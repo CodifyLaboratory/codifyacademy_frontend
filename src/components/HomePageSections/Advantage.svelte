@@ -59,7 +59,7 @@
   <div class="employment__block container">
     <div class="employment_design">
       <div class="helpHr">
-        <div class="rotate__inside" style={`transform: rotate(${y / 4}deg); transition: 0.1s all;`}>
+        <div class="rotate__inside" style={`transform: rotate(${y / 3}deg); transition: 0.1s all;`}>
           <img class="designElement__inside" src="./assets/images/home/Inside.svg" alt="design-element2" />
         </div>
         <img src="./assets/icons/Advantage/HR.png" alt="hr-icon" />

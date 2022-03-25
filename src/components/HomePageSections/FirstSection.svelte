@@ -13,7 +13,9 @@
         <button class="button">{testButton}</button>
       </div>
     </div>
-    <div />
+    <div>
+      <img src="./assets/images/home/homePageGif.gif" alt="world" />
+    </div>
   </div>
 </section>
 
