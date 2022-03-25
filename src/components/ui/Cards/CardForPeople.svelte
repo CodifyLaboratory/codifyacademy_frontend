@@ -49,11 +49,6 @@
     align-items: center;
   }
   hr {
-    border: none;
-    color: var(--blue);
-    background-color: var(--blue);
-    margin: 20px 0;
     width: 90%;
-    height: 1px;
   }
 </style>

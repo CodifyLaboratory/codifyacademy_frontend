@@ -1,6 +1,7 @@
 <script>
-
 </script>
+
+<div class="footer">footer</div>
 
 <style>
   .footer {
@@ -11,12 +12,6 @@
     flex-wrap: wrap;
     margin-top: 158px;
     background: #cccccc;
-    /*padding: 0 15%;*/
     max-height: max-content;
   }
-
 </style>
-
-<div class="footer">
-  footer
-</div>

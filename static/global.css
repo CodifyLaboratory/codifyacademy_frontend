@@ -9,7 +9,8 @@ body {
 }
 :root {
   --dark-blue: #01011c;
-  --blue: #0071bc;
+  --blue: #1c5dab;
+  --green: rgba(7, 255, 225, 1);
   --blue-gradient: linear-gradient(135deg, #07294e, rgba(7, 41, 78, 0));
   --orange-gradient: linear-gradient(#ffc107, #f7941e);
 }
@@ -19,13 +20,10 @@ body {
   padding: 0;
   box-sizing: border-box;
   color: white;
+  font-family: 'Montserrat', sans-serif;
 }
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   background-color: var(--dark-blue);
-  font-family: 'Montserrat', sans-serif;
 }
 .container {
   width: 90%;
@@ -39,4 +37,43 @@ a {
 }
 b {
   font-size: 1.1rem;
+}
+h1 {
+  font-size: 2.7rem;
+}
+h2 {
+  text-align: center;
+  font-size: 1.7rem;
+}
+h3 {
+  font-size: 1.4rem;
+}
+.button {
+  padding: 10px 20px;
+  border: 1px solid var(--blue);
+  font-size: 16px;
+  border-radius: 150px;
+  background: transparent;
+  box-shadow: -3px -3px 15px rgba(0, 157, 255, 0.2), 3px 3px 15px rgba(0, 157, 255, 0.2);
+}
+.contained {
+  background-color: var(--blue);
+}
+hr {
+  border: none;
+  color: var(--blue);
+  background-color: var(--blue);
+  margin: 20px 0;
+  height: 1px;
+}
+section {
+  padding: 40px 0;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

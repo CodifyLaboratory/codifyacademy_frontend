@@ -1,10 +1,5 @@
 <script>
-  export let cardInfo = {
-    img: './assets/icons/CardForCourses/python.png',
-    title: 'lorem ipsum asdasd',
-    time: '2 месяца',
-    type: 'Офлайн',
-  }
+  export let cardInfo
 </script>
 
 <div class="cardForCourses">
@@ -28,6 +23,20 @@
 </div>
 
 <style>
+  .cardForCourses {
+    /* width: calc(25% - 20px);
+    min-width: 210px;
+    max-width: 270px; */
+    width: 270px;
+    border-radius: 10px;
+    background-image: var(--blue-gradient);
+    position: relative;
+    padding: 30px 20px;
+    padding-top: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .cardCircle {
     position: absolute;
     border: 1px solid var(--blue);
@@ -49,25 +58,13 @@
     align-items: center;
     z-index: 1;
   }
-  .cardForCourses {
-    width: 270px;
-    border-radius: 10px;
-    background-image: var(--blue-gradient);
-    position: relative;
-    padding: 30px 20px;
-    padding-top: 90px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  b,
+  p {
+    white-space: nowrap;
   }
   hr {
-    border: none;
-    color: var(--blue);
-    background-color: var(--blue);
-    margin-top: 20px;
-    margin-bottom: 40px;
     width: 90%;
-    height: 1px;
+    margin-bottom: 40px;
   }
   .cardInformation {
     display: flex;

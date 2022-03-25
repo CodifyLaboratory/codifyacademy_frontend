@@ -3,17 +3,20 @@
   export let students
 </script>
 
-<div class="students">
-  {#each students as student}
-    <CardForPeople img={student.img} title={student.name}>
-      <p class="student-work">{student.work}</p>
-      <p>{student.prof}</p>
-    </CardForPeople>
-  {/each}
-</div>
+<section class="sectionStudents">
+  <h2>Трудоустроенные студенты</h2>
+  <div class="studentsCards">
+    {#each students as student}
+      <CardForPeople img={student.img} title={student.name}>
+        <p class="student-work">{student.work}</p>
+        <p>{student.prof}</p>
+      </CardForPeople>
+    {/each}
+  </div>
+</section>
 
 <style>
-  .students {
+  .studentsCards {
     display: flex;
     width: 100%;
     gap: 20px;
