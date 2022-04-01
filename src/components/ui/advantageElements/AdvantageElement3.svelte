@@ -2,6 +2,7 @@
   <img src="./assets/images/home/advantage3.svg" alt="advantage3" />
   <div class="advantageRotateElement3 design3" />
   <div class="design3">
+    <img src="./assets/icons/Advantage/devices.svg" alt="devices" />
     <div class="circle3" />
   </div>
 </div>
@@ -22,9 +23,10 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    bottom: -7px;
+    bottom: -6px;
   }
   .circle3 {
+    position: absolute;
     border-radius: 50%;
     border: 7px solid rgba(0, 157, 255, 1);
     width: 105px;

@@ -1,10 +1,11 @@
 <script>
   import CardForCourses from '../ui/Cards/CardForCourses.svelte'
   export let courseCards
+  export let h2
 </script>
 
 <section class="sectionCourses container">
-  <h2>Курсы</h2>
+  <h2>{h2}</h2>
   <div class="sectionCourses__buttons">
     <button class="button">Все курсы</button>
     <button class="button">Разработка</button>
@@ -19,9 +20,6 @@
 </section>
 
 <style>
-  .sectionCourses > h2 {
-    margin: 60px 0;
-  }
   .sectionCourses__buttons {
     width: 100%;
     display: flex;
@@ -34,6 +32,6 @@
     gap: 20px;
     row-gap: 70px;
     flex-wrap: wrap;
-    margin-top: 70px;
+    margin-top: 80px;
   }
 </style>

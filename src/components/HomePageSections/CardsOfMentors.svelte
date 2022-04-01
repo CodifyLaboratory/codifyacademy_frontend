@@ -1,29 +1,37 @@
 <script>
   import CardForPeople from '../ui/Cards/CardForPeople.svelte'
+  import Carousel from '../ui/Carousel.svelte'
+
   export let mentors
 </script>
 
 <section class="sectionMentors">
   <h2>Наши менторы</h2>
-  <div class="mentorsCards">
+  <!-- <div class="mentorsCards"> -->
+
+  <Carousel>
     {#each mentors as mentor}
-      <CardForPeople img={mentor.img} title={mentor.name}>
-        <div class="mentor-prof">
-          <img src={mentor.profImg} alt={mentor.prof} />
-          <b>{mentor.prof}</b>
-        </div>
-        <p>{mentor.exp}</p>
-        <p>{mentor.work}</p>
-        <div class="social">
-          {#each mentor.social as social}
-            <a href="/">
-              <img src={social.img} alt={social.img} />
-            </a>
-          {/each}
-        </div>
-      </CardForPeople>
+      <div>
+        <CardForPeople img={mentor.img} title={mentor.name}>
+          <div class="mentor-prof">
+            <img src={mentor.profImg} alt={mentor.prof} />
+            <b>{mentor.prof}</b>
+          </div>
+          <p>{mentor.exp}</p>
+          <p>{mentor.work}</p>
+          <div class="social">
+            {#each mentor.social as social}
+              <a href="/">
+                <img src={social.img} alt={social.img} />
+              </a>
+            {/each}
+          </div>
+        </CardForPeople>
+      </div>
     {/each}
-  </div>
+  </Carousel>
+
+  <!-- </div> -->
 </section>
 
 <style>

@@ -9,7 +9,9 @@
     </div>
   </div>
   <div class="design2">
-    <div class="circle2" />
+    <div class="circle2">
+      <img src="./assets/icons/Advantage/managment.svg" alt="managment" />
+    </div>
   </div>
 </div>
 
@@ -23,18 +25,21 @@
   .design2 {
     width: 182px;
     height: 182px;
-    right: 18px;
+    right: 17px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    bottom: 22px;
+    bottom: 24px;
   }
   .circle2 {
     border-radius: 50%;
     border: 6px solid var(--blue);
     width: 100px;
     height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-shadow: -4px -4px 15px rgba(0, 157, 255, 0.25), 4px 4px 15px rgba(0, 157, 255, 0.25);
   }
 
@@ -43,8 +48,8 @@
   }
   .advantageRotateElement2__1 > img {
     position: absolute;
-    bottom: -10px;
-    right: -4px;
+    bottom: -9px;
+    right: -3px;
   }
   .advantageRotateElement2__2 {
     width: 160px;

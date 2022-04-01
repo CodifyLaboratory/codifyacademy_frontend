@@ -43,7 +43,7 @@
     border-bottom-left-radius: 100px;
     border-bottom-right-radius: 100px;
     border-top: none;
-    background-color: var(--dark-blue);
+    background-color: rgb(16 16 26);
     width: 100px;
     height: 50px;
     top: 0;

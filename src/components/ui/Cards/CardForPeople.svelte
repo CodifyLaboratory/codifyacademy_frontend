@@ -37,13 +37,16 @@
     z-index: 1;
   }
   .cardForPeople {
-    width: 370px;
+    width: 95%;
+    min-width: 330px;
+    max-width: 390px;
     border-radius: 10px;
     background-image: var(--blue-gradient);
     position: relative;
     padding: 20px 30px;
     padding-top: 135px;
-    margin-top: 150px;
+    margin: 0 auto;
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;

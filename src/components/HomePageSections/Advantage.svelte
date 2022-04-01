@@ -13,22 +13,22 @@
   <h2>{text.h2.advantages}</h2>
   <div class="advantage__block container">
     <div style="width: 275px; margin-top: 12px;" class="advantageElement">
-      <p>{text.advantages[0].title}</p>
+      <p class="coloredText">{text.advantages[0].title}</p>
       <p>{text.advantages[0].body}</p>
       <AdvantageElement1 />
     </div>
     <div style="width: 230px; margin-top: 25px;" class="advantageElement">
-      <p>{text.advantages[1].title}</p>
+      <p class="coloredText">{text.advantages[1].title}</p>
       <p>{text.advantages[1].body}</p>
       <AdvantageElement2 />
     </div>
     <div style="width: 276px; margin-top: 17px;" class="advantageElement">
-      <p>{text.advantages[2].title}</p>
+      <p class="coloredText">{text.advantages[2].title}</p>
       <p>{text.advantages[2].body}</p>
       <AdvantageElement3 />
     </div>
     <div style="width: 275px;" class="advantageElement">
-      <p>{text.advantages[3].title}</p>
+      <p class="coloredText">{text.advantages[3].title}</p>
       <p>{text.advantages[3].body}</p>
       <AdvantageElement4 />
     </div>
@@ -43,13 +43,13 @@
         <div class="internshipStage__circle1">
           <div class="internshipStage__circle2" />
         </div>
-        <b>{stage.title}</b>
+        <b class="coloredText">{stage.title}</b>
         <p>{stage.body}</p>
       </div>
     {/each}
     <div class="internshipStage finalStage">
       <div class="finalStage__img" />
-      <b>{text.internship.employment}</b>
+      <b class="coloredText">{text.internship.employment}</b>
     </div>
   </div>
 </section>
@@ -62,7 +62,7 @@
         <div class="rotate__inside" style={`transform: rotate(${y / 3}deg); transition: 0.1s all;`}>
           <img class="designElement__inside" src="./assets/images/home/Inside.svg" alt="design-element2" />
         </div>
-        <img src="./assets/icons/Advantage/HR.png" alt="hr-icon" />
+        <img src="./assets/icons/Advantage/HR.svg" alt="hr-icon" />
         <b style="white-space: pre-line;">{text.employment.ourPM}</b>
       </div>
       <img src="./assets/images/home/Outside.svg" alt="design-element" />
@@ -84,11 +84,7 @@
   /* for advantage section */
 
   .sectionAdvantage {
-    padding-top: 90px;
-    padding-bottom: 300px;
-  }
-  .sectionAdvantage h2 {
-    padding-bottom: 70px;
+    padding-bottom: 280px;
   }
   .advantage__block {
     display: flex;
@@ -117,17 +113,19 @@
   /* for intership section */
 
   .sectionInternship {
-    background: linear-gradient(180deg, #000000 0%, #01011c 38.19%, rgba(5, 5, 68, 0.01) 100%);
+    background: #131315;
     border-top: 2px solid var(--blue);
     padding-top: 0;
-    padding-bottom: 200px;
   }
   .sectionInternship h2 {
     position: relative;
-    top: -170px;
+    top: -120px;
   }
   .internship__stages {
+    position: relative;
+    top: -65px;
     display: grid;
+    gap: 20px;
     grid-template-columns: repeat(4, 1fr);
   }
   .internshipStage {
@@ -137,8 +135,6 @@
     position: relative;
     text-align: center;
     white-space: pre-line;
-    width: 248px;
-    padding: 0 20px;
     gap: 16px;
   }
   .internshipStage b {
@@ -183,6 +179,9 @@
 
   /* for employment section  */
 
+  .sectionEmployment {
+    background: #131315;
+  }
   .employment__block {
     display: flex;
     height: 410px;
@@ -238,17 +237,18 @@
     display: flex;
     flex-direction: column;
     gap: 22px;
-    background-color: var(--dark-blue);
+    background: #131315;
   }
   ol li {
     white-space: nowrap;
     border-radius: 150px;
     background-color: var(--dark-blue);
-    background-image: linear-gradient(129.96deg, #07294e -21.19%, rgba(7, 41, 78, 0) 112.21%);
+    background-image: var(--blue-gradient);
     display: flex;
     align-items: center;
     position: relative;
     z-index: 2;
+    font-weight: 500;
     height: 80px;
     left: 0;
     transition: 0.3s all;
@@ -264,7 +264,7 @@
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    font-weight: 700;
+    font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;

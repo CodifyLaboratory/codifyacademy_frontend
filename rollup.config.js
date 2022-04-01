@@ -10,6 +10,7 @@ import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
+import json from "@rollup/plugin-json";
 
 const { APP_NAME, SECRET_KEY, NODE_ENV, API_BASE_URL} = process.env;
 const dev = NODE_ENV === 'development';
@@ -30,7 +31,7 @@ export default {
         'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
         'process.env.SECRET_KEY': JSON.stringify(SECRET_KEY),
         'process.env.API_BASE_URL': JSON.stringify(API_BASE_URL),
-        'process.env.APP_NAME': JSON.stringify(APP_NAME)
+        'process.env.APP_NAME': JSON.stringify(APP_NAME),
       }),
       svelte({
         dev,
@@ -46,6 +47,10 @@ export default {
         dedupe: ['svelte']
       }),
       commonjs(),
+      json({
+				namedExports: false,
+				compact: !dev,
+			}),
 
       legacy && babel({
         extensions: ['.js', '.mjs', '.html', '.svelte'],
@@ -82,7 +87,8 @@ export default {
         'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
         'process.env.SECRET_KEY': JSON.stringify(SECRET_KEY),
         'process.env.API_BASE_URL': JSON.stringify(API_BASE_URL),
-        'process.env.APP_NAME': JSON.stringify(APP_NAME)
+        'process.env.APP_NAME': JSON.stringify(APP_NAME),
+
       }),
       svelte({
         generate: 'ssr',
@@ -97,7 +103,11 @@ export default {
       resolve({
         dedupe: ['svelte']
       }),
-      commonjs()
+      commonjs(),
+      json({
+				namedExports: false,
+				compact: !dev,
+			}),
     ],
     external: Object.keys(pkg.dependencies).concat(require('module').builtinModules),
 
@@ -115,7 +125,7 @@ export default {
         'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
         'process.env.SECRET_KEY': JSON.stringify(SECRET_KEY),
         'process.env.API_BASE_URL': JSON.stringify(API_BASE_URL),
-        'process.env.APP_NAME': JSON.stringify(APP_NAME)
+        'process.env.APP_NAME': JSON.stringify(APP_NAME),
       }),
       commonjs(),
       !dev && terser()

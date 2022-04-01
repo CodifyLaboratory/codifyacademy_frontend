@@ -21,17 +21,13 @@
 </section>
 
 <style>
-  .sectionStudentsProjects {
-    margin-top: 120px;
-  }
   .studentsProjects {
     border-radius: 10px;
     overflow: hidden;
     background: linear-gradient(129.96deg, #07294e -21.19%, rgba(7, 41, 78, 0) 112.21%);
-    margin: 50px 0;
     width: 100%;
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: auto 410px;
   }
   .studentsProjects__info {
     padding: 40px 20px;

@@ -4,7 +4,9 @@
     <img src="./assets/images/home/advantage1-1.svg" alt="advantage1-1" />
   </div>
   <div class="design1">
-    <div class="circle1" />
+    <div class="circle1">
+      <img src="./assets/icons/Advantage/failure.svg" alt="failure" />
+    </div>
   </div>
 </div>
 
@@ -23,13 +25,16 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    bottom: -6.5px;
+    bottom: -5.5px;
   }
   .circle1 {
     border-radius: 50%;
     border: 5px solid rgba(0, 157, 255, 1);
     width: 144px;
     height: 144px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-shadow: -4px -4px 15px rgba(0, 157, 255, 0.25), 4px 4px 15px rgba(0, 157, 255, 0.25);
   }
 

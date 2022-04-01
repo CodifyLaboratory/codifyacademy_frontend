@@ -22,7 +22,7 @@ export const texts = {
       test: 'Тест на профориентацию'
     },
     homePage : {
-      h1 : 'Освой востребованную\n<strong>IT профессию</strong>\nи начни зарабатывать',
+      h1 : 'Освой востребованную\n<strong class="coloredText">IT профессию</strong>\nи начни зарабатывать',
       h2 : {
         courses: 'Курсы',
         advantages: 'Преимущества обучения в Codify',
@@ -106,15 +106,15 @@ export const texts = {
         stages: [
           {
             title: '1 этап',
-            body: 'Вы работаете\nнад внутренними проектами от Codify'
+            body: 'Вы работаете\nнад внутренними\nпроектами от Codify'
           },
           {
             title: '2 этап',
-            body: 'Работаете в команде над реальными проектами'
+            body: 'Работаете в команде\nнад реальными\nпроектами'
           },
           {
             title: '3 этап',
-            body: 'При успешном окончании проекта, первые деньги за выполненную работу'
+            body: 'При успешном\nокончании проекта,\nпервые деньги за\nвыполненную работу'
           },
         ]
       },
@@ -179,8 +179,77 @@ export const texts = {
             }
           ]
         },
+        {
+          img: './assets/images/home/cardsPeople/Julian.png',
+          name: 'Юлиан Худоложкин',
+          profImg: './assets/icons/CardForCourses/ui-ux.png',
+          prof: 'UX/UI-дизайн',
+          exp: 'Опыт работы: 6 лет',
+          work: 'Место работы: Beeline',
+          social: [{
+            url: '',
+            img: './assets/icons/CardsOfMentors/Linkedin.png'
+            },
+            {
+              url: '',
+              img: './assets/icons/CardsOfMentors/Linkedin.png'
+            }
+          ]
+        },
+        {
+          img: './assets/images/home/cardsPeople/Dina.png',
+          name: 'Дина Руслан',
+          profImg: './assets/icons/CardForCourses/PM.png',
+          prof: 'Project Management',
+          exp: 'Опыт работы: 10 лет',
+          work: 'Место работы: Codify, CEO',
+          social: [{
+            url: '',
+            img: './assets/icons/CardsOfMentors/Linkedin.png'
+            },
+            {
+              url: '',
+              img: './assets/icons/CardsOfMentors/Linkedin.png'
+            }
+          ]
+        },
+        {
+          img: './assets/images/home/cardsPeople/Nikita.png',
+          name: 'Никита Ногай',
+          profImg: './assets/icons/CardForCourses/js.png',
+          prof: 'Frontend-разработка',
+          exp: 'Опыт работы: 10 лет',
+          work: 'Место работы:',
+          social: [{
+            url: '',
+            img: './assets/icons/CardsOfMentors/Linkedin.png'
+            },
+            {
+              url: '',
+              img: './assets/icons/CardsOfMentors/Linkedin.png'
+            }
+          ]
+        },
       ],
       studentsCards: [
+        {
+          img: './assets/images/home/cardsPeople/Meerim.png',
+          name: 'Мээрим Сагымбаева',
+          work: 'Beeline',
+          prof: 'Проектный Менеджер',
+        },
+        {
+          img: './assets/images/home/cardsPeople/Baktybek.png',
+          name: 'Бактыбек Байсеркеев',
+          work: 'Reviro',
+          prof: 'Back-End разработчик',
+        },
+        {
+          img: './assets/images/home/cardsPeople/Meerim.png',
+          name: 'Алина Даншина',
+          work: 'Reviro',
+          prof: 'Проектный Менеджер',
+        },
         {
           img: './assets/images/home/cardsPeople/Meerim.png',
           name: 'Мээрим Сагымбаева',
