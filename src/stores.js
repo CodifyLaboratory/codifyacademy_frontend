@@ -19,3 +19,7 @@ export const seo = writable({
   twitterCard: s.twitterCard,
   twitterSite: s.twitterSite
 })
+
+export const language = writable('ru')
+
+export const offSetEnroll = writable(0);

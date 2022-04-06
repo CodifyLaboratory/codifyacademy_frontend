@@ -1,26 +1,31 @@
 <script>
-  import { onMount } from 'svelte'
+  import Carousel from '@beyonk/svelte-carousel'
   import ArrowLeft from './carouselIcons/ArrowLeft.svelte'
   import ArrowRight from './carouselIcons/ArrowRight.svelte'
-  let Carousel // for saving Carousel component class
-  let carousel // for calling methods of the carousel instance
 
-  onMount(async () => {
-    const module = await import('svelte-carousel')
-    Carousel = module.default
-  })
-  const handleNextClick = () => {
-    carousel.goToNext()
-  }
+  export let needLoop = true
+  export let elemPerPage = 1
+  let carousel
   const handlePrevClick = () => {
-    carousel.goToPrev()
+    carousel.left()
+  }
+  const handleNextClick = () => {
+    carousel.right()
   }
 </script>
 
 <div class="slideBox">
-  <svelte:component this={Carousel} arrows={false} particlesToShow={3} particlesToScroll={2} bind:this={carousel}>
+  <Carousel
+    easing="ease-in-out"
+    loop={needLoop}
+    perPage={elemPerPage}
+    dots={false}
+    controls={false}
+    duration={400}
+    bind:this={carousel}
+  >
     <slot />
-  </svelte:component>
+  </Carousel>
   <div class="carouselArrows">
     <ArrowLeft onClick={handlePrevClick} />
     <ArrowRight onClick={handleNextClick} />
@@ -31,8 +36,6 @@
   .slideBox {
     max-width: 1200px;
     margin: 0 auto;
-    width: 100vw;
-    padding: 0 30px;
   }
   .carouselArrows {
     width: 100%;

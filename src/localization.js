@@ -13,13 +13,14 @@ export const texts = {
   ru: {
     buttons: {
       contact_us: 'Связаться с нами',
-      submit: 'Подтвердить',
-      try_free: 'Попробовать бесплатно',
-      join: 'Начать использование',
-      more: 'Показать больше ...',
-      less: 'Свернуть',
+      dev: 'Разработка',
+      allCourses: 'Все курсы',
+      design: 'Дизайн',
+      managment: 'Менеджмент',
+      less: '',
       enroll: 'Записаться на курс',
-      test: 'Тест на профориентацию'
+      consultation: 'Получить консультацию',
+      test: 'Пройти тест'
     },
     homePage : {
       h1 : 'Освой востребованную\n<strong class="coloredText">IT профессию</strong>\nи начни зарабатывать',
@@ -31,6 +32,7 @@ export const texts = {
         students: 'Трудоустроенные студенты',
         studentProjects: 'Работы наших студентов',
         mentors: 'Наши менторы',
+        enroll: 'Получить консультацию и записаться на курс'
 
       },
       courseСards: [
@@ -270,6 +272,38 @@ export const texts = {
         }
       ]
 
+    },
+    footer: {
+      about: {
+        title: 'О компании',
+        academy: 'Взрослые курсы',
+        teens: 'Детские курсы',
+        events: 'Мероприятия'
+      },
+      projects: {
+        title: 'Наши проекты',
+        codifyTeens: 'Codify teens',
+        lms: 'Codify LMS',
+        crm: 'Codify CRM'
+      },
+      contacts: {
+        title: 'Контакты',
+        address: 'ул. Исанова 105/3, 1 этаж'
+        
+      },
+    },
+    header: {
+      academy: 'Взрослые курсы',
+      teens: 'Детские курсы',
+      events: 'Мероприятия',
+      contacts: 'Контакты',
+      call: 'Связаться с нами'
+    },
+    enroll: {
+      name: 'Имя',
+      phone: 'Номер телефона',
+      email: 'E-mail',
+      check: 'Нажимая на кнопку, я соглашаюсь на обработку персональных данных и с правилами пользования Платформы'
     }
     
   }

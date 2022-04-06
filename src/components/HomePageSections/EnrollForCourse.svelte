@@ -1,19 +1,25 @@
 <script>
+  import { texts } from '../../localization'
+  import { language } from '../../stores'
+
+  let activeLang
+  language.subscribe(lang => (activeLang = lang))
+  const text = texts[activeLang]
 </script>
 
-<section class="sectionEnroll">
-  <h2>Получить консультацию и записаться на курс</h2>
+<section class="sectionEnroll" id="enroll">
   <div class="container">
+    <h2>{text.homePage.h2.enroll}</h2>
     <form action="">
       <div class="formInputs">
-        <input required type="text" placeholder="Имя" />
-        <input required type="text" placeholder="Номер телефона" />
-        <input type="text" placeholder="E-mail" />
-        <button class="button contained">Записаться на курс</button>
+        <input required type="text" placeholder={text.enroll.name} />
+        <input required type="text" placeholder={text.enroll.phone} />
+        <input type="text" placeholder={text.enroll.email} />
+        <button class="button contained">{text.buttons.enroll}</button>
       </div>
       <div class="formCheck">
         <input required type="checkbox" />
-        <p>Нажимая на кнопку, я соглашаюсь на обработку персональных данных и с правилами пользования Платформы</p>
+        <p>{text.enroll.check}</p>
       </div>
     </form>
   </div>
@@ -33,7 +39,9 @@
     gap: 20px;
   }
   .formInputs > input {
-    min-width: 290px;
+    width: 23%;
+    min-width: 230px;
+    max-width: 290px;
     padding: 10px 30px;
     line-height: 1.2rem;
     border-radius: 100px;
@@ -52,7 +60,36 @@
     font-size: 12px;
   }
   .formCheck > input {
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
+  }
+  @media screen and (max-width: 1050px) {
+    .formInputs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .formCheck > input {
+      width: 20px;
+      height: 20px;
+    }
+    .formInputs > input {
+      width: 100%;
+      min-width: 230px;
+      max-width: 4900px;
+      align-self: center;
+      justify-self: center;
+    }
+    .formInputs button {
+      justify-self: flex-end;
+    }
+  }
+  @media screen and (max-width: 650px) {
+    .formInputs {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    .formCheck > input {
+      width: 50px;
+    }
   }
 </style>

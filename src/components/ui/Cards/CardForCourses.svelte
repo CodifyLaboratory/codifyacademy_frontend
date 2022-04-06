@@ -1,10 +1,26 @@
 <script>
   export let cardInfo
+  import { language } from '../../../stores'
+
+  let activeLang
+  language.subscribe(lang => (activeLang = lang))
+
+  function currentStydyFormat(studyFormat) {
+    if (activeLang === 'ru') {
+      if (studyFormat.includes('/')) {
+        return studyFormat.split('/').join('/\n')
+      } else {
+        return studyFormat
+      }
+    } else {
+      return studyFormat
+    }
+  }
 </script>
 
 <div class="cardForCourses">
   <div class="card-icon">
-    <img src={cardInfo.img} alt={cardInfo.title} />
+    <img src={`./assets/icons/CardForCourses/${cardInfo.icon}`} alt={cardInfo.title} />
   </div>
   <div class="cardCircle" />
 
@@ -13,20 +29,17 @@
   <div class="cardInformation">
     <div class="cardInformation__block">
       <img src="./assets/icons/CardForCourses/clock.png" alt="clock" />
-      <p>{cardInfo.time}</p>
+      <p>{cardInfo.duration}</p>
     </div>
     <div class="cardInformation__block">
       <img src="./assets/icons/CardForCourses/Business.png" alt="Business" />
-      <p>{cardInfo.type}</p>
+      <p style={activeLang === 'ru' ? 'white-space: pre-line;' : ''}>{currentStydyFormat(cardInfo.study_format)}</p>
     </div>
   </div>
 </div>
 
 <style>
   .cardForCourses {
-    /* width: calc(25% - 20px);
-    min-width: 210px;
-    max-width: 270px; */
     width: 270px;
     border-radius: 10px;
     background-image: var(--blue-gradient);
@@ -36,6 +49,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: 0.2s all;
+  }
+  .cardForCourses:hover {
+    box-shadow: 4px 8px 10px rgba(0, 157, 255, 0.2);
+  }
+  .cardForCourses:active {
+    box-shadow: 4px 8px 10px rgba(0, 157, 255, 0.2);
+    background-color: var(--blue-main);
+  }
+  .cardForCourses:hover .card-icon {
+    transform: scale(1.3);
   }
   .cardCircle {
     position: absolute;
@@ -57,6 +81,7 @@
     justify-content: center;
     align-items: center;
     z-index: 1;
+    transition: 0.3s all;
   }
   b,
   p {

@@ -1,4 +1,8 @@
-<a href="#" class="instagram">
+<script>
+  export let href = '/'
+</script>
+
+<a {href} class="instagram" target="_blank">
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M22.6933 2H9.30667C5.27131 2 2 5.27131 2 9.30667V22.6933C2 26.7287 5.27131 30 9.30667 30H22.6933C26.7287 30 30 26.7287 30 22.6933V9.30667C30 5.27131 26.7287 2 22.6933 2Z"
