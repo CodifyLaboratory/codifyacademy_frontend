@@ -20,12 +20,12 @@
   .design1 {
     width: 194px;
     height: 194px;
-    right: 13.5px;
+    right: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    bottom: -5.5px;
+    bottom: -7px;
   }
   .circle1 {
     border-radius: 50%;

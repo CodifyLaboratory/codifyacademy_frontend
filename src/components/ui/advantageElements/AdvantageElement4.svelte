@@ -22,7 +22,7 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    bottom: 25px;
+    bottom: 24px;
   }
   .circle4 {
     position: absolute;

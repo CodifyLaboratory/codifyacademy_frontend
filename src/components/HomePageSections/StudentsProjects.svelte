@@ -1,8 +1,9 @@
 <script>
-  import ProjectsCarousel from '../ui/ProjectsCarousel.svelte'
+  import Carousel from '../ui/Carousel.svelte'
   import { texts } from '../../localization'
   import { language } from '../../stores'
   import { onMount } from 'svelte'
+  import { SwiperSlide } from 'swiper/svelte'
 
   let activeLang
   language.subscribe(lang => (activeLang = lang))
@@ -15,7 +16,6 @@
       .then(response => response.json())
       .then(data => {
         projects = data
-        console.log(projects)
       })
       .catch(error => {
         console.log(error)
@@ -26,37 +26,39 @@
 <section class="sectionStudentsProjects container">
   <h2>{text}</h2>
   {#if projects.length}
-    <ProjectsCarousel>
+    <Carousel elemPerPage={1}>
       {#each projects as project}
-        <div style="padding: 0 1px;">
-          <div class="studentsProjects">
-            <div class="studentsProjects__img">
-              <img src={project.image} alt="project-img" />
-            </div>
-            <div class="studentsProjects__info">
-              <div>
-                <b>{project.title}</b>
-                <hr />
-                <div class="studentsProjects__description" style="margin-bottom: 20px;">
-                  <img style="margin-bottom: 5px;" src="./assets/icons/StudentsProjects/Digital.svg" alt="digital" />
-                  <p>
-                    {project.description}
-                  </p>
-                </div>
+        <SwiperSlide>
+          <div style="padding: 0 1px;">
+            <div class="studentsProjects">
+              <div class="studentsProjects__img">
+                <img src={project.image} alt="project-img" />
               </div>
-              <div class="studentsProjects__description">
-                <img style="margin-bottom: 5px;" src="./assets/icons/StudentsProjects/Workgroup.svg" alt="digital" />
-                <div class="studentsProjects__team">
-                  {#each project.member as member}
-                    <p>{member.role}</p>
-                  {/each}
+              <div class="studentsProjects__info">
+                <div>
+                  <b>{project.title}</b>
+                  <hr />
+                  <div class="studentsProjects__description" style="margin-bottom: 20px;">
+                    <img style="margin-bottom: 5px;" src="./assets/icons/StudentsProjects/Digital.svg" alt="digital" />
+                    <p>
+                      {project.description}
+                    </p>
+                  </div>
+                </div>
+                <div class="studentsProjects__description">
+                  <img style="margin-bottom: 5px;" src="./assets/icons/StudentsProjects/Workgroup.svg" alt="digital" />
+                  <div class="studentsProjects__team">
+                    {#each project.member as member}
+                      <p>{member.role}</p>
+                    {/each}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </SwiperSlide>
       {/each}
-    </ProjectsCarousel>
+    </Carousel>
   {/if}
 </section>
 

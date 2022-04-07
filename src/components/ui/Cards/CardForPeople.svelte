@@ -36,6 +36,11 @@
     align-items: center;
     z-index: 1;
   }
+  .card-icon > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
   .cardForPeople {
     width: 95%;
     min-width: 300px;

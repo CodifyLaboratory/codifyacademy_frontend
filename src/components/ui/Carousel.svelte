@@ -1,31 +1,25 @@
 <script>
-  import Carousel from '@beyonk/svelte-carousel'
   import ArrowLeft from './carouselIcons/ArrowLeft.svelte'
   import ArrowRight from './carouselIcons/ArrowRight.svelte'
+  import 'swiper/swiper.min.css'
+  import { Swiper } from 'swiper/svelte'
 
-  export let needLoop = false
   export let elemPerPage = 3
-  let carousel
+
+  let swiper
+
   const handlePrevClick = () => {
-    carousel.left()
+    swiper.slidePrev()
   }
   const handleNextClick = () => {
-    carousel.right()
+    swiper.slideNext()
   }
 </script>
 
 <div class="slideBox">
-  <Carousel
-    easing="ease-in-out"
-    loop={needLoop}
-    perPage={elemPerPage}
-    dots={false}
-    controls={false}
-    duration={400}
-    bind:this={carousel}
-  >
+  <Swiper loop={true} spaceBetween={50} slidesPerView={elemPerPage} on:swiper={e => (swiper = e.detail[0])}>
     <slot />
-  </Carousel>
+  </Swiper>
   <div class="carouselArrows">
     <ArrowLeft onClick={handlePrevClick} />
     <ArrowRight onClick={handleNextClick} />

@@ -23,7 +23,7 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    bottom: -6px;
+    bottom: -7px;
   }
   .circle3 {
     position: absolute;

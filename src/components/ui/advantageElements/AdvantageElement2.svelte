@@ -30,7 +30,7 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    bottom: 24px;
+    bottom: 22px;
   }
   .circle2 {
     border-radius: 50%;
