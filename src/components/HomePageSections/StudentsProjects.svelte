@@ -12,7 +12,7 @@
   let projects = []
 
   onMount(async () => {
-    fetch('http://178.62.241.156/ru/api/projects/')
+    fetch(`http://codify.home.kg/${activeLang}/api/projects/`)
       .then(response => response.json())
       .then(data => {
         projects = data

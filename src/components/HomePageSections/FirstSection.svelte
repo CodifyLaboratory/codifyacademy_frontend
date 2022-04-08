@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte'
   import { texts } from '../../localization'
+  import * as animateScroll from 'svelte-scrollto'
   import { language } from '../../stores'
 
   let activeLang
@@ -11,15 +12,9 @@
   let stickyBtn
   let offSetX
   let offsetWidth
-
-  let scrollToEnroll = 10000
-
+  let scrollToEnroll
   function cunsoltation() {
-    scrollToEnroll = document.querySelector('#enroll').offsetTop - 100
-    window.scrollTo({
-      top: scrollToEnroll,
-      behavior: 'smooth',
-    })
+    animateScroll.scrollTo({ element: '#enroll', duration: 1300, offset: -100 })
   }
 
   onMount(() => {

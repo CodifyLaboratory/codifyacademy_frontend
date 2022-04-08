@@ -17,7 +17,7 @@
 </script>
 
 <div class="slideBox">
-  <Swiper loop={true} spaceBetween={50} slidesPerView={elemPerPage} on:swiper={e => (swiper = e.detail[0])}>
+  <Swiper loop={true} spaceBetween={20} slidesPerView={elemPerPage} on:swiper={e => (swiper = e.detail[0])}>
     <slot />
   </Swiper>
   <div class="carouselArrows">

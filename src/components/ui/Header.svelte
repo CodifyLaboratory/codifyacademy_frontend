@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte'
-
+  import * as animateScroll from 'svelte-scrollto'
   import { texts } from '../../localization'
   import { language } from '../../stores'
   let callUsIsOpen = false
@@ -40,7 +40,7 @@
         <a
           href="/"
           on:click={() => {
-            window.scrollTo({ top: 10000, behavior: 'smooth' })
+            animateScroll.scrollToBottom({ duration: 2000 })
             isOpenMenu = false
           }}>{headerText.contacts}</a
         >

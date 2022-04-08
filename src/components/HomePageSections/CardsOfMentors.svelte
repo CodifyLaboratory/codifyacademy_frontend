@@ -15,7 +15,7 @@
   let mentors = []
 
   onMount(async () => {
-    fetch('http://178.62.241.156/ru/api/mentors/')
+    fetch(`http://codify.home.kg/${activeLang}/api/mentors/`)
       .then(response => response.json())
       .then(data => {
         mentors = data

@@ -13,7 +13,7 @@
   let students = []
 
   onMount(async () => {
-    fetch('http://178.62.241.156/ru/api/students/')
+    fetch(`http://codify.home.kg/${activeLang}/api/students/`)
       .then(response => response.json())
       .then(data => {
         students = data
@@ -31,6 +31,7 @@
   {#if students.length}
     <Carousel elemPerPage={win > 1050 ? 3 : win < 1050 && win > 750 ? 2 : 1}>
       {#each students as student}
+        {console.log(student)}
         <SwiperSlide>
           <div>
             <CardForPeople img={student.photo} title={student.name}>

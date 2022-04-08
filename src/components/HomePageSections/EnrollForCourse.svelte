@@ -12,8 +12,8 @@
     <h2>{text.homePage.h2.enroll}</h2>
     <form action="">
       <div class="formInputs">
-        <input required type="text" placeholder={text.enroll.name} />
-        <input required type="text" placeholder={text.enroll.phone} />
+        <input required type="text" placeholder={text.enroll.name + '*'} />
+        <input required type="number" class="phoneInput" placeholder={text.enroll.phone + '*'} />
         <input type="text" placeholder={text.enroll.email} />
         <button class="button contained">{text.buttons.enroll}</button>
       </div>
@@ -39,9 +39,8 @@
     gap: 20px;
   }
   .formInputs > input {
-    width: 23%;
+    width: 27%;
     min-width: 230px;
-    max-width: 290px;
     padding: 10px 30px;
     line-height: 1.2rem;
     border-radius: 100px;
@@ -52,16 +51,23 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-left: 10px;
+    margin-left: 1px;
     margin-top: 20px;
     justify-content: flex-start;
   }
   .formCheck > p {
     font-size: 12px;
+    line-height: 12px;
   }
   .formCheck > input {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
+  }
+  .phoneInput {
+    -moz-appearance: textfield;
+  }
+  .phoneInput::-webkit-inner-spin-button {
+    display: none;
   }
   @media screen and (max-width: 1050px) {
     .formInputs {

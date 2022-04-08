@@ -78,6 +78,8 @@
     right: 0;
     margin: 0 auto;
     top: -55px;
+    background: linear-gradient(177.99deg, #131315 -0.39%, #03032a 101.38%);
+    filter: drop-shadow(-4px -4px 15px rgba(0, 157, 255, 0.16)) drop-shadow(4px 4px 15px rgba(0, 157, 255, 0.16));
   }
   .internshipStage__circle2 {
     border-radius: 50%;

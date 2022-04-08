@@ -16,7 +16,7 @@
 </svelte:head>
 
 <FirstSection />
-<CardsOfCourses />
+<CardsOfCourses lenght={8} />
 <Advantage />
 <Internship />
 <Employment />

@@ -101,7 +101,7 @@
   .footer {
     display: flex;
     justify-content: space-between;
-    margin-top: 160px;
+    margin-top: 40px;
   }
   .footerElement {
     display: flex;

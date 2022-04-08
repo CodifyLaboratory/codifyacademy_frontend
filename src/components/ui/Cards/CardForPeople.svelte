@@ -42,7 +42,7 @@
     border-radius: 50%;
   }
   .cardForPeople {
-    width: 95%;
+    width: 100%;
     min-width: 300px;
     max-width: 390px;
     border-radius: 10px;
