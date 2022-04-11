@@ -94,7 +94,7 @@ h3 {
   border-radius: 150px;
   background: transparent;
   transition: 0.2s all;
-  box-shadow: -3px -3px 15px rgba(0, 157, 255, 0.2), 3px 3px 15px rgba(0, 157, 255, 0.2);
+  box-shadow: -4px -4px 20px rgba(28, 93, 171, 0.2), 4px 4px 20px rgba(28, 93, 171, 0.2);
 }
 .contained {
   background-color: var(--blue-main);

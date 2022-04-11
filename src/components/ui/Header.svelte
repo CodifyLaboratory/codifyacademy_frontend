@@ -12,6 +12,7 @@
     language.set(lang)
     showLanguages = false
   }
+
   let win
   let isOpenMenu = false
   onMount(() => {

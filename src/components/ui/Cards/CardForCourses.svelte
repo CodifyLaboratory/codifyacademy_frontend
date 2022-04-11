@@ -18,37 +18,41 @@
   }
 </script>
 
-<div class="cardForCourses">
-  <div class="card-icon">
-    <img src={`./assets/icons/CardForCourses/${cardInfo.icon}`} alt={cardInfo.title} />
-  </div>
-  <div class="cardCircle" />
+<a href={`${activeLang}/course/${cardInfo.id}`}>
+  <div class="cardForCourses">
+    <div class="card-icon">
+      <img src={`./assets/icons/CardForCourses/${cardInfo.icon}`} alt={cardInfo.title} />
+    </div>
+    <div class="cardCircle" />
 
-  <b>{cardInfo.title}</b>
-  <hr />
-  <div class="cardInformation">
-    <div class="cardInformation__block">
-      <img src="./assets/icons/CardForCourses/clock.png" alt="clock" />
-      <p>{cardInfo.duration}</p>
-    </div>
-    <div class="cardInformation__block">
-      <img src="./assets/icons/CardForCourses/Business.png" alt="Business" />
-      <p style={activeLang === 'ru' ? 'white-space: pre-line;' : ''}>{currentStydyFormat(cardInfo.study_format)}</p>
+    <b>{cardInfo.title}</b>
+    <hr />
+    <div class="cardInformation">
+      <div class="cardInformation__block">
+        <img src="./assets/icons/CardForCourses/clock.png" alt="clock" />
+        <p>{cardInfo.duration}</p>
+      </div>
+      <div class="cardInformation__block">
+        <img src="./assets/icons/CardForCourses/Business.png" alt="Business" />
+        <p style={activeLang === 'ru' ? 'white-space: pre-line;' : ''}>{currentStydyFormat(cardInfo.study_format)}</p>
+      </div>
     </div>
   </div>
-</div>
+</a>
 
 <style>
   .cardForCourses {
     width: 270px;
     border-radius: 10px;
+    min-height: 275px;
     background-image: var(--blue-gradient);
     position: relative;
-    padding: 30px 20px;
+    padding: 20px;
     padding-top: 90px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     transition: 0.2s all;
   }
   .cardForCourses:hover {

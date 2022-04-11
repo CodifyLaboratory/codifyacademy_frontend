@@ -32,6 +32,7 @@ export default {
         'process.env.SECRET_KEY': JSON.stringify(SECRET_KEY),
         'process.env.API_BASE_URL': JSON.stringify(API_BASE_URL),
         'process.env.APP_NAME': JSON.stringify(APP_NAME),
+        'preventAssignment': true
       }),
       svelte({
         dev,
@@ -88,6 +89,7 @@ export default {
         'process.env.SECRET_KEY': JSON.stringify(SECRET_KEY),
         'process.env.API_BASE_URL': JSON.stringify(API_BASE_URL),
         'process.env.APP_NAME': JSON.stringify(APP_NAME),
+        'preventAssignment': true
 
       }),
       svelte({
@@ -126,6 +128,7 @@ export default {
         'process.env.SECRET_KEY': JSON.stringify(SECRET_KEY),
         'process.env.API_BASE_URL': JSON.stringify(API_BASE_URL),
         'process.env.APP_NAME': JSON.stringify(APP_NAME),
+        'preventAssignment': true
       }),
       commonjs(),
       !dev && terser()

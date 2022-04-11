@@ -5,17 +5,28 @@
   import Carousel from '../ui/Carousel.svelte'
   import { texts } from '../../localization'
   import { language } from '../../stores'
+  import axios from 'axios'
 
   let activeLang
-  language.subscribe(lang => (activeLang = lang))
+  let students = []
+  language.subscribe(async lang => {
+    activeLang = lang
+    axios
+      .get(`http://codify.home.kg/${activeLang}/api/students/`)
+      .then(({ data }) => {
+        students = data
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  })
+
   const text = texts[activeLang].homePage.h2.students
 
-  let students = []
-
   onMount(async () => {
-    fetch(`http://codify.home.kg/${activeLang}/api/students/`)
-      .then(response => response.json())
-      .then(data => {
+    axios
+      .get(`http://codify.home.kg/${activeLang}/api/students/`)
+      .then(({ data }) => {
         students = data
       })
       .catch(error => {
@@ -31,7 +42,6 @@
   {#if students.length}
     <Carousel elemPerPage={win > 1050 ? 3 : win < 1050 && win > 750 ? 2 : 1}>
       {#each students as student}
-        {console.log(student)}
         <SwiperSlide>
           <div>
             <CardForPeople img={student.photo} title={student.name}>

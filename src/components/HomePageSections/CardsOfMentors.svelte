@@ -8,16 +8,28 @@
   import Behance from '../ui/socialIcons/behance.svelte'
   import Linkedin from '../ui/socialIcons/linkedin.svelte'
   import { SwiperSlide } from 'swiper/svelte'
+  import axios from 'axios'
+
   let activeLang
-  language.subscribe(lang => (activeLang = lang))
+  language.subscribe(async lang => {
+    activeLang = lang
+    axios
+      .get(`http://codify.home.kg/${activeLang}/api/mentors/`)
+      .then(({ data }) => {
+        mentors = data
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  })
   const text = texts[activeLang].homePage.h2.mentors
 
   let mentors = []
 
   onMount(async () => {
-    fetch(`http://codify.home.kg/${activeLang}/api/mentors/`)
-      .then(response => response.json())
-      .then(data => {
+    axios
+      .get(`http://codify.home.kg/${activeLang}/api/mentors/`)
+      .then(({ data }) => {
         mentors = data
       })
       .catch(error => {

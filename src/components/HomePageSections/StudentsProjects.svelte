@@ -4,17 +4,28 @@
   import { language } from '../../stores'
   import { onMount } from 'svelte'
   import { SwiperSlide } from 'swiper/svelte'
+  import axios from 'axios'
 
   let activeLang
-  language.subscribe(lang => (activeLang = lang))
+  language.subscribe(async lang => {
+    activeLang = lang
+    axios
+      .get(`http://codify.home.kg/${activeLang}/api/projects/`)
+      .then(({ data }) => {
+        projects = data
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  })
   const text = texts[activeLang].homePage.h2.studentProjects
 
   let projects = []
 
   onMount(async () => {
-    fetch(`http://codify.home.kg/${activeLang}/api/projects/`)
-      .then(response => response.json())
-      .then(data => {
+    axios
+      .get(`http://codify.home.kg/${activeLang}/api/projects/`)
+      .then(({ data }) => {
         projects = data
       })
       .catch(error => {

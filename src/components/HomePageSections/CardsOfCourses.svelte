@@ -3,28 +3,45 @@
   import { texts } from '../../localization'
   import { language } from '../../stores'
   import { onMount } from 'svelte'
+  import axios from 'axios'
 
-  export let lenght = 0
+  export let length = 0
 
   let activeLang
-  language.subscribe(lang => (activeLang = lang))
-  const text = texts[activeLang].buttons
 
   let courseCards = []
-
-  onMount(async () => {
-    fetch(`http://codify.home.kg/${activeLang}/api/courses/`)
-      .then(response => response.json())
-      .then(data => {
+  let currentCards = []
+  language.subscribe(async lang => {
+    activeLang = lang
+    axios
+      .get(`http://codify.home.kg/${activeLang}/api/courses/`)
+      .then(({ data }) => {
         courseCards = data
-        lenght && courseCards.lenght > lenght ? (courseCards.lenght = lenght) : null
-        currentCards = data
+        filter(0)
+        if (length && courseCards.length > length) {
+          courseCards.length = length
+        }
+        currentCards = courseCards
       })
       .catch(error => {
         console.log(error)
       })
   })
-  let currentCards = courseCards
+  const text = texts[activeLang].buttons
+  onMount(async () => {
+    axios
+      .get(`http://codify.home.kg/${activeLang}/api/courses/`)
+      .then(({ data }) => {
+        courseCards = data
+        if (length && courseCards.length > length) {
+          courseCards.length = length
+        }
+        currentCards = courseCards
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  })
   let activeBtn = 0
 
   function filterCards(type) {
@@ -39,7 +56,7 @@
     } else if (tab === 2) {
       currentCards = filterCards('Design')
     } else if (tab === 3) {
-      currentCards = filterCards('Managment')
+      currentCards = filterCards('Management')
     }
   }
 </script>
