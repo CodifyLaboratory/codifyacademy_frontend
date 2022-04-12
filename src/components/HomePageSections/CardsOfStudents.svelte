@@ -11,14 +11,16 @@
   let students = []
   language.subscribe(async lang => {
     activeLang = lang
-    axios
-      .get(`http://codify.home.kg/${activeLang}/api/students/`)
-      .then(({ data }) => {
-        students = data
-      })
-      .catch(error => {
-        console.log(error)
-      })
+    if (students.length) {
+      axios
+        .get(`http://codify.home.kg/${activeLang}/api/students/`)
+        .then(({ data }) => {
+          students = data
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    }
   })
 
   const text = texts[activeLang].homePage.h2.students

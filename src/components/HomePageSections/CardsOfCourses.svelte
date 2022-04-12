@@ -13,30 +13,33 @@
   let currentCards = []
   language.subscribe(async lang => {
     activeLang = lang
-    axios
-      .get(`http://codify.home.kg/${activeLang}/api/courses/`)
-      .then(({ data }) => {
-        courseCards = data
-        filter(0)
-        if (length && courseCards.length > length) {
-          courseCards.length = length
-        }
-        currentCards = courseCards
-      })
-      .catch(error => {
-        console.log(error)
-      })
+    if (courseCards.length) {
+      axios
+        .get(`http://codify.home.kg/${activeLang}/api/courses/`)
+        .then(({ data }) => {
+          courseCards = data
+          currentCards = courseCards
+          filter(0)
+          if (length && courseCards.length > length) {
+            currentCards.length = length
+          }
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    }
   })
   const text = texts[activeLang].buttons
   onMount(async () => {
     axios
       .get(`http://codify.home.kg/${activeLang}/api/courses/`)
       .then(({ data }) => {
-        courseCards = data
+        courseCards = [...data]
+        currentCards = [...courseCards]
+        console.log(data)
         if (length && courseCards.length > length) {
-          courseCards.length = length
+          currentCards.length = length
         }
-        currentCards = courseCards
       })
       .catch(error => {
         console.log(error)
@@ -81,7 +84,15 @@
       <CardForCourses cardInfo={card} />
     {/each}
   </div>
-  <button class="button">{text.allCourses}</button>
+  {#if length}
+    <a href={`${activeLang}/courses`}>
+      <button class="button">{text.allCourses}</button>
+    </a>
+  {:else}
+    <a href={`${activeLang}/courses`}>
+      <button class="button">{text.test}</button>
+    </a>
+  {/if}
 </section>
 
 <style>

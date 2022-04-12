@@ -19,14 +19,14 @@
     <div class="about footerElement">
       <b>{footerText.about.title}</b>
       <a href="/">{footerText.about.academy}</a>
-      <a href="/">{footerText.about.teens}</a>
-      <a href="/">{footerText.about.events}</a>
+      <a href="https://teens.codifylab.com/">{footerText.about.teens}</a>
+      <!-- <a href="/">{footerText.about.events}</a> -->
     </div>
     <div class="projects footerElement">
       <b>{footerText.projects.title}</b>
-      <a href="/">{footerText.projects.codifyTeens}</a>
-      <a href="/">{footerText.projects.lms}</a>
-      <a href="/">{footerText.projects.crm}</a>
+      <a href="https://teens.codifylab.com/">{footerText.projects.codifyTeens}</a>
+      <a href="https://codifylms.com/">{footerText.projects.lms}</a>
+      <a href="https://lms.codifylab.com/ru">{footerText.projects.crm}</a>
     </div>
     <div class="contacts footerElement">
       <b>{footerText.contacts.title}</b>

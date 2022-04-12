@@ -1,13 +1,16 @@
 <script>
   import { language } from '../../stores'
+  import { texts } from '../../localization'
+
   export let course
   let activeLang
   language.subscribe(lang => (activeLang = lang))
+  let text = texts[activeLang]
 </script>
 
 <section class="CoursePageWhy container">
   <div class="why_info">
-    <h2>Почему {course.title}?</h2>
+    <h2>{text.courseWhy.h2} {course.title}?</h2>
     <div class="why_grid">
       <div>
         <img src="./assets/icons/CardForCourses/yea.svg" alt="plus" />
@@ -32,27 +35,31 @@
     </div>
   </div>
   <div class="coursePrice">
-    <h3>Стоимость обучения</h3>
+    <h3>{text.courseWhy.h3}</h3>
     <hr />
     <div class="price">
       <div>
-        <h6>{course.discount_price || course.price} сом/месяц</h6>
+        <h6>{course.discount_price || course.price} {text.courseWhy.som}</h6>
         {#if course.special_offer}
-          <p class="oldPrice">{course.price} coм/месяц</p>
+          <p class="oldPrice">{course.price} {text.courseWhy.som}</p>
         {/if}
       </div>
-      <p>*Оплату можно вносить частями</p>
+      <p>{text.courseWhy.payment}</p>
     </div>
     <hr />
     <div class="price_info">
-      <p><strong>Старт курса:</strong> {course.course_start}</p>
+      <p><strong>{text.courseWhy.start}</strong> {course.course_start}</p>
       <p>
-        <strong>Осталось:</strong>
+        <strong>{text.courseWhy.col}</strong>
         {course.seats_left}
-        {course.seats_left === 1 ? 'место' : course.seats_left > 1 && course.seats_left < 5 ? 'места' : 'мест'}
+        {course.seats_left === 1
+          ? text.courseWhy.mesto
+          : activeLang === 'ru' && course.seats_left > 1 && course.seats_left < 5
+          ? text.courseWhy.mesta
+          : text.courseWhy.mest}
       </p>
     </div>
-    <button class="button contained">Записаться на курс</button>
+    <button class="button contained">{text.buttons.enroll}</button>
   </div>
 </section>
 

@@ -11,9 +11,9 @@
   let y
   let stickyBtn
   let offSetX
-  let offsetWidth
-  let scrollToEnroll
-  function cunsoltation() {
+  let offsetWidth = 250
+  let scrollToEnroll = 10000
+  function consultation() {
     animateScroll.scrollTo({ element: '#enroll', duration: 1300, offset: -100 })
   }
 
@@ -38,11 +38,12 @@
             bind:this={stickyBtn}
             style={`left: ${offSetX}`}
             class={`button contained ${y > 427 && y < scrollToEnroll ? 'sticky' : ''}`}
-            on:click={cunsoltation}>{text.buttons.consultation}</button
+            on:click={consultation}>{text.buttons.consultation}</button
           >
         </div>
-
-        <button class="button">{text.buttons.allCourses}</button>
+        <a href={`${activeLang}/courses`}>
+          <button class="button">{text.buttons.allCourses}</button>
+        </a>
       </div>
     </div>
     <div class="firstImg">

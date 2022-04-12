@@ -45,6 +45,7 @@ button {
   background: none;
   border: none;
   outline: none;
+  user-select: none;
 }
 button:hover,
 button:active,
@@ -114,6 +115,9 @@ hr {
 }
 section {
   padding-top: 160px;
+}
+img, h2 , h1 , b, a {
+  user-select: none;
 }
 @keyframes rotate {
   from {

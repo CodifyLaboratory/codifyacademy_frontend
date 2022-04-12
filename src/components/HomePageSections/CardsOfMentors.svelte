@@ -11,20 +11,23 @@
   import axios from 'axios'
 
   let activeLang
+  let mentors = []
+
   language.subscribe(async lang => {
     activeLang = lang
-    axios
-      .get(`http://codify.home.kg/${activeLang}/api/mentors/`)
-      .then(({ data }) => {
-        mentors = data
-      })
-      .catch(error => {
-        console.log(error)
-      })
+    if (mentors.length) {
+      axios
+        .get(`http://codify.home.kg/${activeLang}/api/mentors/`)
+        .then(({ data }) => {
+          mentors = data
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    }
   })
-  const text = texts[activeLang].homePage.h2.mentors
 
-  let mentors = []
+  const text = texts[activeLang].homePage.h2.mentors
 
   onMount(async () => {
     axios
@@ -50,7 +53,7 @@
             <CardForPeople img={mentor?.photo ? mentor?.photo : ''} title={mentor?.name ? mentor?.name : ''}>
               <div class="mentor-prof">
                 <img src={`./assets/icons/CardForCourses/${mentor?.course?.icon}`} alt={mentor?.course?.icon} />
-                <b>{mentor?.course.title}</b>
+                <b>{mentor?.course?.title}</b>
               </div>
               <p>{`Опыт работы: ${mentor?.experience}`}</p>
               <p>{`Место работы: ${mentor?.company}`}</p>

@@ -7,6 +7,7 @@
   let activeLang
   language.subscribe(lang => (activeLang = lang))
   const headerText = texts[activeLang].header
+
   let showLanguages = false
   function changeLang(lang) {
     language.set(lang)
@@ -36,14 +37,12 @@
       <img src="./assets/icons/logo.svg" alt="logo" />
       <nav style={`display:${!isOpenMenu && win < 1050 ? 'none' : 'flex'}`}>
         <a href="/">{headerText.academy}</a>
-        <a href="/">{headerText.teens}</a>
-        <a href="/">{headerText.events}</a>
-        <a
-          href="/"
+        <a href="https://teens.codifylab.com/" target="_blank">{headerText.teens}</a>
+        <button
           on:click={() => {
             animateScroll.scrollToBottom({ duration: 2000 })
             isOpenMenu = false
-          }}>{headerText.contacts}</a
+          }}>{headerText.contacts}</button
         >
       </nav>
     </div>
@@ -73,7 +72,7 @@
     <div class={`callUsModal ${callUsIsOpen ? 'openCall' : ''}`}>
       <img src="./assets/icons/close.svg" alt="closeIcon" on:click={() => (callUsIsOpen = false)} />
       <p>
-        {@html `Позвните нам:\n<strong>+996 550 431 430</strong>\nили\nНапишите нам (WhatsApp):\n<strong>+996 500 431 430</strong>`}
+        {@html headerText.callUsText}
       </p>
     </div>
   </div>
@@ -121,6 +120,15 @@
     background-color: transparent;
     border: none;
     outline: none;
+  }
+  nav > button {
+    font-weight: 300;
+    transition: 0.2s all;
+    height: 40px;
+    line-height: 40px;
+  }
+  nav > button:hover {
+    color: var(--light-blue);
   }
   .call {
     border-radius: 100px;

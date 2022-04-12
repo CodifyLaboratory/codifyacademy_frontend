@@ -1,8 +1,8 @@
 <script>
-  import {stores} from '@sapper/app'
-  import {fade} from 'svelte/transition'
+  import { stores } from '@sapper/app'
+  import { fade } from 'svelte/transition'
 
-  const {preloading} = stores()
+  const { preloading } = stores()
   const step = 5
   const duration = 400
 
@@ -41,13 +41,13 @@
 <div class="loading-bar">
   {#if show}
     <div
-        transition:fade
-        class="fill"
-        style={`
+      transition:fade
+      class="fill"
+      style={`
         transform: translate3d(${-100 + filled}%, 0, 0);
         transition: transform ${duration}ms ease;
       `}
-    ></div>
+    />
   {/if}
 </div>
 
@@ -58,7 +58,7 @@
     left: 0;
     width: 100%;
     height: 4px;
-    z-index: 31;
+    z-index: 30000;
   }
 
   .loading-bar .fill {
@@ -68,5 +68,4 @@
     backface-visibility: hidden;
     perspective: 1000;
   }
-
 </style>

@@ -50,6 +50,7 @@
     position: relative;
     padding: 20px 30px;
     padding-top: 135px;
+    min-height: 274px;
     margin: 0 auto;
     margin-top: 100px;
     display: flex;

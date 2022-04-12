@@ -1,6 +1,7 @@
 <script>
   export let course
   import { language } from '../../stores'
+  import { texts } from '../../localization'
 
   let activeLang
   language.subscribe(lang => (activeLang = lang))
@@ -14,6 +15,7 @@
       return e
     }
   }
+  let text = texts[activeLang].courseFirst
 </script>
 
 {#if course}
@@ -29,25 +31,25 @@
           <div>
             <img src="./assets/icons/CardForCourses/business.svg" alt="Business" />
           </div>
-          <p>{`${restyle(course.study_format)}\nформат обучения`}</p>
+          <p>{`${restyle(course.study_format)}\n${text.format}`}</p>
         </div>
         <div class="courseInfo">
           <div>
             <img src="./assets/icons/CardForCourses/clock.svg" alt="clock" />
           </div>
-          <p>{`Длительность\nкурса: ${course.duration}`}</p>
+          <p>{`${text.duration} ${course.duration}`}</p>
         </div>
         <div class="courseInfo">
           <div>
             <img src="./assets/icons/infinity.svg" alt="clock" />
           </div>
-          <p>{`Пожизненный доступ\nк материалам`}</p>
+          <p>{text.docs}</p>
         </div>
         <div class="courseInfo">
           <div>
             <img src="./assets/icons/Advantage/Entrepreneur.svg" alt="Entrepreneur" />
           </div>
-          <p>{`Гарантированная\nстажировка`}</p>
+          <p>{text.internship}</p>
         </div>
       </div>
     </div>

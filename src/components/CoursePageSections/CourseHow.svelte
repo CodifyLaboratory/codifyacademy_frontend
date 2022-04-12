@@ -1,28 +1,33 @@
 <script>
+  import { language } from '../../stores'
+  import { texts } from '../../localization'
+  let activeLang
+  language.subscribe(lang => (activeLang = lang))
+  let text = texts[activeLang].courseHow
 </script>
 
 <section>
-  <h2>Как проходит обучение</h2>
+  <h2>{text.h2}</h2>
   <div class="CoursePageHow">
     <div class="studyStage">
       <img src="./assets/icons/coursePage/1.svg" alt="studystage" />
-      <b class="coloredText">Изучаете тему</b>
-      <p>Изучаете темы с опытным практикующим специалистом</p>
+      <b class="coloredText">{text.b1}</b>
+      <p>{text.p1}</p>
     </div>
     <div class="studyStage">
       <img src="./assets/icons/coursePage/2.svg" alt="studystage" />
-      <b class="coloredText">Выполняете задания</b>
-      <p>Получаете индивидуальную помощь от тех. поддержки</p>
+      <b class="coloredText">{text.b2}</b>
+      <p>{text.p2}</p>
     </div>
     <div class="studyStage">
       <img src="./assets/icons/coursePage/3.svg" alt="studystage" />
-      <b class="coloredText">Изучаете английский</b>
-      <p>Каждую субботу мы проводим IT English Talking Club</p>
+      <b class="coloredText">{text.b3}</b>
+      <p>{text.p3}</p>
     </div>
     <div class="studyStage">
       <img src="./assets/icons/coursePage/4.svg" alt="studystage" />
-      <b class="coloredText">Начинаете работать</b>
-      <p>После курса Вы получаете стажировку и трудоустройство</p>
+      <b class="coloredText">{text.b4}</b>
+      <p>{text.p4}</p>
     </div>
   </div>
 </section>

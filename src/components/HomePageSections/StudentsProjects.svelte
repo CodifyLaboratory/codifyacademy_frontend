@@ -7,20 +7,22 @@
   import axios from 'axios'
 
   let activeLang
+  let projects = []
+
   language.subscribe(async lang => {
     activeLang = lang
-    axios
-      .get(`http://codify.home.kg/${activeLang}/api/projects/`)
-      .then(({ data }) => {
-        projects = data
-      })
-      .catch(error => {
-        console.log(error)
-      })
+    if (projects.length) {
+      axios
+        .get(`http://codify.home.kg/${activeLang}/api/projects/`)
+        .then(({ data }) => {
+          projects = data
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    }
   })
   const text = texts[activeLang].homePage.h2.studentProjects
-
-  let projects = []
 
   onMount(async () => {
     axios
