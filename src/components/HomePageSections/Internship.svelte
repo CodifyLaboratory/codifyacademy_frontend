@@ -43,7 +43,7 @@
   }
   .sectionInternship h2 {
     position: relative;
-    top: -120px;
+    top: -140px;
   }
   .internship__stages {
     position: relative;
