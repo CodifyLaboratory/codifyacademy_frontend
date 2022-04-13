@@ -37,7 +37,6 @@
       .get(`http://codify.home.kg/${activeLang}/api/courses/${id}`)
       .then(({ data }) => {
         course = data
-        console.log(course)
       })
       .catch(error => {
         console.log(error)

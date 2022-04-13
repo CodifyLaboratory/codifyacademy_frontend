@@ -36,7 +36,6 @@
       .then(({ data }) => {
         courseCards = [...data]
         currentCards = [...courseCards]
-        console.log(data)
         if (length && courseCards.length > length) {
           currentCards.length = length
         }
