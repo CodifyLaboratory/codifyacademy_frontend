@@ -10,29 +10,33 @@
   async function submit(e) {
     e.preventDefault()
     console.dir(e.target)
-    const headers = { Authorization: 'b8faa2c98db86c13fadc2e339bf33743' }
+    const headers = {
+      Authorization: 'b8faa2c98db86c13fadc2e339bf33743',
+      'content-Type': 'application/json',
+    }
     axios
-      .post(
-        'https://academy.codifylab.com/api/crm/leads/?org_id=1',
-        {
-          first_name: e.target[0].value,
-          phone: e.target[1].value
-        },
-        { headers }
-      )
-      .then( () => {
-        axios
       .post('http://codify.home.kg/ru/api/contact_form/', {
         name: e.target[0].value,
         phone_number: e.target[1].value,
         email: e.target[2].value ? e.target[2].value : null,
       })
       .then(() => {
-        isPost = true
-        message = ''
-        setTimeout(() => {
-          isPost = false
-        }, 5000)
+        axios
+          .post(
+            'https://academy.codifylab.com/api/crm/leads/?org_id=1',
+            {
+              first_name: e.target[0].value,
+              phone: e.target[1].value,
+            },
+            { headers }
+          )
+          .then(() => {
+            isPost = true
+            message = ''
+            setTimeout(() => {
+              isPost = false
+            }, 5000)
+          })
       })
       .catch(err => {
         message = err.response.data.email.join()
@@ -41,8 +45,6 @@
           ;(message = ''), (isPost = false)
         }, 5000)
       })
-      })
-    
   }
 
   let activeLang
