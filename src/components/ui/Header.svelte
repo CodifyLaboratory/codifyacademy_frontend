@@ -175,6 +175,10 @@
   .language > img {
     transition: 0.3s all;
   }
+  .language p {
+    font-size: 18px !important;
+    line-height: 1rem;
+  }
   .headerNavigation,
   nav,
   .callUs {
@@ -187,15 +191,23 @@
   }
   .languageDropDown {
     position: absolute;
-    right: 14px;
-    bottom: -60px;
-    padding: 10px;
+    right: 0;
+    bottom: -80px;
+    padding: 15px 10px;
+    padding-right: 25px;
+    background-color: #06071b;
+    border-radius: 12px;
+    font-weight: 500;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
+    font-size: 18px !important;
   }
   .languageDropDown > p {
     cursor: pointer;
+  }
+  .languageDropDown > p:hover {
+    color: var(--blue);
   }
   @media screen and (max-width: 1150px) {
     .headerNavigation,
@@ -231,6 +243,14 @@
     .headerNavigation,
     .callUs {
       gap: 10px;
+    }
+    .call {
+      padding: 3px 20px;
+      display: flex;
+    }
+    .call img {
+      width: 24px;
+      height: 24px;
     }
   }
 </style>

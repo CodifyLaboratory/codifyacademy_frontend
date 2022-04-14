@@ -1,11 +1,16 @@
 <script>
   import { language } from '../../stores'
   import { texts } from '../../localization'
+  import * as animateScroll from 'svelte-scrollto'
 
   export let course
   let activeLang
   language.subscribe(lang => (activeLang = lang))
   let text = texts[activeLang]
+
+  function consultation() {
+    animateScroll.scrollTo({ element: '#enroll', duration: 1300, offset: -100 })
+  }
 </script>
 
 <section class="CoursePageWhy container">
@@ -59,7 +64,8 @@
           : text.courseWhy.mest}
       </p>
     </div>
-    <button class="button contained">{text.buttons.enroll}</button>
+
+    <button class="button contained" on:click={consultation}>{text.buttons.enroll}</button>
   </div>
 </section>
 
@@ -79,8 +85,7 @@
   .why_grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    row-gap: 30px;
+    gap: 30px 20px;
   }
   .why_grid > div {
     display: flex;

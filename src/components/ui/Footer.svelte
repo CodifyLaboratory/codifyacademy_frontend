@@ -25,7 +25,7 @@
     <div class="projects footerElement">
       <b>{footerText.projects.title}</b>
       <a href="https://teens.codifylab.com/">{footerText.projects.codifyTeens}</a>
-      <a href="https://codifylms.com/">{footerText.projects.lms}</a>
+      <a href="https://lms.codifylab.com/ru">{footerText.projects.lms}</a>
       <a href="https://lms.codifylab.com/ru">{footerText.projects.crm}</a>
     </div>
     <div class="contacts footerElement">
@@ -86,11 +86,11 @@
       </div>
     </div>
     <div class="social footerElement">
-      <LinkedIn />
-      <Instagram />
-      <Tiktok />
-      <Youtube />
-      <Telegram />
+      <LinkedIn href="https://www.linkedin.com/company/codifylab-academy/" />
+      <Instagram href="https://instagram.com/codifylab.kg?utm_medium=copy_link" />
+      <Tiktok href="https://vt.tiktok.com/ZSdkkRXvT/" />
+      <Youtube href="https://youtube.com/channel/UCcnOc_ZLd1FtJufrfW1iSWw" />
+      <Telegram href="https://t.me/codifynews" />
     </div>
   </div>
   <hr />

@@ -10,22 +10,22 @@
   <h2>{text.h2}</h2>
   <div class="CoursePageHow">
     <div class="studyStage">
-      <img src="./assets/icons/coursePage/1.svg" alt="studystage" />
+      <img src="./assets/icons/coursePage/one.svg" alt="studystage" />
       <b class="coloredText">{text.b1}</b>
       <p>{text.p1}</p>
     </div>
     <div class="studyStage">
-      <img src="./assets/icons/coursePage/2.svg" alt="studystage" />
+      <img src="./assets/icons/coursePage/two.svg" alt="studystage" />
       <b class="coloredText">{text.b2}</b>
       <p>{text.p2}</p>
     </div>
     <div class="studyStage">
-      <img src="./assets/icons/coursePage/3.svg" alt="studystage" />
+      <img src="./assets/icons/coursePage/three.svg" alt="studystage" />
       <b class="coloredText">{text.b3}</b>
       <p>{text.p3}</p>
     </div>
     <div class="studyStage">
-      <img src="./assets/icons/coursePage/4.svg" alt="studystage" />
+      <img src="./assets/icons/coursePage/four.svg" alt="studystage" />
       <b class="coloredText">{text.b4}</b>
       <p>{text.p4}</p>
     </div>
