@@ -43,7 +43,7 @@
   }
   .cardForPeople {
     width: 100%;
-    min-width: 300px;
+    min-width: 370px;
     max-width: 390px;
     border-radius: 10px;
     background-image: var(--blue-gradient);

@@ -37,6 +37,7 @@
       .get(`http://codify.home.kg/${activeLang}/api/courses/${id}`)
       .then(({ data }) => {
         course = data
+        console.log(course)
       })
       .catch(error => {
         console.log(error)
@@ -70,7 +71,7 @@
     <Employment />
     <div style="background-image: var(--primary-bg);">
       <CoursePlan {course} />
-      <CardsOfMentors />
+      <CardsOfMentors courseId={course.id} />
       <StudentsProjects />
       <EnrollForCourse />
     </div>

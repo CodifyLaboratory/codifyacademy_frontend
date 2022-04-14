@@ -18,15 +18,15 @@
   <div class="footer">
     <div class="about footerElement">
       <b>{footerText.about.title}</b>
-      <a href="/">{footerText.about.academy}</a>
-      <a href="https://teens.codifylab.com/">{footerText.about.teens}</a>
+      <a href={`/${currentLanguage}/courses`}>{footerText.about.academy}</a>
+      <a href="https://teens.codifylab.com/" target="_blank">{footerText.about.teens}</a>
       <!-- <a href="/">{footerText.about.events}</a> -->
     </div>
     <div class="projects footerElement">
       <b>{footerText.projects.title}</b>
-      <a href="https://teens.codifylab.com/">{footerText.projects.codifyTeens}</a>
-      <a href="https://lms.codifylab.com/ru">{footerText.projects.lms}</a>
-      <a href="https://lms.codifylab.com/ru">{footerText.projects.crm}</a>
+      <a href="https://teens.codifylab.com/" target="_blank">{footerText.projects.codifyTeens}</a>
+      <a href="https://lms.codifylab.com/ru" target="_blank">{footerText.projects.lms}</a>
+      <a href="https://dev.codifylab.com/" target="_blank">{footerText.projects.lab}</a>
     </div>
     <div class="contacts footerElement">
       <b>{footerText.contacts.title}</b>
@@ -94,7 +94,7 @@
     </div>
   </div>
   <hr />
-  <p style="margin: 30px auto; text-align: center">© 2022 Codify franchise. All Rights Reserved.</p>
+  <p style="margin: 30px auto; text-align: center">© 2022 Codify Academy. All Rights Reserved.</p>
 </footer>
 
 <style>

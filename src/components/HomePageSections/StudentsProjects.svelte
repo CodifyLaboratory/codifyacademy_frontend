@@ -39,7 +39,7 @@
 <section class="sectionStudentsProjects container">
   <h2>{text}</h2>
   {#if projects.length}
-    <Carousel elemPerPage={1}>
+    <Carousel elemPerPage={1} elemCount={projects.length}>
       {#each projects as project}
         <SwiperSlide>
           <div style="padding: 0 1px;">

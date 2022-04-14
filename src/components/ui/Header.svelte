@@ -33,10 +33,11 @@
           alt="burger"
         />
       {/if}
-
-      <img src="./assets/icons/logo.svg" alt="logo" />
+      <a href="/">
+        <img src="./assets/icons/logo.svg" alt="logo" />
+      </a>
       <nav style={`display:${!isOpenMenu && win < 1050 ? 'none' : 'flex'}`}>
-        <a href="/">{headerText.academy}</a>
+        <a href={`/${activeLang}/courses`}>{headerText.academy}</a>
         <a href="https://teens.codifylab.com/" target="_blank">{headerText.teens}</a>
         <button
           on:click={() => {

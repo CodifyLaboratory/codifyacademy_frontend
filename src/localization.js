@@ -12,7 +12,7 @@ export const texts = {
       test: 'Пройти тест'
     },
     homePage : {
-      h1 : 'Освой востребованную\n<strong class="coloredText">IT профессию</strong>\nи начни зарабатывать',
+      h1 : 'Освой востребованную\n<strong class="coloredText">IT-профессию</strong>\nи начни зарабатывать',
       h2 : {
         courses: 'Курсы',
         advantages: 'Преимущества обучения в Codify',
@@ -55,7 +55,7 @@ export const texts = {
           },
           {
             title: '3 этап',
-            body: 'При успешном\nокончании проекта,\n Вы получаете первые\nденьги за выполненную\nработу'
+            body: 'При успешном\nокончании проекта,\n Вы получаете первые\nденьги за работу'
           },
         ]
       },
@@ -81,8 +81,8 @@ export const texts = {
       projects: {
         title: 'Наши проекты',
         codifyTeens: 'Codify teens',
-        lms: 'Codify LMS',
-        crm: 'Codify CRM'
+        lms: 'Codify LMS/CRM',
+        lab: 'Codify LAB'
       },
       contacts: {
         title: 'Контакты',
@@ -96,7 +96,7 @@ export const texts = {
       events: 'Мероприятия',
       contacts: 'Контакты',
       call: 'Связаться с нами',
-      callUsText: 'Позвните нам:\n<b>+996 550 431 430</b>\nили\nНапишите нам (WhatsApp):\n<b>+996 500 431 430</b>'
+      callUsText: 'Позвоните нам:\n<b>+996 550 431 430</b>\nили\nНапишите нам (WhatsApp):\n<b>+996 500 431 430</b>'
     },
     enroll: {
       postMessage: 'Заявка успешно отправлена, с вами свяжутся в ближайшее время',
@@ -154,7 +154,7 @@ export const texts = {
       test: 'Пройти тест'
     },
     homePage : {
-      h1 : 'Освой востребованную\n<strong class="coloredText">IT профессию</strong>\nи начни зарабатывать',
+      h1 : 'Освой востребованную\n<strong class="coloredText">IT-профессию</strong>\nи начни зарабатывать',
       h2 : {
         courses: 'Курсы',
         advantages: 'Преимущества обучения в Codify',
@@ -197,7 +197,7 @@ export const texts = {
           },
           {
             title: '3 этап',
-            body: 'При успешном\nокончании проекта,\n Вы получаете первые\nденьги за выполненную\nработу'
+            body: 'При успешном\nокончании проекта,\n Вы получаете первые\nденьги за работу'
           },
         ]
       },
@@ -223,8 +223,8 @@ export const texts = {
       projects: {
         title: 'Наши проекты',
         codifyTeens: 'Codify teens',
-        lms: 'Codify LMS',
-        crm: 'Codify CRM'
+        lms: 'Codify LMS/CRM',
+        lab: 'Codify LAB'
       },
       contacts: {
         title: 'Контакты',

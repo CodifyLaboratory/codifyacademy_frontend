@@ -10,6 +10,8 @@
   import { SwiperSlide } from 'swiper/svelte'
   import axios from 'axios'
 
+  export let courseId
+
   let activeLang
   let mentors = []
 
@@ -19,7 +21,11 @@
       axios
         .get(`http://codify.home.kg/${activeLang}/api/mentors/`)
         .then(({ data }) => {
-          mentors = data
+          if (courseId) {
+            mentors = data.filter(mentor => mentor.course.id === courseId)
+          } else {
+            mentors = data
+          }
         })
         .catch(error => {
           console.log(error)
@@ -33,20 +39,26 @@
     axios
       .get(`http://codify.home.kg/${activeLang}/api/mentors/`)
       .then(({ data }) => {
-        mentors = data
+        if (courseId) {
+          mentors = data.filter(mentor => mentor.course.id === courseId)
+        } else {
+          mentors = data
+        }
       })
       .catch(error => {
         console.log(error)
       })
   })
   let win
+  $: elementsPerPage = win > 1050 ? 3 : win < 1050 && win > 750 ? 2 : 1
+  $: elementsWithFilter = courseId && mentors.length < elementsPerPage ? mentors.length : elementsPerPage
 </script>
 
 <svelte:window bind:innerWidth={win} />
 <section class="sectionMentors">
   <h2>{text}</h2>
   {#if mentors.length}
-    <Carousel elemPerPage={win > 1050 ? 3 : win < 1050 && win > 750 ? 2 : 1}>
+    <Carousel elemPerPage={elementsWithFilter} elemCount={mentors.length}>
       {#each mentors as mentor}
         <SwiperSlide>
           <div>
