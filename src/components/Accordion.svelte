@@ -32,6 +32,7 @@
     font-size: 1.25rem;
     cursor: pointer;
     margin: 0;
+    text-align: start;
     padding-bottom: 20px;
     padding-top: 16px;
     border-top: 1px solid var(--blue);
@@ -44,6 +45,8 @@
   svg {
     border-radius: 50%;
     transition: 0.2s ease-in all;
+    min-width: 22px;
+    min-height: 22px;
   }
   ul {
     list-style-type: none;

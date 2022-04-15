@@ -44,4 +44,15 @@
     display: flex;
     flex-direction: column;
   }
+  @media (max-width: 950px) {
+    .planAccordion {
+      width: auto;
+    }
+  }
+  @media (max-width: 550px) {
+    .CoursePagePlan > p,
+    h2 {
+      width: auto;
+    }
+  }
 </style>

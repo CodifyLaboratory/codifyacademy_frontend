@@ -39,6 +39,7 @@
       </div>
     </div>
   </div>
+  <!-- COURSE PRICE -->
   <div class="coursePrice">
     <h3>{text.courseWhy.h3}</h3>
     <hr />
@@ -52,17 +53,22 @@
       <p>{text.courseWhy.payment}</p>
     </div>
     <hr />
-    <div class="price_info">
-      <p><strong>{text.courseWhy.start}</strong> {course.course_start}</p>
-      <p>
-        <strong>{text.courseWhy.col}</strong>
-        {course.seats_left}
-        {course.seats_left === 1
-          ? text.courseWhy.mesto
-          : activeLang === 'ru' && course.seats_left > 1 && course.seats_left < 5
-          ? text.courseWhy.mesta
-          : text.courseWhy.mest}
-      </p>
+    <div class="info_and_offer">
+      <div class="price_info">
+        <p><strong>{text.courseWhy.start}</strong> {course.course_start}</p>
+        <p>
+          <strong>{text.courseWhy.col}</strong>
+          {course.seats_left}
+          {course.seats_left === 1
+            ? text.courseWhy.mesto
+            : activeLang === 'ru' && course.seats_left > 1 && course.seats_left < 5
+            ? text.courseWhy.mesta
+            : text.courseWhy.mest}
+        </p>
+      </div>
+      <div class="specialOffer">
+        <p id="specialOffer">{course.special_offer_text}</p>
+      </div>
     </div>
 
     <button class="button contained" on:click={consultation}>{text.buttons.enroll}</button>
@@ -70,6 +76,28 @@
 </section>
 
 <style>
+  .info_and_offer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    row-gap: 20px;
+    column-gap: 10px;
+  }
+  .specialOffer {
+    padding: 10px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #9dff00;
+    border-radius: 20px;
+  }
+  #specialOffer {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--blue);
+  }
+
   .CoursePageWhy {
     display: grid;
     grid-template-columns: auto 514px;
@@ -100,6 +128,7 @@
 
   /* for price of courses */
   .coursePrice {
+    position: relative;
     padding: 40px;
     border-radius: 10px;
     min-width: 514px;
@@ -132,7 +161,7 @@
   .price > p {
     font-size: 0.85rem;
   }
-  .price_info {
+  .info_and_offer {
     margin-bottom: 50px;
   }
   .price_info > p {
@@ -143,5 +172,22 @@
   }
   .oldPrice {
     text-decoration: line-through;
+  }
+
+  @media (max-width: 1024px) {
+    .CoursePageWhy {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 550px) {
+    .coursePrice {
+      min-width: auto;
+      display: flex;
+      flex-direction: column;
+      height: auto;
+    }
+    .coursePrice > .button {
+      margin: 0 auto;
+    }
   }
 </style>

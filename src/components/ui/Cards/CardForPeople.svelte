@@ -42,6 +42,7 @@
     border-radius: 50%;
   }
   .cardForPeople {
+    text-align: center;
     width: 100%;
     min-width: 370px;
     max-width: 390px;
@@ -59,5 +60,8 @@
   }
   hr {
     width: 90%;
+  }
+  .cardForPeople {
+    min-width: 350px;
   }
 </style>

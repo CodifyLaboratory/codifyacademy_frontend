@@ -137,3 +137,7 @@ img, h2 , h1 , b, a {
 input:focus-visible {
   outline: none;
 }
+
+#specialOffer > div > span {
+  color: var(--blue);
+}
