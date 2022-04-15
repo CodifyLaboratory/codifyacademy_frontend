@@ -9,17 +9,20 @@
 
   async function submit(e) {
     e.preventDefault()
-    console.dir(e.target)
     const headers = {
       Authorization: 'b8faa2c98db86c13fadc2e339bf33743',
       'content-Type': 'application/json',
     }
     axios
-      .post('http://codify.home.kg/ru/api/contact_form/', {
-        name: e.target[0].value,
-        phone_number: e.target[1].value,
-        email: e.target[2].value ? e.target[2].value : null,
-      })
+      .post(
+        'http://codify.home.kg/ru/api/contact_form/',
+        {
+          name: e.target[0].value,
+          phone_number: e.target[1].value,
+          email: e.target[2].value ? e.target[2].value : null,
+        },
+        { Authorization: '3xUcq19gx6xJWopmfpuNjZAnTyS9PDiEFunC99QVNXK4JO3YDdqbTgjS9LFyV9dL' }
+      )
       .then(() => {
         axios
           .post(
