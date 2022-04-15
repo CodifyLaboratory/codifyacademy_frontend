@@ -21,7 +21,7 @@
           phone_number: e.target[1].value,
           email: e.target[2].value ? e.target[2].value : null,
         },
-        { Authorization: '3xUcq19gx6xJWopmfpuNjZAnTyS9PDiEFunC99QVNXK4JO3YDdqbTgjS9LFyV9dL' }
+        { headers: { Authorization: '3xUcq19gx6xJWopmfpuNjZAnTyS9PDiEFunC99QVNXK4JO3YDdqbTgjS9LFyV9dL' } }
       )
       .then(() => {
         axios
