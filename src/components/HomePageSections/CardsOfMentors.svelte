@@ -69,7 +69,7 @@
                 <b>{mentor?.course?.title}</b>
               </div>
               <p>{`${text.mentors.exp} ${mentor?.experience}`}</p>
-              <p>{`${text.mentors.exp} ${mentor?.company}`}</p>
+              <p>{`${text.mentors.company} ${mentor?.company}`}</p>
               <div class="social">
                 {#if mentor?.instagram}
                   <Instagram href={mentor.instagram} />
