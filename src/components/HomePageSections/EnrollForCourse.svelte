@@ -50,7 +50,7 @@
           })
       })
       .catch(err => {
-        message = err.response.data.email.join()
+        message = err.response.data.email?.join() || 'что-то пошло не так'
         isPost = true
         setTimeout(() => {
           ;(message = ''), (isPost = false)

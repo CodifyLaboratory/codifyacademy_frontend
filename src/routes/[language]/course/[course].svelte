@@ -59,6 +59,7 @@
   />
   <meta property="og:image" content="https://codify.home.kg/first-image.jpg" />
   <meta property="og:image:alt" content="title image of site" />
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
   <meta property="og:image:width" content="1024" />
   <meta property="og:image:height" content="1024" />
   <meta property="og:site_name" content="codify.home.kg" />
