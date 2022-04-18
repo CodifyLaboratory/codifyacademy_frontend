@@ -2,9 +2,13 @@
   import { texts } from '../../localization'
   import { language } from '../../stores'
 
-  let activeLang
-  language.subscribe(lang => (activeLang = lang))
-  const text = texts[activeLang].homePage
+  let activeLang = 'ru'
+  let text = texts[activeLang].homePage
+
+  language.subscribe(lang => {
+    activeLang = lang
+    text = texts[activeLang].homePage
+  })
 
   let y
 </script>

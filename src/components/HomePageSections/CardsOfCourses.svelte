@@ -7,7 +7,7 @@
 
   export let length = 0
 
-  let activeLang
+  let activeLang = 'ru'
 
   let courseCards = []
   let currentCards = []
@@ -15,7 +15,7 @@
     activeLang = lang
     if (courseCards.length) {
       axios
-        .get(`http://codify.home.kg/${activeLang}/api/courses/`)
+        .get(`https://codify.home.kg/${activeLang}/api/courses/`)
         .then(({ data }) => {
           courseCards = data
           currentCards = courseCards
@@ -29,10 +29,10 @@
         })
     }
   })
-  const text = texts[activeLang].buttons
+  let text = texts[activeLang].buttons
   onMount(async () => {
     axios
-      .get(`http://codify.home.kg/${activeLang}/api/courses/`)
+      .get(`https://codify.home.kg/${activeLang}/api/courses/`)
       .then(({ data }) => {
         courseCards = [...data]
         currentCards = [...courseCards]
@@ -67,15 +67,16 @@
   <h2>{texts[activeLang].homePage.h2.courses}</h2>
   <div class="sectionCourses__buttons">
     <button class={`buttonCourse allCourses ${!activeBtn ? 'active0' : ''}`} on:click={() => filter(0)}
-      >{text.allCourses}</button
+      >{texts[activeLang].buttons.allCourses}</button
     >
-    <button class={`buttonCourse dev ${activeBtn === 1 ? 'active1' : ''}`} on:click={() => filter(1)}>{text.dev}</button
+    <button class={`buttonCourse dev ${activeBtn === 1 ? 'active1' : ''}`} on:click={() => filter(1)}
+      >{texts[activeLang].buttons.dev}</button
     >
     <button class={`buttonCourse design ${activeBtn === 2 ? 'active2' : ''}`} on:click={() => filter(2)}
-      >{text.design}</button
+      >{texts[activeLang].buttons.design}</button
     >
     <button class={`buttonCourse managment ${activeBtn === 3 ? 'active3' : ''}`} on:click={() => filter(3)}
-      >{text.managment}</button
+      >{texts[activeLang].buttons.managment}</button
     >
   </div>
   <div class="coursesCards">
@@ -85,11 +86,11 @@
   </div>
   {#if length}
     <a href={`${activeLang}/courses`}>
-      <button class="button">{text.allCourses}</button>
+      <button class="button">{texts[activeLang].buttons.allCourses}</button>
     </a>
   {:else}
-    <a href={`${activeLang}/courses`}>
-      <button class="button">{text.test}</button>
+    <a href="https://forms.gle/oU9A5ouQXQGAg3Nk6" target="_blank">
+      <button class="button">{texts[activeLang].buttons.test}</button>
     </a>
   {/if}
 </section>

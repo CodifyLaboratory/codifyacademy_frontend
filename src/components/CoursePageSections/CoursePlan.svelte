@@ -5,9 +5,14 @@
 
   export let course
 
-  let activeLang
-  language.subscribe(lang => (activeLang = lang))
+  let activeLang = 'ru'
+
   let text = texts[activeLang].coursePlan
+
+  language.subscribe(lang => {
+    activeLang = lang
+    text = texts[activeLang].coursePlan
+  })
   let and = activeLang === 'ru' ? ' и ' : activeLang === 'en' ? ' and ' : ' и '
   function restyle(e) {
     let result

@@ -6,14 +6,18 @@
   import { SwiperSlide } from 'swiper/svelte'
   import axios from 'axios'
 
-  let activeLang
+  let activeLang = 'ru'
+
   let projects = []
+  let text = texts[activeLang].homePage.h2.studentProjects
 
   language.subscribe(async lang => {
     activeLang = lang
+    text = texts[activeLang].homePage.h2.studentProjects
+
     if (projects.length) {
       axios
-        .get(`http://codify.home.kg/${activeLang}/api/projects/`)
+        .get(`https://codify.home.kg/${activeLang}/api/projects/`)
         .then(({ data }) => {
           projects = data
         })
@@ -22,11 +26,10 @@
         })
     }
   })
-  const text = texts[activeLang].homePage.h2.studentProjects
 
   onMount(async () => {
     axios
-      .get(`http://codify.home.kg/${activeLang}/api/projects/`)
+      .get(`https://codify.home.kg/${activeLang}/api/projects/`)
       .then(({ data }) => {
         projects = data
       })

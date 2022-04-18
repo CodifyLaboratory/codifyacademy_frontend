@@ -12,14 +12,17 @@
 
   export let courseId
 
-  let activeLang
+  let activeLang = 'ru'
   let mentors = []
+  let text = texts[activeLang].homePage.h2.mentors
 
   language.subscribe(async lang => {
     activeLang = lang
+    text = texts[activeLang].homePage
+
     if (mentors.length) {
       axios
-        .get(`http://codify.home.kg/${activeLang}/api/mentors/`)
+        .get(`https://codify.home.kg/${activeLang}/api/mentors/`)
         .then(({ data }) => {
           if (courseId) {
             mentors = data.filter(mentor => mentor.course.id === courseId)
@@ -33,11 +36,9 @@
     }
   })
 
-  const text = texts[activeLang].homePage.h2.mentors
-
   onMount(async () => {
     axios
-      .get(`http://codify.home.kg/${activeLang}/api/mentors/`)
+      .get(`https://codify.home.kg/${activeLang}/api/mentors/`)
       .then(({ data }) => {
         if (courseId) {
           mentors = data.filter(mentor => mentor.course.id === courseId)
@@ -56,7 +57,7 @@
 
 <svelte:window bind:innerWidth={win} />
 <section class="sectionMentors">
-  <h2>{text}</h2>
+  <h2>{text.h2.mentors}</h2>
   {#if mentors.length}
     <Carousel elemPerPage={elementsWithFilter} elemCount={mentors.length}>
       {#each mentors as mentor}
@@ -67,8 +68,8 @@
                 <img src={`./assets/icons/CardForCourses/${mentor?.course?.icon}`} alt={mentor?.course?.icon} />
                 <b>{mentor?.course?.title}</b>
               </div>
-              <p>{`Опыт работы: ${mentor?.experience}`}</p>
-              <p>{`Место работы: ${mentor?.company}`}</p>
+              <p>{`${text.mentors.exp} ${mentor?.experience}`}</p>
+              <p>{`${text.mentors.exp} ${mentor?.company}`}</p>
               <div class="social">
                 {#if mentor?.instagram}
                   <Instagram href={mentor.instagram} />

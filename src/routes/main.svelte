@@ -5,7 +5,6 @@
   import FirstSection from '../components/HomePageSections/FirstSection.svelte'
   import Advantage from '../components/HomePageSections/Advantage.svelte'
   import StudentsProjects from '../components/HomePageSections/StudentsProjects.svelte'
-  import SeoTags from '../components/SeoTags.svelte'
   import EnrollForCourse from '../components/HomePageSections/EnrollForCourse.svelte'
   import Internship from '../components/HomePageSections/Internship.svelte'
   import Employment from '../components/HomePageSections/Employment.svelte'
@@ -19,7 +18,39 @@
 </script>
 
 <svelte:head>
-  <SeoTags />
+  <title>Codify Academy | IT - курсы программирования в Бишкеке</title>
+  <meta name="description" content="" />
+  <meta
+    name="keywords"
+    content="курсы программирования бишкек, школа программирования, курсы разработки, IT курсы в Бишкеке"
+  />
+  <meta property="og:title" content="Codify Academy | IT - курсы программирования в Бишкеке" />
+  <meta
+    property="og:description"
+    content="Курсы программирования в Бишкеке. Обучись актуальной профессии и начни зарабатывать"
+  />
+  <meta property="og:image" content="https://codify.home.kg/first-image.jpg" />
+  <meta property="og:image:alt" content="title image of site" />
+  <meta property="og:image:width" content="1024" />
+  <meta property="og:image:height" content="1024" />
+  <meta property="og:site_name" content="codify.home.kg" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image:secure_url" content="https://codify.home.kg/first-image.jpg" />
+
+  <meta property="twitter:title" content="Codify Academy | IT - курсы программирования в Бишкеке" />
+  <meta
+    property="twitter:description"
+    content="Курсы программирования в Бишкеке. Обучись актуальной профессии и начни зарабатывать"
+  />
+  <meta name="twitter:title" content="Codify Academy | IT - курсы программирования в Бишкеке" />
+  <meta
+    name="twitter:description"
+    content="Курсы программирования в Бишкеке. Обучись актуальной профессии и начни зарабатывать"
+  />
+  <meta property="twitter:image" content="https://codify.home.kg/first-image.jpg" />
+  <meta property="twitter:image:alt" content="title image of site" />
+  <meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 {#if !loading}

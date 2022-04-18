@@ -6,6 +6,14 @@
 
   let message = ''
   let isPost = false
+  let activeLang = 'ru'
+
+  let text = texts[activeLang]
+
+  language.subscribe(lang => {
+    activeLang = lang
+    text = texts[activeLang]
+  })
 
   async function submit(e) {
     e.preventDefault()
@@ -15,7 +23,7 @@
     }
     axios
       .post(
-        'http://codify.home.kg/ru/api/contact_form/',
+        'https://codify.home.kg/ru/api/contact_form/',
         {
           name: e.target[0].value,
           phone_number: e.target[1].value,
@@ -49,10 +57,6 @@
         }, 5000)
       })
   }
-
-  let activeLang
-  language.subscribe(lang => (activeLang = lang))
-  const text = texts[activeLang]
 </script>
 
 <section class="sectionEnroll" id="enroll">

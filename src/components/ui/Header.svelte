@@ -4,9 +4,13 @@
   import { texts } from '../../localization'
   import { language } from '../../stores'
   let callUsIsOpen = false
-  let activeLang
-  language.subscribe(lang => (activeLang = lang))
-  const headerText = texts[activeLang].header
+  let activeLang = 'ru'
+
+  let headerText = texts[activeLang].header
+  language.subscribe(lang => {
+    activeLang = lang
+    headerText = texts[activeLang].header
+  })
 
   let showLanguages = false
   function changeLang(lang) {

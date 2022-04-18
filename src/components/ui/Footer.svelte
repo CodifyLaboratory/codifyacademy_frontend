@@ -8,10 +8,12 @@
   import { texts } from '../../localization'
   import { language } from '../../stores'
 
-  let currentLanguage
-  language.subscribe(lang => (currentLanguage = lang))
-
-  const footerText = texts[currentLanguage].footer
+  let currentLanguage = 'ru'
+  let footerText = texts[currentLanguage]
+  language.subscribe(lang => {
+    currentLanguage = lang
+    footerText = texts[currentLanguage].footer
+  })
 </script>
 
 <footer class="container">

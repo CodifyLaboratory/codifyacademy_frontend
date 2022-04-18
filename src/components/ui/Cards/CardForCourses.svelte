@@ -5,7 +5,7 @@
   let activeLang
   language.subscribe(lang => (activeLang = lang))
 
-  function currentStydyFormat(studyFormat) {
+  function currentStudyFormat(studyFormat) {
     if (activeLang === 'ru') {
       if (studyFormat.includes('/')) {
         return studyFormat.split('/').join('/\n')
@@ -26,7 +26,13 @@
     <div class="cardCircle" />
 
     <b>{cardInfo.title}</b>
-    <hr />
+    {#if cardInfo.special_offer}
+      <div class="special">
+        <p>{cardInfo.special_offer_text}</p>
+      </div>
+    {:else}
+      <hr />
+    {/if}
     <div class="cardInformation">
       <div class="cardInformation__block">
         <img src="./assets/icons/CardForCourses/clock.png" alt="clock" />
@@ -34,17 +40,33 @@
       </div>
       <div class="cardInformation__block">
         <img src="./assets/icons/CardForCourses/Business.png" alt="Business" />
-        <p style={activeLang === 'ru' ? 'white-space: pre-line;' : ''}>{currentStydyFormat(cardInfo.study_format)}</p>
+        <p style={activeLang === 'ru' ? 'white-space: pre-line;' : ''}>{currentStudyFormat(cardInfo.study_format)}</p>
       </div>
     </div>
   </div>
 </a>
 
 <style>
+  .special {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 30px;
+    margin-bottom: 17px;
+    margin-top: 14px;
+    border-radius: 100px;
+    background: #9dff00;
+  }
+  .special p {
+    font-size: 14px;
+    line-height: 80%;
+    font-weight: 600;
+    color: var(--blue-main);
+  }
   .cardForCourses {
     width: 270px;
     border-radius: 10px;
-    min-height: 275px;
+    height: 275px;
     background-image: var(--blue-gradient);
     position: relative;
     padding: 20px;

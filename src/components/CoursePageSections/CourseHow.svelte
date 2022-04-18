@@ -1,9 +1,13 @@
 <script>
   import { language } from '../../stores'
   import { texts } from '../../localization'
-  let activeLang
-  language.subscribe(lang => (activeLang = lang))
+  let activeLang = 'ru'
   let text = texts[activeLang].courseHow
+
+  language.subscribe(lang => {
+    activeLang = lang
+    text = texts[activeLang].courseHow
+  })
 </script>
 
 <section>

@@ -3,9 +3,15 @@
   import { language } from '../../stores'
   import { texts } from '../../localization'
 
-  let activeLang
-  language.subscribe(lang => (activeLang = lang))
-  let and = activeLang === 'ru' ? ' и ' : activeLang === 'en' ? ' and ' : ' и '
+  let activeLang = 'ru'
+
+  let text = texts[activeLang].courseFirst
+
+  language.subscribe(lang => {
+    activeLang = lang
+    text = texts[activeLang].courseFirst
+  })
+  $: and = activeLang === 'ru' ? ' и ' : activeLang === 'en' ? ' and ' : ' и '
   function restyle(e) {
     let result
     if (e.includes('/')) {
@@ -15,7 +21,6 @@
       return e
     }
   }
-  let text = texts[activeLang].courseFirst
 </script>
 
 {#if course}

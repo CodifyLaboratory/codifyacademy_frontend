@@ -4,9 +4,13 @@
   import * as animateScroll from 'svelte-scrollto'
 
   export let course
-  let activeLang
-  language.subscribe(lang => (activeLang = lang))
+  let activeLang = 'ru'
   let text = texts[activeLang]
+
+  language.subscribe(lang => {
+    activeLang = lang
+    text = texts[activeLang]
+  })
 
   function consultation() {
     animateScroll.scrollTo({ element: '#enroll', duration: 1300, offset: -100 })
@@ -53,36 +57,46 @@
       <p>{text.courseWhy.payment}</p>
     </div>
     <hr />
-    <div class="info_and_offer">
-      <div class="price_info">
-        <p><strong>{text.courseWhy.start}</strong> {course.course_start}</p>
-        <p>
-          <strong>{text.courseWhy.col}</strong>
-          {course.seats_left}
-          {course.seats_left === 1
-            ? text.courseWhy.mesto
-            : activeLang === 'ru' && course.seats_left > 1 && course.seats_left < 5
-            ? text.courseWhy.mesta
-            : text.courseWhy.mest}
-        </p>
+    <div class="info_and_button">
+      <div class="info_and_offer">
+        <div class="price_info">
+          <p><strong>{text.courseWhy.start}</strong> {course.course_start}</p>
+          <p>
+            <strong>{text.courseWhy.col}</strong>
+            {course.seats_left}
+            {course.seats_left === 1
+              ? text.courseWhy.mesto
+              : activeLang === 'ru' && course.seats_left > 1 && course.seats_left < 5
+              ? text.courseWhy.mesta
+              : text.courseWhy.mest}
+          </p>
+        </div>
+        <div class="specialOffer">
+          <p id="specialOffer">{course.special_offer_text}</p>
+        </div>
       </div>
-      <div class="specialOffer">
-        <p id="specialOffer">{course.special_offer_text}</p>
-      </div>
-    </div>
 
-    <button class="button contained" on:click={consultation}>{text.buttons.enroll}</button>
+      <button class="button contained" on:click={consultation}>{text.buttons.enroll}</button>
+    </div>
   </div>
 </section>
 
 <style>
+  .info_and_button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: 170px;
+    gap: 15px;
+  }
   .info_and_offer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
-    row-gap: 20px;
-    column-gap: 10px;
+    width: 100%;
+    gap: 15px;
   }
   .specialOffer {
     padding: 10px 30px;
@@ -162,7 +176,7 @@
     font-size: 0.85rem;
   }
   .info_and_offer {
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
   }
   .price_info > p {
     font-size: 1.25rem;

@@ -7,13 +7,17 @@
   import { language } from '../../stores'
   import axios from 'axios'
 
-  let activeLang
+  let activeLang = 'ru'
   let students = []
+  let text = texts[activeLang].homePage.h2.students
+
   language.subscribe(async lang => {
     activeLang = lang
+    text = texts[activeLang].homePage.h2.students
+
     if (students.length) {
       axios
-        .get(`http://codify.home.kg/${activeLang}/api/students/`)
+        .get(`https://codify.home.kg/${activeLang}/api/students/`)
         .then(({ data }) => {
           students = data
         })
@@ -23,11 +27,9 @@
     }
   })
 
-  const text = texts[activeLang].homePage.h2.students
-
   onMount(async () => {
     axios
-      .get(`http://codify.home.kg/${activeLang}/api/students/`)
+      .get(`https://codify.home.kg/${activeLang}/api/students/`)
       .then(({ data }) => {
         students = data
       })

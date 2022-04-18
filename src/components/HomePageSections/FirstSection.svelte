@@ -4,9 +4,11 @@
   import * as animateScroll from 'svelte-scrollto'
   import { language } from '../../stores'
 
-  let activeLang
-  language.subscribe(lang => (activeLang = lang))
-  const text = texts[activeLang]
+  let activeLang = 'ru'
+
+  language.subscribe(lang => {
+    activeLang = lang
+  })
 
   let y
   let stickyBtn
@@ -31,18 +33,18 @@
 <section class="firstSection">
   <div class="container">
     <div>
-      <h1>{@html text.homePage.h1}</h1>
+      <h1>{@html texts[activeLang].homePage.h1}</h1>
       <div class="firstSection__buttons">
         <div style={`width: ${offsetWidth}px`}>
           <button
             bind:this={stickyBtn}
             style={`left: ${offSetX}`}
             class={`button contained ${y > 427 && y < scrollToEnroll ? 'sticky' : ''}`}
-            on:click={consultation}>{text.buttons.consultation}</button
+            on:click={consultation}>{texts[activeLang].buttons.consultation}</button
           >
         </div>
         <a href={`${activeLang}/courses`}>
-          <button class="button">{text.buttons.allCourses}</button>
+          <button class="button">{texts[activeLang].buttons.allCourses}</button>
         </a>
       </div>
     </div>
