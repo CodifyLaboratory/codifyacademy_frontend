@@ -23,7 +23,7 @@
     }
     axios
       .post(
-        'https://codify.home.kg/ru/api/contact_form/',
+        'http://178.62.241.156/ru/api/contact_form/',
         {
           name: e.target[0].value,
           phone_number: e.target[1].value,

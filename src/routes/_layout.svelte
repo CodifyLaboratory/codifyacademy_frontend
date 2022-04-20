@@ -2,7 +2,6 @@
   import Footer from '../components/ui/Footer.svelte'
   import LoadingBar from '../components/ui/LoadingBar.svelte'
   import Header from '../components/ui/Header.svelte'
-  import SeoTags from '../components/SeoTags.svelte'
 </script>
 
 <div class="site">

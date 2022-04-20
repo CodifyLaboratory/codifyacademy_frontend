@@ -15,7 +15,7 @@
     activeLang = lang
     if (courseCards.length) {
       axios
-        .get(`https://codify.home.kg/${activeLang}/api/courses/`)
+        .get(`http://178.62.241.156/${activeLang}/api/courses/`)
         .then(({ data }) => {
           courseCards = data
           currentCards = courseCards
@@ -32,7 +32,7 @@
   let text = texts[activeLang].buttons
   onMount(async () => {
     axios
-      .get(`https://codify.home.kg/${activeLang}/api/courses/`)
+      .get(`http://178.62.241.156/${activeLang}/api/courses/`)
       .then(({ data }) => {
         courseCards = [...data]
         currentCards = [...courseCards]

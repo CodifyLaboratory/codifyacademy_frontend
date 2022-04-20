@@ -17,7 +17,7 @@
 
     if (students.length) {
       axios
-        .get(`https://codify.home.kg/${activeLang}/api/students/`)
+        .get(`http://178.62.241.156/${activeLang}/api/students/`)
         .then(({ data }) => {
           students = data
         })
@@ -29,7 +29,7 @@
 
   onMount(async () => {
     axios
-      .get(`https://codify.home.kg/${activeLang}/api/students/`)
+      .get(`http://178.62.241.156/${activeLang}/api/students/`)
       .then(({ data }) => {
         students = data
       })
