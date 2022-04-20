@@ -90,7 +90,7 @@ export const texts = {
       },
       contacts: {
         title: 'Contacts',
-        address: 'Isanov st. 105/3, 1st floor'
+        address: "Oltintepa ko'chasi, 28. Tashkent"
         
       },
     },
@@ -100,7 +100,7 @@ export const texts = {
       events: 'Events',
       contacts: 'Contacts',
       call: 'Connect with us',
-      callUsText: 'Call us:\n<b>+996 550 431 430</b>\nor\n Write to us (WhatsApp):\n<b>+996 500 431 430</b>'
+      callUsText: 'Call us or\n write to us (Telegram):\n<b>+998 90 922 44 77</b>\n<b>+998 71 230 77 73</b>'
     },
 
     enroll: {
@@ -237,7 +237,7 @@ export const texts = {
       },
       contacts: {
         title: 'Контакты',
-        address: 'ул. Исанова 105/3, 1 этаж'
+        address: 'ул. Олтинтепа, 28. Ташкент'
         
       },
     },
@@ -247,7 +247,7 @@ export const texts = {
       events: 'Мероприятия',
       contacts: 'Контакты',
       call: 'Связаться с нами',
-      callUsText: 'Позвоните нам:\n<b>+996 550 431 430</b>\nили\nНапишите нам (WhatsApp):\n<b>+996 500 431 430</b>'
+      callUsText: 'Позвоните нам или\nнапишите нам (Telegram):\n<b>+998 90 922 44 77</b>\n<b>+998 71 230 77 73</b>'
     },
     enroll: {
       postMessage: 'Заявка успешно отправлена, с вами свяжутся в ближайшее время',
