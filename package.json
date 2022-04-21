@@ -3,7 +3,7 @@
   "description": "Sapper, svelte blog app",
   "version": "0.0.1",
   "scripts": {
-    "start": "sapper dev",
+    "start": "sapper dev --port 3001",
     "build": "sapper build --legacy",
     "export": "sapper export --legacy",
     "live": "node __sapper__/build",
