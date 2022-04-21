@@ -20,7 +20,7 @@
     activeLang = lang
     if (id) {
       axios
-        .get(`https://codifylab.uz/${activeLang}/api/courses/${id}`)
+        .get(`https://178.62.241.156/${activeLang}/api/courses/${id}`)
         .then(({ data }) => {
           course = data
         })
@@ -34,7 +34,7 @@
     let href = window.location.href
     id = href.split('/').pop()
     axios
-      .get(`https://codifylab.uz/${activeLang}/api/courses/${id}`)
+      .get(`https://178.62.241.156/${activeLang}/api/courses/${id}`)
       .then(({ data }) => {
         course = data
         console.log(course)
@@ -57,7 +57,7 @@
     property="og:description"
     content="Курсы программирования в Ташкенте. Обучись актуальной профессии и начни зарабатывать"
   />
-  <meta property="og:image" content="https://codifylab.uz/first-image.jpg" />
+  <meta property="og:image" content="https://178.62.241.156/first-image.jpg" />
   <meta property="og:image:alt" content="title image of site" />
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
   <meta property="og:image:width" content="1024" />
@@ -65,7 +65,7 @@
   <meta property="og:site_name" content="codifylab.uz" />
   <meta property="og:locale" content="ru_RU" />
   <meta property="og:type" content="website" />
-  <meta property="og:image:secure_url" content="https://codifylab.uz/first-image.jpg" />
+  <meta property="og:image:secure_url" content="https://178.62.241.156/first-image.jpg" />
 
   <meta property="twitter:title" content="Codify Academy | IT - курсы программирования в Ташкенте" />
   <meta
@@ -77,7 +77,7 @@
     name="twitter:description"
     content="Курсы программирования в Ташкенте. Обучись актуальной профессии и начни зарабатывать"
   />
-  <meta property="twitter:image" content="https://codifylab.uz/first-image.jpg" />
+  <meta property="twitter:image" content="https://178.62.241.156/first-image.jpg" />
   <meta property="twitter:image:alt" content="title image of site" />
   <meta name="twitter:card" content="summary_large_image" />
 </svelte:head>

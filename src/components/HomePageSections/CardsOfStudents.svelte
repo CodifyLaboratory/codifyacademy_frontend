@@ -17,7 +17,7 @@
 
     if (students.length) {
       axios
-        .get(`https://codifylab.uz/${activeLang}/api/students/`)
+        .get(`https://178.62.241.156/${activeLang}/api/students/`)
         .then(({ data }) => {
           students = data
         })
@@ -29,7 +29,7 @@
 
   onMount(async () => {
     axios
-      .get(`https://codifylab.uz/${activeLang}/api/students/`)
+      .get(`https://178.62.241.156/${activeLang}/api/students/`)
       .then(({ data }) => {
         students = data
       })
