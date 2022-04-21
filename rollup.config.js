@@ -29,9 +29,6 @@ export default {
       replace({
         'process.browser': true,
         'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
-        'process.env.SECRET_KEY': JSON.stringify(SECRET_KEY),
-        'process.env.API_BASE_URL': JSON.stringify(API_BASE_URL),
-        'process.env.APP_NAME': JSON.stringify(APP_NAME),
         'preventAssignment': true
       }),
       svelte({
@@ -84,13 +81,9 @@ export default {
     output: config.server.output(),
     plugins: [
       replace({
-        'process.browser': false,
+        'process.browser': true,
         'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
-        'process.env.SECRET_KEY': JSON.stringify(SECRET_KEY),
-        'process.env.API_BASE_URL': JSON.stringify(API_BASE_URL),
-        'process.env.APP_NAME': JSON.stringify(APP_NAME),
         'preventAssignment': true
-
       }),
       svelte({
         generate: 'ssr',
@@ -125,9 +118,6 @@ export default {
       replace({
         'process.browser': true,
         'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
-        'process.env.SECRET_KEY': JSON.stringify(SECRET_KEY),
-        'process.env.API_BASE_URL': JSON.stringify(API_BASE_URL),
-        'process.env.APP_NAME': JSON.stringify(APP_NAME),
         'preventAssignment': true
       }),
       commonjs(),

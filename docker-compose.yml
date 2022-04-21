@@ -4,10 +4,4 @@ services:
     build: .
     restart: always
     environment:
-      - VIRTUAL_HOST=holoclinic.io
       - VIRTUAL_PORT=3001
-    networks:
-      mypupio: {}
-networks:
-  mypupio:
-    name: mypupio

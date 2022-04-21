@@ -23,7 +23,7 @@
     }
     axios
       .post(
-        'http://178.62.241.156/ru/api/contact_form/',
+        'https://codifylab.uz//ru/api/contact_form/',
         {
           name: e.target[0].value,
           phone_number: e.target[1].value,
@@ -31,24 +31,24 @@
         },
         { headers: { Authorization: '3xUcq19gx6xJWopmfpuNjZAnTyS9PDiEFunC99QVNXK4JO3YDdqbTgjS9LFyV9dL' } }
       )
+      // .then(() => {
+      //   axios
+      //     .post(
+      //       'https://academy.codifylab.com/api/crm/leads/?org_id=1',
+      //       {
+      //         first_name: e.target[0].value,
+      //         phone: e.target[1].value,
+      //       },
+      //       { headers }
+      //     )
       .then(() => {
-        axios
-          .post(
-            'https://academy.codifylab.com/api/crm/leads/?org_id=1',
-            {
-              first_name: e.target[0].value,
-              phone: e.target[1].value,
-            },
-            { headers }
-          )
-          .then(() => {
-            isPost = true
-            message = ''
-            setTimeout(() => {
-              isPost = false
-            }, 5000)
-          })
+        isPost = true
+        message = ''
+        setTimeout(() => {
+          isPost = false
+        }, 5000)
       })
+      // })
       .catch(err => {
         message = err.response.data.email?.join() || 'что-то пошло не так'
         isPost = true
