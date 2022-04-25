@@ -141,6 +141,9 @@
     height: 32px;
     align-items: center;
   }
+  .social {
+    padding-top: 42px;
+  }
   @media screen and (max-width: 950px) {
     .footer {
       display: grid;
