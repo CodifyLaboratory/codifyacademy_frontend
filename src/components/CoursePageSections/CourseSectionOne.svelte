@@ -34,13 +34,13 @@
       <div class="fullInfo container">
         <div class="courseInfo">
           <div>
-            <img src="./assets/icons/CardForCourses/business.svg" alt="Business" />
+            <img src="./assets/icons/CardForCourses/business1.svg" alt="Business" />
           </div>
           <p>{`${restyle(course.study_format)}\n${text.format}`}</p>
         </div>
         <div class="courseInfo">
           <div>
-            <img src="./assets/icons/CardForCourses/clock.svg" alt="clock" />
+            <img src="./assets/icons/CardForCourses/clock1.svg" alt="clock" />
           </div>
           <p>{`${text.duration} ${course.duration}`}</p>
         </div>

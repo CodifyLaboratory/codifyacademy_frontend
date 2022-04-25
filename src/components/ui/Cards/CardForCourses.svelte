@@ -35,11 +35,11 @@
     {/if}
     <div class="cardInformation">
       <div class="cardInformation__block">
-        <img src="./assets/icons/CardForCourses/clock.png" alt="clock" />
+        <img src="./assets/icons/CardForCourses/clock.svg" alt="clock" />
         <p>{cardInfo.duration}</p>
       </div>
       <div class="cardInformation__block">
-        <img src="./assets/icons/CardForCourses/Business.png" alt="Business" />
+        <img src="./assets/icons/CardForCourses/business.svg" alt="Business" />
         <p style={activeLang === 'ru' ? 'white-space: pre-line;' : ''}>{currentStudyFormat(cardInfo.study_format)}</p>
       </div>
     </div>
@@ -127,5 +127,9 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
+  }
+  .cardInformation__block > img {
+    width: 32px;
+    height: 32px;
   }
 </style>
