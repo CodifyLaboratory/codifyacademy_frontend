@@ -1,5 +1,9 @@
 export const texts = {
   en: {
+    error: {
+      notFound: 'Oops! Page not found',
+      goHome: 'Go to homepage',
+    },
     buttons: {
       contact_us: 'contact us',
       dev: 'Developing',
@@ -142,6 +146,10 @@ export const texts = {
   },
 
   ru: {
+    error: {
+      notFound: 'Ой! Эта страница не найдена',
+      goHome: 'Вернуться на главную',
+    },
     buttons: {
       contact_us: 'Связаться с нами',
       dev: 'Разработка',

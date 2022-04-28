@@ -66,7 +66,7 @@
   .cardForCourses {
     width: 270px;
     border-radius: 10px;
-    height: 275px;
+    height: 277px;
     background-image: var(--blue-gradient);
     position: relative;
     padding: 20px;
