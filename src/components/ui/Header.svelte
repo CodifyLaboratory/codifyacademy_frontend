@@ -20,12 +20,9 @@
 
   let win
   let isOpenMenu = false
-  onMount(() => {
-    isOpenMenu = win > 1050
-  })
 </script>
 
-<svelte:window bind:outerWidth={win} on:scroll={() => (callUsIsOpen = false)} />
+<svelte:window bind:innerWidth={win} on:scroll={() => (callUsIsOpen = false)} />
 <header class="header">
   <div class="container">
     <div class="headerNavigation">
@@ -41,8 +38,8 @@
         <img src="./assets/icons/logo.svg" alt="logo" />
       </a>
       <nav style={`display:${!isOpenMenu && win < 1050 ? 'none' : 'flex'}`}>
-        <a href={`/${activeLang}/courses`}>{headerText.academy}</a>
-        <a href="https://teens.codifylab.com/" target="_blank">{headerText.teens}</a>
+        <a href={`/${activeLang}/courses`} on:click={()=>{isOpenMenu = false}}>{headerText.academy}</a>
+        <a href="https://teens.codifylab.com/" target="_blank" on:click={()=>{isOpenMenu = false}}>{headerText.teens}</a>
         <button
           on:click={() => {
             animateScroll.scrollToBottom({ duration: 2000 })
@@ -242,6 +239,16 @@
     }
     nav > a:not(:last-child) {
       border-bottom: 1px solid var(--blue);
+    }
+  }
+  @media screen and (max-width: 950px) {
+    .call {
+      padding: 3px 20px;
+      display: flex;
+    }
+    .call img {
+      width: 24px;
+      height: 24px;
     }
   }
   @media screen and (max-width: 750px) {

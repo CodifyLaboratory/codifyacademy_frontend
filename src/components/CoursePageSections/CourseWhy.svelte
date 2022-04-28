@@ -71,9 +71,12 @@
               : text.courseWhy.mest}
           </p>
         </div>
+        {#if course.special_offer}
         <div class="specialOffer">
           <p id="specialOffer">{course.special_offer_text}</p>
         </div>
+        {/if}
+
       </div>
 
       <button class="button contained" on:click={consultation}>{text.buttons.enroll}</button>
@@ -175,9 +178,7 @@
   .price > p {
     font-size: 0.85rem;
   }
-  .info_and_offer {
-    /* margin-bottom: 50px; */
-  }
+
   .price_info > p {
     font-size: 1.25rem;
   }

@@ -8,6 +8,9 @@
 
   language.subscribe(lang => {
     activeLang = lang
+    setTimeout(() => {
+      offsetWidth = stickyBtn.offsetWidth
+    }, 100)
   })
 
   let y

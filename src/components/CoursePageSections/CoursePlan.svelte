@@ -13,7 +13,7 @@
     activeLang = lang
     text = texts[activeLang].coursePlan
   })
-  let and = activeLang === 'ru' ? ' и ' : activeLang === 'en' ? ' and ' : ' и '
+  $: and = activeLang === 'ru' ? ' и ' : ' and ' 
   function restyle(e) {
     let result
     if (e.includes('/')) {
