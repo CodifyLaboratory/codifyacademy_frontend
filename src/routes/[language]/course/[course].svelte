@@ -80,6 +80,22 @@
   <meta property="twitter:image" content="https://codifylab.uz/first-image.jpg" />
   <meta property="twitter:image:alt" content="title image of site" />
   <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Global site tag (gtag.js) - Google Ads: 10891704135 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10891704135"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-10891704135');
+  </script>
+  
+  <!-- Event snippet for Начало оформления покупки conversion page -->
+  <script>
+    gtag('event', 'conversion', {'send_to': 'AW-10891704135/FLnxCK_zp7gDEMfuyMko'});
+  </script>
+  
 </svelte:head>
 
 <div class="asd">
