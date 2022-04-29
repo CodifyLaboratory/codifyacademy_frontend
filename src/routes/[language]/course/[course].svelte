@@ -47,7 +47,7 @@
 
 <svelte:head>
   <title>Codify Academy | IT - курсы программирования в Бишкеке</title>
-  <meta name="description" content="" />
+  <meta name="description" content="Курсы программирования в Бишкеке. Обучись актуальной профессии и начни зарабатывать" />
   <meta
     name="keywords"
     content="курсы программирования бишкек, школа программирования, курсы разработки, IT курсы в Бишкеке"
