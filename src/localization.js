@@ -7,6 +7,9 @@ export const texts = {
     buttons: {
       contact_us: 'contact us',
       dev: 'Developing',
+      events: 'Events',
+      news: 'News',
+      all: 'All',
       allCourses: 'All courses',
       design: 'Design',
       managment: ' Management',
@@ -75,6 +78,13 @@ export const texts = {
           'Complete a technical interview',
         ],
       },
+    },
+    eventsPage: {
+      h1: 'Events and news',
+      date: 'Date:',
+      time: 'Time:',
+      place: 'Place:',
+      address: 'Address:',
     },
     footer: {
       about: {
@@ -152,7 +162,10 @@ export const texts = {
     },
     buttons: {
       contact_us: 'Связаться с нами',
+      events: 'Мероприятия',
+      news: 'Новости',
       dev: 'Разработка',
+      all: 'Все',
       allCourses: 'Все курсы',
       design: 'Дизайн',
       managment: 'Менеджмент',
@@ -221,6 +234,13 @@ export const texts = {
           'Пройти техническое собеседование',
         ],
       },
+    },
+    eventsPage: {
+      h1: 'Мероприятия и новости',
+      date: 'Дата проведения:',
+      time: 'Время:',
+      place: 'Место проведения:',
+      address: 'Адрес:',
     },
     footer: {
       about: {
