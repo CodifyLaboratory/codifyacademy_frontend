@@ -50,6 +50,7 @@
     "sapper": "^0.28.0",
     "svelte": "^3.17.3",
     "svelte-meta-tags": "^2.5.1",
+    "svelte-paginate": "^0.0.1",
     "svelte-scrollto": "^0.2.0",
     "swiper": "^8.0.7"
   }

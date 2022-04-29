@@ -18,6 +18,7 @@ body {
   --blue: #1c5dab;
   --light-blue: rgba(0, 157, 255, 1);
   --blue-main: #263886;
+  
   --green: rgba(7, 255, 225, 1);
   --white: #eceded;
   --blue-gradient: linear-gradient(124.4deg, rgba(7, 36, 78, 0.7) 1.34%, rgba(95, 14, 157, 0.1) 101.18%);
@@ -141,3 +142,5 @@ input:focus-visible {
 #specialOffer > div > span {
   color: var(--blue);
 }
+
+/* For Pagination custom component
