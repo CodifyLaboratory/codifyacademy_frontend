@@ -23,13 +23,12 @@
     }
     axios
       .post(
-        'https://codifylab.uz//ru/api/contact_form/',
+        'https://codifylab.uz/ru/api/contact_form/',
         {
           name: e.target[0].value,
           phone_number: e.target[1].value,
           email: e.target[2].value ? e.target[2].value : null,
         },
-        { headers: { Authorization: '3xUcq19gx6xJWopmfpuNjZAnTyS9PDiEFunC99QVNXK4JO3YDdqbTgjS9LFyV9dL' } }
       )
       // .then(() => {
       //   axios
