@@ -14,6 +14,7 @@
     currentLanguage = lang
     footerText = texts[currentLanguage].footer
   })
+  const date = new Date();
 </script>
 
 <footer class="container">
@@ -96,7 +97,7 @@
     </div>
   </div>
   <hr />
-  <p style="margin: 30px auto; text-align: center">© 2022 Codify Academy. All Rights Reserved.</p>
+  <p style="margin: 30px auto; text-align: center">© {date.getFullYear()} Codify Academy. All Rights Reserved.</p>
 </footer>
 
 <style>

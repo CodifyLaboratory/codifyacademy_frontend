@@ -22,7 +22,7 @@
 
     if (mentors.length) {
       axios
-        .get(`https://codify.home.kg/${activeLang}/api/mentors/`)
+        .get(`https://codifylab.com/${activeLang}/api/mentors/`)
         .then(({ data }) => {
           if (courseId) {
             mentors = data.filter(mentor => mentor.course.id === courseId)
@@ -38,7 +38,7 @@
 
   onMount(async () => {
     axios
-      .get(`https://codify.home.kg/${activeLang}/api/mentors/`)
+      .get(`https://codifylab.com/${activeLang}/api/mentors/`)
       .then(({ data }) => {
         if (courseId) {
           mentors = data.filter(mentor => mentor.course.id === courseId)

@@ -17,7 +17,7 @@
 
     if (projects.length) {
       axios
-        .get(`https://codify.home.kg/${activeLang}/api/projects/`)
+        .get(`https://codifylab.com/${activeLang}/api/projects/`)
         .then(({ data }) => {
           projects = data
         })
@@ -29,7 +29,7 @@
 
   onMount(async () => {
     axios
-      .get(`https://codify.home.kg/${activeLang}/api/projects/`)
+      .get(`https://codifylab.com/${activeLang}/api/projects/`)
       .then(({ data }) => {
         projects = data
       })

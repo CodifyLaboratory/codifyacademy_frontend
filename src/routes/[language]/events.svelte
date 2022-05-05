@@ -15,7 +15,7 @@
     let currentFilter = ''
     async function fetchEvents(page, filter=0) {
       axios
-        .get(`https://codify.home.kg/${activeLang}/api/publications/?page=${page}${filter? `&type=${filter}` : ''}`)
+        .get(`https://codifylab.com/${activeLang}/api/publications/?page=${page}${filter? `&type=${filter}` : ''}`)
         .then(({ data }) => {
           dataEvents = data
           console.log
@@ -67,15 +67,15 @@
     property="og:description"
     content="Курсы программирования в Бишкеке. Обучись актуальной профессии и начни зарабатывать"
   />
-  <meta property="og:image" content="https://codify.home.kg/first-image.jpg" />
+  <meta property="og:image" content="https://codifylab.com/first-image.jpg" />
   <meta property="og:image:alt" content="title image of site" />
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
   <meta property="og:image:width" content="1024" />
   <meta property="og:image:height" content="1024" />
-  <meta property="og:site_name" content="codify.home.kg" />
+  <meta property="og:site_name" content="codifylab.com" />
   <meta property="og:locale" content="ru_RU" />
   <meta property="og:type" content="website" />
-  <meta property="og:image:secure_url" content="https://codify.home.kg/first-image.jpg" />
+  <meta property="og:image:secure_url" content="https://codifylab.com/first-image.jpg" />
 
   <meta property="twitter:title" content="Codify Academy | IT - курсы программирования в Бишкеке" />
   <meta
@@ -87,7 +87,7 @@
     name="twitter:description"
     content="Курсы программирования в Бишкеке. Обучись актуальной профессии и начни зарабатывать"
   />
-  <meta property="twitter:image" content="https://codify.home.kg/first-image.jpg" />
+  <meta property="twitter:image" content="https://codifylab.com/first-image.jpg" />
   <meta property="twitter:image:alt" content="title image of site" />
   <meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
