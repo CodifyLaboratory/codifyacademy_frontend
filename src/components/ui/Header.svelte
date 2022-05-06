@@ -40,7 +40,7 @@
       <nav style={`display:${!isOpenMenu && win < 1050 ? 'none' : 'flex'}`}>
         <a href={`/${activeLang}/courses`} on:click={()=>{isOpenMenu = false}}>{headerText.academy}</a>
         <a href="https://teens.codifylab.com/" target="_blank" on:click={()=>{isOpenMenu = false}}>{headerText.teens}</a>
-        <a href={`/${activeLang}/events`} on:click={()=>{isOpenMenu = false}}>{headerText.events}</a>
+        <!-- <a href={`/${activeLang}/events`} on:click={()=>{isOpenMenu = false}}>{headerText.events}</a> -->
         <button
           on:click={() => {
             animateScroll.scrollToBottom({ duration: 2000 })
