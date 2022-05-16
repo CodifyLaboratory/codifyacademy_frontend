@@ -114,7 +114,7 @@ export const texts = {
     },
 
     enroll: {
-      postMessage: 'Application has been successfully submitted, you will be contacted soon',
+      postMessage: 'Application has been successfully submitted',
       name: 'Name',
       phone: 'Phone number ',
       email: 'E-mail',
@@ -269,7 +269,7 @@ export const texts = {
       callUsText: 'Позвоните нам или\nнапишите нам (Telegram):\n<b>+998 90 922 44 77</b>\n<b>+998 71 230 77 73</b>',
     },
     enroll: {
-      postMessage: 'Заявка успешно отправлена, с вами свяжутся в ближайшее время',
+      postMessage: 'Ваша заявка успешно отправлена',
       name: 'Имя',
       phone: 'Номер телефона',
       email: 'E-mail',

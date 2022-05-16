@@ -7,7 +7,7 @@
   let message = ''
   let isPost = false
   let activeLang = 'ru'
-
+  let disabledBtn = false
   let text = texts[activeLang]
 
   language.subscribe(lang => {
@@ -21,6 +21,7 @@
       Authorization: 'b8faa2c98db86c13fadc2e339bf33743',
       'content-Type': 'application/json',
     }
+    disabledBtn = true
     axios
       .post(
         'https://codifylab.uz/ru/api/contact_form/',
@@ -49,6 +50,7 @@
       })
       // })
       .catch(err => {
+        disabledBtn = false
         message = err.response.data.email?.join() || 'что-то пошло не так'
         isPost = true
         setTimeout(() => {
@@ -67,7 +69,7 @@
         <input required type="text" placeholder={text.enroll.name + '*'} />
         <input required type="number" class="phoneInput" placeholder={text.enroll.phone + '*'} />
         <input type="email" placeholder={text.enroll.email} />
-        <button class="button contained">{text.buttons.enroll}</button>
+        <button disabled={disabledBtn} class="button contained">{text.buttons.enroll}</button>
       </div>
       <div class="formCheck">
         <input required type="checkbox" />
@@ -78,13 +80,22 @@
 </section>
 
 <style>
+  .button:disabled {
+    opacity: 0.5;
+    cursor: auto;
+    pointer-events: none;
+  }
+  
+  
   .successPost {
     position: absolute;
     top: -55px;
     left: 0;
+    right: 0;
     margin: 0 auto;
+    font-size: 16px;
     max-width: 100%;
-    height: 50px;
+    min-height: 50px;
     background-image: var(--primary-bg);
     border-radius: 100px;
     border: 1px solid var(--blue);
@@ -93,7 +104,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 50px;
+    padding: 10px 50px;
     opacity: 0;
   }
   .post {
