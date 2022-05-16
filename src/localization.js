@@ -114,7 +114,7 @@ export const texts = {
     },
 
     enroll: {
-      postMessage: 'Application has been successfully submitted, you will be contacted soon',
+      postMessage: 'Application has been successfully submitted',
       name: 'Name',
       phone: 'Phone number ',
       email: 'E-mail',
@@ -269,7 +269,7 @@ export const texts = {
       callUsText: 'Позвоните нам:\n<b>+996 550 431 430</b>\nили\nНапишите нам (WhatsApp):\n<b>+996 500 431 430</b>',
     },
     enroll: {
-      postMessage: 'Заявка успешно отправлена, с вами свяжутся в ближайшее время',
+      postMessage: 'Ваша заявка успешно отправлена',
       name: 'Имя',
       phone: 'Номер телефона',
       email: 'E-mail',
