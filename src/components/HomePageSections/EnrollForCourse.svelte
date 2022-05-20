@@ -69,7 +69,7 @@
         <input required type="text" placeholder={text.enroll.name + '*'} />
         <input required type="number" class="phoneInput" placeholder={text.enroll.phone + '*'} />
         <input type="email" placeholder={text.enroll.email} />
-        <button disabled={disabledBtn} class="button contained">{text.buttons.enroll}</button>
+        <button disabled={disabledBtn} class="button contained google-button google-button-form">{text.buttons.enroll}</button>
       </div>
       <div class="formCheck">
         <input required type="checkbox" />

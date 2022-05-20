@@ -41,7 +41,7 @@
         <a href={`/${activeLang}/courses`} on:click={()=>{isOpenMenu = false}}>{headerText.academy}</a>
         <a href="https://teens.codifylab.com/" target="_blank" on:click={()=>{isOpenMenu = false}}>{headerText.teens}</a>
         <!-- <a href={`/${activeLang}/events`} on:click={()=>{isOpenMenu = false}}>{headerText.events}</a> -->
-        <button
+        <button class='google-button'
           on:click={() => {
             animateScroll.scrollToBottom({ duration: 2000 })
             isOpenMenu = false
@@ -50,7 +50,7 @@
       </nav>
     </div>
     <div class="callUs">
-      <button class="call" on:click={() => (callUsIsOpen = true)}>
+      <button class="call google-button" on:click={() => (callUsIsOpen = true)}>
         {#if win > 950}
           <p>{headerText.call}</p>
         {:else}
