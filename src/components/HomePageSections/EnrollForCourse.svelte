@@ -40,6 +40,7 @@
             {
               first_name: e.target[0].value,
               phone: e.target[1].value,
+              email: e.target[2].value ? e.target[2].value : null,
             },
             { headers }
           )
