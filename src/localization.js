@@ -101,8 +101,12 @@ export const texts = {
       },
       contacts: {
         title: 'Contacts',
-        address: 'Isanov st. 105/3, 1st floor',
+        address: 'Isanov st. 105/3, 1st floor\n7 Microdistrict, 23 Str., Atlant House',
       },
+      endLinks: {
+        privacy: 'Privacy Policy',
+        contract: 'Company Details'
+      }
     },
     header: {
       academy: 'Adult Courses',
@@ -110,7 +114,7 @@ export const texts = {
       events: 'Events',
       contacts: 'Contacts',
       call: 'Connect with us',
-      callUsText: 'Call us:\n<b>+996 550 431 430</b>\nor\n Write to us (WhatsApp):\n<b>+996 500 431 430</b>',
+      callUsText: 'Call us or\n Write to us (WhatsApp):\n<b>+996 500 431 430</b>',
     },
 
     enroll: {
@@ -257,8 +261,12 @@ export const texts = {
       },
       contacts: {
         title: 'Контакты',
-        address: 'ул. Исанова 105/3, 1 этаж',
+        address: 'ул. Исанова 105/3, 1 этаж\n7мкр, 23 стр, дом Атлант',
       },
+      endLinks: {
+        privacy: 'Политика конфиденциальности',
+        contract: 'Реквизиты'
+      }
     },
     header: {
       academy: 'Взрослые курсы',
@@ -266,7 +274,7 @@ export const texts = {
       events: 'Мероприятия',
       contacts: 'Контакты',
       call: 'Связаться с нами',
-      callUsText: 'Позвоните нам:\n<b>+996 550 431 430</b>\nили\nНапишите нам (WhatsApp):\n<b>+996 500 431 430</b>',
+      callUsText: 'Позвоните нам или\nНапишите нам (WhatsApp):\n<b>+996 500 431 430</b>',
     },
     enroll: {
       postMessage: 'Ваша заявка успешно отправлена',

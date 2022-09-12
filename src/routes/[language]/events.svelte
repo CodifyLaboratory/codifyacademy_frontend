@@ -18,7 +18,6 @@
         .get(`https://codifylab.com/${activeLang}/api/publications/?page=${page}${filter? `&type=${filter}` : ''}`)
         .then(({ data }) => {
           dataEvents = data
-          console.log
           isLoading = false
         })
         .catch(error => {

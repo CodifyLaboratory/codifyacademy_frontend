@@ -4,18 +4,15 @@
   import { language } from '../../stores'
   import { onMount } from 'svelte'
   import axios from 'axios'
-
   export let length = 0
-
   let activeLang = 'ru'
-
   let courseCards = []
   let currentCards = []
   language.subscribe(async lang => {
     activeLang = lang
     if (courseCards.length) {
       axios
-        .get(`https://codifylab.com//${activeLang}/api/courses/`)
+        .get(`https://codifylab.com/${activeLang}/api/courses/`)
         .then(({ data }) => {
           courseCards = data
           currentCards = courseCards

@@ -57,7 +57,7 @@
             fill="#07FFE1"
           />
         </svg>
-        <p>+996 550 431 430</p>
+        <p>+996 500 431 430</p>
       </div>
       <div>
         <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -85,7 +85,7 @@
           />
         </svg>
 
-        <p>{footerText.contacts.address}</p>
+        <p style="white-space: pre-wrap">{footerText.contacts.address}</p>
       </div>
     </div>
     <div class="social footerElement">
@@ -97,10 +97,34 @@
     </div>
   </div>
   <hr />
-  <p style="margin: 30px auto; text-align: center">© {date.getFullYear()} Codify Academy. All Rights Reserved.</p>
+  <div class="policy">
+    <a href="https://drive.google.com/file/d/1wVOmU4-Y6KGO7jZnNde891kPiTYsClFV/view?usp=sharing"
+    target="_blank"
+    >
+      {footerText.endLinks.contract}
+    </a>
+    <a href="https://drive.google.com/file/d/1_w_lLnw9tGNLkGuK-GWUEBzHUoodpL8f/view?usp=sharing"
+       target="_blank"
+    >
+      {footerText.endLinks.privacy}
+    </a>
+  </div>
+  <p style="margin: 10px 0 30px 0; text-align: center">© {date.getFullYear()} Codify Academy. All Rights Reserved.</p>
 </footer>
 
 <style>
+  .policy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .policy a {
+    font-size: 14px;
+    white-space: nowrap;
+    text-decoration: underline;
+  }
   .footer {
     display: flex;
     justify-content: space-between;
