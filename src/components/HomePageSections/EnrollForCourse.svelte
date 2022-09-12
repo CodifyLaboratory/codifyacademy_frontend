@@ -18,7 +18,7 @@
   async function submit(e) {
     e.preventDefault()
     const headers = {
-      Authorization: 'b8faa2c98db86c13fadc2e339bf33743',
+      Authorization: '6ff815033a2fa93e6300c1326159483a',
       'content-Type': 'application/json',
     }
     disabledBtn = true
@@ -31,16 +31,16 @@
           email: e.target[2].value ? e.target[2].value : null,
         },
       )
-      // .then(() => {
-      //   axios
-      //     .post(
-      //       'https://academy.codifylab.com/api/crm/leads/?org_id=1',
-      //       {
-      //         first_name: e.target[0].value,
-      //         phone: e.target[1].value,
-      //       },
-      //       { headers }
-      //     )
+      .then(() => {
+        axios
+          .post(
+            'https://academy.codifylab.com/api/crm/leads/?org_id=14',
+            {
+              first_name: e.target[0].value,
+              phone: e.target[1].value,
+            },
+            { headers }
+          )
       .then(() => {
         isPost = true
         message = ''
@@ -48,7 +48,7 @@
           isPost = false
         }, 5000)
       })
-      // })
+      })
       .catch(err => {
         disabledBtn = false
         message = err.response.data.email?.join() || 'что-то пошло не так'
