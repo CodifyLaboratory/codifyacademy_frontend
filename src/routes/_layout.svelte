@@ -11,6 +11,7 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-MDCRHGK');</script>
   <!-- End Google Tag Manager -->
+  <meta name="facebook-domain-verification" content="8cse7usx5domkbtwk63oifn00gx0su" />
   
 </svelte:head>
 <div class="site">
