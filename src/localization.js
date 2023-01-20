@@ -57,7 +57,7 @@ export const texts = {
         stages: [
           {
             title: '',
-            body: '48 hours 1 completed project in the portfolio',
+            body: '48 hours, 1 completed project in the portfolio',
           },
           {
             title: '',
@@ -217,7 +217,7 @@ export const texts = {
         stages: [
           {
             title: '',
-            body: '48 часов 1 готовый проект\n в портфолио',
+            body: '48 часов, 1 готовый проект\n в портфолио',
           },
           {
             title: '',
