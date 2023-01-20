@@ -86,9 +86,9 @@
       <button class="button">{texts[activeLang].buttons.allCourses}</button>
     </a>
   {:else}
-    <a href="https://forms.gle/oU9A5ouQXQGAg3Nk6" target="_blank">
-      <button class="button">{texts[activeLang].buttons.test}</button>
-    </a>
+<!--    <a href="https://forms.gle/oU9A5ouQXQGAg3Nk6" target="_blank">-->
+<!--      <button class="button">{texts[activeLang].buttons.test}</button>-->
+<!--    </a>-->
   {/if}
 </section>
 

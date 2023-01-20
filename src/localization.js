@@ -23,7 +23,7 @@ export const texts = {
       h2: {
         courses: 'Courses',
         advantages: 'The advantages of studying at Codify',
-        internship: 'Guaranteed Internship',
+        internship: 'Guaranteed Hackathon Internship',
         employment: 'Help in finding a job',
         students: 'Employed students',
         studentProjects: 'Works of our students',
@@ -53,19 +53,19 @@ export const texts = {
         company: 'Company:',
       },
       internship: {
-        employment: 'Employment',
+        employment: '',
         stages: [
           {
-            title: 'Stage 1',
-            body: 'You work\n on internal\n projects from Codify',
+            title: '',
+            body: '48 hours 1 completed project in the portfolio',
           },
           {
-            title: 'Stage 2',
-            body: 'Working in a team\non real\nprojects',
+            title: '',
+            body: 'IT team, consists of a project manager, designer, developers and testers',
           },
           {
-            title: 'Stage 3',
-            body: 'On successful\ncompletion of the project,\n you get the first\nmoney for the work',
+            title: '',
+            body: 'Upon successful completion of the project, you receive the first money for the work',
           },
         ],
       },
@@ -101,7 +101,7 @@ export const texts = {
       },
       contacts: {
         title: 'Contacts',
-        address: 'Isanov st. 105/3, 1st floor\n7 Microdistrict, 23 Str., Atlant House',
+        address: '7 Microdistrict, 23 Str., Atlant House\nIsanov st. 105/3, 1st floor',
       },
       endLinks: {
         privacy: 'Privacy Policy',
@@ -183,7 +183,7 @@ export const texts = {
       h2: {
         courses: 'Курсы',
         advantages: 'Преимущества обучения в Codify',
-        internship: 'Гарантированная стажировка',
+        internship: 'Гарантированная стажировка в формате ХАКАТОНА',
         employment: 'Помощь в трудоустройстве',
         students: 'Трудоустроенные студенты',
         studentProjects: 'Работы наших студентов',
@@ -213,19 +213,19 @@ export const texts = {
         },
       ],
       internship: {
-        employment: 'Трудоустройство',
+        employment: '',
         stages: [
           {
-            title: '1 этап',
-            body: 'Вы работаете\nнад внутренними\nпроектами от Codify',
+            title: '',
+            body: '48 часов 1 готовый проект\n в портфолио',
           },
           {
-            title: '2 этап',
-            body: 'Работаете в команде\nнад реальными\nпроектами',
+            title: '',
+            body: 'IT команда, состоит\n из проектного менеджера, дизайнера, разработчиков и тестировщиков',
           },
           {
-            title: '3 этап',
-            body: 'При успешном\nокончании проекта,\n Вы получаете первые\nденьги за работу',
+            title: '',
+            body: 'При успешном окончаний проекта, Вы получаете первые деньги за работу',
           },
         ],
       },
@@ -261,7 +261,7 @@ export const texts = {
       },
       contacts: {
         title: 'Контакты',
-        address: 'ул. Исанова 105/3, 1 этаж\n7мкр, 23 стр, дом Атлант',
+        address: '7мкр, 23 стр, дом Атлант\nул. Исанова 105/3, 1 этаж',
       },
       endLinks: {
         privacy: 'Политика конфиденциальности',
