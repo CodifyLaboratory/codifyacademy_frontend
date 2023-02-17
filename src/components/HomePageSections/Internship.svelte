@@ -19,7 +19,7 @@
   <h2>{text.h2.internship}</h2>
 
   <div class="internship__stages container">
-    {#if win < 650}
+    {#if win <= 750}
       <div class="mobileLine" />
     {/if}
     {#each text.internship.stages as stage}
@@ -28,7 +28,7 @@
           <div class="internshipStage__circle2" />
         </div>
         <b class="coloredText">{stage.title}</b>
-        <p>{stage.body}</p>
+        <p class="internshipStage_text">{stage.body}</p>
       </div>
     {/each}
     <div class="internshipStage finalStage">
@@ -52,7 +52,7 @@
   }
   .internship__stages {
     position: relative;
-    top: -58px;
+    top: -55px;
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(4, 1fr);
@@ -65,6 +65,7 @@
     text-align: center;
     white-space: pre-line;
     gap: 16px;
+    margin: 0 14%;
   }
   .internshipStage b {
     color: var(--green);
@@ -98,8 +99,7 @@
   .finalStage__img {
     position: absolute;
     top: -100px;
-    left: 0;
-    right: 0;
+    right: -55px;
     margin: 0 auto;
     width: 120px;
     height: 120px;
@@ -116,38 +116,54 @@
     position: absolute;
     background-color: var(--blue);
     top: 0;
-    right: 0;
-    left: 0;
-    margin: 0 auto;
+    left: 60px;
+
   }
-  @media screen and (max-width: 650px) {
+
+  @media screen and (max-width: 790px) {
+    .internship__stages {
+      top: -95px;
+    }
+  }
+
+  @media screen and (max-width: 750px) {
     .internshipStage b {
       margin-top: 5px;
+      display: none;
+    }
+    .internshipStage_text {
+      width: 100%;
+      padding-left: 90px;
+      text-align: start;
     }
     .sectionInternship {
       border: none;
     }
     .internship__stages {
       grid-template-columns: 1fr;
+
     }
     .internshipStage {
-      justify-self: start;
+      justify-self: flex-start;
       position: unset;
-      margin: 0 14%;
+      margin: 0;
     }
     .internshipStage:nth-child(3) {
-      justify-self: end;
+      justify-self: flex-start;
       position: unset;
     }
     .internshipStage__circle1 {
       top: unset;
+      right: unset;
+      left: 45px;
     }
     .finalStage {
-      justify-self: center;
+      justify-self: flex-start;
     }
     .finalStage__img {
       position: relative;
-      top: 0;
+      top: unset;
+      right: 0;
     }
     .finalStage > b {
       margin-top: 0px;
