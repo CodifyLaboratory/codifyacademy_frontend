@@ -30,6 +30,7 @@
       <a href="https://teens.codifylab.com/" target="_blank">{footerText.projects.codifyTeens}</a>
       <a href="https://lms.codifylab.com/ru" target="_blank">{footerText.projects.lms}</a>
       <a href="https://dev.codifylab.com/" target="_blank">{footerText.projects.lab}</a>
+      <a href="https://letscodify.io/" target="_blank">Letscodify</a>
     </div>
     <div class="contacts footerElement">
       <b>{footerText.contacts.title}</b>
@@ -48,7 +49,7 @@
             fill="#07FFE1"
           />
         </svg>
-        <p>+996 500 431 430</p>
+        <a href="https://api.whatsapp.com/send?phone=996500431430">+996 500 431 430</a>
       </div>
       <div>
         <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -71,7 +72,7 @@
           />
         </svg>
 
-        <p>info@codifylab.com</p>
+        <a href="mailto:info@codifylab.com">info@codifylab.com</a>
       </div>
       <div>
         <svg style="flex-shrink: 0" width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -85,7 +86,7 @@
           />
         </svg>
 
-        <p style="white-space: pre-wrap">{footerText.contacts.address}</p>
+        <p style="white-space: pre-wrap">{@html footerText.contacts.address}</p>
       </div>
     </div>
     <div class="social footerElement">

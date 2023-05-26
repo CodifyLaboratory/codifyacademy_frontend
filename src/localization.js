@@ -101,7 +101,7 @@ export const texts = {
       },
       contacts: {
         title: 'Contacts',
-        address: '7 Microdistrict, 23 Str., Atlant House\nIsanov st. 105/3, 1st floor',
+        address: '<a target="_blank" href="https://go.2gis.com/sp5qt">7 Microdistrict, 23 Str., Atlant House</a>\n<a href="https://go.2gis.com/2z2ih" target="_blank">Isanov st. 105/3, 1st floor</a>',
       },
       endLinks: {
         privacy: 'Privacy Policy',
@@ -261,7 +261,7 @@ export const texts = {
       },
       contacts: {
         title: 'Контакты',
-        address: '7мкр, 23 стр, дом Атлант\nул. Исанова 105/3, 1 этаж',
+        address: '<a target="_blank" href="https://go.2gis.com/sp5qt">7мкр, 23 стр, дом Атлант</a>\n<a href="https://go.2gis.com/2z2ih" target="_blank">ул. Исанова 105/3, 1 этаж</a>',
       },
       endLinks: {
         privacy: 'Политика конфиденциальности',
