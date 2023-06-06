@@ -74,6 +74,8 @@
     </div>
     <div class={`callUsModal ${callUsIsOpen ? 'openCall' : ''}`}>
       <img src="./assets/icons/close.svg" alt="closeIcon" on:click={() => (callUsIsOpen = false)} />
+      <a class="button contained" href="tel:+996 500 431 430">{headerText.callUs}</a>
+      <a class="button contained" href="https://api.whatsapp.com/send?phone=996500431430">WhatsApp</a>
       <p>
         {@html headerText.callUsText}
       </p>
@@ -94,17 +96,22 @@
   }
   .callUsModal {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
     top: 100px;
     right: -300px;
-    width: 280px;
+    width: 240px;
     border-radius: 15px;
     background-image: var(--blue-gradient);
     background-color: var(--blue);
-    padding: 15px;
+    padding: 20px 15px 15px;
     text-align: center;
     opacity: 0;
     transition: 0.4s all;
   }
+
   .callUsModal > img {
     position: absolute;
     width: 20px;

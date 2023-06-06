@@ -114,7 +114,8 @@ export const texts = {
       events: 'Events',
       contacts: 'Contacts',
       call: 'Connect with us',
-      callUsText: 'Call us or\n Write to us (WhatsApp):\n<b>+996 500 431 430</b>',
+      callUsText: '<b>+996 500 431 430</b>',
+      callUs: 'Call'
     },
 
     enroll: {
@@ -274,7 +275,8 @@ export const texts = {
       events: 'Мероприятия',
       contacts: 'Контакты',
       call: 'Связаться с нами',
-      callUsText: 'Позвоните нам или\nНапишите нам (WhatsApp):\n<b>+996 500 431 430</b>',
+      callUsText: '<b style="user-select: all">+996 500 431 430</b>',
+      callUs: 'Позвонить',
     },
     enroll: {
       postMessage: 'Ваша заявка успешно отправлена',

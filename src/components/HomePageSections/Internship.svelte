@@ -83,7 +83,7 @@
     left: 0;
     right: 0;
     margin: 0 auto;
-    top: -55px;
+    top: -57px;
     background: linear-gradient(177.99deg, #131315 -0.39%, #03032a 101.38%);
     filter: drop-shadow(-4px -4px 15px rgba(0, 157, 255, 0.16)) drop-shadow(4px 4px 15px rgba(0, 157, 255, 0.16));
   }
@@ -155,7 +155,7 @@
     .internshipStage__circle1 {
       top: unset;
       right: unset;
-      left: 45px;
+      left: 46px;
     }
     .finalStage {
       justify-self: flex-start;
@@ -166,7 +166,7 @@
       right: 0;
     }
     .finalStage > b {
-      margin-top: 0px;
+      margin-top: 0;
     }
   }
   @media screen and (max-width: 500px) {

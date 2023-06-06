@@ -19,7 +19,8 @@
   let offsetWidth = 250
   let scrollToEnroll = 10000
   function consultation() {
-    animateScroll.scrollTo({ element: '#enroll', duration: 1300, offset: -100 })
+      window.open(window.matchMedia("(max-width: 768px)").matches ? 'tel:+996 500 431 430' : 'https://api.whatsapp.com/send?phone=996500431430')
+    // animateScroll.scrollTo({ element: '#enroll', duration: 1300, offset: -100 }) // old version of button
   }
 
   onMount(() => {
@@ -131,7 +132,7 @@
   }
   @media screen and (max-width: 650px) {
     .firstSection > .container {
-      margin-top: 0px;
+      margin-top: 0;
     }
     .firstSection__buttons {
       flex-direction: column;
