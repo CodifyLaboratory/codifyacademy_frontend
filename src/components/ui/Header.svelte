@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from 'svelte'
   import * as animateScroll from 'svelte-scrollto'
   import { texts } from '../../localization'
   import { language } from '../../stores'
@@ -35,7 +34,7 @@
         />
       {/if}
       <a href="/">
-        <img src="./assets/icons/logo.svg" alt="logo" />
+        <img width="136px" height="28px" src="./assets/icons/logo.webp" alt="logo" />
       </a>
       <nav style={`display:${!isOpenMenu && win < 1050 ? 'none' : 'flex'}`}>
         <a href={`/${activeLang}/courses`} on:click={()=>{isOpenMenu = false}}>{headerText.academy}</a>
@@ -58,7 +57,7 @@
         {/if}
       </button>
       <button class="language" on:click={() => (showLanguages = !showLanguages)}>
-        <p>{activeLang.toUpperCase()}</p>
+        {activeLang.toUpperCase()}
         <img
           style={showLanguages ? 'transform: rotate(180deg);' : ''}
           src="./assets/icons/ArrowDown-small-white.svg"
@@ -148,6 +147,8 @@
     border: 1px solid #07ff5a;
     background-color: #0a0b18;
     transition: 0.2s all;
+    transform: translate3d(0, 0, 0);
+
     filter: drop-shadow(-4px -4px 10px #00ffa218) drop-shadow(4px 4px 15px #9dff001e);
   }
   .call:hover {

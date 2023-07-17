@@ -7,7 +7,7 @@
   <div class="card-icon">
     <img src={img} alt={title} />
   </div>
-  <div class="cardCircle" />
+  <div class="cardCircle" ></div>
 
   <b>{title}</b>
   <hr />
@@ -39,6 +39,7 @@
   .card-icon > img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
     border-radius: 50%;
   }
   .cardForPeople {

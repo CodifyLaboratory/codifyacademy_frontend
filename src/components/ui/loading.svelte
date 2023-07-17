@@ -2,7 +2,7 @@
   export let fullHeight = false
 </script>
 {#if fullHeight}
-  <img class="loadingLogo" src="./assets/icons/logo.svg" alt="logo" />
+  <img class="loadingLogo" width="136px" height="28px" src="./assets/icons/logo.webp" alt="logo" />
 {/if}
 <div class="loading">
   <div class="lds-roller">
@@ -33,7 +33,6 @@
     bottom: 0;
     width: 100%;
     height: 100vh;
-    top: 0;
     z-index: 20000;
     background-image: var(--primary-bg);
     display: flex;

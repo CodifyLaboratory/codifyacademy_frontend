@@ -57,7 +57,7 @@
     property="og:description"
     content="Курсы программирования в Бишкеке. Обучись актуальной профессии и начни зарабатывать"
   />
-  <meta property="og:image" content="https://codifylab.com/first-image.jpg" />
+  <meta property="og:image" content="https://codifylab.com/first-image.webp" />
   <meta property="og:image:alt" content="title image of site" />
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
   <meta property="og:image:width" content="1024" />
@@ -65,7 +65,7 @@
   <meta property="og:site_name" content="codifylab.com" />
   <meta property="og:locale" content="ru_RU" />
   <meta property="og:type" content="website" />
-  <meta property="og:image:secure_url" content="https://codifylab.com/first-image.jpg" />
+  <meta property="og:image:secure_url" content="https://codifylab.com/first-image.webp" />
 
   <meta property="twitter:title" content="Codify Academy | IT - курсы программирования в Бишкеке" />
   <meta
@@ -77,7 +77,7 @@
     name="twitter:description"
     content="Курсы программирования в Бишкеке. Обучись актуальной профессии и начни зарабатывать"
   />
-  <meta property="twitter:image" content="https://codifylab.com/first-image.jpg" />
+  <meta property="twitter:image" content="https://codifylab.com/first-image.webp" />
   <meta property="twitter:image:alt" content="title image of site" />
   <meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
@@ -85,7 +85,7 @@
 <div class="asd">
   {#if !course}
     <section style="height: 200vh;">
-      <img class="loadingLogo" src="./assets/icons/logo.svg" alt="logo" />
+      <img class="loadingLogo" width="136px" height="28px" src="./assets/icons/logo.webp" alt="logo" />
       <div class="loading">
         <div class="lds-roller">
           <div />
@@ -131,7 +131,6 @@
     bottom: 0;
     width: 100vw;
     height: 100vh;
-    top: 0;
     z-index: 20000;
     background-image: var(--primary-bg);
     display: flex;

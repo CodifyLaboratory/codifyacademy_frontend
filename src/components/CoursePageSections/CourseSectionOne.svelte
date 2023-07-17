@@ -30,7 +30,7 @@
       <p>{course.description}</p>
     </div>
     <div class="image_and_info">
-      <img class="courseBg" src={course.image || './assets/images/course-bg.png'} alt="course-bg" />
+      <img class="courseBg" src={course.image || './assets/images/course-bg.webp'} alt="course-bg" />
       <div class="fullInfo container">
         <div class="courseInfo">
           <div>

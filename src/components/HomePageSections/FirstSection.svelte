@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte'
+  import { lazyLoad } from '../lazyLoad'
   import { texts } from '../../localization'
-  import * as animateScroll from 'svelte-scrollto'
   import { language } from '../../stores'
 
   let activeLang = 'ru'
@@ -53,7 +53,7 @@
       </div>
     </div>
     <div class="firstImg">
-      <img src="./assets/images/home/homePageGif.gif" alt="world" />
+      <img use:lazyLoad={"./assets/images/home/homePageGif.webp"} src="./assets/images/home/homePageGif.webp" alt="world" />
     </div>
   </div>
 </section>

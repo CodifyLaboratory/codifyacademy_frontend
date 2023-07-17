@@ -1,4 +1,4 @@
-/*! bulma.io v0.9.0 | MIT License | github.com/jgthms/bulma */
+
 @-webkit-keyframes spinAround {
   from {
     transform: rotate(0deg);
@@ -323,7 +323,6 @@ html {
   -webkit-text-size-adjust: 100%;
      -moz-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
-          text-size-adjust: 100%;
 }
 
 article,
@@ -347,7 +346,6 @@ textarea {
 code,
 pre {
   -moz-osx-font-smoothing: auto;
-  -webkit-font-smoothing: auto;
   font-family: monospace;
 }
 
@@ -451,7 +449,7 @@ table th {
 .box {
   background-color: white;
   border-radius: 6px;
-  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
   color: #4a4a4a;
   display: block;
   padding: 1.25rem;
@@ -1745,7 +1743,6 @@ fieldset[disabled] .button {
 }
 
 .button.is-loading::after {
-  position: absolute;
   left: calc(50% - (1em / 2));
   top: calc(50% - (1em / 2));
   position: absolute !important;
@@ -4588,7 +4585,7 @@ fieldset[disabled] .select select:hover {
 
 .card {
   background-color: white;
-  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
   color: #4a4a4a;
   max-width: 100%;
   position: relative;
@@ -6514,7 +6511,7 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 
 .panel {
   border-radius: 6px;
-  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
   font-size: 1rem;
 }
 
@@ -8720,8 +8717,6 @@ label.panel-block:hover {
   flex-basis: 0;
   flex-grow: 1;
   flex-shrink: 1;
-  min-height: -webkit-min-content;
-  min-height: -moz-min-content;
   min-height: min-content;
 }
 

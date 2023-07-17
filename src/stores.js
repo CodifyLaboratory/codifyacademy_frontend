@@ -8,7 +8,6 @@ export const seo = writable({
   titleSuffix: s.siteTitleSuffix,
   image: {
     alt: s.siteImageAlt,
-    heigth: s.siteImageHeigth,
     src: s.siteImageSrc,
     width: s.siteImageWidth,
     height: s.siteImageHeight,
@@ -22,4 +21,3 @@ export const seo = writable({
 
 export const language = writable('ru')
 
-export const offSetEnroll = writable(0);

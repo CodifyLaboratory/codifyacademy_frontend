@@ -66,7 +66,7 @@
     property="og:description"
     content="Курсы программирования в Бишкеке. Обучись актуальной профессии и начни зарабатывать"
   />
-  <meta property="og:image" content="https://codifylab.com/first-image.jpg" />
+  <meta property="og:image" content="https://codifylab.com/first-image.webp" />
   <meta property="og:image:alt" content="title image of site" />
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
   <meta property="og:image:width" content="1024" />
@@ -74,7 +74,7 @@
   <meta property="og:site_name" content="codifylab.com" />
   <meta property="og:locale" content="ru_RU" />
   <meta property="og:type" content="website" />
-  <meta property="og:image:secure_url" content="https://codifylab.com/first-image.jpg" />
+  <meta property="og:image:secure_url" content="https://codifylab.com/first-image.webp" />
 
   <meta property="twitter:title" content="Codify Academy | IT - курсы программирования в Бишкеке" />
   <meta
@@ -86,7 +86,7 @@
     name="twitter:description"
     content="Курсы программирования в Бишкеке. Обучись актуальной профессии и начни зарабатывать"
   />
-  <meta property="twitter:image" content="https://codifylab.com/first-image.jpg" />
+  <meta property="twitter:image" content="https://codifylab.com/first-image.webp" />
   <meta property="twitter:image:alt" content="title image of site" />
   <meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
@@ -183,6 +183,8 @@
     .paginate :global(.option.next:hover){
       border: 2px solid var(--green);
       filter: drop-shadow(2px 2px 15px #07ffe23f);
+      transform: translate3d(0, 0, 0);
+
     }
     .paginate :global(.option.prev:hover svg path),
     .paginate :global(.option.next:hover svg path){
@@ -217,16 +219,23 @@
   .all {
     border-color: rgba(247, 148, 30, 1);
     filter: drop-shadow(4px 4px 10px #f7951e2f);
+    transform: translate3d(0, 0, 0);
+
   }
 
   .events {
     border-color: rgba(103, 3, 180, 1);
     filter: drop-shadow(4px 4px 10px rgba(169, 0, 188, 0.199));
+    transform: translate3d(0, 0, 0);
+
   }
   .news {
     border-color: rgba(221, 255, 0, 1);
     filter: drop-shadow(4px 4px 10px #ddff002d);
+    transform: translate3d(0, 0, 0);
+
   }
+
   .active0 {
     background: rgba(247, 148, 30, 1);
     color: black;

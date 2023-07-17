@@ -120,19 +120,26 @@
   .allCourses {
     border-color: rgba(247, 148, 30, 1);
     filter: drop-shadow(4px 4px 10px #f7951e2f);
+    transform: translate3d(0, 0, 0);
   }
 
   .dev {
     border-color: rgba(103, 3, 180, 1);
     filter: drop-shadow(4px 4px 10px rgba(169, 0, 188, 0.199));
+    transform: translate3d(0, 0, 0);
+
   }
   .design {
     border-color: rgba(221, 255, 0, 1);
     filter: drop-shadow(4px 4px 10px #ddff002d);
+    transform: translate3d(0, 0, 0);
+
   }
   .managment {
     border-color: rgba(0, 255, 98, 1);
     filter: drop-shadow(4px 4px 10px #00ff6233);
+    transform: translate3d(0, 0, 0);
+
   }
   .buttonCourse:hover {
     border-color: var(--light-blue) !important;
