@@ -6,6 +6,7 @@ cypress/screenshots
 .sessions
 __sapper__
 .env
+.env.production
 .idea
 cypress
 package-lock.json

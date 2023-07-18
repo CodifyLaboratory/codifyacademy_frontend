@@ -1,8 +1,8 @@
 {
 	"background_color": "#ffffff",
 	"theme_color": "#333333",
-	"name": "MY-LA-STORE",
-	"short_name": "MY-LA-STORE",
+	"name": "CODIFY-ACADEMY",
+	"short_name": "CODIFY-ACADEMY",
 	"display": "minimal-ui",
 	"start_url": "/",
 	"icons": [

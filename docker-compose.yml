@@ -4,10 +4,10 @@ services:
     build: .
     restart: always
     environment:
-      - VIRTUAL_HOST=holoclinic.io
+      - VIRTUAL_HOST=codifylab.com
       - VIRTUAL_PORT=3000
     networks:
-      mypupio: {}
+      codifyAcademy: {}
 networks:
-  mypupio:
-    name: mypupio
+  codifyAcademy:
+    name: codifyAcademy
