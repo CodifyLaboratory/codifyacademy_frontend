@@ -25,7 +25,6 @@ self.addEventListener('activate', event => {
 			for (const key of keys) {
 				if (key !== ASSETS) await caches.delete(key);
 			}
-
 			self.clients.claim();
 		})
 	);
@@ -35,7 +34,6 @@ self.addEventListener('fetch', event => {
 	if (event.request.method !== 'GET' || event.request.headers.has('range')) return;
 
 	const url = new URL(event.request.url);
-
 	// don't try to handle e.g. data: URIs
 	if (!url.protocol.startsWith('http')) return;
 
@@ -70,13 +68,15 @@ self.addEventListener('fetch', event => {
 				try {
 					const response = await fetch(event.request);
 					cache.put(event.request, response.clone());
+
 					return response;
 				} catch(err) {
 					const response = await cache.match(event.request);
 					if (response) return response;
 
-					throw err;
+					// throw err;
 				}
 			})
 	);
+
 });

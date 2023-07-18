@@ -37,7 +37,6 @@
       .get(`https://codifylab.com/${activeLang}/api/courses/${id}`)
       .then(({ data }) => {
         course = data
-        console.log(course)
       })
       .catch(error => {
         console.log(error)

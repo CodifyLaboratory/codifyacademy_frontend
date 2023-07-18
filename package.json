@@ -3,7 +3,7 @@
   "description": "Codify Academy 23",
   "version": "0.0.1",
   "scripts": {
-    "start": "sapper dev",
+    "start": "node __sapper__/build",
     "build": "sapper build --legacy",
     "export": "sapper export --legacy",
     "live": "node __sapper__/build"
