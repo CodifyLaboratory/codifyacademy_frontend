@@ -2,46 +2,28 @@
   import CardForCourses from '../ui/Cards/CardForCourses.svelte'
   import { texts } from '../../localization'
   import { language } from '../../stores'
-  import { onMount } from 'svelte'
-  import axios from 'axios'
+  import {request} from "../../api";
   export let length = 0
+  let activeBtn = 0
   let activeLang = 'ru'
   let courseCards = []
   let currentCards = []
+  let text = texts[activeLang].buttons
+
   language.subscribe(async lang => {
     activeLang = lang
-    if (courseCards.length) {
-      axios
-        .get(`https://codifylab.com/${activeLang}/api/courses/`)
-        .then(({ data }) => {
-          courseCards = data
-          currentCards = courseCards
-          filter(0)
-          if (length && courseCards.length > length) {
-            currentCards.length = length
-          }
-        })
-        .catch(error => {
-          console.log(error)
-        })
-    }
+    request('get', 'courses/', lang)
+            .then((data) => {
+              courseCards = data
+              currentCards = data
+              filter(0)
+              if (length && courseCards.length > length) {
+                currentCards.length = length
+              }
+            })
   })
-  let text = texts[activeLang].buttons
-  onMount(async () => {
-    axios
-      .get(`https://codifylab.com/${activeLang}/api/courses/`)
-      .then(({ data }) => {
-        courseCards = [...data]
-        currentCards = [...courseCards]
-        if (length && courseCards.length > length) {
-          currentCards.length = length
-        }
-      })
-      .catch(error => {
-        console.log(error)
-      })
-  })
-  let activeBtn = 0
+
+
 
   function filterCards(type) {
     return courseCards.filter(card => card.study_area === type)
