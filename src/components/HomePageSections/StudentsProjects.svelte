@@ -79,6 +79,9 @@
 </section>
 
 <style>
+  h2 {
+    text-align: center !important;
+  }
   .studentsProjects {
     border-radius: 10px;
     overflow: hidden;

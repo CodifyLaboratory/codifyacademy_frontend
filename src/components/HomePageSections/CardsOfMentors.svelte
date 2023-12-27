@@ -50,7 +50,7 @@
         console.log(error)
       })
   })
-  let win
+  let win=0
   $: elementsPerPage = win > 1050 ? 3 : win < 1050 && win > 750 ? 2 : 1
   $: elementsWithFilter = courseId && mentors.length < elementsPerPage ? mentors.length : elementsPerPage
 </script>
@@ -90,6 +90,9 @@
 </section>
 
 <style>
+  h2 {
+    text-align: center !important;
+  }
   .mentor-prof {
     display: flex;
     height: 24px;

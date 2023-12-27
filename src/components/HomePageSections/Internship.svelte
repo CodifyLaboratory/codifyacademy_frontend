@@ -41,6 +41,11 @@
 </section>
 
 <style>
+  h2 {
+    padding: 0 5vw;
+    height: 48px;
+    text-align: center !important;
+  }
   .sectionInternship {
     background: #131315;
     border-top: 2px solid var(--blue);
@@ -52,7 +57,7 @@
   }
   .internship__stages {
     position: relative;
-    top: -55px;
+    top: -38px;
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(4, 1fr);
@@ -123,9 +128,9 @@
   }
 
   @media screen and (max-width: 790px) {
-    .internship__stages {
-      top: -95px;
-    }
+    /*.internship__stages {*/
+    /*  top: -95px;*/
+    /*}*/
   }
 
   @media screen and (max-width: 750px) {

@@ -38,8 +38,7 @@
       </a>
       <nav style={`display:${!isOpenMenu && win < 1050 ? 'none' : 'flex'}`}>
         <a href={`/${activeLang}/courses`} on:click={()=>{isOpenMenu = false}}>{headerText.academy}</a>
-        <a href="https://teens.codifylab.com/" target="_blank" on:click={()=>{isOpenMenu = false}}>{headerText.teens}</a>
-        <a href={`/${activeLang}/events`} on:click={()=>{isOpenMenu = false}}>{headerText.events}</a>
+        <a href="/teens" on:click={()=>{isOpenMenu = false}}>{headerText.teens}</a>
         <button
           on:click={() => {
             animateScroll.scrollToBottom({ duration: 2000 })
@@ -56,20 +55,20 @@
           <img src="./assets/icons/phone.svg" alt="phone" />
         {/if}
       </button>
-      <button class="language" on:click={() => (showLanguages = !showLanguages)}>
-        {activeLang.toUpperCase()}
-        <img
-          style={showLanguages ? 'transform: rotate(180deg);' : ''}
-          src="./assets/icons/ArrowDown-small-white.svg"
-          alt="arrow-down"
-        />
-      </button>
-      {#if showLanguages}
-        <div class="languageDropDown">
-          <p on:click={() => changeLang('ru')}>RU</p>
-          <p on:click={() => changeLang('en')}>EN</p>
-        </div>
-      {/if}
+<!--      <button class="language" on:click={() => (showLanguages = !showLanguages)}>-->
+<!--        {activeLang.toUpperCase()}-->
+<!--        <img-->
+<!--          style={showLanguages ? 'transform: rotate(180deg);' : ''}-->
+<!--          src="./assets/icons/ArrowDown-small-white.svg"-->
+<!--          alt="arrow-down"-->
+<!--        />-->
+<!--      </button>-->
+<!--      {#if showLanguages}-->
+<!--        <div class="languageDropDown">-->
+<!--          <p on:click={() => changeLang('ru')}>RU</p>-->
+<!--          <p on:click={() => changeLang('en')}>EN</p>-->
+<!--        </div>-->
+<!--      {/if}-->
     </div>
     <div class={`callUsModal ${callUsIsOpen ? 'openCall' : ''}`}>
       <img src="./assets/icons/close.svg" alt="closeIcon" on:click={() => (callUsIsOpen = false)} />

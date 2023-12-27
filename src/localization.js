@@ -1,5 +1,9 @@
 export const texts = {
   en: {
+    teens: {
+      h1: `Академия\nпрограммирования\nи дизайна`,
+      subtitle: 'для детей и подростков от 7 до 17 лет',
+    },
     error: {
       notFound: 'Oops! Page not found',
       goHome: 'Go to homepage',
@@ -11,15 +15,17 @@ export const texts = {
       news: 'News',
       all: 'All',
       allCourses: 'All courses',
+      choseCourse: 'Choose a course',
       design: 'Design',
-      managment: ' Management',
+      management: ' Management',
       less: '',
       enroll: 'Sign up for a course',
       consultation: 'Get Advice',
       test: 'Pass the test',
     },
     homePage: {
-      h1: 'Learn an in-demand \n<strong class="coloredText">IT- profession </strong>\n and start earning',
+      h1: 'Get a current specialty',
+      subtitle: 'Helping you learn new skills and start a career in IT',
       h2: {
         courses: 'Courses',
         advantages: 'The advantages of studying at Codify',
@@ -161,6 +167,10 @@ export const texts = {
   },
 
   ru: {
+    teens: {
+      h1: `Академия\nпрограммирования\nи дизайна`,
+      subtitle: 'для детей и подростков от 7 до 17 лет',
+    },
     error: {
       notFound: 'Ой! Эта страница не найдена',
       goHome: 'Вернуться на главную',
@@ -171,16 +181,27 @@ export const texts = {
       news: 'Новости',
       dev: 'Разработка',
       all: 'Все',
+      choseCourse: 'Выбрать курс',
       allCourses: 'Все курсы',
       design: 'Дизайн',
-      managment: 'Менеджмент',
+      management: 'Менеджмент',
       less: '',
       enroll: 'Записаться на курс',
       consultation: 'Получить консультацию',
       test: 'Пройти тест',
     },
+    findEducation : {
+      title: 'Поможем подобрать обучение',
+      input_name: 'Имя',
+      input_phone: 'Номер телефона',
+      button: 'Хочу план обучения',
+      subText: 'Отправляя заявку, вы даете согласие на обработку персональных данных.',
+      subLink : ''
+    },
     homePage: {
-      h1: 'Освой востребованную\n<strong class="coloredText">IT-профессию</strong>\nи начни зарабатывать',
+      h1: 'Получите актуальную специальность',
+      subtitle: 'Помогаем освоить новые навыки и начать карьеру в IT',
+
       h2: {
         courses: 'Курсы',
         advantages: 'Преимущества обучения в Codify',
@@ -283,7 +304,7 @@ export const texts = {
       name: 'Имя',
       phone: 'Номер телефона',
       email: 'E-mail',
-      check: 'Нажимая на кнопку, я соглашаюсь на обработку персональных данных и с правилами пользования Платформы',
+      check: 'Отправляя заявку, вы даете согласие на обработку персональных данных.',
     },
     courseFirst: {
       format: 'формат обучения',

@@ -12,7 +12,7 @@
 
   language.subscribe(async lang => {
     activeLang = lang
-    request('get', 'courses/', lang)
+    await request('GET', 'courses/')
             .then((data) => {
               courseCards = data
               currentCards = data
@@ -54,8 +54,8 @@
     <button class={`buttonCourse design ${activeBtn === 2 ? 'active2' : ''}`} on:click={() => filter(2)}
       >{texts[activeLang].buttons.design}</button
     >
-    <button class={`buttonCourse managment ${activeBtn === 3 ? 'active3' : ''}`} on:click={() => filter(3)}
-      >{texts[activeLang].buttons.managment}</button
+    <button class={`buttonCourse management ${activeBtn === 3 ? 'active3' : ''}`} on:click={() => filter(3)}
+      >{texts[activeLang].buttons.management}</button
     >
   </div>
   <div class="coursesCards">
@@ -64,9 +64,13 @@
     {/each}
   </div>
   {#if length}
+    <div style="display: flex; justify-content: center">
+
     <a href={`${activeLang}/courses`}>
       <button class="button">{texts[activeLang].buttons.allCourses}</button>
     </a>
+    </div>
+
   {:else}
 <!--    <a href="https://forms.gle/oU9A5ouQXQGAg3Nk6" target="_blank">-->
 <!--      <button class="button">{texts[activeLang].buttons.test}</button>-->
@@ -75,6 +79,9 @@
 </section>
 
 <style>
+  h2 {
+    text-align: center !important;
+  }
   .sectionCourses {
     text-align: center;
   }
@@ -117,7 +124,7 @@
     transform: translate3d(0, 0, 0);
 
   }
-  .managment {
+  .management {
     border-color: rgba(0, 255, 98, 1);
     filter: drop-shadow(4px 4px 10px #00ff6233);
     transform: translate3d(0, 0, 0);

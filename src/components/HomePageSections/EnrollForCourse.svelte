@@ -6,7 +6,7 @@
 
   let message = ''
   let isPost = false
-  let isDesabled = false
+  let isDisabled = false
   let activeLang = 'ru'
 
   let text = texts[activeLang]
@@ -22,7 +22,7 @@
       Authorization: 'b8faa2c98db86c13fadc2e339bf33743',
       'content-Type': 'application/json',
     }
-    isDesabled = true
+    isDisabled = true
     axios
       .post(
         'https://codifylab.com/ru/api/contact_form/',
@@ -55,9 +55,10 @@
       .catch(err => {
         message = err.response.data.email?.join() || 'что-то пошло не так'
         isPost = true
-        isDesabled = false
+        isDisabled = false
         setTimeout(() => {
-          ;(message = ''), (isPost = false)
+          message = ''
+          isPost = false
         }, 5000)
       })
   }
@@ -71,8 +72,8 @@
         <p class={`successPost ${isPost ? 'post' : ''}`}>{message || text.enroll.postMessage}</p>
         <input required type="text" placeholder={text.enroll.name + '*'} />
         <input required type="number" class="phoneInput" placeholder={text.enroll.phone + '*'} />
-        <input type="email" placeholder={text.enroll.email} />
-        <button disabled={isDesabled} class="button contained">{text.buttons.enroll}</button>
+<!--        <input type="email" placeholder={text.enroll.email} />-->
+        <button disabled={isDisabled} class="button contained">{text.buttons.enroll}</button>
       </div>
       <div class="formCheck">
         <input required type="checkbox" />
@@ -82,7 +83,7 @@
   </div>
 </section>
 
-<style>
+<style lang="scss">
   .button:disabled {
     opacity: 0.5;
     pointer-events: none;
@@ -125,7 +126,15 @@
     padding: 100px 0;
     background-color: #131315;
   }
-  .formInputs,
+  .formInputs {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+     @media (max-width: 768px) {
+       grid-template-columns: 100%;
+     }
+  }
   .formCheck {
     width: 100%;
     position: relative;
@@ -134,7 +143,7 @@
     gap: 20px;
   }
   .formInputs > input {
-    width: 27%;
+    width: 100%;
     min-width: 230px;
     padding: 10px 30px;
     line-height: 1.2rem;
@@ -173,10 +182,6 @@
     display: none;
   }
   @media screen and (max-width: 1050px) {
-    .formInputs {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
     .formCheck > input {
       width: 20px;
       height: 20px;
@@ -185,17 +190,17 @@
       width: 100%;
       min-width: 230px;
       max-width: 4900px;
-      align-self: center;
-      justify-self: center;
     }
     .formInputs button {
-      justify-self: flex-end;
     }
   }
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 768px) {
     .formInputs {
       display: grid;
       grid-template-columns: 1fr;
+    }
+    .formInputs > input {
+      min-height: 51px;
     }
     .formCheck > input {
       width: 50px;

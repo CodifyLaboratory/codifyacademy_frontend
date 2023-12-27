@@ -42,6 +42,10 @@
 </section>
 
 <style>
+  h2 {
+    padding: 0 5vw;
+    text-align: center !important;
+  }
   .sectionAdvantage {
     padding-bottom: 280px;
   }

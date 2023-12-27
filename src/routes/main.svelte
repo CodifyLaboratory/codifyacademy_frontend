@@ -31,7 +31,6 @@
   />
   <meta property="og:image" content="https://codifylab.com/first-image.webp" />
   <meta property="og:image:alt" content="title image of site" />
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
   <meta property="og:image:width" content="1024" />
   <meta property="og:image:height" content="1024" />
   <meta property="og:site_name" content="codifylab.com" />
@@ -84,7 +83,7 @@
   </section>
 {/if}
 
-<style>
+<style lang="scss">
   .loadingLogo {
     position: fixed;
     top: 50px;

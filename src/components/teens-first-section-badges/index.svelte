@@ -1,0 +1,42 @@
+<script>
+  import { language } from '../../stores'
+    export let course
+  let activeLang = 'ru'
+
+  language.subscribe(lang => {
+    activeLang = lang
+  })
+
+
+</script>
+
+<div class="card-badges">
+    <span class="badge">{course.age_category === 'teens' ? "12-17 лет" : "7-12 лет"}</span>
+    <span class="badge">{course.duration_str}</span>
+    {#each course.study_format as format}
+        <span class="badge">{format === 'online' ? 'Онлайн' : 'Офлайн'}</span>
+    {/each}
+</div>
+
+<style lang="scss">
+    .card-badges {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    @media (max-width: 768px) {
+        gap: 5px;
+    }
+    }
+    .badge {
+        padding: 15px 20px;
+        border-radius: 100px;
+        font-weight: 400;
+        border: 1px solid white;
+        color: white;
+        font-size: 14px;
+    @media (max-width: 768px) {
+        font-size: 12px;
+        padding: 10px;
+    }
+    }
+</style>

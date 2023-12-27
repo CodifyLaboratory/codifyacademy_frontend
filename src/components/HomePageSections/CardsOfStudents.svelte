@@ -60,6 +60,9 @@
 </section>
 
 <style>
+  h2 {
+    text-align: center !important;
+  }
   .student-work {
     margin-bottom: 10px;
   }

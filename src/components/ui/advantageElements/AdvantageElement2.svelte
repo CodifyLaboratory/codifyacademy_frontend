@@ -10,7 +10,7 @@
   </div>
   <div class="design2">
     <div class="circle2">
-      <img src="./assets/icons/Advantage/managment.svg" alt="managment" />
+      <img src="./assets/icons/Advantage/management.svg" alt="management" />
     </div>
   </div>
 </div>

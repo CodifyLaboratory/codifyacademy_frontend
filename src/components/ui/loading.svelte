@@ -1,10 +1,12 @@
 <script>
   export let fullHeight = false
+  export let vh = 100
+  export let isTransparent= false
 </script>
 {#if fullHeight}
   <img class="loadingLogo" width="136px" height="28px" src="./assets/icons/logo.webp" alt="logo" />
 {/if}
-<div class="loading">
+<div class="loading" style={`min-height: ${vh}vh; background-image : ${isTransparent ? 'none' : 'var(--primary-bg)'}`}>
   <div class="lds-roller">
     <div />
     <div />
@@ -32,9 +34,7 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 100vh;
     z-index: 20000;
-    background-image: var(--primary-bg);
     display: flex;
     justify-content: center;
     align-items: center;

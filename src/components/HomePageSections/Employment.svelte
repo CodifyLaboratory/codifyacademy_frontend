@@ -40,6 +40,9 @@
 <svelte:window bind:scrollY={y} />
 
 <style>
+  h2 {
+    text-align: center !important;
+  }
   .sectionEmployment {
     background: #131315;
   }

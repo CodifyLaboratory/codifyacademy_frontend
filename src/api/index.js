@@ -1,9 +1,15 @@
 import axios from "axios";
-import {language} from "../stores";
 
-const SITE_URL = 'https://codifylab.com/'
-export const request = (method, url, lang) => {
-  return axios[method](`${SITE_URL}${lang}/api/${url}`)
+export const request = (method, url, params, payload) => {
+  return axios({
+    baseURL: 'http://192.168.68.120:8000/ru/api/',
+    url,
+    headers: {'ngrok-skip-browser-warning': 'true',
+    },
+    method,
+    data: payload,
+    params
+  })
       .then(({ data }) => data)
       .catch(error => {
         console.log(error)
