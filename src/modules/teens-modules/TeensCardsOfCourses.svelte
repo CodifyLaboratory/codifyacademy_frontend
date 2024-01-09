@@ -7,7 +7,6 @@
   let length = 4
   let activeBtn = 0
   let activeLang = 'ru'
-  let courseCards = []
   let currentCards = []
   let text = texts[activeLang].buttons
 
@@ -15,10 +14,9 @@
     activeLang = lang
     request('get', 'children-courses/')
       .then((data) => {
-        courseCards = data || []
         currentCards = data || []
         filter(0)
-        if (length && courseCards.length > length) {
+        if (length && data.length > length) {
           currentCards.length = length
         }
       })
@@ -26,23 +24,27 @@
 
 
 
-  function filterCards(type) {
-    return courseCards.filter(card => card.study_area === type)
+
+  function filterCards(age_category) {
+    request('get', 'children-courses/', {age_category})
+      .then((data) => {
+        currentCards = data || []
+        if (length && data.length > length) {
+          currentCards.length = length
+        }
+      })
   }
   function filter(tab) {
     activeBtn = tab
     if (!tab) {
-      currentCards = courseCards
+      filterCards()
     } else if (tab === 1) {
-      currentCards = filterCards('Development')
+      filterCards('children')
     } else if (tab === 2) {
-      currentCards = filterCards('Design')
-    } else if (tab === 3) {
-      currentCards = filterCards('Management')
+      filterCards('teens')
     }
   }
 
-  console.log('active', courseCards)
 </script>
 
 <section class="sectionCourses">

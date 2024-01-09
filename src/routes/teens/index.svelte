@@ -6,6 +6,11 @@
   import TeensFreeLesson from "../../modules/teens-modules/TeensFreeLesson.svelte";
   import TeensAdvantages from "../../modules/teens-modules/TeensAdvantages.svelte";
   import EducationLicense from "../../components/HomePageSections/EducationLicense.svelte";
+  import EnrollForCourse from "../../components/HomePageSections/EnrollForCourse.svelte";
+  import TeensStudentProject from "../../modules/teens-modules/TeensStudentProject.svelte";
+  import TeensFAQ from "../../modules/teens-modules/TeensFAQ.svelte";
+  import TeensLocation from "../../modules/teens-modules/TeensLocation.svelte";
+  import InstaReviews from "../../modules/InstaReviews.svelte";
 
   let loading = true
 
@@ -20,8 +25,12 @@
     <TeensCardsOfCourses length={4} />
     <TeensFreeLesson />
     <TeensAdvantages />
-    <StudentsProjects />
+    <TeensStudentProject />
+    <InstaReviews />
     <EducationLicense />
+    <TeensLocation />
+    <TeensFAQ />
+    <EnrollForCourse />
 {:else}
     <section style="height: 200vh;">
         <img class="loadingLogo" width="136px" height="28px" src="./assets/icons/logo.webp" alt="logo" />

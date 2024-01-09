@@ -3,6 +3,7 @@
 
   import { texts } from '../../localization'
   import { language } from '../../stores'
+  import {request} from "../../api";
 
   let message = ''
   let isPost = false
@@ -23,16 +24,11 @@
       'content-Type': 'application/json',
     }
     isDisabled = true
-    axios
-      .post(
-        'https://codifylab.com/ru/api/contact_form/',
-        {
-          name: e.target[0].value,
-          phone_number: e.target[1].value,
-          email: e.target[2].value ? e.target[2].value : null,
-        },
-        { headers: { Authorization: '3xUcq19gx6xJWopmfpuNjZAnTyS9PDiEFunC99QVNXK4JO3YDdqbTgjS9LFyV9dL' } }
-      )
+    request('post', 'contact-form/submit/', null, {
+      name: e.target[0].value,
+      phone_number: e.target[1].value,
+      comment: 'Консультация'
+    })
       .then(() => {
         axios
           .post(
@@ -41,15 +37,18 @@
               first_name: e.target[0].value,
               phone: e.target[1].value,
               email: e.target[2].value ? e.target[2].value : null,
+              extra_comments: ['Консультация']
             },
             { headers }
           )
           .then(() => {
             isPost = true
-            message = ''
+            message = 'Заявка отправлена'
             setTimeout(() => {
+              message = ''
               isPost = false
-            }, 5000)
+              isDisabled=false
+            }, 10000)
           })
       })
       .catch(err => {
@@ -67,6 +66,12 @@
 <section class="sectionEnroll" id="enroll">
   <div class="container">
     <h2>{text.homePage.h2.enroll}</h2>
+    <div class="description-box">
+      <p>
+        {text.enroll.description}
+      </p>
+
+    </div>
     <form on:submit={submit}>
       <div class="formInputs">
         <p class={`successPost ${isPost ? 'post' : ''}`}>{message || text.enroll.postMessage}</p>
@@ -84,6 +89,16 @@
 </section>
 
 <style lang="scss">
+  .description-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+     & p {
+       max-width: 875px;
+       text-align: center;
+       padding-bottom: 20px;
+     }
+  }
   .button:disabled {
     opacity: 0.5;
     pointer-events: none;
@@ -122,13 +137,13 @@
     }
   }
   .sectionEnroll {
-    margin-top: 160px;
     padding: 100px 0;
     background-color: #131315;
   }
   .formInputs {
     display: grid;
     gap: 20px;
+    position: relative;
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
      @media (max-width: 768px) {

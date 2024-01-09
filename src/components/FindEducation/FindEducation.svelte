@@ -3,6 +3,7 @@
   import { language } from '../../stores'
   import Loading from '../../components/ui/loading.svelte'
   import axios from "axios";
+  import {request} from "../../api";
 
   let activeLang = 'ru'
   let message = ''
@@ -19,16 +20,11 @@
       'content-Type': 'application/json',
     }
     isDisabled = true
-    axios
-      .post(
-        'https://codifylab.com/ru/api/contact_form/',
-        {
-          name: e.target[0].value,
-          phone_number: e.target[1].value,
-          email: e.target[2].value ? e.target[2].value : null,
-        },
-        { headers: { Authorization: '3xUcq19gx6xJWopmfpuNjZAnTyS9PDiEFunC99QVNXK4JO3YDdqbTgjS9LFyV9dL' } }
-      )
+    request('post', 'contact-form/submit/', null, {
+      name: e.target[0].value,
+      phone_number: e.target[1].value,
+      comment: 'Поможем подобрать обучение'
+    })
       .then(() => {
         axios
           .post(
@@ -37,15 +33,16 @@
               first_name: e.target[0].value,
               phone: e.target[1].value,
               email: e.target[2].value ? e.target[2].value : null,
+              extra_comments: ['Поможем подобрать обучение']
             },
             { headers }
           )
           .then(() => {
             isPost = true
             message = ''
-            // setTimeout(() => {
-            //   isPost = false
-            // }, 5000)
+            setTimeout(() => {
+              isPost = false
+            }, 5000)
           })
       })
       .catch(err => {
@@ -55,7 +52,6 @@
         setTimeout(() => {
           message = ''
           isPost = false
-
         }, 5000)
       })
   }

@@ -34,7 +34,7 @@ body {
   font-family: 'NoirPro', sans-serif;
 }
 body {
-  background-image: var(--primary-bg);
+  background: #111119;
 }
 .container {
   width: 90%;

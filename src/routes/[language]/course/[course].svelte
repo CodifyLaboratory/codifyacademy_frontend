@@ -1,3 +1,13 @@
+<script context="module">
+  import {request} from "../../../api";
+  export async function preload(page) {
+    const { course } = page.params;
+    const course_data = await request('get', `courses/${course}`)
+
+    return { course_data };
+  }
+</script>
+
 <script>
   import CourseSectionOne from '../../../components/CoursePageSections/CourseSectionOne.svelte'
   import CourseWhy from '../../../components/CoursePageSections/CourseWhy.svelte'
@@ -5,43 +15,14 @@
   import CoursePlan from '../../../components/CoursePageSections/CoursePlan.svelte'
   import Internship from '../../../components/HomePageSections/Internship.svelte'
   import Employment from '../../../components/HomePageSections/Employment.svelte'
-  import { onMount } from 'svelte'
-  import axios from 'axios'
-  import { language } from '../../../stores'
   import CardsOfMentors from '../../../components/HomePageSections/CardsOfMentors.svelte'
   import StudentsProjects from '../../../components/HomePageSections/StudentsProjects.svelte'
   import EnrollForCourse from '../../../components/HomePageSections/EnrollForCourse.svelte'
 
   let id
   let activeLang
-  let course
+  export let course_data = {}
 
-  language.subscribe(async lang => {
-    activeLang = lang
-    if (id) {
-      axios
-        .get(`https://codifylab.com/${activeLang}/api/courses/${id}`)
-        .then(({ data }) => {
-          course = data
-        })
-        .catch(error => {
-          console.log(error)
-        })
-    }
-  })
-
-  onMount(async () => {
-    let href = window.location.href
-    id = href.split('/').pop()
-    axios
-      .get(`https://codifylab.com/${activeLang}/api/courses/${id}`)
-      .then(({ data }) => {
-        course = data
-      })
-      .catch(error => {
-        console.log(error)
-      })
-  })
 </script>
 
 <svelte:head>
@@ -81,7 +62,7 @@
 </svelte:head>
 
 <div class="asd">
-  {#if !course}
+  {#if !course_data}
     <section style="height: 200vh;">
       <img class="loadingLogo" width="136px" height="28px" src="./assets/icons/logo.webp" alt="logo" />
       <div class="loading">
@@ -98,15 +79,15 @@
       </div>
     </section>
   {/if}
-  {#if course}
-    <CourseSectionOne {course} />
-    <CourseWhy {course} />
+  {#if course_data}
+    <CourseSectionOne course={course_data} />
+    <CourseWhy course={course_data} />
     <CourseHow />
     <Internship />
     <Employment />
     <div style="background-image: var(--primary-bg);">
-      <CoursePlan {course} />
-      <CardsOfMentors courseId={course.id} />
+      <CoursePlan course={course_data} />
+      <CardsOfMentors courseId={course_data.id} />
       <StudentsProjects />
       <EnrollForCourse />
     </div>

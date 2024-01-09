@@ -2,6 +2,7 @@
   import { language } from '../../stores'
   import Loading from '../../components/ui/loading.svelte'
   import axios from "axios";
+  import {request} from "../../api";
   export let maxWidth = 600
   let activeLang = 'ru'
   let message = ''
@@ -10,7 +11,7 @@
   language.subscribe(lang => {
     activeLang = lang
   })
-
+console.log('asd', process.env.API_BASE_URL)
   async function submit(e) {
     e.preventDefault()
     const headers = {
@@ -18,18 +19,13 @@
       'content-Type': 'application/json',
     }
     isDisabled = true
-    axios
-      .post(
-        'https://codifylab.com/ru/api/contact_form/',
-        {
-          name: e.target[0].value,
-          phone_number: e.target[1].value,
-          email: e.target[2].value ? e.target[2].value : null,
-        },
-        { headers: { Authorization: '3xUcq19gx6xJWopmfpuNjZAnTyS9PDiEFunC99QVNXK4JO3YDdqbTgjS9LFyV9dL' } }
-      )
+    request('post', 'contact-form/submit/', null, {
+      name: e.target[0].value,
+      phone_number: e.target[1].value,
+      comment: 'Бесплатное пробное занятие'
+    })
       .then(() => {
-        return axios
+        axios
           .post(
             'https://academy.codifylab.com/api/crm/leads/?org_id=1',
             {
@@ -46,18 +42,16 @@
             setTimeout(() => {
               isPost = false
             }, 5000)
-          }).catch((e) => {
-            throw e
-        })
+          })
       })
       .catch(err => {
-        message = err.response.data.email?.join() || 'Что-то пошло не так. Попробуйте позже'
+        message = err.response.data.email?.join() || 'что-то пошло не так'
         isPost = true
         isDisabled = false
         setTimeout(() => {
           message = ''
           isPost = false
-        }, 3000)
+        }, 5000)
       })
   }
 
