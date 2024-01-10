@@ -114,8 +114,12 @@
       }
     }
     & a {
-      margin-top: 10px;
+      margin-top: auto;
+      & button {
+        margin-top: 10px;
+      }
       @media (max-width: 768px) {
+        display: none;
         width: 100%;
         margin-bottom: 10px;
         & button {

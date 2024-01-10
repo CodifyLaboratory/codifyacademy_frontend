@@ -84,7 +84,7 @@
         </blockquote>
     </div>
 
-    <script async src="www.instagram.com/embed.js"></script>
+    <script async src="//www.instagram.com/embed.js"></script>
 </div>
 
 <style lang="scss">
