@@ -1,5 +1,6 @@
 <script>
   import { language } from '../../stores'
+  import Badge from "../badge/Badge.svelte";
 
   let activeLang = 'ru'
 
@@ -11,11 +12,11 @@
 </script>
 
 <div class="first-section-badges">
-    <span class="badge">Программирование</span>
-    <span class="badge">Project Management</span>
-    <span class="badge">Для взрослых</span>
-    <span class="badge">Для детей</span>
-    <span class="badge">Для подростков</span>
+    <Badge text="Программирование"/>
+    <Badge text="Project Management"/>
+    <Badge text="Для взрослых"/>
+    <Badge text="Для детей"/>
+    <Badge text="Для подростков"/>
 </div>
 
 <style>
@@ -26,13 +27,6 @@
         flex-wrap: wrap;
         margin-top: 40px;
     }
-    .badge {
-        padding: 15px 20px;
-        border-radius: 100px;
-        border: 1px solid white;
-        color: white;
-        font-size: 14px;
-    }
     @media (max-width: 855px) {
         .first-section-badges {
             margin-top: 20px;
@@ -40,6 +34,7 @@
         .badge {
             padding: 10px;
             font-size: 12px;
+            line-height: 8px;
         }
     }
 </style>

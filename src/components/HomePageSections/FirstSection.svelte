@@ -13,13 +13,14 @@
 </script>
 
 <section class="firstSection">
+    <img src="./assets/new-first-section-element.png" alt=".">
   <div class="container">
       <div>
         <h1>{texts[activeLang].homePage.h1}</h1>
         <p>{texts[activeLang].homePage.subtitle}</p>
           <FirstSectionBadges />
         <div class="firstSection__buttons">
-          <a href={`${activeLang}/courses`}>
+          <a href={`/courses`}>
             <button class="button contained">{texts[activeLang].buttons.choseCourse}</button>
           </a>
         </div>
@@ -28,7 +29,19 @@
     </div>
 </section>
 
-<style>
+<style lang="scss">
+    .firstSection {
+        padding-top: 150px;
+        position: relative;
+      overflow: hidden;
+      & > img {
+        position: absolute;
+        top: 140px;
+        z-index: -1;
+        min-width: 100%;
+        right: 0;
+      }
+    }
   .container {
     display: flex;
     gap: 20px;

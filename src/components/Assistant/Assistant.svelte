@@ -19,7 +19,7 @@ timeOut(10000)
 
 <div>
     <div class={`assistant-message ${openedDialog && 'opened'}`}>
-            Привет! Я Codify ботик. Готов ответить на твои вопросы :)
+            Привет! Я CODIFY ботик. Готов ответить на твои вопросы :)
         <div class='close-button' on:click={() => {closed = true
         openedDialog = false
         }}>

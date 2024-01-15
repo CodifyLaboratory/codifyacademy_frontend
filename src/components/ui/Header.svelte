@@ -37,7 +37,7 @@
         <img width="136px" height="28px" src="./assets/icons/logo.webp" alt="logo" />
       </a>
       <nav style={`display:${!isOpenMenu && win < 1050 ? 'none' : 'flex'}`}>
-        <a href={`/${activeLang}/courses`} on:click={()=>{isOpenMenu = false}}>{headerText.academy}</a>
+        <a href={`/courses`} on:click={()=>{isOpenMenu = false}}>{headerText.academy}</a>
         <a href="/teens" on:click={()=>{isOpenMenu = false}}>{headerText.teens}</a>
         <button
           on:click={() => {

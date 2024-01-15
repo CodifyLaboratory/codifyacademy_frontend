@@ -4,7 +4,7 @@
   import { texts } from '../../localization'
   import { language } from '../../stores'
   import {request} from "../../api";
-
+  export let course_title = ''
   let message = ''
   let isPost = false
   let isDisabled = false
@@ -27,7 +27,7 @@
     request('post', 'contact-form/submit/', null, {
       name: e.target[0].value,
       phone_number: e.target[1].value,
-      comment: 'Консультация'
+      comment: course_title ? `Оставил заявку на странице курса ${course_title}`  : 'Консультация'
     })
       .then(() => {
         axios
@@ -37,7 +37,7 @@
               first_name: e.target[0].value,
               phone: e.target[1].value,
               email: e.target[2].value ? e.target[2].value : null,
-              extra_comments: ['Консультация']
+              extra_comments: [course_title ? `Оставил заявку на странице курса ${course_title}` : 'Консультация']
             },
             { headers }
           )
@@ -78,7 +78,7 @@
         <input required type="text" placeholder={text.enroll.name + '*'} />
         <input required type="number" class="phoneInput" placeholder={text.enroll.phone + '*'} />
 <!--        <input type="email" placeholder={text.enroll.email} />-->
-        <button disabled={isDisabled} class="button contained">{text.buttons.enroll}</button>
+        <button disabled={isDisabled} class="button contained">Оставить заявку</button>
       </div>
       <div class="formCheck">
         <input required type="checkbox" />
@@ -97,6 +97,9 @@
        max-width: 875px;
        text-align: center;
        padding-bottom: 20px;
+       @media (max-width: 768px) {
+         text-align: start;
+       }
      }
   }
   .button:disabled {

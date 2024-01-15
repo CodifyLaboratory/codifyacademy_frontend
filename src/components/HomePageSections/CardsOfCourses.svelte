@@ -1,8 +1,9 @@
 <script>
-  import CardForCourses from '../ui/Cards/CardForCourses.svelte'
   import { texts } from '../../localization'
   import { language } from '../../stores'
   import {request} from "../../api";
+  import NewCardOfCourses from "../ui/Cards/NewCardOfCourses.svelte";
+  import Badge from "../badge/Badge.svelte";
   export let length = 0
   let activeBtn = 0
   let activeLang = 'ru'
@@ -43,7 +44,12 @@
 </script>
 
 <section class="sectionCourses container">
-  <h2>{texts[activeLang].homePage.h2.courses}</h2>
+  <div class="breadCrumbs">
+    <a href="/">Главная</a>
+    <img src="./assets/icons/chevron-right.svg" alt="chevron-right">
+    <p>Взрослые курсы</p>
+  </div>
+  <h1>Курсы для вашего профессионального роста</h1>
   <div class="sectionCourses__buttons">
     <button class={`buttonCourse allCourses ${!activeBtn ? 'active0' : ''}`} on:click={() => filter(0)}
       >{texts[activeLang].buttons.allCourses}</button
@@ -59,45 +65,137 @@
     >
   </div>
   <div class="coursesCards">
+    <div class="card test-card">
+      <Badge text="Тест на профориентацию" />
+      <div class="test-card_title">
+        <h2>
+          Какую IT профессию выбрать
+        </h2>
+        <p>
+          Пройдите короткий тест и откройте для себя направление, которое лучше всего соответствует вашим навыкам и интересам.
+        </p>
+      </div>
+      <p>
+        🕓 Время прохождения — 3 минуты
+      </p>
+      <a href="/test" class="test-card_link">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 16H27" stroke="#009DFF" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="round"/>
+          <path d="M19 7L28 16L19 25" stroke="#009DFF" stroke-width="2.2" stroke-linecap="square"/>
+        </svg>
+        <p>Пройти тест</p>
+      </a>
+    </div>
     {#each currentCards as card}
-      <CardForCourses cardInfo={card} />
+      <NewCardOfCourses course={card} />
     {/each}
   </div>
-  {#if length}
-    <div style="display: flex; justify-content: center">
-
-    <a href={`${activeLang}/courses`}>
-      <button class="button">{texts[activeLang].buttons.allCourses}</button>
-    </a>
-    </div>
-
-  {:else}
-<!--    <a href="https://forms.gle/oU9A5ouQXQGAg3Nk6" target="_blank">-->
-<!--      <button class="button">{texts[activeLang].buttons.test}</button>-->
-<!--    </a>-->
-  {/if}
 </section>
 
-<style>
-  h2 {
-    text-align: center !important;
+<style lang="scss">
+  .test-card {
+    border: 2px solid #0A244D;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    @media (max-width: 768px) {
+      gap: 15px;
+
+    }
+    & p {
+      font-size: 16px;
+      @media (max-width: 768px) {
+        font-size: 14px;
+      }
+    }
+  }
+  .test-card_title {
+    & h2 {
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 40px;
+      margin-bottom: 10px !important;
+      text-align: start;
+    }
+    & p {
+      line-height: 130%;
+      text-align: start;
+    }
+    @media (max-width: 768px) {
+      & h2 {
+        font-size: 20px;
+        line-height: 25px;
+
+      }
+    }
+  }
+  .test-card_link {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    gap: 5px;
+    @media (max-width: 768px) {
+      & svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    & p {
+      font-size: 18px;
+      color: #009DFF;
+      font-weight: 500;
+      @media (max-width: 768px) {
+        font-size: 14px;
+      }
+    }
+  }
+  .breadCrumbs {
+    display: flex;
+    align-items: center;
+    padding-bottom: 50px;
+    gap: 8px;
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  .breadCrumbs p {
+    font-weight: 500
+  }
+  .breadCrumbs p, .breadCrumbs a {
+    font-size: 16px;
+  }
+  h1 {
+    text-align: start;
+    font-weight: 500;
+    margin-bottom: 30px;
+    @media (max-width: 768px) {
+      font-size: 32px;
+    }
   }
   .sectionCourses {
+    padding-top: 100px;
     text-align: center;
   }
   .sectionCourses__buttons {
     width: 100%;
     display: flex;
     gap: 20px;
-    justify-content: center;
+    justify-content: start;
   }
   .coursesCards {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
     gap: 20px;
-    row-gap: 70px;
     flex-wrap: wrap;
-    margin-top: 80px;
+    margin-top: 50px;
+    @media (max-width: 900px) {
+      grid-template-columns: 100%;
+      gap: 10px;
+
+    }
   }
   .buttonCourse {
     border-radius: 10px;

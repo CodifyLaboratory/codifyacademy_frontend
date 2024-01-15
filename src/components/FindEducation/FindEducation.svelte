@@ -5,6 +5,7 @@
   import axios from "axios";
   import {request} from "../../api";
 
+  export let forMap = false
   let activeLang = 'ru'
   let message = ''
   let isPost = false
@@ -23,7 +24,7 @@
     request('post', 'contact-form/submit/', null, {
       name: e.target[0].value,
       phone_number: e.target[1].value,
-      comment: 'Поможем подобрать обучение'
+      comment: forMap ? 'Карта IT-профессий' : 'Поможем подобрать обучение'
     })
       .then(() => {
         axios
@@ -33,13 +34,17 @@
               first_name: e.target[0].value,
               phone: e.target[1].value,
               email: e.target[2].value ? e.target[2].value : null,
-              extra_comments: ['Поможем подобрать обучение']
+              extra_comments: [forMap ? 'Карта IT-профессий' : 'Поможем подобрать обучение']
             },
             { headers }
           )
           .then(() => {
+            isDisabled=false
             isPost = true
             message = ''
+            if(forMap) {
+              //TODO: aman request
+            }
             setTimeout(() => {
               isPost = false
             }, 5000)
@@ -59,34 +64,37 @@
 
 </script>
 
-<form  on:submit={submit} class="card">
+<form  on:submit={submit} class="card {forMap ? 'w-100' : null}">
     {#if isDisabled && !isPost}
         <div class="innerLoading">
-
         <Loading isTransparent vh="20"/>
         </div>
-
     {/if}
     {#if isPost && !isDisabled}
         <div class="innerLoading">
             <p>{message || 'Заявка отправлена'}</p>
         </div>
     {/if}
-    <div class={`find-education ${isDisabled? 'transparent' : ''}`}>
-    <p>{texts[activeLang].findEducation.title}</p>
+    <div class={`find-education ${isDisabled || isPost? 'transparent' : ''}`}>
+        {#if !forMap}
+            <p>{texts[activeLang].findEducation.title}</p>
+        {/if}
     <input  required type="text" placeholder={texts[activeLang].findEducation.input_name} />
     <input required type="text" placeholder={texts[activeLang].findEducation.input_phone} />
-    <button class="button contained">{texts[activeLang].findEducation.button}</button>
-    <span class="subtitle">{texts[activeLang].findEducation.subText} <a>{texts[activeLang].findEducation.subLink}</a></span>
+    <button class="button contained">{forMap ? 'Получить карту IT профессий' : texts[activeLang].findEducation.button}</button>
+    <span class="subtitle">{(texts[activeLang].findEducation.subText + ' ' +texts[activeLang].findEducation.subLink)}</span>
     </div>
 
 </form>
 
-<style>
+<style lang="scss">
     .card {
         position: relative;
         max-width: 392px;
-
+  &.w-100 {
+    max-width: unset;
+    width: 100%;
+  }
     }
     .innerLoading {
         position: absolute;
@@ -105,6 +113,9 @@
     }
     .find-education.transparent {
         opacity: 0;
+        pointer-events: none;
+        user-select: none;
+        cursor: default;
     }
     p {
         color: var(--white);

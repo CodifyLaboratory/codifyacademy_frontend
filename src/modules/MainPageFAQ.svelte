@@ -1,12 +1,12 @@
 <script>
   import {onMount} from "svelte";
-  import {request} from "../../api";
-  import NewAccordion from "../../components/NewAccordion.svelte";
+  import {request} from "../api";
+  import NewAccordion from "../components/NewAccordion.svelte";
 
   let faq = []
 
   onMount(() => {
-    request('get', 'children-courses-faq/')
+    request('get', 'main-faq/')
       .then((data) => {
         faq = data
       })

@@ -50,7 +50,7 @@
     <div class="price">
       <div>
         <h6>{course.discount_price || course.price} {text.courseWhy.som}</h6>
-        {#if course.special_offer}
+        {#if course.discount_price}
           <p class="oldPrice">{course.price} {text.courseWhy.som}</p>
         {/if}
       </div>

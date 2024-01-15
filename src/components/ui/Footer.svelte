@@ -21,7 +21,7 @@
   <div class="footer">
     <div class="about footerElement">
       <b>{footerText.about.title}</b>
-      <a href={`/${currentLanguage}/courses`}>{footerText.about.academy}</a>
+      <a href={`/courses`}>{footerText.about.academy}</a>
       <a href="https://teens.codifylab.com/" target="_blank">{footerText.about.teens}</a>
       <!-- <a href="/">{footerText.about.events}</a> -->
     </div>

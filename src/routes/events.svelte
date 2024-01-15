@@ -1,10 +1,10 @@
 <script>
     import { onMount } from 'svelte';
     import { PaginationNav } from 'svelte-paginate'
-    import { texts } from '../../localization'
-    import {language} from '../../stores'
-    import Loading from '../../components/ui/loading.svelte'
-    import CardForEvents from '../../components/ui/Cards/CardForEvents.svelte';
+    import { texts } from '../localization'
+    import {language} from '../stores'
+    import Loading from '../components/ui/loading.svelte'
+    import CardForEvents from '../components/ui/Cards/CardForEvents.svelte';
     import axios from 'axios';
 
     let activeLang = 'ru'

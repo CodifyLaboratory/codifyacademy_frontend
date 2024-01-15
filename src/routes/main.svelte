@@ -1,14 +1,16 @@
 <script>
-  import CardsOfCourses from '../components/HomePageSections/CardsOfCourses.svelte'
-  import CardsOfMentors from '../components/HomePageSections/CardsOfMentors.svelte'
-  import CardsOfStudents from '../components/HomePageSections/CardsOfStudents.svelte'
   import FirstSection from '../components/HomePageSections/FirstSection.svelte'
-  import Advantage from '../components/HomePageSections/Advantage.svelte'
-  import StudentsProjects from '../components/HomePageSections/StudentsProjects.svelte'
   import EnrollForCourse from '../components/HomePageSections/EnrollForCourse.svelte'
-  import Internship from '../components/HomePageSections/Internship.svelte'
-  import Employment from '../components/HomePageSections/Employment.svelte'
   import { onMount } from 'svelte'
+  import TestAndInfo from "../modules/TestAndInfo.svelte";
+  import StudyPrograms from "../modules/StudyPrograms.svelte";
+  import HappyStudents from "../modules/HappyStudents.svelte";
+  import EducationLicense from "../components/HomePageSections/EducationLicense.svelte";
+  import Partners from "../modules/Partners.svelte";
+  import GraduatesWork from "../modules/GraduatesWork.svelte";
+  import ProfessionsMap from "../modules/ProfessionsMap.svelte";
+  import MainPageFAQ from "../modules/MainPageFAQ.svelte";
+  import Media from "../modules/Media.svelte";
 
   let loading = true
 
@@ -54,17 +56,20 @@
 </svelte:head>
 
 {#if !loading}
-  <FirstSection />
-  <CardsOfCourses length={8} />
-  <Advantage />
-  <Internship />
-  <Employment />
-  <div style="background-image: var(--primary-bg);">
-    <CardsOfStudents />
-    <StudentsProjects />
-    <CardsOfMentors />
+  <div class="main-page">
+    <FirstSection />
+    <TestAndInfo />
+    <StudyPrograms />
+    <ProfessionsMap />
+    <HappyStudents />
+    <Partners />
+    <GraduatesWork />
+    <EducationLicense type="main" />
+    <MainPageFAQ />
+    <Media />
     <EnrollForCourse />
   </div>
+
 {:else}
   <section style="height: 200vh;">
     <img class="loadingLogo" width="136px" height="28px" src="./assets/icons/logo.webp" alt="logo" />
@@ -84,6 +89,11 @@
 {/if}
 
 <style lang="scss">
+  .main-page {
+    & h2 {
+      text-align: start !important;
+    }
+  }
   .loadingLogo {
     position: fixed;
     top: 50px;

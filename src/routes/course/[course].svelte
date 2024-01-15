@@ -1,23 +1,22 @@
 <script context="module">
-  import {request} from "../../../api";
+  import {request} from "../../api";
   export async function preload(page) {
     const { course } = page.params;
     const course_data = await request('get', `courses/${course}`)
-
     return { course_data };
   }
 </script>
 
 <script>
-  import CourseSectionOne from '../../../components/CoursePageSections/CourseSectionOne.svelte'
-  import CourseWhy from '../../../components/CoursePageSections/CourseWhy.svelte'
-  import CourseHow from '../../../components/CoursePageSections/CourseHow.svelte'
-  import CoursePlan from '../../../components/CoursePageSections/CoursePlan.svelte'
-  import Internship from '../../../components/HomePageSections/Internship.svelte'
-  import Employment from '../../../components/HomePageSections/Employment.svelte'
-  import CardsOfMentors from '../../../components/HomePageSections/CardsOfMentors.svelte'
-  import StudentsProjects from '../../../components/HomePageSections/StudentsProjects.svelte'
-  import EnrollForCourse from '../../../components/HomePageSections/EnrollForCourse.svelte'
+  import CourseSectionOne from '../../components/CoursePageSections/CourseSectionOne.svelte'
+  import CourseWhy from '../../components/CoursePageSections/CourseWhy.svelte'
+  import CourseHow from '../../components/CoursePageSections/CourseHow.svelte'
+  import CoursePlan from '../../components/CoursePageSections/CoursePlan.svelte'
+  import Internship from '../../components/HomePageSections/Internship.svelte'
+  import Employment from '../../components/HomePageSections/Employment.svelte'
+  import CardsOfMentors from '../../components/HomePageSections/CardsOfMentors.svelte'
+  import StudentsProjects from '../../components/HomePageSections/StudentsProjects.svelte'
+  import EnrollForCourse from '../../components/HomePageSections/EnrollForCourse.svelte'
 
   let id
   let activeLang
@@ -89,7 +88,7 @@
       <CoursePlan course={course_data} />
       <CardsOfMentors courseId={course_data.id} />
       <StudentsProjects />
-      <EnrollForCourse />
+      <EnrollForCourse course_title={course_data.title} />
     </div>
   {/if}
 </div>

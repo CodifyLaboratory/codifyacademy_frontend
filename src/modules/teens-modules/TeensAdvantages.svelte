@@ -5,7 +5,7 @@ import PageSection from "../new-design-section-types/PageSection.svelte";
 const cards = [
   {icon: './assets/images/new_icons/coins.png',
   title: 'CodeCoins',
-    description: 'Во время обучения дети зарабатывают\n CodeCoins, которые можно обменять на\n стильные аксессуары от Codify'
+    description: 'Во время обучения дети зарабатывают\n CodeCoins, которые можно обменять на\n стильные аксессуары от CODIFY'
   },
   {icon: './assets/images/new_icons/atom.png',
     title: 'Студенческие лаборатории',

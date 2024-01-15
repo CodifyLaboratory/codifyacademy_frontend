@@ -6,7 +6,7 @@
  let reviews = []
 export let type = 'children_course'
 
- console.log('reviews', reviews)
+ console.log('reviews', type)
 
  onMount(() => {
    request('get', 'instagram-video-feedbacks/')
@@ -17,9 +17,11 @@ export let type = 'children_course'
 </script>
 
 <section class="insta-section">
-    <div class="container">
-        <h2>Отзывы учеников и родителей</h2>
-    </div>
+    {#if type === 'children_course'}
+        <div class="container">
+            <h2>Отзывы учеников и родителей</h2>
+        </div>
+    {/if}
     <div class="container_flex">
 
     <div class="reviews_container">
