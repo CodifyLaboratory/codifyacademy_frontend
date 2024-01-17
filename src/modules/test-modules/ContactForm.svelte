@@ -136,7 +136,7 @@
     background: transparent;
     color: white;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 400;
     border-radius: 100px;
   }
   input::placeholder {
@@ -145,7 +145,7 @@
   }
   .subtitle {
     max-width: 328px;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 14px;
   }
   .button {

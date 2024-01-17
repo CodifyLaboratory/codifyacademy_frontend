@@ -21,6 +21,7 @@
     flex: 1;
     display: flex;
     padding-bottom: 20px;
+    padding-top: 30px;
     align-items: center;
     justify-content: center;
     & .start-test {

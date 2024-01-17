@@ -22,7 +22,7 @@
 .three_cards_transparent-box {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px 0;
+  gap: 30px 20px;
   @media (max-width: 975px) {
     grid-template-columns: repeat(2, 1fr);
   }

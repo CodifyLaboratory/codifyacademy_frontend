@@ -31,12 +31,16 @@
 </section>
 
 <style lang="scss">
+  h2 {
+    @media (max-width: 768px) {
+      margin-bottom: 10px !important;
+    }
+  }
   p {
     font-size: 20px;
     max-width: 580px;
     @media (max-width: 768px) {
       font-size: 14px;
-      font-weight: 400;
       padding-bottom: 0;
       line-height: 130%;
     }

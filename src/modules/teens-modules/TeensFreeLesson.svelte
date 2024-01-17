@@ -27,7 +27,7 @@ import FreeLessonCard from '../../components/free-lesson-card/free-lesson-card.s
         <div>
 
         <p>
-            Пробное занятие — это идеальная возможность для вашего ребенка протестировать и выбрать направление обучения. На этом занятии мы сочетаем немного теории с множеством практики, обеспечиваем понимание основ и даем первое представление о курсе:
+            Пробное занятие — это идеальная возможность для вашего ребенка протестировать и выбрать направление обучения. На этом занятии мы сочетаем немного теории с множеством практики, обеспечиваем понимание основ и даем первое представление о курсе.
         </p>
             <div class="description_text-box">
 
@@ -42,6 +42,11 @@ import FreeLessonCard from '../../components/free-lesson-card/free-lesson-card.s
 </section>
 
 <style lang="scss">
+  h2 {
+    @media (max-width: 768px) {
+      margin-bottom: 10px !important;
+    }
+  }
   p {
     font-size: 20px;
     padding-bottom: 40px;
@@ -68,6 +73,7 @@ import FreeLessonCard from '../../components/free-lesson-card/free-lesson-card.s
       }
     }
     .description_text {
+      font-weight: 400;
       font-size: 20px;
 padding-bottom: 10px;
       display: block;

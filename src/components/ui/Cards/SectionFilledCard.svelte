@@ -3,7 +3,6 @@
   export let title
   export let description
   export let id
-  export let order
 
 </script>
 
@@ -51,14 +50,14 @@
   .title {
     padding: 0 0 10px;
     font-size: 32px;
-    font-weight: 400;
+    font-weight: 500;
     @media (max-width: 768px) {
       font-size: 20px;
     }
   }
   .description{
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 400;
     @media (max-width: 768px) {
       white-space: unset;
       font-size: 14px;

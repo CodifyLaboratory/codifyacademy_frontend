@@ -11,7 +11,6 @@
   language.subscribe(lang => {
     activeLang = lang
   })
-console.log('asd', process.env.API_BASE_URL)
   async function submit(e) {
     e.preventDefault()
     const headers = {
@@ -116,7 +115,7 @@ console.log('asd', process.env.API_BASE_URL)
         background: transparent;
         color: white;
         font-size: 16px;
-        font-weight: 300;
+        font-weight: 400;
         border-radius: 100px;
     }
     input::placeholder {
@@ -124,11 +123,11 @@ console.log('asd', process.env.API_BASE_URL)
         opacity: 0.7;
     }
     .subtitle {
-        font-weight: 300;
+        font-weight: 400;
         font-size: 14px;
     }
     a {
-        font-weight: 300;
+        font-weight: 400;
         font-size: 14px;
         cursor: pointer;
         color: #009DFF;

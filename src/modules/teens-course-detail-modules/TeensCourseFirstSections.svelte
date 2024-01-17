@@ -45,10 +45,12 @@
 <style lang="scss">
   .firstSection {
     padding-top: 120px;
+    @media (max-width: 768px) {
+      padding-top: 90px;
+    }
   }
   .description {
     font-size: 16px;
-    font-weight: 300;
     line-height: 1.5;
     max-width: 722px;
     display: block;
@@ -58,7 +60,6 @@
   }
   .mobile-description {
     font-size: 14px;
-    font-weight: 300;
     line-height: 1.5;
     display: none;
     @media (max-width: 768px) {
@@ -120,7 +121,7 @@
     text-align: start;
     font-size: 16px;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 400;
     line-height: normal;
     @media (max-width: 768px) {
       font-size: 14px;

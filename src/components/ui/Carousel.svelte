@@ -10,7 +10,6 @@
 
   const handlePrevClick = () => {
     swiper.slidePrev()
-    console.log(swiper)
   }
   const handleNextClick = () => {
     swiper.slideNext()

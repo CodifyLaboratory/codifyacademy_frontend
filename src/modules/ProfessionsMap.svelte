@@ -30,9 +30,14 @@ import FindEducation from "../components/FindEducation/FindEducation.svelte";
       flex-direction: column;
     }
   }
+  h2 {
+    padding-bottom: 20px;
+    margin-bottom: 0 !important;
+  }
   .test-card {
     border: 2px solid #0A244D;
     background: transparent;
+    justify-content: center;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -51,9 +56,8 @@ import FindEducation from "../components/FindEducation/FindEducation.svelte";
   .test-card_title {
     & h2 {
       font-size: 32px;
-      font-weight: 400;
+      font-weight: 500;
       line-height: 120%;
-      margin-bottom: 10px !important;
       text-align: start;
     }
     & p {

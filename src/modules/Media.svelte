@@ -121,7 +121,7 @@
       }
       & h6 {
         font-size: 24px;
-        font-weight: 400;
+        font-weight: 500;
         font-style: normal;
         line-height: 130%;
         display: -webkit-box;

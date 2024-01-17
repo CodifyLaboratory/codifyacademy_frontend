@@ -11,7 +11,7 @@
  import TestQuestions from "../modules/test-modules/TestQuestions.svelte";
  import ContactForm from "../modules/test-modules/ContactForm.svelte";
  import {goto} from "@sapper/app";
- let is_test = true
+ let is_test = false
  let result_questions = null
  export let questions = []
 const sendTest = async () => {
@@ -51,17 +51,22 @@ const sendTest = async () => {
     text-align: center;
   }
 .test-page {
-  height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
 }
 .test-header {
   padding-top: 30px;
   padding-bottom: 30px;
+  background: #111119;
+  position: sticky;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   @media (max-width: 768px) {
+    padding-top: 10px;
+    padding-bottom: 10px;
     & p {
       display: none;
     }

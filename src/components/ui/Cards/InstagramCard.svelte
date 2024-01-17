@@ -28,7 +28,7 @@
                 data-instgrm-version="14"
                 style="background:#000; border:0; border-radius:3px; max-width:540px; min-width:326px; padding:0; width:100%;;"
         >
-            <div style="padding:24px;">
+            <div style="padding: 24px;">
                 <a
                         href="{review}/?utm_source=ig_embed&amp;utm_campaign=loading"
                         style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;"
@@ -115,7 +115,7 @@
       & p {
         cursor: pointer;
 
-        font-weight: 400;
+        font-weight: 500;
       }
 
     }

@@ -19,19 +19,22 @@
             <span class="badge">{format === 'online' ? 'Онлайн' : 'Офлайн'}</span>
                 {/each}
         </div>
-        <h4>{cardInfo.title}</h4>
+        <h4 class="desktop-title">{cardInfo.title}</h4>
         <div class="image_box">
             <img src={cardInfo.icon} alt="course-icon">
         </div>
-
-        <p class="description">
-            {cardInfo.short_description}
-        </p>
-        <ul class="mobile-description">
-            {#each cardInfo.mobile_short_description || [] as text}
-            <li>{text}</li>
+        <div>
+            <h4 class="mobile-title">{cardInfo.title}</h4>
+            <p class="description">
+                {cardInfo.short_description}
+            </p>
+            <ul class="mobile-description">
+                {#each cardInfo.mobile_short_description || [] as text}
+                    <li>{text}</li>
                 {/each}
-        </ul>
+            </ul>
+        </div>
+
         <div class="bonuses">
             {#each cardInfo?.additional_details || [] as text}
                 <span class="bonus">{text}</span>
@@ -45,6 +48,18 @@
     </div>
 
 <style lang="scss">
+  .desktop-title {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  .mobile-title {
+    display: none;
+    @media (max-width: 768px) {
+      display: block;
+      padding-bottom: 5px;
+    }
+  }
   .teensCardForCourses {
     height: 100%;
     display: flex;
@@ -103,7 +118,7 @@
     text-align: start;
     font-size: 14px;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 400;
     padding-left: 17px;
      & li {
        line-height: 20px;
@@ -124,11 +139,13 @@
     .badge {
         padding: 15px 20px;
         border-radius: 100px;
-      font-weight: 400;
+      line-height: 9px;
+      font-weight: 500;
         border: 1px solid white;
         color: white;
         font-size: 14px;
       @media (max-width: 768px) {
+        line-height: 8px;
         font-size: 12px;
         padding: 10px;
       }

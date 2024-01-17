@@ -2,7 +2,6 @@
   import Footer from '../components/ui/Footer.svelte'
   import LoadingBar from '../components/ui/LoadingBar.svelte'
   import Header from '../components/ui/Header.svelte'
-  import Assistant from '../components/Assistant/Assistant.svelte'
   import {stores} from "@sapper/app";
 
   const {page} = stores()
@@ -13,8 +12,8 @@
 <div class="site">
   <LoadingBar />
   {#if !$page.path.includes('test')}
-  <Header />
-  <Assistant />
+  <Header path={$page.path} />
+<!--  <Assistant />-->
   {/if}
 
   <main class="site-content">

@@ -5,7 +5,6 @@
   export let id
   export let order
   export let index = 0
-  console.log('index', index % 3 === 0 ? 'top' : ((index % 3) === 1 ? 'bottom' : 'middle'))
 </script>
 
 <div class="filled-card card">
@@ -53,6 +52,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: -1;
      &.top {
        top: -30px;
        transform: rotate(-120deg);
@@ -80,11 +80,11 @@
   .title {
     padding: 0 0 10px;
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 500;
   }
   .description{
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 400;
     @media (max-width: 768px) {
       white-space: unset;
       font-size: 14px;

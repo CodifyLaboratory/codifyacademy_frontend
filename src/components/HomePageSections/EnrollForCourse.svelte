@@ -5,6 +5,7 @@
   import { language } from '../../stores'
   import {request} from "../../api";
   export let course_title = ''
+  export let forMainPage = false
   let message = ''
   let isPost = false
   let isDisabled = false
@@ -65,9 +66,9 @@
 
 <section class="sectionEnroll" id="enroll">
   <div class="container">
-    <h2>{text.homePage.h2.enroll}</h2>
-    <div class="description-box">
-      <p>
+    <h2 style={forMainPage ? 'text-align: start' : ''}>{text.homePage.h2.enroll}</h2>
+    <div class="description-box" style={forMainPage ? 'justify-content: start' : ''}>
+      <p style={forMainPage ? 'text-align: start' : ''}>
         {text.enroll.description}
       </p>
 
@@ -89,6 +90,9 @@
 </section>
 
 <style lang="scss">
+  h2 {
+    margin-bottom: 15px !important;
+  }
   .description-box {
     display: flex;
     justify-content: center;
@@ -96,8 +100,9 @@
      & p {
        max-width: 875px;
        text-align: center;
-       padding-bottom: 20px;
+       padding-bottom: 50px;
        @media (max-width: 768px) {
+         padding-bottom: 30px;
          text-align: start;
        }
      }
@@ -219,9 +224,6 @@
     }
     .formInputs > input {
       min-height: 51px;
-    }
-    .formCheck > input {
-      width: 50px;
     }
   }
 </style>

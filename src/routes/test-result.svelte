@@ -1,10 +1,10 @@
 <script>
     import {onMount} from "svelte";
     import NewCardOfCourses from "../components/ui/Cards/NewCardOfCourses.svelte";
-    import Badge from "../components/badge/Badge.svelte";
     import {goto} from "@sapper/app";
 
     let test_result = { result : []}
+    let it_map_downloaded = false
     onMount(() => {
       if(localStorage.getItem('test-result')) {
         test_result =JSON.parse(localStorage.getItem('test-result'))
@@ -23,16 +23,18 @@
         </a>
         <p>Карьерный тест</p>
     </div>
+    {#if !it_map_downloaded}
     <div class="it-map">
         <div class="container">
         <p class="it-map-text">🎉 Поздравляем с завершением теста! Карта актуальных IT-профессий уже ждёт вас.</p>
-            <a href="http://192.168.68.118:8000/ru/api/download-it-prof-map/">
+            <a href="http://192.168.68.118:8000/ru/api/download-it-prof-map/" on:click={() => it_map_downloaded = true}>
 
         <button class="button light-blue">Получить карту</button>
             </a>
 
         </div>
     </div>
+        {/if}
 
     <div class="container test-result-container">
         {#if test_result.result?.length > 1}
@@ -46,7 +48,7 @@
                     {/if}
                         <img src={result_card.icon_url} alt="result-icon">
                         <h1>{result_card.profession}</h1>
-                        <Badge text={`Совпадение — ${result_card.score}%`} />
+<!--                        <Badge text={`Совпадение — ${result_card.score}%`} />-->
                     <p>{result_card.description}</p>
                 </div>
             {/each}
@@ -77,7 +79,7 @@
                 {#if test_result.second_profession_courses}
                     {#each test_result.second_profession_courses as course}
                         <div class="test-result_course">
-                            <NewCardOfCourses forTestResult course={course} />
+                            <NewCardOfCourses course={course} />
                             <div class="card description-card">
                                 <p>{course.profession_description}</p>
                             </div>
@@ -118,7 +120,8 @@
       width: 100%;
       gap: 20px;
       @media (max-width: 768px) {
-        grid-template-columns: 100%;
+        display: flex;
+        flex-direction: column;
         gap: 10px;
       }
       & > .description-card {
@@ -141,6 +144,9 @@
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
   }
   .result-card {
     padding: 60px;
@@ -152,7 +158,7 @@
       padding: 60px 30px;
     }
     @media (max-width: 768px) {
-      padding: 30px 15px;
+      padding: 30px 15px !important;
       gap: 20px;
     }
     & h3 {
@@ -174,7 +180,7 @@
     }
     & h1 {
       font-size: 48px;
-      font-weight: 400;
+      font-weight: 500;
       text-align: center;
       line-height: 120%;
       @media (max-width: 768px) {
@@ -190,6 +196,7 @@
       font-size: 20px;
       line-height: 120%;
       @media (max-width: 768px) {
+        padding-top: 0;
         font-size: 14px;
       }
     }
@@ -198,13 +205,22 @@
     padding-top: 80px;
     @media (max-width: 768px) {
       padding-top: 40px;
+      & h2 {
+        margin-bottom: 20px !important;
+      }
     }
   }
   h2 {
     text-align: start;
+
   }
   .it-map {
     background: linear-gradient(130deg, #07294E -21.19%, rgba(7, 41, 78, 0.20) 112.21%);
+    position: sticky;
+    top: 93px;
+    @media (max-width: 768px) {
+      top: 52px;
+    }
     & .container {
       padding: 15px 0;
       display: flex;
@@ -237,17 +253,20 @@
     text-align: center;
   }
   .test-result-page {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+    min-height: 100dvh;
   }
   .test-header {
     padding-top: 30px;
     padding-bottom: 30px;
+    position: sticky;
+    top: 0;
+    background: #111119;
     display: flex;
     align-items: center;
     justify-content: space-between;
     @media (max-width: 768px) {
+      padding-top: 10px;
+      padding-bottom: 10px;
       & p {
         display: none;
       }

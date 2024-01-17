@@ -11,7 +11,6 @@
     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M10 15L20 25L30 15" stroke="#009DFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-
 </button>
 {#if isOpen}
     <p transition:slide={{ duration: 300 }}>{entry.answer}</p>
@@ -20,7 +19,7 @@
     <!--  </ul>-->
 {/if}
 
-<style>
+<style lang="scss">
     button {
         border: none;
         background: none;
@@ -35,10 +34,12 @@
         padding-top: 16px;
         font-size: 24px;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 500;
         line-height: normal;
-        border-top: 1px solid var(--blue);
         transition: 0.2s all;
+    }
+    button:not(:first-child) {
+      border-top: 1px solid var(--blue);
     }
     button:hover {
         color: var(--light-blue);

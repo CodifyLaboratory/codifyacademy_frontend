@@ -40,4 +40,4 @@
 </svelte:head>
 
 <CardsOfCourses />
-<EnrollForCourse />
+<EnrollForCourse forMainPage />

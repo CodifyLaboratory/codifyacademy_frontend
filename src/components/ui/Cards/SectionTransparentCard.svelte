@@ -43,7 +43,7 @@
     padding: 20px 0 10px;
     font-size: 24px;
     text-align: center;
-    font-weight: 400;
+    font-weight: 500;
     @media (max-width: 768px) {
      font-size: 20px;
       padding: 10px 0 5px;
@@ -53,7 +53,7 @@
   .description{
     font-size: 16px;
     text-align: center;
-    font-weight: 300;
+    font-weight: 400;
     @media (max-width: 768px) {
       white-space: unset;
       font-size: 14px;

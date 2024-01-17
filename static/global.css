@@ -5,7 +5,6 @@ body {
   position: relative;
   width: 100%;
   font-size: 18px;
-  font-weight: 300;
 }
 @media screen and (max-width: 650px) {
   html,
@@ -36,6 +35,9 @@ body {
 body {
   background: #111119;
 }
+input {
+  font-size: 16px !important;
+}
 .container {
   width: 90%;
   margin: 0 auto;
@@ -60,6 +62,9 @@ li,
 a, button {
   font-size: 1rem;
   /*line-height: 1.2rem;*/
+}
+p {
+  font-weight: 400;
 }
 b {
   font-size: 1.1rem;

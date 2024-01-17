@@ -30,13 +30,16 @@
     .badge {
         padding: 15px 20px;
         border-radius: 100px;
-        font-weight: 400;
+        font-weight: 500;
         border: 1px solid white;
         color: white;
+      line-height: 9px;
         font-size: 14px;
     @media (max-width: 768px) {
         font-size: 12px;
         padding: 10px;
+      line-height: 8px;
+
     }
     }
 </style>

@@ -10,13 +10,14 @@
     background: #9DFF00 !important;
     border-color: #9DFF00 !important;
     color: black !important;
-    font-weight: 400;
+    font-weight: 500;
   }
   .badge {
     padding: 15px 20px;
     border-radius: 100px;
     border: 1px solid white;
     color: white;
+    font-weight: 400;
     line-height: 9px;
     font-size: 14px;
     @media (max-width: 768px) {

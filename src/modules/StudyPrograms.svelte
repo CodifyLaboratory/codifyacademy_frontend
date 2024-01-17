@@ -21,7 +21,7 @@
     ]
 </script>
 
-<section class="study-programs container">
+<section id="study-programs" class="study-programs container">
     <h2>Программы обучения для взрослых и детей</h2>
     {#each programs as program}
         <ProgramCard program={program} />

@@ -49,7 +49,6 @@
 
 <style lang="scss">
   .uto-cards {
-    padding: 15px;
     align-items: center;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -71,7 +70,7 @@
       }
       & h5 {
         font-size: 24px;
-        font-weight: 400;
+        font-weight: 500;
         padding: 15px 0 5px;
         @media (max-width: 768px) {
           padding: 10px 0 5px;
@@ -81,6 +80,7 @@
       & p {
         white-space: pre-wrap;
         font-size: 16px;
+        font-weight: 400;
         line-height: 130%;
         @media (max-width: 768px) {
           font-size: 14px;

@@ -19,7 +19,7 @@ import InstaReviews from "./InstaReviews.svelte";
             <p>будут рекомендовать Codify своим друзьям и знакомым</p>
         </div>
     </div>
-    <InstaReviews type="main" />
+    <InstaReviews key={'main'} type="main" />
 </section>
 
 <style lang="scss">
@@ -48,7 +48,7 @@ import InstaReviews from "./InstaReviews.svelte";
       & p {
         max-width: 409px;
         font-size: 24px;
-        font-weight: 400;
+        font-weight: 500;
         line-height: 120%;
       }
       @media (max-width: 768px) {

@@ -16,13 +16,11 @@
     text = texts[activeLang].homePage.h2.studentProjects
 
   })
-  console.log('projects', projects)
 
 
   onMount(() => {
     request('get', 'children-projects/')
       .then((data) => {
-        console.log('data', data)
         projects = data
       })
       .catch(error => {
@@ -117,31 +115,21 @@
         height: 100%;
         object-fit: cover;
     }
-    .studentsProjects__description,
-    .studentsProjects__team {
+
+    .studentsProjects__description{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 5px;
+      & p {
+        font-size: 16px;
+        @media (max-width: 768px) {
+          font-size: 14px;
+        }
+      }
     }
     @media screen and (max-width: 1060px) {
         .studentsProjects {
-            grid-template-columns: 1fr;
-        }
-        .studentsProjects__team {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            column-gap: 30px;
-            row-gap: 10px;
-        }
-    }
-    @media screen and (max-width: 850px) {
-        .studentsProjects__team {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-    @media screen and (max-width: 650px) {
-        .studentsProjects__team {
             grid-template-columns: 1fr;
         }
     }

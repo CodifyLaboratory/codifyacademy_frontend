@@ -84,7 +84,7 @@
   gap: 10px;
    & h3 {
      font-size: 32px;
-     font-weight: 400;
+     font-weight: 500;
      line-height: 130%;
      @media (max-width: 880px) {
        font-size: 20px;

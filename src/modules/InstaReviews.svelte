@@ -5,18 +5,19 @@
 
  let reviews = []
 export let type = 'children_course'
-
- console.log('reviews', type)
+ let loading = true
 
  onMount(() => {
+   loading = true
    request('get', 'instagram-video-feedbacks/')
      .then((data) => {
+       loading = false
        reviews = data.filter(d => d?.page_type === type)
      })
  })
 </script>
 
-<section class="insta-section">
+<section  class="insta-section">
     {#if type === 'children_course'}
         <div class="container">
             <h2>Отзывы учеников и родителей</h2>
@@ -25,10 +26,11 @@ export let type = 'children_course'
     <div class="container_flex">
 
     <div class="reviews_container">
+        {#if !loading}
         {#each reviews as review}
             <InstagramCard review={review?.publication_link} />
         {/each}
-
+        {/if}
     </div>
     </div>
 

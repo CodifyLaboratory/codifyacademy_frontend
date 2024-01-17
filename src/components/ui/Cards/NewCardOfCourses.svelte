@@ -3,7 +3,6 @@
 
     export let course = {}
     export let forTestResult = false
-    console.log('course', course)
 
 
 </script>
@@ -33,10 +32,14 @@
                 <Badge text={'Офлайн'} />
             {/if}
         </div>
+    <div>
+
         <h4>{course.title}</h4>
         <p class="description">
             {course.description}
         </p>
+    </div>
+
     <div class="card-info">
         <p class="start">
             🕓 Старт — {course.course_start}
@@ -67,6 +70,9 @@
 
   .card-info{
     margin-top: auto;
+    @media (max-width: 768px) {
+      margin-top: 0;
+    }
     & p {
       font-size: 16px !important;
 
@@ -87,7 +93,7 @@
     flex-direction: column;
     gap: 20px;
     @media (max-width: 768px) {
-      gap: 10px;
+      gap: 15px;
     }
     & * {
       text-align: start;
@@ -99,6 +105,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: 130%;
+    padding-bottom: 10px;
     @media (max-width: 768px) {
       font-size: 20px;
     }
@@ -108,6 +115,9 @@
     font-size: 16px;
     font-style: normal;
     line-height: normal;
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
   }
   .card-badges {
     display: flex;

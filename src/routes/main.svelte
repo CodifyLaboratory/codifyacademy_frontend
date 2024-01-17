@@ -7,7 +7,6 @@
   import HappyStudents from "../modules/HappyStudents.svelte";
   import EducationLicense from "../components/HomePageSections/EducationLicense.svelte";
   import Partners from "../modules/Partners.svelte";
-  import GraduatesWork from "../modules/GraduatesWork.svelte";
   import ProfessionsMap from "../modules/ProfessionsMap.svelte";
   import MainPageFAQ from "../modules/MainPageFAQ.svelte";
   import Media from "../modules/Media.svelte";
@@ -64,11 +63,11 @@
     <ProfessionsMap />
     <HappyStudents />
     <Partners />
-    <GraduatesWork />
+<!--    <GraduatesWork />-->
     <EducationLicense type="main" />
     <MainPageFAQ />
     <Media />
-    <EnrollForCourse />
+    <EnrollForCourse forMainPage />
   </div>
 
 {:else}

@@ -3,12 +3,17 @@
   import { language } from '../../stores'
   import FindEducation from "../FindEducation/FindEducation.svelte";
   import FirstSectionBadges from "../first-section-badges/index.svelte";
+  import * as animateScroll from "svelte-scrollto";
 
   let activeLang = 'ru'
 
   language.subscribe(lang => {
     activeLang = lang
   })
+
+  function scrollTo() {
+    animateScroll.scrollTo({ element: '#study-programs', duration: 1300, offset: -100 })
+  }
 
 </script>
 
@@ -20,9 +25,9 @@
         <p>{texts[activeLang].homePage.subtitle}</p>
           <FirstSectionBadges />
         <div class="firstSection__buttons">
-          <a href={`/courses`}>
-            <button class="button contained">{texts[activeLang].buttons.choseCourse}</button>
-          </a>
+<!--          <a href={`/courses`}>-->
+            <button class="button contained" on:click={scrollTo}>{texts[activeLang].buttons.choseCourse}</button>
+<!--          </a>-->
         </div>
       </div>
       <FindEducation />
@@ -31,12 +36,16 @@
 
 <style lang="scss">
     .firstSection {
-        padding-top: 150px;
+      padding-top: 150px;
         position: relative;
       overflow: hidden;
+      @media (max-width: 768px) {
+        padding-top: 100px;
+
+      }
       & > img {
         position: absolute;
-        top: 140px;
+        top: -30px;
         z-index: -1;
         min-width: 100%;
         right: 0;

@@ -93,7 +93,7 @@
       & h3 {
         font-size: 32px;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 500;
         line-height: 120%;
         text-align: center;
         padding-bottom: 30px;
@@ -125,6 +125,7 @@
             }
           }
            & p {
+             padding-top: 3px;
              color: #132150;
              font-size: 16px;
              font-style: normal;
@@ -132,6 +133,8 @@
              line-height: 120%;
              @media (max-width: 768px) {
                font-size: 14px;
+               padding-top: 1px;
+
              }
            }
         }

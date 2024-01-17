@@ -4,7 +4,7 @@
   import { language } from '../../stores'
   let callUsIsOpen = false
   let activeLang = 'ru'
-
+  export let path
   let headerText = texts[activeLang].header
   language.subscribe(lang => {
     activeLang = lang
@@ -33,12 +33,12 @@
           alt="burger"
         />
       {/if}
-      <a href="/">
+      <a href="/" style="display: flex; align-items: center">
         <img width="136px" height="28px" src="./assets/icons/logo.webp" alt="logo" />
       </a>
       <nav style={`display:${!isOpenMenu && win < 1050 ? 'none' : 'flex'}`}>
-        <a href={`/courses`} on:click={()=>{isOpenMenu = false}}>{headerText.academy}</a>
-        <a href="/teens" on:click={()=>{isOpenMenu = false}}>{headerText.teens}</a>
+        <a class={path === '/courses' ? 'active' : ''} href={`/courses`} on:click={()=>{isOpenMenu = false}}>{headerText.academy}</a>
+        <a class={path === '/teens' ? 'active' : ''} href="/teens" on:click={()=>{isOpenMenu = false}}>{headerText.teens}</a>
         <button
           on:click={() => {
             animateScroll.scrollToBottom({ duration: 2000 })
@@ -81,7 +81,10 @@
   </div>
 </header>
 
-<style>
+<style lang="scss">
+  .active {
+    color: var(--light-blue);
+  }
   .header {
     position: fixed;
     top: 0;
@@ -91,6 +94,9 @@
     height: 90px;
     background-image: linear-gradient(109.63deg, #111212 -1.59%, #04051c 105.94%);
     z-index: 10000;
+    @media (max-width: 768px) {
+      height: 52px;
+    }
   }
   .callUsModal {
     position: absolute;
@@ -130,7 +136,7 @@
     outline: none;
   }
   nav > button {
-    font-weight: 300;
+    font-weight: 400;
     transition: 0.2s all;
     height: 40px;
     line-height: 40px;

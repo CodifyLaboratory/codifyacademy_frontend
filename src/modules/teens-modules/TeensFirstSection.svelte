@@ -34,8 +34,9 @@
 
 <style lang="scss">
   .firstSection {
+    padding-top: 120px;
     @media (max-width: 768px) {
-      padding-top: 120px;
+      padding-top: 60px;
     }
   }
     .breadCrumbs {
@@ -56,7 +57,8 @@
         display: flex;
         gap: 20px;
       align-items: flex-start;
-        justify-content: space-between;
+      padding-top: 46px;
+      justify-content: space-between;
       @media (max-width: 768px) {
         flex-direction: column-reverse;
       }
