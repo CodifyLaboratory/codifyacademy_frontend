@@ -43,6 +43,7 @@
             isPost = true
             message = ''
             if(forMap) {
+              window.location.href = "http://192.168.68.118:8000/ru/api/download-it-prof-map/"
               //TODO: aman request
             }
             setTimeout(() => {

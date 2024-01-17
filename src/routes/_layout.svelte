@@ -3,14 +3,25 @@
   import LoadingBar from '../components/ui/LoadingBar.svelte'
   import Header from '../components/ui/Header.svelte'
   import Assistant from '../components/Assistant/Assistant.svelte'
+  import {stores} from "@sapper/app";
+
+  const {page} = stores()
+
+
 </script>
 
 <div class="site">
   <LoadingBar />
+  {#if !$page.path.includes('test')}
   <Header />
   <Assistant />
+  {/if}
+
   <main class="site-content">
     <slot />
   </main>
+  {#if !$page.path.includes('test')}
   <Footer />
+  {/if}
+
 </div>

@@ -11,9 +11,9 @@
   import ProfessionsMap from "../modules/ProfessionsMap.svelte";
   import MainPageFAQ from "../modules/MainPageFAQ.svelte";
   import Media from "../modules/Media.svelte";
+  import UTO from "../modules/UTO.svelte";
 
   let loading = true
-
   onMount(() => {
     loading = false
   })
@@ -58,6 +58,7 @@
 {#if !loading}
   <div class="main-page">
     <FirstSection />
+    <UTO />
     <TestAndInfo />
     <StudyPrograms />
     <ProfessionsMap />

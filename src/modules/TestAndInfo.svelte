@@ -33,13 +33,23 @@ const info_cards = [
             <p>Пройти тест</p>
         </a>
     </div>
-    <div class="info-cards">
-        {#each info_cards as {icon, text}}
-            <div class="info-card">
-                <img src={icon} alt={text}>
-                <p>{text}</p>
-            </div>
-            {/each}
+    <div class="card test-card telegram-card">
+        <Badge text="Телеграм-канал Job CODIFY" />
+        <div class="test-card_title">
+            <h2>
+                🚀 Начните свой IT-путь с CODIFY
+            </h2>
+            <p>
+                Подпишитесь на наш телеграм-канал Job CODIFY и откройте для себя мир актуальных IT-вакансий. Оставайтесь в курсе последних требований, зарплат и возможностей в IT-индустрии.
+              </p>
+        </div>
+        <a href="https://t.me/codifynews" class="test-card_link">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 16H27" stroke="#009DFF" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="round"/>
+                <path d="M19 7L28 16L19 25" stroke="#009DFF" stroke-width="2.2" stroke-linecap="square"/>
+            </svg>
+            <p>Подписаться на Job CODIFY</p>
+        </a>
     </div>
 </section>
 
@@ -50,12 +60,14 @@ const info_cards = [
     gap: 20px;
     @media (max-width: 975px) {
       display: flex;
-      flex-direction: column-reverse;
+      flex-direction: column;
     }
   }
+  .telegram-card {
+    border: 2px solid #0A244D;
+    background: transparent;
+  }
     .test-card {
-      border: 2px solid #0A244D;
-      background: transparent;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -93,6 +105,7 @@ const info_cards = [
     .test-card_link {
       display: flex;
       align-items: center;
+      margin-top: auto;
       gap: 5px;
       @media (max-width: 768px) {
         & svg {
