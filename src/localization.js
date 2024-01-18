@@ -28,7 +28,7 @@ export const texts = {
       subtitle: 'Helping you learn new skills and start a career in IT',
       h2: {
         courses: 'Courses',
-        advantages: 'The advantages of studying at Codify',
+        advantages: 'The advantages of studying at CODIFY',
         internship: 'Guaranteed Hackathon Internship',
         employment: 'Help in finding a job',
         students: 'Employed students',

@@ -31,4 +31,4 @@ const cards = [
 
 </script>
 
-<PageSection type="three_cards_transparent" cards={cards} title='Преимущества обучения в Codify Академии' />
+<PageSection type="three_cards_transparent" cards={cards} title='Преимущества обучения в CODIFY Академии' />

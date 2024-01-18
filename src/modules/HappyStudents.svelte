@@ -16,7 +16,7 @@ import InstaReviews from "./InstaReviews.svelte";
         </div>
         <div class="percent-block">
             <b class="coloredText">75%</b>
-            <p>будут рекомендовать Codify своим друзьям и знакомым</p>
+            <p>будут рекомендовать CODIFY своим друзьям и знакомым</p>
         </div>
     </div>
     <InstaReviews key={'main'} type="main" />
