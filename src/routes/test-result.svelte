@@ -27,7 +27,7 @@
     <div class="it-map">
         <div class="container">
         <p class="it-map-text">🎉 Поздравляем с завершением теста! Карта актуальных IT-профессий уже ждёт вас.</p>
-            <a href="http://192.168.68.118:8000/ru/api/download-it-prof-map/" on:click={() => it_map_downloaded = true}>
+            <a href="https://codifylab.com/ru/api/download-it-prof-map/" on:click={() => it_map_downloaded = true}>
 
         <button class="button light-blue">Получить карту</button>
             </a>
