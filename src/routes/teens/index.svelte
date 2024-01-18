@@ -25,7 +25,7 @@
     <TeensCardsOfCourses length={4} />
     <TeensFreeLesson />
     <TeensAdvantages />
-    <TeensStudentProject />
+<!--    <TeensStudentProject />-->
     <InstaReviews />
     <EducationLicense />
     <TeensLocation />

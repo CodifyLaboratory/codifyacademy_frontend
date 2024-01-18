@@ -21,7 +21,7 @@ import FreeLessonCard from '../../components/free-lesson-card/free-lesson-card.s
 
 </script>
 
-<section class="sectionFreeLesson container">
+<section id="freeLesson" class="sectionFreeLesson container">
     <h2>Бесплатное пробное занятие</h2>
     <div class="fleeLesson_box">
         <div>

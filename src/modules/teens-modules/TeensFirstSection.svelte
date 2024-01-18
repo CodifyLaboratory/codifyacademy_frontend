@@ -1,12 +1,17 @@
 <script>
   import { texts } from '../../localization'
   import { language } from '../../stores'
+  import * as animateScroll from "svelte-scrollto";
 
   let activeLang = 'ru'
 
   language.subscribe(lang => {
     activeLang = lang
   })
+
+  function scrollTo() {
+    animateScroll.scrollTo({ element: '#freeLesson', duration: 1300, offset: -100 })
+  }
 
 </script>
 
@@ -22,8 +27,8 @@
             <h1>{texts[activeLang].teens.h1}</h1>
             <p>{texts[activeLang].teens.subtitle}</p>
             <div class="firstSection__buttons">
-                <button class="button contained desktop">Подобрать курс</button>
-                <button class="button contained mobile">Попробовать бесплатно</button>
+                <button class="button contained desktop" on:click={scrollTo}>Попробовать бесплатно</button>
+                <button class="button contained mobile" on:click={scrollTo}>Попробовать бесплатно</button>
             </div>
         </div>
         <img class="teens-section-img" src="./assets/images/rocket-main.webp" alt="rocket">

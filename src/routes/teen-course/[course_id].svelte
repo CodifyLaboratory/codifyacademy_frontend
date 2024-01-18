@@ -19,8 +19,14 @@
   import InstaReviews from "../../modules/InstaReviews.svelte";
   import TeensFAQ from "../../modules/teens-modules/TeensFAQ.svelte";
   import EnrollForCourse from "../../components/HomePageSections/EnrollForCourse.svelte";
+  import {onMount} from "svelte";
 
+  let mounted = false
   export let course = {}
+
+  onMount(() => {
+    mounted = true
+  })
 </script>
 
     <TeensCourseFirstSections course={course}  />
@@ -29,11 +35,13 @@
     {/each}
     <TeensCourseProgress />
     <TeensCourseProgram cards={course.program_blocks || []} />
-    <TeensStudentProject />
+<!--    <TeensStudentProject />-->
     <TeensFreeLesson />
-    <InstaReviews />
+    {#if mounted}
+        <InstaReviews />
+    {/if}
 <!--    <TeensFAQ />-->
-    <EnrollForCourse />
+    <EnrollForCourse course_title={course.title} />
 
 
 <style lang="scss">

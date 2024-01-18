@@ -87,7 +87,7 @@
     <div style="background-image: var(--primary-bg);">
       <CoursePlan course={course_data} />
       <CardsOfMentors courseId={course_data.id} />
-      <StudentsProjects />
+<!--      <StudentsProjects />-->
       <EnrollForCourse course_title={course_data.title} />
     </div>
   {/if}

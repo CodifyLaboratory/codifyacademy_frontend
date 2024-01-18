@@ -33,8 +33,11 @@
           alt="burger"
         />
       {/if}
-      <a href="/" style="display: flex; align-items: center">
+      <a href="/" style="display: flex; align-items: center; position: relative">
         <img width="136px" height="28px" src="./assets/icons/logo.webp" alt="logo" />
+        {#if path?.includes('teen')}
+          <img src="./assets/Teens.svg" alt="teens" class="teens-logo">
+        {/if}
       </a>
       <nav style={`display:${!isOpenMenu && win < 1050 ? 'none' : 'flex'}`}>
         <a class={path === '/courses' ? 'active' : ''} href={`/courses`} on:click={()=>{isOpenMenu = false}}>{headerText.academy}</a>
@@ -82,6 +85,11 @@
 </header>
 
 <style lang="scss">
+  .teens-logo {
+    position: absolute;
+    bottom: -25px;
+    right: -15px
+  }
   .active {
     color: var(--light-blue);
   }
@@ -95,7 +103,7 @@
     background-image: linear-gradient(109.63deg, #111212 -1.59%, #04051c 105.94%);
     z-index: 10000;
     @media (max-width: 768px) {
-      height: 52px;
+      height: 72px;
     }
   }
   .callUsModal {
