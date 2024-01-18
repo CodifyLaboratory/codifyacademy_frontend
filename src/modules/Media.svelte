@@ -28,7 +28,7 @@
 <section>
     <h2 class="container">CODIFY в медиа</h2>
     <div class="media-box container">
-        {#each [...publications, ...publications, ...publications, ...publications, ...publications, ...publications, ...publications, ] as publication}
+        {#each [...publications] as publication}
             <a class="media-card" href={publication.source_link} target="_blank">
                 <div class="image-container">
                     <img src={publication.preview_image} alt="preview">
