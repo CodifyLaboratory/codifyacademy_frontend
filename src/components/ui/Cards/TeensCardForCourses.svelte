@@ -28,11 +28,11 @@
             <p class="description">
                 {cardInfo.short_description}
             </p>
-            <ul class="mobile-description">
-                {#each cardInfo.mobile_short_description || [] as text}
-                    <li>{text}</li>
-                {/each}
-            </ul>
+<!--            <ul class="mobile-description">-->
+<!--                {#each cardInfo.mobile_short_description || [] as text}-->
+<!--                    <li>{text}</li>-->
+<!--                {/each}-->
+<!--            </ul>-->
         </div>
 
         <div class="bonuses">
@@ -111,7 +111,7 @@
     font-weight: 400;
     line-height: normal;
     @media (max-width: 768px) {
-      display: none;
+      font-size: 14px;
     }
   }
   .mobile-description {

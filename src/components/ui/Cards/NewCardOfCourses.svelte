@@ -41,9 +41,9 @@
     </div>
 
     <div class="card-info">
-        <p class="start">
-            🕓 Старт — {course.course_start}
-        </p>
+<!--        <p class="start">-->
+<!--            🕓 Старт — {course.course_start}-->
+<!--        </p>-->
         <p class="price">
             💸 Стоимость — {course?.discount_price || course?.price} сом в месяц
         </p>
