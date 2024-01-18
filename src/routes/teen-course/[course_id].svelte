@@ -32,7 +32,7 @@
     <TeensStudentProject />
     <TeensFreeLesson />
     <InstaReviews />
-    <TeensFAQ />
+<!--    <TeensFAQ />-->
     <EnrollForCourse />
 
 
