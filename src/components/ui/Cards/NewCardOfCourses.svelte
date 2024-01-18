@@ -9,7 +9,7 @@
 
 
 
-<a href={`/course/${course.id}`} class="card course-card">
+<a href={course.redirect_url || `/course/${course.id}`} target={course.redirect_url ? '_blank' : ''} class="card course-card">
     {#if forTestResult}
         <div class="test">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,7 +45,7 @@
 <!--            🕓 Старт — {course.course_start}-->
 <!--        </p>-->
         <p class="price">
-            💸 Стоимость — {course?.discount_price || course?.price} сом в месяц
+            💸 Стоимость — {course.redirect_url ? `$${course?.discount_price || course?.price} за курс` : `${course?.discount_price || course?.price} сом в месяц`}
         </p>
     </div>
 
