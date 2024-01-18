@@ -60,7 +60,7 @@
     <div class="info_and_button">
       <div class="info_and_offer">
         <div class="price_info">
-          <p><strong>{text.courseWhy.start}</strong> {course.course_start}</p>
+<!--          <p><strong>{text.courseWhy.start}</strong> {course.course_start}</p>-->
           <p>
             <strong>{text.courseWhy.col}</strong>
             {course.seats_left}
@@ -191,7 +191,8 @@
 
   @media (max-width: 1024px) {
     .CoursePageWhy {
-      grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: column;
     }
   }
   @media (max-width: 550px) {
@@ -200,6 +201,9 @@
       display: flex;
       flex-direction: column;
       height: auto;
+    }
+    .info_and_button {
+      min-height: unset;
     }
     .coursePrice > .button {
       margin: 0 auto;

@@ -88,7 +88,7 @@
       <CoursePlan course={course_data} />
       <CardsOfMentors courseId={course_data.id} />
 <!--      <StudentsProjects />-->
-      <EnrollForCourse course_title={course_data.title} />
+      <EnrollForCourse ч />
     </div>
   {/if}
 </div>

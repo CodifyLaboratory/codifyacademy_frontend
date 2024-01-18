@@ -128,7 +128,7 @@
     .image_and_info {
       height: auto;
       min-height: 300px;
-      margin-bottom: 230px;
+      margin-bottom: 310px;
     }
     .fullInfo {
       width: 90%;

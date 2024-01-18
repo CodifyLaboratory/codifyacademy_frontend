@@ -56,6 +56,8 @@
 </script>
 
 <svelte:window bind:innerWidth={win} />
+
+{#if mentors.length}
 <section class="sectionMentors">
   <h2>{text.h2.mentors}</h2>
   {#if mentors.length}
@@ -88,7 +90,7 @@
     </Carousel>
   {/if}
 </section>
-
+{/if}
 <style>
   h2 {
     text-align: center !important;

@@ -64,8 +64,8 @@
     <ProfessionsMap />
     <HappyStudents />
     <Partners />
-    <GraduatesWork />
     <EducationLicense type="main" />
+    <GraduatesWork />
     <MainPageFAQ />
     <Media />
     <EnrollForCourse forMainPage />
