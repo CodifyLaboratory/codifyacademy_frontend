@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const request = (method, url, params, payload) => {
   return axios({
-    baseURL: 'https://codifylab.com/ru/api/',
+    baseURL: 'http://192.168.68.108:8000/ru/api/',
     url,
     headers: {'ngrok-skip-browser-warning': 'true',
     },

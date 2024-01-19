@@ -30,7 +30,7 @@
 <!--      <a href="/teens" target="_blank">{footerText.projects.codifyTeens}</a>-->
       <a href="https://lms.codifylab.com/" target="_blank">{footerText.projects.lms}</a>
       <a href="https://dev.codifylab.com/" target="_blank">{footerText.projects.lab}</a>
-      <a href="https://letscodify.io/" target="_blank">Lets Codify</a>
+      <a href="https://letscodify.io/" target="_blank">Job Codify</a>
     </div>
     <div class="contacts footerElement">
       <b>{footerText.contacts.title}</b>

@@ -15,10 +15,10 @@
     activeLang = lang
     await request('GET', 'courses/')
             .then((data) => {
-              courseCards = data
-              currentCards = data
+              courseCards = data || []
+              currentCards = data || []
               filter(0)
-              if (length && courseCards.length > length) {
+              if (courseCards?.length  && length && courseCards?.length > length) {
                 currentCards.length = length
               }
             })
@@ -27,7 +27,7 @@
 
 
   function filterCards(type) {
-    return courseCards.filter(card => card.study_area === type)
+    return courseCards?.filter(card => card.study_area === type)
   }
   function filter(tab) {
     activeBtn = tab

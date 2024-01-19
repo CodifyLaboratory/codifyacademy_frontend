@@ -48,7 +48,6 @@
                 <h6>{publication.title}</h6>
             </a>
         {/each}
-
     </div>
 </section>
 

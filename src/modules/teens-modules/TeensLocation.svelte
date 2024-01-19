@@ -35,7 +35,7 @@
         <div class="location-block">
             <img class="location-image" src="./assets/images/place-2.png" alt="location">
             <h5 class="title">
-                CODIFY Академия в 7 микрорайоне
+                CODIFY Академия на Исанова
             </h5>
             <div class="location-info_box">
                 <img src="./assets/icons/new-phone.svg" alt="phone">
