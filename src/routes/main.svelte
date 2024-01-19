@@ -53,6 +53,7 @@
   <meta property="twitter:image" content="https://codifylab.com/first-image.webp" />
   <meta property="twitter:image:alt" content="title image of site" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 </svelte:head>
 
 {#if !loading}
