@@ -36,7 +36,7 @@ export let type = 'children_course'
 
 </section>
 
-<style lang="scss">
+<style>
   .insta-section {
     max-width: 100%;
     overflow: hidden;

@@ -78,104 +78,103 @@
         </div>
     {/if}
     <div class={`test-contact-form ${isDisabled || isPost? 'transparent' : ''}`}>
-            <p>Вы почти у цели! Узнайте, какая профессия вам подходит.</p>
+        <p>Вы почти у цели! Узнайте, какая профессия вам подходит.</p>
         <input  required type="text" placeholder={texts[activeLang].findEducation.input_name} />
         <input required type="text" placeholder={texts[activeLang].findEducation.input_phone} />
         <button class="button contained">{'Отправить'}</button>
         <span class="subtitle">{(texts[activeLang].findEducation.subText + ' ' +texts[activeLang].findEducation.subLink)}</span>
     </div>
-
 </form>
 
-<style lang="scss">
-  .card {
-    margin: 70px auto 0;
-    position: relative;
-    max-width: 912px;
-    padding: 60px;
-    &.w-100 {
-      width: 100%;
-    }
-  }
-  .innerLoading {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .test-contact-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-  .test-contact-form.transparent {
-    opacity: 0;
-    pointer-events: none;
-    user-select: none;
-    cursor: default;
-  }
-  p {
-    color: var(--white);
-    max-width: 570px;
-    text-align: center;
-    font-size: 28px;
-    font-weight: 500;
-    line-height: 130%; /* 36.4px */
-  }
-  input {
-    width: 100%;
-    max-width: 328px;
-    border: 1px solid white;
-    padding: 11px 30px;
-    height: 60px;
-    background: transparent;
-    color: white;
-    font-size: 16px;
-    font-weight: 400;
-    border-radius: 100px;
-  }
-  input::placeholder {
-    color: white;
-    opacity: 0.7;
-  }
-  .subtitle {
-    max-width: 328px;
-    font-weight: 400;
-    font-size: 14px;
-  }
-  .button {
-    width: 100%;
-    max-width: 328px;
-    background: #009DFF;
-  }
-  @media (max-width: 855px) {
+<style>
     .card {
-      max-width: 100%;
-      padding: 30px 15px;
+        margin: 70px auto 0;
+        position: relative;
+        max-width: 912px;
+        padding: 60px;
+    }
+    .card.w-100 {
+        width: 100%;
+    }
+    .innerLoading {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .test-contact-form {
-      gap: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .test-contact-form.transparent {
+        opacity: 0;
+        pointer-events: none;
+        user-select: none;
+        cursor: default;
     }
     p {
-      font-size: 20px;
-      line-height: 130%; /* 36.4px */
+        color: var(--white);
+        max-width: 570px;
+        text-align: center;
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 130%; /* 36.4px */
     }
     input {
-      margin-top: 5px;
-      padding: 5px 30px;
-      height: 51px;
-      font-size: 14px;
+        width: 100%;
+        max-width: 328px;
+        border: 1px solid white;
+        padding: 11px 30px;
+        height: 60px;
+        background: transparent;
+        color: white;
+        font-size: 16px;
+        font-weight: 400;
+        border-radius: 100px;
     }
-    .test-contact-form {
-      max-width: 100%;
+    input::placeholder {
+        color: white;
+        opacity: 0.7;
     }
-    .subtitle, a {
-      font-size: 12px;
+    .subtitle {
+        max-width: 328px;
+        font-weight: 400;
+        font-size: 14px;
     }
-  }
+    .button {
+        width: 100%;
+        max-width: 328px;
+        background: #009DFF;
+    }
+    @media (max-width: 855px) {
+        .card {
+            max-width: 100%;
+            padding: 30px 15px;
+        }
+        .test-contact-form {
+            gap: 10px;
+        }
+        p {
+            font-size: 20px;
+            line-height: 130%; /* 36.4px */
+        }
+        input {
+            margin-top: 5px;
+            padding: 5px 30px;
+            height: 51px;
+            font-size: 14px;
+        }
+        .test-contact-form {
+            max-width: 100%;
+        }
+        .subtitle {
+            font-size: 12px;
+        }
+    }
 </style>

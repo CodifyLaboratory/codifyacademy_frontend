@@ -92,7 +92,7 @@
   </div>
 </section>
 
-<style lang="scss">
+<style>
   .test-card {
     border: 2px solid #0A244D;
     background: transparent;
@@ -100,65 +100,37 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
-    @media (max-width: 768px) {
-      gap: 15px;
-
-    }
-    & p {
-      font-size: 16px;
-      @media (max-width: 768px) {
-        font-size: 14px;
-      }
-    }
   }
-  .test-card_title {
-    & h2 {
-      font-size: 32px;
-      font-weight: 500;
-      line-height: 40px;
-      margin-bottom: 10px !important;
-      text-align: start;
-    }
-    & p {
-      line-height: 130%;
-      text-align: start;
-    }
-    @media (max-width: 768px) {
-      & h2 {
-        font-size: 20px;
-        line-height: 25px;
-
-      }
-    }
+  .test-card p {
+    font-size: 16px;
+  }
+  .test-card_title h2 {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 40px;
+    margin-bottom: 10px !important;
+    text-align: start;
+  }
+  .test-card_title p {
+    line-height: 130%;
+    text-align: start;
   }
   .test-card_link {
     display: flex;
     align-items: center;
     margin-top: auto;
     gap: 5px;
-    @media (max-width: 768px) {
-      & svg {
-        width: 24px;
-        height: 24px;
-      }
-    }
-    & p {
-      font-size: 18px;
-      color: #009DFF;
-      font-weight: 500;
-      @media (max-width: 768px) {
-        font-size: 14px;
-      }
-    }
+  }
+  .test-card_link p {
+    font-size: 18px;
+    color: #009DFF;
+    font-weight: 500;
   }
   .breadCrumbs {
     display: flex;
     align-items: center;
     padding-bottom: 50px;
     gap: 8px;
-    @media (max-width: 768px) {
-      display: none;
-    }
   }
   .breadCrumbs p {
     font-weight: 500
@@ -170,9 +142,6 @@
     text-align: start;
     font-weight: 500;
     margin-bottom: 30px;
-    @media (max-width: 768px) {
-      font-size: 32px;
-    }
   }
   .sectionCourses {
     padding-top: 100px;
@@ -191,11 +160,6 @@
     gap: 20px;
     flex-wrap: wrap;
     margin-top: 50px;
-    @media (max-width: 900px) {
-      grid-template-columns: 100%;
-      gap: 10px;
-
-    }
   }
   .buttonCourse {
     border-radius: 10px;
@@ -214,13 +178,11 @@
     border-color: rgba(103, 3, 180, 1);
     filter: drop-shadow(4px 4px 10px rgba(169, 0, 188, 0.199));
     transform: translate3d(0, 0, 0);
-
   }
   .design {
     border-color: rgba(221, 255, 0, 1);
     filter: drop-shadow(4px 4px 10px #ddff002d);
     transform: translate3d(0, 0, 0);
-
   }
   .management {
     border-color: rgba(0, 255, 98, 1);
@@ -259,6 +221,35 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
+    }
+    .coursesCards {
+        grid-template-columns: 100%;
+        gap: 10px;
+    }
+  }
+  @media (max-width: 768px) {
+    .test-card {
+        gap: 15px;
+    }
+    .test-card p {
+        font-size: 14px;
+    }
+    .test-card_title h2 {
+          font-size: 20px;
+          line-height: 25px;
+    }
+    .test-card_link svg {
+          width: 24px;
+          height: 24px;
+    }
+    .test-card_link p {
+        font-size: 14px;
+    }
+    .breadCrumbs {
+        display: none;
+    }
+    h1 {
+        font-size: 32px;
     }
   }
 </style>

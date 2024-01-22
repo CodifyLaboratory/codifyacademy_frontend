@@ -13,18 +13,21 @@
     </div>
 </section>
 
-<style lang="scss">
-
-  .program-box {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+<style>
+    .program-box {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
     @media (max-width: 975px) {
-      grid-template-columns: repeat(2, 1fr);
+        .program-box {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
     @media (max-width: 768px) {
-      grid-template-columns: 100%;
-      gap: 10px;
+        .program-box {
+            grid-template-columns: 100%;
+            gap: 10px;
+        }
     }
-  }
 </style>

@@ -90,11 +90,9 @@
   </section>
 {/if}
 
-<style lang="scss">
-  .main-page {
-    & h2 {
+<style>
+  .main-page h2 {
       text-align: start !important;
-    }
   }
   .loadingLogo {
     position: fixed;

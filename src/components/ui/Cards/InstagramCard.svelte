@@ -90,56 +90,54 @@
     <script async src="//www.instagram.com/embed.js"></script>
 </div>
 
-<style lang="scss">
-  .review-box {
-    position: relative;
-    overflow: hidden;
-    min-width: 326px;
-    & .ig_block {
-      width: calc(100% + 2px);
-      position: relative;
-      left: -1px;
+<style>
+    .review-box {
+        position: relative;
+        overflow: hidden;
+        min-width: 326px;
     }
-    & .top-block {
-      position: absolute;
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      width: 100%;
-      height: 56px;
-      padding: 10px;
-      z-index: 1;
-      background: #111119;
-      cursor: pointer;
-      & img {
+    .review-box .ig_block {
+        width: calc(100% + 4px);
+        position: relative;
+        left: -2px;
+    }
+    .review-box .top-block {
+        position: absolute;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        width: 100%;
+        height: 56px;
+        padding: 10px;
+        z-index: 1;
+        background: #111119;
+        cursor: pointer;
+    }
+    .review-box .top-block img {
         width: 40px;
         height: 40px;
-      }
-      & p {
+    }
+    .review-box .top-block p {
         cursor: pointer;
 
         font-weight: 500;
-      }
-
     }
-    & .bottom-block {
-      position: absolute;
-      height: 45px;
-      width: 100%;
-      padding: 0 12px;
-      display: flex;
-      align-items: center;
-      //opacity: 0;
-      z-index: 1;
-      pointer-events: none;
-      left: 0;
-      bottom: 0;
-      background: #111119;
-      & p {
+    .review-box .bottom-block {
+        position: absolute;
+        height: 45px;
+        width: 100%;
+        padding: 0 12px;
+        display: flex;
+        align-items: center;
+        z-index: 1;
+        pointer-events: none;
+        left: 0;
+        bottom: 0;
+        background: #111119;
+    }
+    .review-box .bottom-block p {
         color: rgb(0, 149, 246);
         font-size: 14px;
         font-weight: 500;
-      }
     }
-  }
 </style>

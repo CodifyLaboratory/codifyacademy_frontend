@@ -51,105 +51,106 @@
     </button>
 </div>
 
-<style lang="scss">
+<style>
     .questions-container {
-      flex: 1;
-      max-width: 912px;
-      margin: 0 auto;
-      & > svg {
-        @media (max-width: 768px) {
-          width: 24px;
-          height: 24px;
-        }
-      }
+        flex: 1;
+        max-width: 912px;
+        margin: 0 auto;
+    }
+    .questions-container > svg {
     }
     .questions-progress{
-      display: flex;
-      padding: 20px 0 40px;
-      gap: 10px;
-      width: 100%;
-      max-width: 912px;
-      @media (max-width: 768px) {
-        padding: 10px 0 20px;
-      }
-      & .progress {
+        display: flex;
+        padding: 20px 0 40px;
+        gap: 10px;
+        width: 100%;
+        max-width: 912px;
+    }
+    .questions-progress .progress {
         height: 6px;
         border-radius: 7px;
         background: rgba(0, 157, 255, 0.40);
         width: 100%;
-
-        &.active {
-          background: #009DFF;
-
-        }
-      }
+    }
+    .questions-progress .progress.active {
+        background: #009DFF;
     }
     .question-card {
-      width: 100%;
-      padding: 60px;
-      @media (max-width: 768px) {
-        padding: 30px 15px 15px;
-      }
-      & h3 {
+        width: 100%;
+        padding: 60px;
+    }
+    .question-card h3 {
         font-size: 32px;
         font-style: normal;
         font-weight: 500;
         line-height: 120%;
         text-align: center;
         padding-bottom: 30px;
-        @media (max-width: 768px) {
-          font-size: 20px;
-          padding-bottom: 15px;
-        }
-      }
-      & .answers-box {
+    }
+    .question-card .answers-box {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
-        @media (max-width: 768px) {
-          grid-template-columns: 100%;
-        }
-        & .answer {
-          background: white;
-          border-radius: 10px;
-          padding: 20px 20px 20px 15px;
-          display: flex;
-          align-items: start;
-          gap: 8px;
-          cursor: pointer;
-          & svg {
-            flex-shrink: 0;
-            @media (max-width: 768px) {
-              width: 16px;
-              height: 16px;
-            }
-          }
-           & p {
-             padding-top: 3px;
-             color: #132150;
-             font-size: 16px;
-             font-style: normal;
-             font-weight: 400;
-             line-height: 120%;
-             @media (max-width: 768px) {
-               font-size: 14px;
-               padding-top: 1px;
-
-             }
-           }
-        }
-      }
+    }
+    .answer {
+        background: white;
+        border-radius: 10px;
+        padding: 20px 20px 20px 15px;
+        display: flex;
+        align-items: start;
+        gap: 8px;
+        cursor: pointer;
+    }
+    .answer svg {
+        flex-shrink: 0;
+    }
+    .answer p {
+        padding-top: 3px;
+        color: #132150;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
     }
     .test-button {
-      margin: 40px auto 0;
-      background: #009DFF;
-      @media (max-width: 768px) {
-        margin: 10px auto;
-      }
-      &:disabled {
+        margin: 40px auto 0;
+        background: #009DFF;
+    }
+    .test-button:disabled {
         opacity: 0.8;
         pointer-events: none;
         cursor: auto;
-      }
+    }
+
+
+    @media (max-width: 768px) {
+        .questions-container > svg {
+            width: 24px;
+            height: 24px;
+        }
+        .questions-progress{
+            padding: 10px 0 20px;
+        }
+        .question-card {
+            padding: 30px 15px 15px;
+        }
+        .question-card h3 {
+            font-size: 20px;
+            padding-bottom: 15px;
+        }
+        .question-card .answers-box {
+            grid-template-columns: 100%;
+        }
+        .answer svg {
+            width: 16px;
+            height: 16px;
+        }
+        .answer p {
+            font-size: 14px;
+            padding-top: 1px;
+        }
+        .test-button {
+            margin: 10px auto;
+        }
     }
 </style>

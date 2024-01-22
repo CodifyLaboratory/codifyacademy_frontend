@@ -69,68 +69,69 @@
     {/if}
 </section>
 
-<style lang="scss">
-    .project_student {
-        display: flex;
-        gap: 20px;
-        & img {
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
-          }
-      & .name {
-        font-size: 24px;
-        font-weight: 500;
-        margin-bottom: 5px;
-      }
-    }
-    h2 {
-        text-align: center !important;
-    }
+<style>
+  .project_student {
+    display: flex;
+    gap: 20px;
+  }
+  .project_student img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  .project_student .name {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  h2 {
+    text-align: center !important;
+  }
+  .studentsProjects {
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 392px;
+    gap: 20px;
+  }
+  .studentsProjects__img {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .studentsProjects__info {
+    display: flex;
+    background: linear-gradient(129.96deg, #07294e -21.19%, rgba(7, 41, 78, 0) 112.21%);
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 20px;
+  }
+  .studentsProjects__info {
+    max-width: 100%;
+  }
+  .studentsProjects__img > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .studentsProjects__description{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  .studentsProjects__description p {
+    font-size: 16px;
+  }
+  @media screen and (max-width: 1060px) {
     .studentsProjects {
-        border-radius: 10px;
-        overflow: hidden;
-        width: 100%;
-        display: grid;
-        grid-template-columns: auto 392px;
-        gap: 20px;
+      grid-template-columns: 1fr;
     }
-    .studentsProjects__img {
-        border-radius: 10px;
-        overflow: hidden;
+  }
+  @media (max-width: 768px) {
+    .studentsProjects__description p {
+      font-size: 14px;
     }
-    .studentsProjects__info {
-        display: flex;
-        background: linear-gradient(129.96deg, #07294e -21.19%, rgba(7, 41, 78, 0) 112.21%);
-
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 40px 20px;
-    }
-    .studentsProjects__info {
-        max-width: 100%;
-    }
-    .studentsProjects__img > img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .studentsProjects__description{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
-      & p {
-        font-size: 16px;
-        @media (max-width: 768px) {
-          font-size: 14px;
-        }
-      }
-    }
-    @media screen and (max-width: 1060px) {
-        .studentsProjects {
-            grid-template-columns: 1fr;
-        }
-    }
+  }
 </style>

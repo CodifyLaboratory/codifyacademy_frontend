@@ -23,26 +23,27 @@
     </div>
 </section>
 
-<style lang="scss">
-  .partners-box {
-    display: grid;
-    gap: 40px;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+<style>
+    .partners-box {
+        display: grid;
+        gap: 40px;
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    }
+    .partner-card {
+        justify-self: center;
+        align-self: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .partner-card img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+    }
     @media (max-width: 768px) {
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-
+        .partners-box {
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        }
     }
-  }
-  .partner-card {
-    justify-self: center;
-    align-self: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    & img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: cover;
-    }
-  }
 </style>

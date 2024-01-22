@@ -59,73 +59,76 @@
     </div>
 </section>
 
-<style lang="scss">
-  .location-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-    gap: 20px;
-    @media (max-width: 768px) {
-      grid-template-columns: 100%;
+<style>
+    .location-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        gap: 20px;
     }
-  }
-  .location-block {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    @media (max-width: 768px) {
-      gap: 5px;
+    .location-block {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
-    & .location-image {
-      width: 100%;
-      object-fit: cover;
-      aspect-ratio: 2 / 1;
-      margin-bottom: 10px;
-      border-radius: 10px;
-      overflow: hidden;
+    .location-block .location-image {
+        width: 100%;
+        object-fit: cover;
+        aspect-ratio: 2 / 1;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        overflow: hidden;
     }
-    & .title {
-      font-size: 24px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: normal;
-      @media (max-width: 768px) {
-        font-size: 20px;
-      }
+    .location-block .title {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
     }
-    & .location-info_box {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      & p {
+    .location-block .location-info_box {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .location-block .location-info_box p {
         color: #009DFF;
         font-size: 20px;
         font-style: normal;
         line-height: normal;
-        @media (max-width: 768px) {
-          font-size: 14px;
-        }
-      }
-      & img {
-        @media (max-width: 768px) {
-          width: 20px;
-          height: 20px;
-        }
-      }
     }
-    & a {
-      margin-top: auto;
-      & button {
+    .location-block a {
+        margin-top: auto;
+    }
+    .location-block a button {
         margin-top: 10px;
-      }
-      @media (max-width: 768px) {
-        display: none;
-        width: 100%;
-        margin-bottom: 10px;
-        & button {
-          width: 100% !important;
-        }
-      }
     }
-  }
+
+    @media (max-width: 768px) {
+        .location-container {
+            grid-template-columns: 100%;
+        }
+        .location-block {
+            gap: 5px;
+        }
+
+        .location-block .title {
+            font-size: 20px;
+        }
+
+        .location-block .location-info_box p {
+            font-size: 14px;
+        }
+        .location-block .location-info_box img {
+            width: 20px;
+            height: 20px;
+        }
+        .location-block a {
+            display: none;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .location-block a button {
+            width: 100% !important;
+        }
+    }
 </style>

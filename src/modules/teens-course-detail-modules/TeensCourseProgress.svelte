@@ -38,50 +38,48 @@
     </div>
 </section>
 
-<style lang="scss">
-  p {
-    font-size: 20px;
-    padding-bottom: 30px;
-    @media (max-width: 768px) {
-      font-size: 14px;
-      padding-bottom: 10px;
+<style>
+    p {
+        font-size: 20px;
+        padding-bottom: 30px;
     }
-  }
-  .progress_box {
-    padding-top: 10px;
-    display: flex;
-    gap: 20px;
-    justify-content: space-between;
-    width: 100%;
-    @media (max-width: 768px) {
-      flex-wrap: wrap-reverse;
+    .progress_box {
+        padding-top: 10px;
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        width: 100%;
     }
-  }
-  .description_text {
-    font-size: 20px;
-    padding-bottom: 10px;
-    display: block;
-    @media (max-width: 768px) {
-      font-size: 14px;
-      padding-bottom: 5px;
+    .description_text {
+        font-size: 20px;
+        padding-bottom: 10px;
+        display: block;
     }
-  }
-   img {
-     @media (max-width: 768px) {
-       width: 60%;
-     }
-   }
-   a {
-     @media (max-width: 768px) {
-       width: 100%;
-     }
-   }
-   .button {
-     min-height: 46px;
-     margin-top: 40px;
-     @media (max-width: 768px) {
-       margin-top: 20px;
-       width: 100%;
-     }
-   }
+    .button {
+        min-height: 46px;
+        margin-top: 40px;
+    }
+    @media (max-width: 768px) {
+        p {
+            font-size: 14px;
+            padding-bottom: 10px;
+        }
+        .progress_box {
+            flex-wrap: wrap-reverse;
+        }
+        .description_text {
+            font-size: 14px;
+            padding-bottom: 5px;
+        }
+        img {
+            width: 60%;
+        }
+        a {
+            width: 100%;
+        }
+        .button {
+            margin-top: 20px;
+            width: 100%;
+        }
+    }
 </style>

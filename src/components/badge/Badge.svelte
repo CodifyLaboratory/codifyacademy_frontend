@@ -5,7 +5,7 @@
 
 <span class="badge {green ? 'green' : null}">{text}</span>
 
-<style lang="scss">
+<style>
   .green {
     background: #9DFF00 !important;
     border-color: #9DFF00 !important;
@@ -20,11 +20,12 @@
     font-weight: 400;
     line-height: 9px;
     font-size: 14px;
-    @media (max-width: 768px) {
-        padding: 10px;
-        font-size: 12px;
-        line-height: 8px;
-
+  }
+  @media (max-width: 768px) {
+    .badge {
+      padding: 10px;
+      font-size: 12px;
+      line-height: 8px;
     }
   }
 </style>

@@ -1,15 +1,14 @@
 <script>
+  import {onMount} from "svelte";
+  import {request} from "../api";
 
-    import {onMount} from "svelte";
-    import {request} from "../api";
-
-    let partners = []
-    onMount(() => {
-      request('get', 'partners/')
-        .then((data) => {
-          partners = data || []
-        })
-    })
+  let partners = []
+  onMount(() => {
+    request('get', 'partners/')
+      .then((data) => {
+        partners = data || []
+      })
+  })
 </script>
 
 <section class="partners-section container">
@@ -23,26 +22,29 @@
     </div>
 </section>
 
-<style lang="scss">
+<style>
     .partners-box {
-      display: grid;
-      gap: 40px;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      @media (max-width: 768px) {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-
-      }
+        display: grid;
+        gap: 40px;
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     }
     .partner-card {
-      justify-self: center;
-      align-self: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      & img {
+        justify-self: center;
+        align-self: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .partner-card img {
         max-width: 100%;
         max-height: 100%;
         object-fit: cover;
-      }
+    }
+
+    @media (max-width: 768px) {
+        .partners-box {
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+
+        }
     }
 </style>

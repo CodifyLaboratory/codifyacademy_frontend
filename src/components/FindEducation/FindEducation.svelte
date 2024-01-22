@@ -88,93 +88,93 @@
 
 </form>
 
-<style lang="scss">
-    .card {
-        position: relative;
-        max-width: 392px;
-  &.w-100 {
+<style>
+  .card {
+    position: relative;
+    max-width: 392px;
+  }
+  .card.w-100 {
     max-width: unset;
     width: 100%;
   }
-    }
-    .innerLoading {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+  .innerLoading {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .find-education {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .find-education.transparent {
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    cursor: default;
+  }
+  p {
+    color: var(--white);
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 130%; /* 36.4px */
+  }
+  input {
+    border: 1px solid white;
+    padding: 11px 30px;
+    height: 60px;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 100px;
+  }
+  input::placeholder {
+    color: white;
+    opacity: 0.7;
+  }
+  .subtitle {
+    font-weight: 400;
+    font-size: 14px;
+  }
+  a {
+    font-weight: 400;
+    font-size: 14px;
+    cursor: pointer;
+    color: #009DFF;
+    text-decoration: underline;
+  }
+  a:hover {
+    color: var(--blue);
+
+  }
+  @media (max-width: 855px) {
+    .card {
+      max-width: 100%;
     }
     .find-education {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-    .find-education.transparent {
-        opacity: 0;
-        pointer-events: none;
-        user-select: none;
-        cursor: default;
+      gap: 10px;
     }
     p {
-        color: var(--white);
-        font-size: 28px;
-        font-weight: 500;
-        line-height: 130%; /* 36.4px */
+      font-size: 20px;
+      line-height: 130%; /* 36.4px */
     }
     input {
-        border: 1px solid white;
-        padding: 11px 30px;
-        height: 60px;
-        background: transparent;
-        color: white;
-        font-size: 16px;
-        font-weight: 400;
-        border-radius: 100px;
+      margin-top: 5px;
+      padding: 5px 30px;
+      height: 51px;
+      font-size: 14px;
     }
-    input::placeholder {
-        color: white;
-        opacity: 0.7;
+    .find-education {
+      max-width: 100%;
     }
-    .subtitle {
-        font-weight: 400;
-        font-size: 14px;
+    .subtitle, a {
+      font-size: 12px;
     }
-    a {
-        font-weight: 400;
-        font-size: 14px;
-        cursor: pointer;
-        color: #009DFF;
-        text-decoration: underline;
-    }
-    a:hover {
-        color: var(--blue);
-
-    }
-    @media (max-width: 855px) {
-        .card {
-            max-width: 100%;
-        }
-        .find-education {
-            gap: 10px;
-        }
-        p {
-            font-size: 20px;
-            line-height: 130%; /* 36.4px */
-        }
-        input {
-            margin-top: 5px;
-            padding: 5px 30px;
-            height: 51px;
-            font-size: 14px;
-        }
-        .find-education {
-            max-width: 100%;
-        }
-        .subtitle, a {
-            font-size: 12px;
-        }
-    }
+  }
 </style>

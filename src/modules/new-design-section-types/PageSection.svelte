@@ -17,27 +17,31 @@
     </div>
 </section>
 
-<style lang="scss">
-
-.three_cards_transparent-box {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px 20px;
-  @media (max-width: 975px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media (max-width: 768px) {
-    grid-template-columns: 100%;
-    gap: 30px;
-  }
-}
-  .two_cards-box {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    @media (max-width: 768px) {
-      grid-template-columns: 100%;
-      gap: 10px;
+<style>
+    .three_cards_transparent-box {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px 20px;
     }
-  }
+    .two_cards-box {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    @media (max-width: 975px) {
+        .three_cards_transparent-box {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+    }
+    @media (max-width: 768px) {
+        .three_cards_transparent-box {
+            grid-template-columns: 100%;
+            gap: 30px;
+        }
+        .two_cards-box {
+            grid-template-columns: 100%;
+            gap: 10px;
+        }
+    }
 </style>

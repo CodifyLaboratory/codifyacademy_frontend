@@ -43,113 +43,116 @@
     </a>
 </div>
 
-<style lang="scss">
+<style>
   .mobile-link {
     display: none;
-    @media (max-width: 880px) {
-      display: block;
-      width: 100%;
-    }
-    & button {
-      background: #fff;
-      color: black;
-      width: 100%;
-    }
   }
-.program-card {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 20px;
-  & > img {
+  .mobile-link button {
+    background: #fff;
+    color: black;
+    width: 100%;
+  }
+  .program-card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  .program-card > img {
     position: absolute;
     top: 0;
     right: 0;
-    @media (max-width: 880px) {
-      display: none;
-    }
   }
-  @media (max-width: 880px) {
+  .left-block {
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 10px;
   }
-}
-.left-block {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-   & h3 {
-     font-size: 32px;
-     font-weight: 500;
-     line-height: 130%;
-     @media (max-width: 880px) {
-       font-size: 20px;
-     }
-   }
-  & .subtitle {
+  .left-block h3 {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 130%;
+  }
+  .left-block .subtitle {
     line-height: 150%;
     font-size: 20px;
     max-width: 640px;
-    @media (max-width: 880px) {
-      font-size: 14px;
-
-    }
   }
-  & .badges {
+  .left-block .badges {
     padding-top: 10px;
     padding-bottom: 20px;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    @media (max-width: 880px) {
-      padding-bottom: 0;
-    }
   }
-  & > a {
+  .left-block > a {
     margin-top: auto;
     display: block;
-    @media (max-width: 880px) {
-      display: none;
-    }
-     & button {
-       background: #fff;
-       color: black
-     }
   }
-}
-.right-block {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: flex-start;
-  min-width: 392px;
-  @media (max-width: 1145px) {
-    min-width: 250px;
+  .left-block > a button {
+    background: #fff;
+    color: black
   }
-  @media (max-width: 880px) {
+  .right-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    min-width: 392px;
+  }
+  .right-block .course-name {
+    display: flex;
+    align-items: center;
     gap: 10px;
   }
-   & .course-name {
-     display: flex;
-     align-items: center;
-     gap: 10px;
-     @media (max-width: 880px) {
-       & svg {
-         width: 16px;
-         height: 16px;
-       }
-       & span {
-         font-size: 14px !important;
-       }
-     }
-     & span {
-       font-size: 20px;
-       font-weight: 500;
-     }
-   }
-}
+  .right-block .course-name span {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+
+  @media (max-width: 1145px) {
+    .right-block {
+        min-width: 250px;
+    }
+  }
+
+  @media (max-width: 880px) {
+    .mobile-link {
+        display: block;
+    }
+    .program-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .program-card > img {
+        display: none;
+    }
+    .left-block h3 {
+        font-size: 20px;
+    }
+    .left-block .subtitle {
+        font-size: 14px;
+    }
+    .left-block .badges {
+        padding-bottom: 0;
+    }
+    .left-block > a {
+        display: none;
+    }
+    .right-block {
+        gap: 10px;
+    }
+    .right-block .course-name svg {
+      width: 16px;
+      height: 16px;
+    }
+    .right-block .course-name span {
+          font-size: 14px !important;
+    }
+  }
 </style>

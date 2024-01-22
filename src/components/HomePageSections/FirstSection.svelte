@@ -34,23 +34,19 @@
     </div>
 </section>
 
-<style lang="scss">
-    .firstSection {
-      padding-top: 150px;
-        position: relative;
-      overflow: hidden;
-      @media (max-width: 768px) {
-        padding-top: 100px;
-
-      }
-      & > img {
-        position: absolute;
-        top: -30px;
-        z-index: -1;
-        min-width: 100%;
-        right: 0;
-      }
-    }
+<style>
+  .firstSection {
+    padding-top: 150px;
+    position: relative;
+    overflow: hidden;
+  }
+  .firstSection > img {
+    position: absolute;
+    top: -30px;
+    z-index: -1;
+    min-width: 100%;
+    right: 0;
+  }
   .container {
     display: flex;
     gap: 20px;
@@ -65,23 +61,26 @@
     padding-bottom: 10px;
   }
   p {
-      font-size: 24px;
+    font-size: 24px;
   }
   .button {
     margin-top: 50px;
   }
   @media (max-width: 855px) {
-      h1 {
-          font-size: 32px;
-      }
-      p  {
-          font-size: 20px;
-      }
-      .container {
-          flex-direction: column;
-      }
-      .button {
-          display: none;
-      }
+    .firstSection {
+      padding-top: 100px;
+    }
+    h1 {
+      font-size: 32px;
+    }
+    p  {
+      font-size: 20px;
+    }
+    .container {
+      flex-direction: column;
+    }
+    .button {
+      display: none;
+    }
   }
 </style>

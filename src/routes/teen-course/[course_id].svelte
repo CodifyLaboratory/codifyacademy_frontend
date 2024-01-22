@@ -15,9 +15,7 @@
   import PageSection from "../../modules/new-design-section-types/PageSection.svelte";
   import TeensCourseProgress from "../../modules/teens-course-detail-modules/TeensCourseProgress.svelte";
   import TeensCourseProgram from "../../modules/teens-course-detail-modules/TeensCourseProgram.svelte";
-  import TeensStudentProject from "../../modules/teens-modules/TeensStudentProject.svelte";
   import InstaReviews from "../../modules/InstaReviews.svelte";
-  import TeensFAQ from "../../modules/teens-modules/TeensFAQ.svelte";
   import EnrollForCourse from "../../components/HomePageSections/EnrollForCourse.svelte";
   import {onMount} from "svelte";
 
@@ -35,15 +33,14 @@
     {/each}
     <TeensCourseProgress />
     <TeensCourseProgram cards={course.program_blocks || []} />
-<!--    <TeensStudentProject />-->
+    <!--    <TeensStudentProject />-->
     <TeensFreeLesson />
     {#if mounted}
         <InstaReviews />
     {/if}
-<!--    <TeensFAQ />-->
+    <!--    <TeensFAQ />-->
     <EnrollForCourse course_title={course.title} />
 
 
-<style lang="scss">
-
+<style>
 </style>

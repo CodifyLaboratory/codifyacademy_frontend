@@ -84,7 +84,7 @@
   </div>
 </header>
 
-<style lang="scss">
+<style>
   .teens-logo {
     position: absolute;
     bottom: -25px;
@@ -102,9 +102,6 @@
     height: 90px;
     background-image: linear-gradient(109.63deg, #111212 -1.59%, #04051c 105.94%);
     z-index: 10000;
-    @media (max-width: 768px) {
-      height: 72px;
-    }
   }
   .callUsModal {
     position: absolute;
@@ -273,7 +270,11 @@
       height: 24px;
     }
   }
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 768px) {
+    .header {
+      height: 72px;
+
+    }
     .headerNavigation,
     .callUs {
       gap: 10px;

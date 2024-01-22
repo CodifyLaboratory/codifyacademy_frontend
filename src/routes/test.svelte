@@ -44,32 +44,33 @@ const sendTest = async () => {
     <p class="test-footer">© 2023 Codify Academy. All Rights Reserved</p>
 </div>
 
-<style lang="scss">
-  .test-footer {
-    padding: 15px 0;
-    width: 100%;
-    text-align: center;
-  }
-.test-page {
-  min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
-}
-.test-header {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  background: #111119;
-  position: sticky;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  @media (max-width: 768px) {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    & p {
-      display: none;
+<style>
+    .test-footer {
+        padding: 15px 0;
+        width: 100%;
+        text-align: center;
     }
-  }
-}
+    .test-page {
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+    }
+    .test-header {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        background: #111119;
+        position: sticky;
+        top: 0;
+        display: flex;
+        align-items: center;
+    }
+    @media (max-width: 768px) {
+        .test-header {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .test-header p {
+            display: none;
+        }
+    }
 </style>

@@ -51,81 +51,85 @@
 
 </a>
 
-<style lang="scss">
-  .test {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-      & svg {
+<style>
+    .test {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .test svg {
         width: 24px;
         height: 24px;
-      }
-    & p {
-      color: #009DFF;
-      font-weight: 500;
-    font-size: 14px;
+    }
+    .test p {
+        color: #009DFF;
+        font-weight: 500;
+        font-size: 14px;
 
     }
-  }
 
-  .card-info{
-    margin-top: auto;
-    @media (max-width: 768px) {
-      margin-top: 0;
+    .card-info{
+        margin-top: auto;
     }
-    & p {
-      font-size: 16px !important;
+    .card-info p {
+        font-size: 16px !important;
 
-      @media (max-width: 768px) {
-        font-size: 14px !important;
-      }
     }
-  }
-  .start {
-    padding-bottom: 5px;
-    @media (max-width: 768px) {
-      padding-bottom: 0;
+    .start {
+        padding-bottom: 5px;
     }
-  }
-  .course-card {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    @media (max-width: 768px) {
-      gap: 15px;
+    .course-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
-    & * {
-      text-align: start;
+    .course-card * {
+        text-align: start;
     }
-  }
 
-  h4 {
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 130%;
-    padding-bottom: 10px;
-    @media (max-width: 768px) {
-      font-size: 20px;
+    h4 {
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%;
+        padding-bottom: 10px;
     }
-  }
-  .description {
-    text-align: start;
-    font-size: 16px;
-    font-style: normal;
-    line-height: normal;
-    @media (max-width: 768px) {
-      font-size: 14px;
+    .description {
+        text-align: start;
+        font-size: 16px;
+        font-style: normal;
+        line-height: normal;
     }
-  }
-  .card-badges {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    @media (max-width: 768px) {
-      gap: 5px;
+    .card-badges {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
     }
-  }
 
+    @media (max-width: 768px) {
+
+        .card-info{
+            margin-top: 0;
+        }
+        .card-info p {
+            font-size: 14px !important;
+        }
+        .start {
+            padding-bottom: 0;
+        }
+        .course-card {
+            gap: 15px;
+        }
+
+        h4 {
+            font-size: 20px;
+        }
+        .description {
+            font-size: 14px;
+        }
+        .card-badges {
+            gap: 5px;
+        }
+    }
 </style>

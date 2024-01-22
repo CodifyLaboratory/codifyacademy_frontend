@@ -20,102 +20,61 @@ import FindEducation from "../components/FindEducation/FindEducation.svelte";
     <FindEducation forMap />
 </section>
 
-<style lang="scss">
-  .professions-map {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    @media (max-width: 975px) {
-      display: flex;
-      flex-direction: column;
+<style>
+    .professions-map {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
     }
-  }
-  h2 {
-    padding-bottom: 20px;
-    margin-bottom: 0 !important;
-  }
-  .test-card {
-    border: 2px solid #0A244D;
-    background: transparent;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    @media (max-width: 768px) {
-      gap: 5px;
+    h2 {
+        padding-bottom: 20px;
+        margin-bottom: 0 !important;
+    }
+    .test-card {
+        border: 2px solid #0A244D;
+        background: transparent;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .test-card p {
+        font-size: 16px;
+    }
 
+    .test-card_title h2 {
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 120%;
+        text-align: start;
     }
-    & p {
-      font-size: 16px;
-      @media (max-width: 768px) {
-        font-size: 14px;
-      }
-    }
-  }
-  .test-card_title {
-    & h2 {
-      font-size: 32px;
-      font-weight: 500;
-      line-height: 120%;
-      text-align: start;
-    }
-    & p {
-      line-height: 130%;
-    }
-    @media (max-width: 768px) {
-      & h2 {
-        font-size: 20px;
-        line-height: 24px;
-
-      }
-    }
-  }
-  .test-card_link {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    @media (max-width: 768px) {
-      & svg {
-        width: 24px;
-        height: 24px;
-      }
-    }
-    & p {
-      font-size: 18px;
-      color: #009DFF;
-      font-weight: 500;
-      @media (max-width: 768px) {
-        font-size: 14px;
-      }
-    }
-  }
-  .info-cards {
-    padding: 15px;
-    align-items: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    @media (max-width: 768px) {
-      grid-template-columns: 100%;
-    }
-    & .info-card {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      align-items: flex-start;
-      & p {
-        white-space: pre-wrap;
+    .test-card_title p {
         line-height: 130%;
-      }
-      @media (max-width: 768px) {
-        flex-direction: row;
-        align-items: center;
-        & img {
-          width: 24px;
-          height: 24px;
-        }
-      }
     }
-  }
+
+    @media (max-width: 975px) {
+        .professions-map {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .professions-map {
+            display: flex;
+            flex-direction: column;
+        }
+        .test-card {
+            gap: 5px;
+        }
+        .test-card p {
+            font-size: 14px;
+        }
+        .test-card_title h2 {
+            font-size: 20px;
+            line-height: 24px;
+
+        }
+    }
 </style>

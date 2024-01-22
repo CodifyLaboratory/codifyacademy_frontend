@@ -53,101 +53,80 @@ const info_cards = [
     </div>
 </section>
 
-<style lang="scss">
-  .test-info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    @media (max-width: 975px) {
-      display: flex;
-      flex-direction: column;
+<style>
+    .test-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
     }
-  }
-  .telegram-card {
-    border: 2px solid #0A244D;
-    background: transparent;
-  }
+    .telegram-card {
+        border: 2px solid #0A244D;
+        background: transparent;
+    }
     .test-card {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 20px;
-      @media (max-width: 768px) {
-        gap: 15px;
-
-      }
-       & p {
-         font-size: 16px;
-         @media (max-width: 768px) {
-           font-size: 14px;
-         }
-       }
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
     }
-    .test-card_title {
-      & h2 {
+    .test-card p {
+        font-size: 16px;
+    }
+    .test-card_title h2 {
         font-size: 32px;
         font-weight: 500;
         line-height: 46px;
         margin-bottom: 10px !important;
         text-align: start;
-      }
-      & p {
+    }
+    .test-card_title p {
         line-height: 130%;
-      }
-      @media (max-width: 768px) {
-        & h2 {
-          font-size: 20px;
-          line-height: 32px;
-
-        }
-      }
     }
     .test-card_link {
-      display: flex;
-      align-items: center;
-      margin-top: auto;
-      gap: 5px;
-      @media (max-width: 768px) {
-        & svg {
-          width: 24px;
-          height: 24px;
-        }
-      }
-      & p {
+        display: flex;
+        align-items: center;
+        margin-top: auto;
+        gap: 5px;
+    }
+    .test-card_link p {
         font-size: 18px;
         color: #009DFF;
         font-weight: 500;
-        @media (max-width: 768px) {
-          font-size: 14px;
-        }
-      }
     }
-    .info-cards {
-      padding: 15px;
-      align-items: center;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      @media (max-width: 768px) {
-        grid-template-columns: 100%;
-      }
-      & .info-card {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        align-items: flex-start;
-        & p {
-        white-space: pre-wrap;
-          line-height: 130%;
+
+
+
+    @media (max-width: 975px) {
+        .test-info {
+            display: flex;
+            flex-direction: column;
         }
-        @media (max-width: 768px) {
-          flex-direction: row;
-          align-items: center;
-          & img {
+    }
+
+
+    @media (max-width: 768px) {
+
+        .test-card_title h2 {
+            font-size: 20px;
+            line-height: 32px;
+
+        }
+        .test-card_link svg {
             width: 24px;
             height: 24px;
-          }
         }
-      }
+
+        .test-card {
+            gap: 15px;
+
+        }
+        .test-card p {
+            font-size: 14px;
+        }
+
+        .test-card_link p {
+            font-size: 14px;
+        }
+
     }
 </style>

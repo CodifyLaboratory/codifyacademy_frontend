@@ -89,7 +89,7 @@
   </div>
 </section>
 
-<style lang="scss">
+<style>
   h2 {
     margin-bottom: 15px !important;
   }
@@ -97,15 +97,12 @@
     display: flex;
     justify-content: center;
     width: 100%;
-     & p {
-       max-width: 875px;
-       text-align: center;
-       padding-bottom: 50px;
-       @media (max-width: 768px) {
-         padding-bottom: 30px;
-         text-align: start;
-       }
-     }
+
+  }
+  .description-box p {
+    max-width: 875px;
+    text-align: center;
+    padding-bottom: 50px;
   }
   .button:disabled {
     opacity: 0.5;
@@ -154,9 +151,6 @@
     position: relative;
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
-     @media (max-width: 768px) {
-       grid-template-columns: 100%;
-     }
   }
   .formCheck {
     width: 100%;
@@ -218,9 +212,14 @@
     }
   }
   @media screen and (max-width: 768px) {
+    .description-box p {
+      padding-bottom: 30px;
+      text-align: start;
+    }
     .formInputs {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: 100%;
+
     }
     .formInputs > input {
       min-height: 51px;

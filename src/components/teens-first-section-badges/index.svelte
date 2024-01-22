@@ -18,14 +18,11 @@
     {/each}
 </div>
 
-<style lang="scss">
+<style>
     .card-badges {
         display: flex;
         gap: 10px;
         flex-wrap: wrap;
-    @media (max-width: 768px) {
-        gap: 5px;
-    }
     }
     .badge {
         padding: 15px 20px;
@@ -33,13 +30,18 @@
         font-weight: 500;
         border: 1px solid white;
         color: white;
-      line-height: 9px;
+        line-height: 9px;
         font-size: 14px;
-    @media (max-width: 768px) {
-        font-size: 12px;
-        padding: 10px;
-      line-height: 8px;
-
     }
+    @media (max-width: 768px) {
+        .card-badges {
+            gap: 5px;
+        }
+        .badge {
+            font-size: 12px;
+            padding: 10px;
+            line-height: 8px;
+
+        }
     }
 </style>

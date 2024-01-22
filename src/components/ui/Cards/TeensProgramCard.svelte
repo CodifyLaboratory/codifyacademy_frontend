@@ -18,77 +18,77 @@
 
 </div>
 
-<style lang="scss">
-  .text-container {
-    height: 100%;
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  .filled-card {
-    min-height: 195px;
-    position: relative;
-    overflow: hidden;
-    gap: 30px;
+<style>
+    .text-container {
+        height: 100%;
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .filled-card {
+        min-height: 195px;
+        position: relative;
+        overflow: hidden;
+        gap: 30px;
+    }
+    .filled-card * {
+        text-align: start;
+        line-height: unset;
 
-    & * {
-      text-align: start;
-      line-height: unset;
+    }
+    .img-container {
+        position: absolute;
+        right: -30px;
+        opacity: 0.4;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: -1;
+    }
+    .img-container.top {
+        top: -30px;
+        transform: rotate(-120deg);
 
+    }
+    .img-container.middle {
+        top: 40px;
+    }
+    .img-container.bottom {
+        bottom: -30px;
+        transform: rotate(60deg);
+    }
+    .img-container.card-5 {
+        bottom: -10px !important;
+        top: unset !important;
+        transform: rotate(160deg) !important;
+    }
+    img {
+        height: 100% !important;
+    }
+    .title {
+        padding: 0 0 10px;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .description{
+        font-size: 16px;
+        font-weight: 400;
     }
     @media (max-width: 768px) {
-      flex-direction: column;
-      gap: 10px;
-      min-height: unset;
+        .filled-card {
+            flex-direction: column;
+            gap: 10px;
+            min-height: unset;
+        }
+        .img-container.middle {
+            top: 8px;
+        }
+        .description{
+            white-space: unset;
+            font-size: 14px;
+        }
     }
-  }
-  .img-container {
-    position: absolute;
-    right: -30px;
-    opacity: 0.4;
-    pointer-events: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: -1;
-     &.top {
-       top: -30px;
-       transform: rotate(-120deg);
-
-     }
-    &.middle {
-      top: 40px;
-      @media (max-width: 768px) {
-        top: 8px;
-      }
-    }
-    &.bottom {
-      bottom: -30px;
-      transform: rotate(60deg);
-    }
-    &.card-5 {
-      bottom: -10px !important;
-      top: unset !important;
-      transform: rotate(160deg) !important;
-    }
-  }
-  img {
-    height: 100% !important;
-  }
-  .title {
-    padding: 0 0 10px;
-    font-size: 20px;
-    font-weight: 500;
-  }
-  .description{
-    font-size: 16px;
-    font-weight: 400;
-    @media (max-width: 768px) {
-      white-space: unset;
-      font-size: 14px;
-    }
-  }
-
 </style>

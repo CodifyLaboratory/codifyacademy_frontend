@@ -42,44 +42,34 @@
     </div>
 </section>
 
-<style lang="scss">
-  .firstSection {
-    padding-top: 120px;
-    @media (max-width: 768px) {
-      padding-top: 90px;
+<style>
+    .firstSection {
+        padding-top: 120px;
     }
-  }
-  .description {
-    font-size: 16px;
-    line-height: 1.5;
-    max-width: 722px;
-    display: block;
-    @media (max-width: 768px) {
-      display: none;
+    .description {
+        font-size: 16px;
+        line-height: 1.5;
+        max-width: 722px;
+        display: block;
     }
-  }
-  .mobile-description {
-    font-size: 14px;
-    line-height: 1.5;
-    display: none;
-    @media (max-width: 768px) {
-      display: block;
+    .mobile-description {
+        font-size: 14px;
+        line-height: 1.5;
+        display: none;
+
     }
-  }
     .teens-first-sections_box {
         display: flex;
         gap: 20px;
         justify-content: space-between;
-      align-items: center;
+        align-items: center;
     }
     .breadCrumbs {
         display: flex;
         align-items: center;
-      padding-bottom: 70px;
+        padding-bottom: 70px;
         gap: 8px;
-    @media (max-width: 768px) {
-        display: none;
-    }
+
     }
     .breadCrumbs p {
         font-weight: 500
@@ -88,16 +78,12 @@
         font-size: 16px;
     }
     .left_box {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-       & .button {
-         min-height: 46px;
-       }
-
-      @media (max-width: 768px) {
-        gap: 10px;
-      }
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .left_box .button {
+        min-height: 46px;
     }
     h1 {
         font-size: 48px;
@@ -108,26 +94,19 @@
     p {
         font-size: 24px;
     }
-  .bonuses {
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
-    align-items: flex-start;
-    @media (max-width: 768px) {
-      gap: 5px;
+    .bonuses {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        align-items: flex-start;
     }
-  }
-  .bonus {
-    text-align: start;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    @media (max-width: 768px) {
-      font-size: 14px;
-
+    .bonus {
+        text-align: start;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
     }
-  }
     @media (max-width: 855px) {
         h1 {
             font-size: 32px;
@@ -140,6 +119,29 @@
         }
         a {
             display: none;
+        }
+    }
+    @media (max-width: 768px) {
+        .firstSection {
+            padding-top: 90px;
+        }
+        .description {
+            display: none;
+        }
+        .mobile-description {
+            display: block;
+        }
+        .breadCrumbs {
+            display: none;
+        }
+        .left_box {
+            gap: 10px;
+        }
+        .bonuses {
+            gap: 5px;
+        }
+        .bonus {
+            font-size: 14px;
         }
     }
 </style>

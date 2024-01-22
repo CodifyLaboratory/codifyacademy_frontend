@@ -51,74 +51,62 @@
     </div>
 </section>
 
-<style lang="scss">
-  section {
-    overflow: hidden;
-  }
+<style>
+    section {
+        overflow: hidden;
+    }
     .media-box {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 40px 20px;
-      @media (max-width: 768px) {
-        display: flex;
-        overflow: auto;
-        gap: 10px;
-        width: 100% !important;
-        max-width: unset !important;
-        padding: 0 5vw 20px;
-      }
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 40px 20px;
     }
     .media-card {
-      display: flex;
-      flex-direction: column;
-      align-items: start;
-      gap: 20px;
-      flex-shrink: 0;
-      @media (max-width: 768px) {
-        gap: 10px;
-        width: 90vw;
-        max-width: 400px;
-      }
-      & .image-container {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 20px;
+        flex-shrink: 0;
+    }
+    .media-card .image-container {
         position: relative;
         aspect-ratio: 392/200;
         border-radius: 10px;
         overflow: hidden;
-        & .video-box {
-          width: 100%;
-          height: 100%;
-          top: 0;
-          left: 0;
-          pointer-events: none;
-          user-select: none;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          position: absolute;
-        }
-        & img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
-      & .card-info {
+    }
+    .media-card .image-container .video-box {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        user-select: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+    }
+    .media-card .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .media-card .card-info {
         display: flex;
         gap: 5px;
         line-height: 11px;
-        & p {
-          line-height: 11px;
+    }
+    .media-card .card-info  p {
+        line-height: 11px;
 
-          font-size: 16px;
-          color: #009DFF;
-        }
-        & span {
-          line-height: 11px;
-          font-size: 16px;
-          text-transform: capitalize;
-        }
-      }
-      & h6 {
+        font-size: 16px;
+        color: #009DFF;
+    }
+    .media-card .card-info  span {
+        line-height: 11px;
+        font-size: 16px;
+        text-transform: capitalize;
+    }
+    .media-card h6 {
         font-size: 24px;
         font-weight: 500;
         font-style: normal;
@@ -127,6 +115,20 @@
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
-      }
+    }
+    @media (max-width: 768px) {
+        .media-box {
+            display: flex;
+            overflow: auto;
+            gap: 10px;
+            width: 100% !important;
+            max-width: unset !important;
+            padding: 0 5vw 20px;
+        }
+        .media-card {
+            gap: 10px;
+            width: 90vw;
+            max-width: 400px;
+        }
     }
 </style>

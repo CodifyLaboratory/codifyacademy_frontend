@@ -19,7 +19,7 @@
     <!--  </ul>-->
 {/if}
 
-<style lang="scss">
+<style>
     button {
         border: none;
         background: none;
@@ -39,7 +39,7 @@
         transition: 0.2s all;
     }
     button:not(:first-child) {
-      border-top: 1px solid var(--blue);
+        border-top: 1px solid var(--blue);
     }
     button:hover {
         color: var(--light-blue);

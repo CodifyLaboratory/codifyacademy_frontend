@@ -30,51 +30,51 @@
     </div>
 </section>
 
-<style lang="scss">
-  h2 {
-    @media (max-width: 768px) {
-      margin-bottom: 10px !important;
+<style>
+    p {
+        font-size: 20px;
+        max-width: 580px;
     }
-  }
-  p {
-    font-size: 20px;
-    max-width: 580px;
-    @media (max-width: 768px) {
-      font-size: 14px;
-      padding-bottom: 0;
-      line-height: 130%;
+    .license_box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        justify-content: space-between;
+        width: 100%;
     }
-  }
-  .license_box {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    justify-content: space-between;
-    width: 100%;
+    .text-box {
+        display: flex;
+        padding-bottom: 40px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .button {
+        margin-top: 10px;
+        min-height: 46px;
+    }
+    img {
+        width: 100%;
+    }
     @media (max-width: 768px) {
-      grid-template-columns: 100%;
+        h2 {
+            margin-bottom: 10px !important;
+        }
+        p {
+            font-size: 14px;
+            padding-bottom: 0;
+            line-height: 130%;
+        }
+        .license_box {
+            grid-template-columns: 100%;
 
+        }
+        .text-box {
+            padding-bottom: 0;
+            gap: 10px
+        }
+        .button {
+            display: none;
+        }
     }
-  }
-  .text-box {
-    display: flex;
-    padding-bottom: 40px;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 20px;
-    @media (max-width: 768px) {
-      padding-bottom: 0;
-      gap: 10px
-    }
-  }
-  .button {
-    margin-top: 10px;
-    min-height: 46px;
-    @media (max-width: 768px) {
-      display: none;
-    }
-  }
-  img {
-    width: 100%;
-  }
 </style>

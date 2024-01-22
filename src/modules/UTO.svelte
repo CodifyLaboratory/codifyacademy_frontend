@@ -47,45 +47,51 @@
     </div>
 </section>
 
-<style lang="scss">
-  .uto-cards {
-    align-items: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px 20px;
-    @media (max-width: 1315px) {
-      grid-template-columns: 1fr 1fr;
+<style>
+    .uto-cards {
+        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px 20px;
     }
-    @media (max-width: 768px) {
-      grid-template-columns: 100%;
-      gap: 20px;
+    .uto-card {
+        display: flex;
+        padding: 0 10px;
+        flex-direction: column;
+        align-items: flex-start;
     }
-    & .uto-card {
-      display: flex;
-      padding: 0 10px;
-      flex-direction: column;
-      align-items: flex-start;
-      @media (max-width: 768px) {
-        padding: 0;
-      }
-      & h5 {
+    .uto-card h5 {
         font-size: 24px;
         font-weight: 500;
         padding: 15px 0 5px;
-        @media (max-width: 768px) {
-          padding: 10px 0 5px;
-          font-size: 20px;
-        }
-      }
-      & p {
+    }
+    .uto-card p {
         white-space: pre-wrap;
         font-size: 16px;
         font-weight: 400;
         line-height: 130%;
-        @media (max-width: 768px) {
-          font-size: 14px;
-        }
-      }
     }
-  }
+
+    @media (max-width: 1315px) {
+        .uto-cards {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .uto-cards {
+            grid-template-columns: 100%;
+            gap: 20px;
+        }
+        .uto-card {
+            padding: 0;
+        }
+        .uto-card h5 {
+            padding: 10px 0 5px;
+            font-size: 20px;
+        }
+        .uto-card p {
+            font-size: 14px;
+        }
+    }
 </style>

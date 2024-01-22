@@ -37,81 +37,81 @@
     </div>
 </section>
 
-<style lang="scss">
+<style>
   .firstSection {
     padding-top: 120px;
-    @media (max-width: 768px) {
-      padding-top: 60px;
-    }
   }
-    .breadCrumbs {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      @media (max-width: 768px) {
-        display: none;
+  .breadCrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .breadCrumbs p {
+    font-weight: 500
+  }
+  .breadCrumbs p, .breadCrumbs a {
+    font-size: 16px;
+  }
+  .firstSection_box {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding-top: 46px;
+    justify-content: space-between;
+  }
+  h1 {
+    padding-top: 50px;
+    font-size: 48px;
+    line-height: 120%;
+    max-width: 590px;
+    white-space: pre-wrap;
+    font-weight: 500;
+    color: var(--white);
+    padding-bottom: 10px;
+  }
+  p {
+    font-size: 24px;
+  }
+  .button {
+    margin-top: 50px;
+  }
+  .button.mobile {
+    width: 100%;
+    margin-top: 20px;
+  }
+  @media (max-width: 1000px) {
+    .teens-section-img {
+        width: 250px;
       }
+  }
+
+  @media (max-width: 768px) {
+    .firstSection {
+        padding-top: 60px;
     }
-    .breadCrumbs p {
-      font-weight: 500
-    }
-    .breadCrumbs p, .breadCrumbs a {
-        font-size: 16px;
+    .breadCrumbs {
+        display: none;
     }
     .firstSection_box {
-        display: flex;
-        gap: 20px;
-      align-items: flex-start;
-      padding-top: 46px;
-      justify-content: space-between;
-      @media (max-width: 768px) {
         flex-direction: column-reverse;
-      }
     }
     h1 {
-        padding-top: 50px;
-        font-size: 48px;
-        line-height: 120%;
-        max-width: 590px;
-        white-space: pre-wrap;
-        font-weight: 500;
-        color: var(--white);
-        padding-bottom: 10px;
-      @media (max-width: 768px) {
         padding-top: 20px;
         font-size: 32px;
         line-height: 110%;
-      }
     }
     p {
-        font-size: 24px;
-      @media (max-width: 768px) {
         font-size: 20px;
-      }
     }
-    .button {
-        margin-top: 50px;
-      &.desktop {
-        @media (max-width: 768px) {
-          display: none;
-        }
-      }
-      &.mobile {
-        width: 100%;
-        margin-top: 20px;
-        @media (min-width: 768px) {
-          display: none;
-        }
-      }
+    .button.mobile {
+        display: none;
+    }
+    .button.desktop {
+        display: none;
     }
     .teens-section-img {
-      @media (max-width: 1000px) {
-        width: 250px;
-      }
-      @media (max-width: 768px) {
         width: 70%;
         max-width: 400px;
-      }
     }
-
+  }
 </style>

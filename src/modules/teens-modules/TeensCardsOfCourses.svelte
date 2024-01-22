@@ -22,9 +22,6 @@
       })
   })
 
-
-
-
   function filterCards(age_category) {
     request('get', 'children-courses/', {age_category})
       .then((data) => {
@@ -71,7 +68,7 @@
     </div>
 </section>
 
-<style lang="scss">
+<style>
     .sectionCourses {
         text-align: center;
     }
@@ -85,20 +82,24 @@
         overflow-x: auto;
         gap: 20px;
         padding: 0 5vw 20px;
-        @media (max-width: 768px) {
+    }
+    @media (max-width: 768px) {
+        .sectionCourses__buttons {
             gap: 5px
         }
     }
     .teensCoursesCards {
-      margin-top: 0;
+        margin-top: 0;
         display: grid;
-      grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         justify-content: center;
         gap: 20px;
         flex-wrap: wrap;
-      @media (max-width: 1000px) {
-        grid-template-columns: 1fr;
-      }
+    }
+    @media (max-width: 1000px) {
+        .teensCoursesCards {
+            grid-template-columns: 1fr;
+        }
     }
     .buttonCourse {
         border-radius: 10px;

@@ -41,44 +41,44 @@ import FreeLessonCard from '../../components/free-lesson-card/free-lesson-card.s
     </div>
 </section>
 
-<style lang="scss">
-  h2 {
-    @media (max-width: 768px) {
-      margin-bottom: 10px !important;
+<style>
+    p {
+        font-size: 20px;
+        padding-bottom: 40px;
+        max-width: 580px;
     }
-  }
-  p {
-    font-size: 20px;
-    padding-bottom: 40px;
-    max-width: 580px;
-    @media (max-width: 768px) {
-      font-size: 14px;
-      padding-bottom: 0;
-    }
-  }
     .fleeLesson_box {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      justify-content: space-between;
-      width: 100%;
-      @media (max-width: 768px) {
-        grid-template-columns: 100%;
-
-      }
-    }
-    .description_text-box{
-      @media (max-width: 850px) {
-        display: none;
-      }
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        justify-content: space-between;
+        width: 100%;
     }
     .description_text {
-      font-weight: 400;
-      font-size: 20px;
-padding-bottom: 10px;
-      display: block;
-      &:last-child {
+        font-weight: 400;
+        font-size: 20px;
+        padding-bottom: 10px;
+        display: block;
+    }
+    .description_text:last-child {
         max-width: 580px;
-      }
+    }
+    @media (max-width: 850px) {
+        .description_text-box{
+            display: none;
+        }
+    }
+    @media (max-width: 768px) {
+        h2 {
+            margin-bottom: 10px !important;
+        }
+        p {
+            font-size: 14px;
+            padding-bottom: 0;
+        }
+        .fleeLesson_box {
+            grid-template-columns: 100%;
+
+        }
     }
 </style>
