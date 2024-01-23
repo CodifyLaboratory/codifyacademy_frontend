@@ -28,7 +28,7 @@
             <p>{texts[activeLang].teens.subtitle}</p>
             <div class="firstSection__buttons">
                 <button class="button contained desktop" on:click={scrollTo}>Попробовать бесплатно</button>
-                <button class="button contained mobile" on:click={scrollTo}>Попробовать бесплатно</button>
+<!--                <button class="button contained mobile" on:click={scrollTo}>Попробовать бесплатно</button>-->
             </div>
         </div>
         <img class="teens-section-img" src="./assets/images/rocket-main.webp" alt="rocket">
@@ -104,9 +104,6 @@
         font-size: 20px;
     }
     .button.mobile {
-        display: none;
-    }
-    .button.desktop {
         display: none;
     }
     .teens-section-img {
