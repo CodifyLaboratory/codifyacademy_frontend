@@ -37,6 +37,7 @@
           )
           .then(() => {
             isPost = true
+            isDisabled=false
             message = ''
             setTimeout(() => {
               isPost = false

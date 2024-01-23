@@ -39,12 +39,11 @@
             { headers }
           )
           .then(() => {
-            isDisabled=false
             isPost = true
+            isDisabled=false
             message = ''
             if(forMap) {
               window.location.href = "https://codifylab.com/ru/api/download-it-prof-map/"
-              //TODO: aman request
             }
             setTimeout(() => {
               isPost = false
