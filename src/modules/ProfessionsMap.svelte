@@ -7,7 +7,7 @@ import FindEducation from "../components/FindEducation/FindEducation.svelte";
     <div class="card test-card">
         <div class="test-card_title">
             <h2>
-                Какие специальности будут востребованы в 2024 году?
+                Получите карту IT профессий
             </h2>
             <p>
                 IT-профессия – это не просто новая работа, это возможность поменять свое мышление, окружение и жизнь. Это новые возможности не только для вас, но и для вашей семьи и детей.

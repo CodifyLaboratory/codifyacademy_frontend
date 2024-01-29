@@ -1,19 +1,9 @@
 <script>
 
-import Badge from "../components/badge/Badge.svelte";
-
-const info_cards = [
-  {icon: './assets/icons/info/GraduationCap.svg', text: 'Обучение на основе \nлицензии МинОбразования'},
-  {icon: './assets/icons/info/Briefcase.svg', text: 'Поддержка на всех этапах трудоустройства'},
-  {icon: './assets/icons/info/Star.svg', text: 'Опытные практикующие менторы и наставники'},
-  {icon: './assets/icons/info/RocketLaunch.svg', text: 'Индивидуальный подход к каждому студенту'},
-]
-
 </script>
 
 <section class="test-info container">
     <div class="card test-card">
-        <Badge text="Тест на профориентацию" />
         <div class="test-card_title">
             <h2>
                 Какую IT профессию выбрать
@@ -34,7 +24,6 @@ const info_cards = [
         </a>
     </div>
     <div class="card test-card telegram-card">
-        <Badge text="Телеграм-канал Job CODIFY" />
         <div class="test-card_title">
             <h2>
                 🚀 Начните свой IT-путь с CODIFY
@@ -68,6 +57,7 @@ const info_cards = [
         flex-direction: column;
         align-items: flex-start;
         gap: 20px;
+        padding: 60px 30px;
     }
     .test-card p {
         font-size: 16px;
@@ -105,7 +95,10 @@ const info_cards = [
 
 
     @media (max-width: 768px) {
+        .test-card {
+            padding: 20px 15px;
 
+        }
         .test-card_title h2 {
             font-size: 20px;
             line-height: 32px;

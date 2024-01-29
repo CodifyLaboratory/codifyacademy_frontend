@@ -12,6 +12,7 @@
   import Media from "../modules/Media.svelte";
   import UTO from "../modules/UTO.svelte";
   import GraduatesWork from "../modules/GraduatesWork.svelte";
+  import CheckList from "../modules/CheckList.svelte";
 
   let loading = true
   onMount(() => {
@@ -65,8 +66,10 @@
     <ProfessionsMap />
     <HappyStudents />
     <Partners />
-    <EducationLicense type="main" />
+    <CheckList />
     <GraduatesWork />
+    <EducationLicense type="main" />
+
     <MainPageFAQ />
     <Media />
     <EnrollForCourse forMainPage />
