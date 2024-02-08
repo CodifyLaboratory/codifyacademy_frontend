@@ -1,5 +1,4 @@
 <script>
-  import * as animateScroll from 'svelte-scrollto'
   import { texts } from '../../localization'
   import { language } from '../../stores'
   let callUsIsOpen = false
@@ -12,10 +11,10 @@
   })
 
   let showLanguages = false
-  function changeLang(lang) {
-    language.set(lang)
-    showLanguages = false
-  }
+  // function changeLang(lang) {
+  //   language.set(lang)
+  //   showLanguages = false
+  // }
 
   let win
   let isOpenMenu = false
@@ -42,12 +41,8 @@
       <nav style={`display:${!isOpenMenu && win < 1050 ? 'none' : 'flex'}`}>
         <a class={path === '/courses' ? 'active' : ''} href={`/courses`} on:click={()=>{isOpenMenu = false}}>{headerText.academy}</a>
         <a class={path === '/teens' ? 'active' : ''} href="/teens" on:click={()=>{isOpenMenu = false}}>{headerText.teens}</a>
-        <button
-          on:click={() => {
-            animateScroll.scrollToBottom({ duration: 2000 })
-            isOpenMenu = false
-          }}>{headerText.contacts}</button
-        >
+        <a class={path === '/about-us' ? 'active' : ''} href="/about-us" on:click={()=>{isOpenMenu = false}}>О нас</a>
+
       </nav>
     </div>
     <div class="callUs">

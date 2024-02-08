@@ -63,6 +63,7 @@ const sendTest = async () => {
         top: 0;
         display: flex;
         align-items: center;
+        justify-content: space-between;
     }
     @media (max-width: 768px) {
         .test-header {
