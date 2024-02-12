@@ -5,7 +5,7 @@
   let iframe;
   let loading = true
   function handleMessage(event) {
-    if (event.origin === "http://localhost:3000") {
+    if (event.origin === "https://letscodify.io") {
       const height = event.data.height;
       iframe.style.height = `${height}px`;
         if(height) {
@@ -26,7 +26,7 @@
             <Loading />
         </div>
     {/if}
-<iframe bind:this={iframe} frameborder="0" title="About us" width="100%" scrolling="no"  src="http://localhost:3000/about-us?is_academy=true"></iframe>
+<iframe bind:this={iframe} frameborder="0" title="About us" width="100%" scrolling="no"  src="https://letscodify.io/about-us?is_academy=true"></iframe>
 </div>
 
 
