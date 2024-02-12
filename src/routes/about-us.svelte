@@ -7,10 +7,12 @@
   function handleMessage(event) {
     if (event.origin === "https://letscodify.io") {
       const height = event.data.height;
+      console.log('event', event.data, event.data.height)
       iframe.style.height = `${height}px`;
-        if(height) {
-          loading =false
-        }
+      loading=false
+        // if(height) {
+        //   loading =false
+        // }
     }
   }
 
