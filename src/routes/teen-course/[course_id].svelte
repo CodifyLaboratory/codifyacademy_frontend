@@ -34,7 +34,7 @@
     <TeensCourseProgress />
     <TeensCourseProgram cards={course.program_blocks || []} />
     <!--    <TeensStudentProject />-->
-    <TeensFreeLesson />
+    <TeensFreeLesson comment={course.title} />
     {#if mounted}
         <InstaReviews />
     {/if}

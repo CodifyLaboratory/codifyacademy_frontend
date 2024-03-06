@@ -36,7 +36,7 @@
                 </a>
 
         </div>
-            <FreeLessonCard maxWidth={392} />
+            <FreeLessonCard maxWidth={392} comment={course.title} />
         </div>
 
     </div>

@@ -5,15 +5,12 @@
   let iframe;
   let loading = true
   function handleMessage(event) {
-    console.log('EVENT', event, event.origin)
     if (event.origin === "https://letscodify.io") {
       const height = event.data.height;
-      console.log('event_data', event.data, event.data.height)
       iframe.style.height = `${height}px`;
-      loading=false
-        // if(height) {
-        //   loading =false
-        // }
+        if(height) {
+          loading =false
+        }
     }
   }
 

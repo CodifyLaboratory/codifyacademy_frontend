@@ -28,7 +28,7 @@
     request('post', 'contact-form/submit/', null, {
       name: e.target[0].value,
       phone_number: e.target[1].value,
-      comment: course_title ? `Оставил заявку на странице курса ${course_title}`  : 'Консультация'
+      comment: !!course_title ? `Оставил заявку на странице курса ${course_title}`  : 'Консультация'
     })
       .then(() => {
         axios
@@ -38,7 +38,7 @@
               first_name: e.target[0].value,
               phone: e.target[1].value,
               email: e.target[2].value ? e.target[2].value : null,
-              extra_comments: [course_title ? `Оставил заявку на странице курса ${course_title}` : 'Консультация']
+              extra_comments: ['Консультация', course_title ? `Оставил заявку на странице курса ${course_title}` : 'Главная страница']
             },
             { headers }
           )

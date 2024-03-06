@@ -34,7 +34,7 @@
               first_name: e.target[0].value,
               phone: e.target[1].value,
               email: e.target[2].value ? e.target[2].value : null,
-              extra_comments: [forMap ? 'Карта IT-профессий' : 'Поможем подобрать обучение']
+              extra_comments: ['Главная страница', 'Десткие и взрослые', forMap ? 'Карта IT-профессий' : 'Поможем подобрать обучение']
             },
             { headers }
           )

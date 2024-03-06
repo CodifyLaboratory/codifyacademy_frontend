@@ -4,7 +4,7 @@
 import FreeLessonCard from '../../components/free-lesson-card/free-lesson-card.svelte'
   let activeLang = 'ru'
   let text = texts[activeLang].buttons
-
+    export let comment =''
   language.subscribe(async lang => {
     activeLang = lang
   })
@@ -26,18 +26,18 @@ import FreeLessonCard from '../../components/free-lesson-card/free-lesson-card.s
     <div class="fleeLesson_box">
         <div>
 
-        <p>
-            Пробное занятие — это идеальная возможность для вашего ребенка протестировать и выбрать направление обучения. На этом занятии мы сочетаем немного теории с множеством практики, обеспечиваем понимание основ и даем первое представление о курсе.
-        </p>
+            <p>
+                Пробное занятие — это идеальная возможность для вашего ребенка протестировать и выбрать направление обучения. На этом занятии мы сочетаем немного теории с множеством практики, обеспечиваем понимание основ и даем первое представление о курсе.
+            </p>
             <div class="description_text-box">
 
-        {#each description_texts as text}
-            <span class="description_text">{text}</span>
-        {/each}
+                {#each description_texts as text}
+                    <span class="description_text">{text}</span>
+                {/each}
             </div>
 
         </div>
-<FreeLessonCard />
+        <FreeLessonCard comment={comment}/>
     </div>
 </section>
 

@@ -1,5 +1,4 @@
 <script>
-  import StudentsProjects from '../../components/HomePageSections/StudentsProjects.svelte'
   import { onMount } from 'svelte'
   import TeensFirstSection from "../../modules/teens-modules/TeensFirstSection.svelte";
   import TeensCardsOfCourses from "../../modules/teens-modules/TeensCardsOfCourses.svelte";
@@ -7,7 +6,6 @@
   import TeensAdvantages from "../../modules/teens-modules/TeensAdvantages.svelte";
   import EducationLicense from "../../components/HomePageSections/EducationLicense.svelte";
   import EnrollForCourse from "../../components/HomePageSections/EnrollForCourse.svelte";
-  import TeensStudentProject from "../../modules/teens-modules/TeensStudentProject.svelte";
   import TeensFAQ from "../../modules/teens-modules/TeensFAQ.svelte";
   import TeensLocation from "../../modules/teens-modules/TeensLocation.svelte";
   import InstaReviews from "../../modules/InstaReviews.svelte";
@@ -23,7 +21,7 @@
 {#if !loading}
     <TeensFirstSection />
     <TeensCardsOfCourses length={4} />
-    <TeensFreeLesson />
+    <TeensFreeLesson comment="Страница всех курсов" />
     <TeensAdvantages />
 <!--    <TeensStudentProject />-->
     <InstaReviews />

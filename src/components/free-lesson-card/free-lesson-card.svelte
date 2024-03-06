@@ -4,6 +4,7 @@
   import axios from "axios";
   import {request} from "../../api";
   export let maxWidth = 600
+  export let comment =''
   let activeLang = 'ru'
   let message = ''
   let isPost = false
@@ -31,7 +32,7 @@
               first_name: e.target[0].value,
               phone: e.target[1].value,
               email: e.target[2].value ? e.target[2].value : null,
-              extra_comments: ['Бесплатное пробное занятие']
+              extra_comments: ['Детские курсы','Бесплатное пробное занятие', comment]
             },
             { headers }
           )
