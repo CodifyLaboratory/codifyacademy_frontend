@@ -13,7 +13,8 @@
 
 <div class="first-section-badges">
     <Badge text="Программирование"/>
-    <Badge text="Project Management"/>
+    <Badge text="Проектный менеджмент"/>
+    <Badge text="UX/UI дизайн"/>
     <Badge text="Для взрослых"/>
     <Badge text="Для детей"/>
     <Badge text="Для подростков"/>

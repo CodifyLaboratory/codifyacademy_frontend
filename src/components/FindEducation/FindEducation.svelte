@@ -6,6 +6,8 @@
   import {request} from "../../api";
 
   export let forMap = false
+  export let forTeens = false
+  export let forModalMap = false
   let activeLang = 'ru'
   let message = ''
   let isPost = false
@@ -34,7 +36,7 @@
               first_name: e.target[0].value,
               phone: e.target[1].value,
               email: e.target[2].value ? e.target[2].value : null,
-              extra_comments: ['Главная страница', 'Десткие и взрослые', forMap ? 'Карта IT-профессий' : 'Поможем подобрать обучение']
+              extra_comments: ['Главная страница', 'Десткие и взрослые', forMap ? 'Карта IT-профессий' : (forTeens ? 'Главная страница детских курсов' :'Поможем подобрать обучение')]
             },
             { headers }
           )
@@ -64,7 +66,7 @@
 
 </script>
 
-<form  on:submit={submit} class="card {forMap ? 'w-100' : null}">
+<form  on:submit={submit} style={`${forModalMap ? 'background: linear-gradient(140deg, rgba(0, 157, 255, 0.50) 0%, rgba(188, 20, 227, 0.50) 100%)' : ''}`} class="card {forMap ? 'w-100' : null}">
     {#if isDisabled && !isPost}
         <div class="innerLoading">
         <Loading isTransparent vh="20"/>
@@ -76,13 +78,19 @@
         </div>
     {/if}
     <div class={`find-education ${isDisabled || isPost? 'transparent' : ''}`}>
-        {#if !forMap}
+        {#if !forMap && !forTeens}
             <p>{texts[activeLang].findEducation.title}</p>
+        {/if}
+        {#if forModalMap}
+            <p>Получите карту актуальных IT профессий</p>
+        {/if}
+        {#if forTeens}
+            <p>Получите бесплатный урок и карту профессий будущего</p>
         {/if}
     <input  required type="text" placeholder={texts[activeLang].findEducation.input_name} />
     <input required type="text" placeholder={texts[activeLang].findEducation.input_phone} />
     <button class="button contained">{forMap ? 'Получить карту IT профессий' : texts[activeLang].findEducation.button}</button>
-    <span class="subtitle">{(texts[activeLang].findEducation.subText + ' ' +texts[activeLang].findEducation.subLink)}</span>
+    <span class="subtitle">{forMap ? 'Нажимая на кнопку, вы даете согласие на обработку персональных данных' :(texts[activeLang].findEducation.subText + ' ' +texts[activeLang].findEducation.subLink)}</span>
     </div>
 
 </form>
@@ -119,7 +127,7 @@
   }
   p {
     color: var(--white);
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 500;
     line-height: 130%; /* 36.4px */
   }
@@ -130,7 +138,7 @@
     background: transparent;
     color: white;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 300;
     border-radius: 100px;
   }
   input::placeholder {
@@ -138,7 +146,7 @@
     opacity: 0.7;
   }
   .subtitle {
-    font-weight: 400;
+    font-weight: 300;
     font-size: 14px;
   }
   a {

@@ -13,6 +13,9 @@
   import UTO from "../modules/UTO.svelte";
   import GraduatesWork from "../modules/GraduatesWork.svelte";
   import CheckList from "../modules/CheckList.svelte";
+  import FreeLessonsModule from "../modules/FreeLessonsModule.svelte";
+  import TestBanner from "../components/test-banner/test-banner.svelte";
+  import TelegramBanner from "../components/telegram-banner/telegram-banner.svelte";
 
   let loading = true
   onMount(() => {
@@ -60,18 +63,23 @@
 {#if !loading}
   <div class="main-page">
     <FirstSection />
-    <UTO />
-    <TestAndInfo />
+    <TelegramBanner type="pro_it" />
+    <FreeLessonsModule />
+<!--    <TestAndInfo />-->
     <StudyPrograms />
-    <ProfessionsMap />
     <HappyStudents />
+    <UTO />
+<!--    <ProfessionsMap />-->
     <Partners />
-    <CheckList />
+    <TestBanner />
     <GraduatesWork />
+    <TelegramBanner type="job" />
     <EducationLicense type="main" />
+    <CheckList />
+    <Media />
 
     <MainPageFAQ />
-    <Media />
+
     <EnrollForCourse forMainPage />
   </div>
 
@@ -94,9 +102,7 @@
 {/if}
 
 <style>
-  .main-page h2 {
-      text-align: start !important;
-  }
+
   .loadingLogo {
     position: fixed;
     top: 50px;

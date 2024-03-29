@@ -11,11 +11,11 @@ import InstaReviews from "./InstaReviews.svelte";
     </div>
     <div class="happy-students_box container">
         <div class="percent-block">
-            <b class="coloredText">82%</b>
+            <b>82%</b>
             <p>студентов отмечают, что CODIFY помог им освоить новые навыки</p>
         </div>
         <div class="percent-block">
-            <b class="coloredText">75%</b>
+            <b>75%</b>
             <p>будут рекомендовать CODIFY своим друзьям и знакомым</p>
         </div>
     </div>
@@ -40,6 +40,7 @@ import InstaReviews from "./InstaReviews.svelte";
     }
     .percent-block b {
         font-size: 64px;
+        color: var(--blue-main);
     }
     .percent-block p {
         max-width: 409px;

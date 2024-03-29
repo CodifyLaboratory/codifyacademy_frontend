@@ -1,7 +1,7 @@
 <script>
   import { texts } from '../../localization'
   import { language } from '../../stores'
-import FreeLessonCard from '../../components/free-lesson-card/free-lesson-card.svelte'
+import FreeLessonForm from '../../components/free-lesson-form/free-lesson-form.svelte'
   let activeLang = 'ru'
   let text = texts[activeLang].buttons
     export let comment =''
@@ -22,12 +22,11 @@ import FreeLessonCard from '../../components/free-lesson-card/free-lesson-card.s
 </script>
 
 <section id="freeLesson" class="sectionFreeLesson container">
-    <h2>Бесплатное пробное занятие</h2>
     <div class="fleeLesson_box">
         <div>
-
+            <h2>Не просто учим, а закладываем навыки для успешного будущего</h2>
             <p>
-                Пробное занятие — это идеальная возможность для вашего ребенка протестировать и выбрать направление обучения. На этом занятии мы сочетаем немного теории с множеством практики, обеспечиваем понимание основ и даем первое представление о курсе.
+                Пробный урок — это идеальная возможность для вашего ребенка протестировать и выбрать направление обучения:
             </p>
             <div class="description_text-box">
 
@@ -35,16 +34,20 @@ import FreeLessonCard from '../../components/free-lesson-card/free-lesson-card.s
                     <span class="description_text">{text}</span>
                 {/each}
             </div>
-
         </div>
-        <FreeLessonCard comment={comment}/>
+        <FreeLessonForm maxWidth={392} comment={comment}/>
     </div>
 </section>
 
 <style>
+    h2 {
+        text-align: start;
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
     p {
         font-size: 20px;
-        padding-bottom: 40px;
+        padding-bottom: 20px;
         max-width: 580px;
     }
     .fleeLesson_box {
@@ -69,7 +72,9 @@ import FreeLessonCard from '../../components/free-lesson-card/free-lesson-card.s
         }
     }
     @media (max-width: 768px) {
+
         h2 {
+            font-size: 24px;
             margin-bottom: 10px !important;
         }
         p {

@@ -37,7 +37,7 @@
             {
               first_name: e.target[0].value,
               phone: e.target[1].value,
-              email: e.target[2].value ? e.target[2].value : null,
+              // email: e.target[2].value ? e.target[2].value : null,
               extra_comments: ['Консультация', course_title ? `Оставил заявку на странице курса ${course_title}` : 'Главная страница']
             },
             { headers }
@@ -69,7 +69,7 @@
     <h2 style={forMainPage ? 'text-align: start' : ''}>{text.homePage.h2.enroll}</h2>
     <div class="description-box" style={forMainPage ? 'justify-content: start' : ''}>
       <p style={forMainPage ? 'text-align: start' : ''}>
-        {text.enroll.description}
+        Мы с удовольствием ответим на все ваши вопросы и поможем определиться с выбором курса!
       </p>
 
     </div>
@@ -82,7 +82,7 @@
         <button disabled={isDisabled} class="button contained">Оставить заявку</button>
       </div>
       <div class="formCheck">
-        <input required type="checkbox" />
+<!--        <input required type="checkbox" />-->
         <p>{text.enroll.check}</p>
       </div>
     </form>

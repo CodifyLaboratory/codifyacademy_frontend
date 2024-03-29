@@ -1,6 +1,6 @@
 <script>
   import { language } from '../../stores'
-  import FreeLessonCard from "../../components/free-lesson-card/free-lesson-card.svelte";
+  import FreeLessonForm from "../../components/free-lesson-form/free-lesson-form.svelte";
   import TeensFirstSectionBadges from "../../components/teens-first-section-badges/index.svelte";
   let activeLang = 'ru'
   export let course = {}
@@ -36,7 +36,7 @@
                 </a>
 
         </div>
-            <FreeLessonCard maxWidth={392} comment={course.title} />
+            <FreeLessonForm maxWidth={392} comment={course.title} />
         </div>
 
     </div>

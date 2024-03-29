@@ -16,7 +16,7 @@ body {
   --dark-blue: #01011c;
   --blue: #1c5dab;
   --light-blue: rgba(0, 157, 255, 1);
-  --blue-main: #263886;
+  --blue-main: #009DFF;
   
   --green: rgba(7, 255, 225, 1);
   --white: #ECEDED;
@@ -106,9 +106,10 @@ h3 {
   border-radius: 150px;
   background: transparent;
   transition: 0.2s all;
-  box-shadow: -4px -4px 20px rgba(28, 93, 171, 0.2), 4px 4px 20px rgba(28, 93, 171, 0.2);
+  /*box-shadow: -4px -4px 20px rgba(28, 93, 171, 0.2), 4px 4px 20px rgba(28, 93, 171, 0.2);*/
 }
 .contained {
+  background: var(--blue-main);
   background-color: var(--blue-main);
 }
 .button:hover {
@@ -138,7 +139,30 @@ img, h2 , h1 , b, a {
     transform: rotate(360deg);
   }
 }
-
+.modal-card {
+  width: 100%;
+  max-width: 804px;
+  max-height: 100dvh;
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: auto;
+}
+.modal-card h3 {
+  font-size: 32px;
+}
+.modal-card ul,  .modal-card li, .modal-card p, .modal-card b {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 130%;
+}
+.modal-card .button {
+  background: #fff;
+  color: var(--blue-main);
+  border: none;
+}
 .coloredText {
   background: var(--green-gradient);
   -webkit-background-clip: text;
@@ -151,13 +175,20 @@ input:focus-visible {
 
 #specialOffer > div > span {
   color: var(--blue);
+
 }
 
 .card {
   width: 100%;
   padding: 30px;
   border-radius: 10px;
-  background: linear-gradient(124deg, rgba(7, 36, 78, 0.70) 1.34%, rgba(95, 14, 157, 0.10) 101.18%), linear-gradient(130deg, #07294E -21.19%, rgba(7, 41, 78, 0.00) 112.21%);
+  background: linear-gradient(140deg, rgba(0, 157, 255, 0.30) 0%, rgba(188, 20, 227, 0.30) 100%);
+}
+.card.adult {
+  background: linear-gradient(140deg, rgba(188, 20, 227, 0.10) 0%, rgba(0, 157, 255, 0.10) 100%);
+}
+.main-page h2, .teens-page h2 {
+  text-align: start !important;
 }
 @media (max-width: 768px) {
  .card {
@@ -174,6 +205,19 @@ input:focus-visible {
   }
   section {
     padding-top: 60px;
+  }
+  .modal-card {
+    padding: 20px 18px;
+    gap: 15px;
+  }
+  .modal-card h3 {
+    font-size: 20px;
+  }
+  .modal-card b {
+    font-size: 16px;
+  }
+  .modal-card ul,  .modal-card li, .modal-card p {
+    font-size: 14px;
   }
 }
 

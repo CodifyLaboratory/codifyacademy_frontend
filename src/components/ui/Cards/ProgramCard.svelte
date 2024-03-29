@@ -2,10 +2,13 @@
     import Badge from "../../badge/Badge.svelte";
 
     export let program = {}
+    export let forTeens
 </script>
 
-<div class="program-card card">
+<div class={`program-card card ${forTeens? 'teens-program-card' : ''}`}>
+    {#if !forTeens}
     <img src="./assets/program-card-element-{program.id}.png" alt=".">
+        {/if}
     <div class="left-block">
         
         <h3>
@@ -19,13 +22,16 @@
             <Badge text={text} />
         {/each}
     </div>
-    <a href={program.link}>
-        <button class="button">
+    <a class={forTeens ? "mobile-link" : ''} href={program.link}>
+        <button class="button contained">
         Выбрать курс
     </button>
     </a>
     </div>
     <div class="right-block">
+        {#if forTeens}
+            <img class="teens-img" src="/assets/icons/rocket.png" alt="rocket">
+            {:else }
         {#each program.courses as course}
             <div class="course-name">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -35,21 +41,25 @@
                 <span>{course}</span>
             </div>
         {/each}
+            
+            {/if}
     </div>
-    <a class="mobile-link" href={program.link}>
-        <button class="button">
-            Выбрать курс
-        </button>
-    </a>
+    {#if !forTeens}
+        <a class="mobile-link" href={program.link}>
+            <button class="button contained">
+                Выбрать курс
+            </button>
+        </a>
+    {/if}
+
 </div>
 
 <style>
+
   .mobile-link {
     display: none;
   }
   .mobile-link button {
-    background: #fff;
-    color: black;
     width: 100%;
   }
   .program-card {
@@ -60,6 +70,10 @@
     align-items: center;
     gap: 20px;
     margin-bottom: 20px;
+  }
+  .program-card:not(.teens-program-card) {
+      background: linear-gradient(140deg, rgba(188, 20, 227, 0.10) 0%, rgba(0, 157, 255, 0.10) 100%);
+
   }
   .program-card > img {
     position: absolute;
@@ -94,8 +108,6 @@
     display: block;
   }
   .left-block > a button {
-    background: #fff;
-    color: black
   }
   .right-block {
     display: flex;
@@ -122,12 +134,22 @@
   }
 
   @media (max-width: 880px) {
+      .teens-img {
+          width: 60%;
+      }
     .mobile-link {
-        display: block;
+        display: block !important;
+        width: 100%;
     }
     .program-card {
         flex-direction: column;
         align-items: flex-start;
+    }
+    .teens-program-card {
+        flex-direction: column-reverse;
+    }
+    .teens-program-card button {
+        width: 100%;
     }
     .program-card > img {
         display: none;

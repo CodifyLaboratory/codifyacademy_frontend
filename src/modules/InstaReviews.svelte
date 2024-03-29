@@ -20,7 +20,8 @@ export let type = 'children_course'
 <section  class="insta-section">
     {#if type === 'children_course'}
         <div class="container">
-            <h2>Отзывы учеников и родителей</h2>
+            <h2 style='margin-bottom: 10px !important;'>Что говорят о нас родители и ученики</h2>
+            <p style="margin-bottom: 30px">Отдайте ребёнка в мир IT и обеспечьте всестороннее развитие навыков!</p>
         </div>
     {/if}
     <div class="container_flex">

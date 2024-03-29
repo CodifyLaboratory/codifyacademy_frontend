@@ -4,7 +4,7 @@
   import moment from "moment";
   import 'moment/locale/ru'
   let publications = []
-
+    export let title
   // id
   // is_video
   // preview_image
@@ -26,7 +26,7 @@
 </script>
 
 <section>
-    <h2 class="container">CODIFY в медиа</h2>
+    <h2 class="container">{title || 'CODIFY в медиа'}</h2>
     <div class="media-box container">
         {#each [...publications] as publication}
             <a class="media-card" href={publication.source_link} target="_blank">

@@ -46,7 +46,7 @@
 
 <section class="sectionCourses">
     <h2 class="container">{texts[activeLang].homePage.h2.courses}</h2>
-    <div class="tabs-box">
+    <div class="tabs-box container">
 
     <div class="sectionCourses__buttons">
         <button class={`buttonCourse allCourses ${!activeBtn ? 'active0' : ''}`} on:click={() => filter(0)}
@@ -74,17 +74,21 @@
     }
     .tabs-box {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         overflow: hidden;
     }
     .sectionCourses__buttons {
         display: flex;
         overflow-x: auto;
         gap: 20px;
-        padding: 0 5vw 20px;
+        padding-bottom: 20px;
     }
     @media (max-width: 768px) {
+        .tabs-box {
+            width: 100%;
+        }
         .sectionCourses__buttons {
+            padding: 0 5vw 20px;
             gap: 5px
         }
     }

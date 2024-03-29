@@ -20,6 +20,7 @@
   <LoadingBar />
   {#if !$page.path.includes('test')}
   <Header path={$page.path} />
+
 <!--  <Assistant />-->
   {/if}
 
@@ -31,3 +32,7 @@
   {/if}
 
 </div>
+
+<style>
+
+</style>

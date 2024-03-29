@@ -1,6 +1,12 @@
 <script>
   import { texts } from '../../localization'
   import { language } from '../../stores'
+  import {stores} from "@sapper/app";
+  import Modal from '../modal/modal.svelte'
+  import FindEducation from '../FindEducation/FindEducation.svelte'
+  const {page} = stores()
+
+  console.log('asd', $page.path)
   let callUsIsOpen = false
   let activeLang = 'ru'
   export let path
@@ -18,6 +24,8 @@
 
   let win
   let isOpenMenu = false
+  let it_map_downloaded = false
+  let isModalOpen = false
 </script>
 
 <svelte:window bind:innerWidth={win} on:scroll={() => (callUsIsOpen = false)} />
@@ -33,20 +41,29 @@
         />
       {/if}
       <a href="/" style="display: flex; align-items: center; position: relative">
-        <img width="136px" height="28px" src="./assets/icons/logo.webp" alt="logo" />
+        <img width="136px" height="28px" src="./assets/logo.svg" class="logo-img" alt="logo" />
         {#if path?.includes('teen')}
           <img src="./assets/Teens.svg" alt="teens" class="teens-logo">
         {/if}
       </a>
-      <nav style={`display:${!isOpenMenu && win < 1050 ? 'none' : 'flex'}`}>
+      <nav class="desktop-nav">
         <a class={path === '/courses' ? 'active' : ''} href={`/courses`} on:click={()=>{isOpenMenu = false}}>{headerText.academy}</a>
         <a class={path === '/teens' ? 'active' : ''} href="/teens" on:click={()=>{isOpenMenu = false}}>{headerText.teens}</a>
         <a class={path === '/about-us' ? 'active' : ''} href="/about-us" on:click={()=>{isOpenMenu = false}}>О нас</a>
-
       </nav>
+      <div class={`mobile-nav ${isOpenMenu ? 'opened' : ''}`}
+           on:click={()=>{isOpenMenu = false}}
+      >
+      <nav>
+        <a class={path === '/courses' ? 'active' : ''} href={`/courses`}>{headerText.academy}</a>
+        <a class={path === '/teens' ? 'active' : ''} href="/teens">{headerText.teens}</a>
+        <a class={path === '/about-us' ? 'active' : ''} href="/about-us">О нас</a>
+      </nav>
+      </div>
+
     </div>
     <div class="callUs">
-      <button class="call" on:click={() => (callUsIsOpen = true)}>
+      <button class="call" on:click={() => (callUsIsOpen = !callUsIsOpen)}>
         {#if win > 950}
           <p>{headerText.call}</p>
         {:else}
@@ -69,21 +86,83 @@
 <!--      {/if}-->
     </div>
     <div class={`callUsModal ${callUsIsOpen ? 'openCall' : ''}`}>
-      <img src="./assets/icons/close.svg" alt="closeIcon" on:click={() => (callUsIsOpen = false)} />
+      <img src="./assets/icons/close.svg" alt="closeIcon" style="cursor: pointer" on:click={() => (callUsIsOpen = false)} />
       <a class="button contained" href="tel:+996 500 431 430">{headerText.callUs}</a>
       <a class="button contained" href="https://api.whatsapp.com/send?phone=996500431430">WhatsApp</a>
       <p>
         {@html headerText.callUsText}
       </p>
+
     </div>
   </div>
 </header>
+{#if $page.path === '/' && !it_map_downloaded}
+  <div class="it-map">
+    <div class="gradient-bg">
+
+      <div class="container">
+        <p class="it-map-text">Получите карту актуальных IT профессий 🚀</p>
+        <div style="display: flex; align-items: center; gap: 10px">
+
+          <button class="button contained"
+                  on:click={() =>{
+                    it_map_downloaded = true
+                    isModalOpen = true
+                     }}
+          >Получить карту</button>
+          <img width="18" height="18" src="./assets/icons/close.svg" alt="closeIcon" style="cursor: pointer" on:click={() => (it_map_downloaded = true)} />
+        </div>
+
+      </div>
+    </div>
+  </div>
+{/if}
+<Modal isOpen={isModalOpen} setModalOpen={() => isModalOpen = !isModalOpen}>
+  <div style='max-width: 392px; background: #111119'>
+
+  <FindEducation forMap forModalMap />
+  </div>
+
+</Modal>
 
 <style>
+  .mobile-nav {
+    display: none;
+  }
+  .it-map {
+    position: fixed;
+    background: #111119;
+    top: 74px;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    /*display: none;*/
+    /*top: 74px;*/
+  }
+  .gradient-bg {
+    width: 100%;
+    background: linear-gradient(140deg, rgba(0, 157, 255, 0.30) 0%, rgba(188, 20, 227, 0.30) 100%);
+
+  }
+  .it-map .container {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .it-map .button {
+    padding: 10px 20px;
+    min-height: auto;
+    background: var(--blue-main);
+  }
+  .it-map-text {
+    font-size: 20px;
+  }
   .teens-logo {
     position: absolute;
-    bottom: -25px;
-    right: -15px
+    bottom: -23px;
+    right: -23px
   }
   .active {
     color: var(--light-blue);
@@ -94,7 +173,7 @@
     left: 0;
     width: 100%;
     display: flex;
-    height: 90px;
+    padding: 15px 0;
     background-image: linear-gradient(109.63deg, #111212 -1.59%, #04051c 105.94%);
     z-index: 10000;
   }
@@ -149,38 +228,22 @@
     padding: 10px 30px;
     font-size: 1rem;
     font-weight: 500;
-    border: 1px solid #07ff5a;
+    color: #009DFF;
+    border: 1px solid #009DFF;
     background-color: #0a0b18;
     transition: 0.2s all;
     transform: translate3d(0, 0, 0);
-
-    filter: drop-shadow(-4px -4px 10px #00ffa218) drop-shadow(4px 4px 15px #9dff001e);
   }
   .call:hover {
-    border: 1px solid #07ffc1;
-  }
-  .call:active {
-    border: 1px solid rgba(157, 255, 0, 1);
+    border-color:#00b2ff;
   }
 
   .call > p {
-    background: linear-gradient(126.1deg, #07ffc1 4.89%, #9dff00 110.2%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    transition: 0.5s all;
+    color: #009DFF;
+    transition: 0.2s all;
   }
   .call:hover p {
-    background: linear-gradient(126.1deg, #07ffc1 4.89%, #07ffc1 110.2%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  .call:active p {
-    background: linear-gradient(126.1deg, rgba(157, 255, 0, 1) 4.89%, rgba(157, 255, 0, 1) 110.2%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #00b2ff;
   }
   .container,
   .language {
@@ -233,19 +296,41 @@
     }
   }
   @media screen and (max-width: 1050px) {
-    nav {
+    .mobile-nav {
+      z-index: -1;
+      display: block;
+      position: absolute;
+      width: 100vw;
+      top: 64px;
+      left: 0;
+      right: 0;
+      height: calc(100vh - 64px);
+      transition: 0.3s ease-out background-color;
+      transform: translate3d(0, -150%, 0);
+
+    }
+    .mobile-nav.opened {
+      background-color: rgba(5, 33, 49, 0.38);
+      transform: translate3d(0, 0, 0);
+    }
+    .mobile-nav nav {
+      display: flex;
       flex-direction: column;
       background: var(--primary-bg);
       padding: 20px;
-      position: absolute;
-      gap: 0;
-      top: 88px;
-      left: 0;
-      right: 0;
+      transform: translate3d(0, -150%, 0);
+      transition: 0.3s ease-out;
     }
+    .mobile-nav.opened nav  {
+      transform: translate3d(0, 0, 0);
+    }
+    .desktop-nav {
+      display: none;
+    }
+
     .burgerIcon {
-      width: 36px;
-      height: 36px;
+      width: 32px;
+      height: 32px;
     }
     nav > a {
       height: 40px;
@@ -256,9 +341,13 @@
     }
   }
   @media screen and (max-width: 950px) {
+    .it-map {
+      top: 64px;
+    }
     .call {
-      padding: 3px 20px;
+      padding: 3px 15px;
       display: flex;
+      border-width: 2px;
     }
     .call img {
       width: 24px;
@@ -266,16 +355,28 @@
     }
   }
   @media screen and (max-width: 768px) {
+    .it-map , .mobile-nav {
+      top: 54px;
+    }
+    .it-map-text {
+      font-size: 12px;
+    }
+    .it-map .button {
+      font-size: 12px;
+    }
     .header {
-      height: 72px;
-
+      padding: 10px 0;
+    }
+    .logo-img {
+      height: 20px;
+      width: 98px;
     }
     .headerNavigation,
     .callUs {
       gap: 10px;
     }
     .call {
-      padding: 3px 20px;
+      padding: 3px 15px;
       display: flex;
     }
     .call img {

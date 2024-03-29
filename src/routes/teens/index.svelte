@@ -9,7 +9,11 @@
   import TeensFAQ from "../../modules/teens-modules/TeensFAQ.svelte";
   import TeensLocation from "../../modules/teens-modules/TeensLocation.svelte";
   import InstaReviews from "../../modules/InstaReviews.svelte";
-
+  import TelegramBanner from '../../components/telegram-banner/telegram-banner.svelte'
+  import TestBanner from '../../components/test-banner/test-banner.svelte'
+  import FreeLessonsModule from "../../modules/FreeLessonsModule.svelte";
+  import Media from "../../modules/Media.svelte";
+  import TeensGamesBaner from "../../modules/teens-modules/TeensGamesBaner.svelte";
   let loading = true
 
   onMount(() => {
@@ -19,16 +23,26 @@
 </script>
 
 {#if !loading}
+    <div class="teens-page">
     <TeensFirstSection />
+    <TelegramBanner forTeens type="pro_it" />
+        <TeensGamesBaner />
+    <FreeLessonsModule />
     <TeensCardsOfCourses length={4} />
+    <InstaReviews />
     <TeensFreeLesson comment="Страница всех курсов" />
+        <TestBanner forTeens />
+        <EducationLicense />
+
     <TeensAdvantages />
 <!--    <TeensStudentProject />-->
-    <InstaReviews />
-    <EducationLicense />
     <TeensLocation />
-    <TeensFAQ />
-    <EnrollForCourse />
+        <Media title="Полезно знать" />
+
+        <TeensFAQ />
+    <EnrollForCourse forMainPage />
+    </div>
+
 {:else}
     <section style="height: 200vh;">
         <img class="loadingLogo" width="136px" height="28px" src="./assets/icons/logo.webp" alt="logo" />

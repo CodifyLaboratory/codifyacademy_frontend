@@ -24,17 +24,17 @@
         <p>Карьерный тест</p>
     </div>
     {#if !it_map_downloaded}
-    <div class="it-map">
-        <div class="container">
-        <p class="it-map-text">🎉 Поздравляем с завершением теста! Карта актуальных IT-профессий уже ждёт вас.</p>
-            <a href="https://codifylab.com/ru/api/download-it-prof-map/" on:click={() => it_map_downloaded = true}>
+        <div class="it-map">
+            <div class="container">
+                <p class="it-map-text">🎉 Поздравляем с завершением теста! Карта актуальных IT-профессий уже ждёт вас.</p>
+                <a href="https://codifylab.com/ru/api/download-it-prof-map/" on:click={() => it_map_downloaded = true}>
 
-        <button class="button light-blue">Получить карту</button>
-            </a>
+                    <button class="button light-blue">Получить карту</button>
+                </a>
 
+            </div>
         </div>
-    </div>
-        {/if}
+    {/if}
 
     <div class="container test-result-container">
         {#if test_result.result?.length > 1}
@@ -46,9 +46,9 @@
                     {#if test_result.result?.length === 1}
                         <h3>Ваша идеальная IT-специальность</h3>
                     {/if}
-                        <img src={result_card.icon_url} alt="result-icon">
-                        <h1>{result_card.profession}</h1>
-<!--                        <Badge text={`Совпадение — ${result_card.score}%`} />-->
+                    <img src={result_card.icon_url} alt="result-icon">
+                    <h1>{result_card.profession}</h1>
+                    <!--                        <Badge text={`Совпадение — ${result_card.score}%`} />-->
                     <p>{result_card.description}</p>
                 </div>
             {/each}
@@ -60,14 +60,14 @@
             </h2>
             <div class="result-courses_box">
                 {#if test_result.top_professions_courses}
-                {#each test_result.top_professions_courses as course}
-                    <div class="test-result_course">
-                        <NewCardOfCourses course={course} />
-                        <div class="card description-card">
-                            <p>{course.profession_description}</p>
+                    {#each test_result.top_professions_courses as course}
+                        <div class="test-result_course">
+                            <NewCardOfCourses course={course} />
+                            <div class="card description-card">
+                                <p>{course.profession_description}</p>
+                            </div>
                         </div>
-                    </div>
-                {/each}
+                    {/each}
                 {/if}
             </div>
         </section>

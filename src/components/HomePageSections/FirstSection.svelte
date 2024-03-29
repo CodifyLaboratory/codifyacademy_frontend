@@ -36,7 +36,7 @@
 
 <style>
   .firstSection {
-    padding-top: 150px;
+    padding-top: 200px;
     position: relative;
     overflow: hidden;
   }
@@ -61,7 +61,7 @@
     padding-bottom: 10px;
   }
   p {
-    font-size: 24px;
+    font-size: 20px;
   }
   .button {
     margin-top: 50px;

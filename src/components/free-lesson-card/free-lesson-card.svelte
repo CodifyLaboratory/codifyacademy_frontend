@@ -1,166 +1,89 @@
 <script>
-  import { language } from '../../stores'
-  import Loading from '../../components/ui/loading.svelte'
-  import axios from "axios";
-  import {request} from "../../api";
-  export let maxWidth = 600
-  export let comment =''
-  let activeLang = 'ru'
-  let message = ''
-  let isPost = false
-  let isDisabled = false
-  language.subscribe(lang => {
-    activeLang = lang
-  })
-  async function submit(e) {
-    e.preventDefault()
-    const headers = {
-      Authorization: 'b8faa2c98db86c13fadc2e339bf33743',
-      'content-Type': 'application/json',
-    }
-    isDisabled = true
-    request('post', 'contact-form/submit/', null, {
-      name: e.target[0].value,
-      phone_number: e.target[1].value,
-      comment: 'Бесплатное пробное занятие'
-    })
-      .then(() => {
-        axios
-          .post(
-            'https://academy.codifylab.com/api/crm/leads/?org_id=1',
-            {
-              first_name: e.target[0].value,
-              phone: e.target[1].value,
-              email: e.target[2].value ? e.target[2].value : null,
-              extra_comments: ['Детские курсы','Бесплатное пробное занятие', comment]
-            },
-            { headers }
-          )
-          .then(() => {
-            isPost = true
-            isDisabled=false
-            message = ''
-            setTimeout(() => {
-              isPost = false
-            }, 5000)
-          })
-      })
-      .catch(err => {
-        message = err.response.data.email?.join() || 'что-то пошло не так'
-        isPost = true
-        isDisabled = false
-        setTimeout(() => {
-          message = ''
-          isPost = false
-        }, 5000)
-      })
-  }
+  import Modal from '../modal/modal.svelte'
+  import MasterClassDescription from './master-class-description.svelte'
+  import Olympiad from './olympiad-description.svelte'
+  import Hackathon from './hackathon-description.svelte'
+export let card_info={}
+let isModalOpen = false
+const setModalOpen = () => {
+  isModalOpen = !isModalOpen
+}
 
-  // console.log('isPost', isPost)
-  // console.log('isDisabled', isDisabled)
+const modal_content = {
+  master_class: MasterClassDescription,
+  olympiad: Olympiad,
+  hackathon: Hackathon,
+}
+  console.log('asd', card_info?.modal_content)
+const CurrentModalContent = modal_content[card_info?.modal_content || 'master_class']
 
 </script>
 
-<form  on:submit={submit} class="card" style={`max-width: ${maxWidth}px`}>
-    {#if isDisabled && !isPost}
-        <div class="innerLoading">
-            <Loading isTransparent vh="20"/>
-        </div>
-    {/if}
-    {#if isPost && !isDisabled}
-        <div class="innerLoading">
-            <p>{message || 'Заявка отправлена'}</p>
-        </div>
-    {/if}
-    <div class={`find-education ${isDisabled || isPost? 'transparent' : ''}`}>
-        <p>Запишитесь на бесплатное пробное занятие</p>
-        <input  required type="text" placeholder='Имя' />
-        <input required type="text" placeholder='Номер телефона' />
-        <button class="button contained">Оставить заявку</button>
-        <span class="subtitle">{'Отправляя заявку, вы даете согласие на обработку персональных данных.'}</span>
+<div class="card free-lesson-card" style={`background: ${card_info.color}`}>
+    <h3>{card_info.title}</h3>
+    <div class="badge_box">
+        {#each card_info?.badges as badge}
+            <p>{badge}</p>
+            {/each}
     </div>
+    <button class=" button contained free-lesson-card_button" on:click={setModalOpen}>
+        <svg width="18" height="18" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 16H27" stroke="#009DFF" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="round"/>
+            <path d="M19 7L28 16L19 25" stroke="#009DFF" stroke-width="2.2" stroke-linecap="square"/>
+        </svg>
+        <p>Узнать подробнее</p>
+    </button>
+    <Modal isOpen={isModalOpen} setModalOpen={setModalOpen}>
+            <CurrentModalContent />
+    </Modal>
+</div>
 
-</form>
+
 
 <style>
-    .card {
-        position: relative;
-    }
-    .innerLoading {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .find-education {
+    .free-lesson-card {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        align-items: flex-start;
     }
-    .find-education.transparent {
-        opacity: 0;
+    .free-lesson-card h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
     }
-    p {
-        color: var(--white);
-        font-size: 28px;
-        font-weight: 500;
-        line-height: 130%; /* 36.4px */
-    }
-    input {
-        border: 1px solid white;
-        padding: 11px 30px;
-        height: 60px;
-        background: transparent;
-        color: white;
-        font-size: 16px;
+    .badge_box p {
+        font-size: 15px;
         font-weight: 400;
-        border-radius: 100px;
     }
-    input::placeholder {
-        color: white;
-        opacity: 0.7;
+    .badge_box {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding-bottom: 20px;
     }
-    .subtitle {
-        font-weight: 400;
-        font-size: 14px;
+    .free-lesson-card_button {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        background: white;
+        padding: 10px 20px;
+        min-height: auto;
+        border: none;
+        margin-top: auto;
     }
-    a {
-        font-weight: 400;
-        font-size: 14px;
-        cursor: pointer;
+    .free-lesson-card_button p  {
         color: #009DFF;
-        text-decoration: underline;
     }
-    a:hover {
-        color: var(--blue);
-
-    }
-    @media (max-width: 855px) {
-        .card {
-            max-width: 100% !important;
+    @media (max-width: 1030px) {
+        .free-lesson-card {
+            width: 90vw;
+            max-width: 350px;
+            flex-shrink: 0;
         }
-        .find-education {
-            gap: 10px;
-        }
-        p {
+        .free-lesson-card h3 {
             font-size: 20px;
-            line-height: 130%; /* 36.4px */
         }
-        input {
-            margin-top: 5px;
-            padding: 5px 30px;
-            height: 51px;
+        .badge_box p {
             font-size: 14px;
-        }
-        .find-education {
-            max-width: 100%;
-        }
-        .subtitle, a {
-            font-size: 12px;
         }
     }
 </style>
