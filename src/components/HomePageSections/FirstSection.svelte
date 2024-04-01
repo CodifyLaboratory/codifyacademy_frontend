@@ -68,7 +68,7 @@
   }
   @media (max-width: 855px) {
     .firstSection {
-      padding-top: 100px;
+      padding-top: 130px;
     }
     h1 {
       font-size: 32px;

@@ -104,6 +104,8 @@ z-index: 1;
     }
     .olympiad {
         background: #66127E;
+        max-height: 90dvh;
+        overflow: auto;
     }
     .inputs {
         display: grid;

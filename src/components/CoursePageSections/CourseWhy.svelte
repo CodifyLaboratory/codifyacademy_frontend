@@ -50,7 +50,7 @@
     <div class="price">
       <div>
         <h6>{course.discount_price || course.price} {text.courseWhy.som}</h6>
-        {#if course.discount_price}
+        {#if course.discount_price && Number(course.discount_price) !== Number(course.price)}
           <p class="oldPrice">{course.price} {text.courseWhy.som}</p>
         {/if}
       </div>
@@ -71,7 +71,7 @@
               : text.courseWhy.mest}
           </p>
         </div>
-        {#if course.special_offer}
+        {#if course.special_offer && course.special_offer_text}
         <div class="specialOffer">
           <p id="specialOffer">{course.special_offer_text}</p>
         </div>

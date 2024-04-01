@@ -24,9 +24,7 @@
         width: 0;
         height: 0;
         top: 0;
-        bottom: 0;
         left: 0;
-        right: 0;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -39,8 +37,8 @@
     .modal.opened {
         background: rgba(0, 0, 0, 0.63);
         opacity: 1;
-        width: 100vw;
-        height: 100vh;
+        width: 100dvw;
+        height: 100dvh;
         overflow: unset;
         pointer-events: all;
     }
