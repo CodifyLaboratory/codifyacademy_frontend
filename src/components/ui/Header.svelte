@@ -47,8 +47,8 @@
         {/if}
       </a>
       <nav class="desktop-nav">
-        <a class={path === '/courses' ? 'active' : ''} href={`/courses`} on:click={()=>{isOpenMenu = false}}>{headerText.academy}</a>
         <a class={path === '/teens' ? 'active' : ''} href="/teens" on:click={()=>{isOpenMenu = false}}>{headerText.teens}</a>
+        <a class={path === '/courses' ? 'active' : ''} href={`/courses`} on:click={()=>{isOpenMenu = false}}>{headerText.academy}</a>
         <a class={path === '/about-us' ? 'active' : ''} href="/about-us" on:click={()=>{isOpenMenu = false}}>О нас</a>
       </nav>
       <div class={`mobile-nav ${isOpenMenu ? 'opened' : ''}`}
@@ -132,7 +132,7 @@
   .it-map {
     position: fixed;
     background: #111119;
-    top: 74px;
+    top: 73px;
     left: 0;
     width: 100%;
     z-index: 100;
@@ -342,7 +342,7 @@
   }
   @media screen and (max-width: 950px) {
     .it-map {
-      top: 64px;
+      top: 63px;
     }
     .call {
       padding: 3px 15px;

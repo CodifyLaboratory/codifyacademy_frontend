@@ -1,17 +1,3 @@
-<svg width="64" height="58" viewBox="0 0 64 58" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_d_1410_2284)">
-<path d="M37.1132 49.3871L52.9335 33.5668C56.8202 29.6605 57.3866 23.2738 53.7147 19.1918C52.7939 18.1631 51.6729 17.333 50.4204 16.7521C49.1679 16.1713 47.8101 15.8519 46.43 15.8135C45.0498 15.7751 43.6764 16.0185 42.3935 16.5289C41.1106 17.0392 39.9453 17.8057 38.9687 18.7816L35.9999 21.7699L33.4413 19.1918C29.5351 15.3051 23.1483 14.7387 19.0663 18.4105C18.0376 19.3314 17.2075 20.4524 16.6266 21.7049C16.0458 22.9574 15.7264 24.3152 15.688 25.6953C15.6496 27.0755 15.893 28.4489 16.4034 29.7318C16.9137 31.0147 17.6802 32.18 18.6562 33.1566L34.8866 49.3871C35.1829 49.6805 35.583 49.8451 35.9999 49.8451C36.4169 49.8451 36.8169 49.6805 37.1132 49.3871V49.3871Z" stroke="#009DFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-</g>
-<defs>
-<filter id="filter0_d_1410_2284" x="-3" y="-6" width="70" height="70" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dx="-4" dy="-4"/>
-<feGaussianBlur stdDeviation="5"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.615686 0 0 0 0 1 0 0 0 0.2 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1410_2284"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1410_2284" result="shape"/>
-</filter>
-</defs>
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M26.1132 41.3871L41.9335 25.5668C45.8202 21.6605 46.3866 15.2738 42.7147 11.1918C41.7939 10.1631 40.6729 9.33297 39.4204 8.75212C38.1679 8.17126 36.8101 7.85188 35.43 7.8135C34.0498 7.77511 32.6764 8.01852 31.3935 8.52885C30.1106 9.03919 28.9453 9.80573 27.9687 10.7816L24.9999 13.7699L22.4413 11.1918C18.5351 7.30508 12.1483 6.73867 8.06631 10.4105C7.03762 11.3314 6.20748 12.4524 5.62663 13.7049C5.04577 14.9574 4.7264 16.3152 4.68801 17.6953C4.64962 19.0755 4.89303 20.4489 5.40336 21.7318C5.9137 23.0147 6.68024 24.18 7.65615 25.1566L23.8866 41.3871C24.1829 41.6805 24.583 41.8451 24.9999 41.8451C25.4169 41.8451 25.8169 41.6805 26.1132 41.3871V41.3871Z" stroke="#009DFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

@@ -12,7 +12,7 @@ export let forTeens = false
         <p class="subtitle">
             Пройдите короткий тест и откройте для себя направление, которое лучше всего соответствует вашим навыкам и интересам
         </p>
-        <p>🕓 Время прохождения — 3 минуты</p>
+        <p class="subtitle">🕓 Время прохождения — 3 минуты</p>
         <a class={"mobile-link"} href={'/test'}>
             <button class="button contained">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -24,14 +24,16 @@ export let forTeens = false
         </a>
     </div>
     <div class="right-block">
-            <img class="teens-img" src={`/assets/${forTeens ? 'planet_with_satellites'  : 'girl_on_arrow'}.png`} alt="rocket">
+            <img width={forTeens? '274px' : '258px' } class="teens-img" src={`/assets/${forTeens ? 'planet_with_satellites'  : 'girl_on_arrow'}.png`} alt="rocket">
     </div>
 
 </div>
 </section>
 
 <style>
-
+    /*.teens-img {*/
+    /*    width: 258px;*/
+    /*}*/
     .mobile-link {
         margin-top: 30px;
     }
@@ -40,6 +42,7 @@ export let forTeens = false
         display: flex;
         align-items: center;
         gap: 5px;
+        min-height: unset;
     }
     .program-card {
         position: relative;
@@ -49,6 +52,7 @@ export let forTeens = false
         align-items: center;
         gap: 20px;
         margin-bottom: 20px;
+        padding: 60px;
     }
     .program-card:not(.teens-program-card) {
         background: linear-gradient(140deg, rgba(188, 20, 227, 0.10) 0%, rgba(0, 157, 255, 0.10) 100%);
@@ -69,17 +73,19 @@ export let forTeens = false
         font-size: 32px;
         font-weight: 500;
         line-height: 130%;
-        max-width: 532px;
+        max-width: 538px;
+
     }
     .left-block .subtitle {
         line-height: 150%;
-        font-size: 20px;
-        max-width: 640px;
+        font-size: 16px;
+        max-width: 538px;
     }
     .left-block > a {
         display: block;
     }
     .left-block > a button {
+
     }
     .right-block {
         display: flex;
@@ -116,6 +122,8 @@ export let forTeens = false
         .program-card {
             flex-direction: column;
             align-items: flex-start;
+            padding: 20px 15px;
+
         }
         .teens-program-card {
             flex-direction: column-reverse;

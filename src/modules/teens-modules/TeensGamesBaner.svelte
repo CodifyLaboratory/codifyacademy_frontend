@@ -51,6 +51,7 @@
         position: absolute;
         bottom: 0;
         right: 0;
+        width: 133px;
         z-index: -1;
     }
     h3 {

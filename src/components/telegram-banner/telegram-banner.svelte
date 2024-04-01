@@ -4,7 +4,7 @@
   const types= {
     pro_it: {
       image: '/assets/pro_it_mockup.png',
-      bg: '/assets/pro_it_BG.png',
+      bg: '/assets/pro_it_BG.svg',
       teens_bg: '/assets/pro_it_BG_teens.png',
       title: 'Telegram-канал “Pro IT с Диной Руслан”',
       subtitle: 'Присоединяйтесь к Telegram-каналу Дины Руслан и получайте ежедневные обновления с полезными ссылками и свежими новостями из мира IT',
@@ -13,7 +13,7 @@
     },
     job: {
       image: '/assets/job_codify_mockup.png',
-      bg: '/assets/job_codify_BG.png',
+      bg: '/assets/job_codify_BG.svg',
   teens_bg: '/assets/job_codify_BG.png',
       title: 'Job CODIFY — telegram-канал c актуальными вакансиями',
       subtitle: 'Подпишитесь на телеграм-канал Job CODIFY и откройте для себя мир актуальных IT-вакансий. Оставайтесь в курсе последних требований, зарплат и возможностей в IT-индустрии!',
@@ -59,13 +59,15 @@
 <style>
     .teens-img {
         z-index: 1;
-        position: relative;
-        bottom: -30px;
+        position: absolute;
+        right: 170px;
+        height: 310px;
+        bottom: 0;
     }
     .card-bg {
-        height: 100%;
         position: absolute;
         right: 0;
+        height: 100%;
         top: 0;
         z-index: -1;
     }
@@ -77,6 +79,7 @@
         display: flex;
         align-items: center;
         gap: 5px;
+        min-height: auto;
     }
     .program-card {
         position: relative;
@@ -86,6 +89,7 @@
         align-items: center;
         gap: 20px;
         margin-bottom: 20px;
+        padding: 60px;
     }
     .program-card:not(.teens-program-card) {
         background: linear-gradient(140deg, rgba(188, 20, 227, 0.10) 0%, rgba(0, 157, 255, 0.10) 100%);
@@ -95,17 +99,18 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
+        gap: 5px;
     }
     .left-block h3 {
         font-size: 32px;
         font-weight: 500;
         line-height: 130%;
+        max-width: 537px;
     }
     .left-block .subtitle {
-        line-height: 150%;
-        font-size: 20px;
-        max-width: 640px;
+        line-height: 130%;
+        font-size: 16px;
+        max-width: 537px;
     }
     .left-block .badges {
         padding-top: 10px;
@@ -151,6 +156,7 @@
         }
         .program-card {
             flex-direction: column;
+            padding: 20px 15px;
             align-items: flex-start;
         }
         .teens-program-card {

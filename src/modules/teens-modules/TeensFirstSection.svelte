@@ -64,6 +64,9 @@
         align-items: center;
         gap: 24px;
     }
+    .bot img {
+        width: 68px;
+    }
     .dialog_box {
         border-radius: 100px;
         background: white;

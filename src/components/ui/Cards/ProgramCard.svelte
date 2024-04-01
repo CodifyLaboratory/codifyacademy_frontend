@@ -30,7 +30,7 @@
     </div>
     <div class="right-block">
         {#if forTeens}
-            <img class="teens-img" src="/assets/icons/rocket.png" alt="rocket">
+            <img class="teens-img" src="/assets/rocket.png" alt="rocket">
             {:else }
         {#each program.courses as course}
             <div class="course-name">
@@ -55,7 +55,9 @@
 </div>
 
 <style>
-
+.teens-img {
+    height: 285px;
+}
   .mobile-link {
     display: none;
   }
@@ -136,6 +138,8 @@
   @media (max-width: 880px) {
       .teens-img {
           width: 60%;
+          height: auto;
+
       }
     .mobile-link {
         display: block !important;
