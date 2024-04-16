@@ -15,6 +15,7 @@
   import CheckList from "../modules/CheckList.svelte";
   import FreeLessonsModule from "../modules/FreeLessonsModule.svelte";
   import TestBanner from "../components/test-banner/test-banner.svelte";
+  import SendReviewBanner from "../components/send-review-banner/send-review-banner.svelte";
   import TelegramBanner from "../components/telegram-banner/telegram-banner.svelte";
 
   let loading = true
@@ -67,6 +68,7 @@
     <FreeLessonsModule />
 <!--    <TestAndInfo />-->
     <StudyPrograms />
+    <SendReviewBanner />
     <HappyStudents />
     <UTO />
 <!--    <ProfessionsMap />-->
