@@ -6,7 +6,6 @@
   import FindEducation from '../FindEducation/FindEducation.svelte'
   const {page} = stores()
 
-  console.log('asd', $page.path)
   let callUsIsOpen = false
   let activeLang = 'ru'
   export let path

@@ -14,7 +14,6 @@ const modal_content = {
   olympiad: Olympiad,
   hackathon: Hackathon,
 }
-  console.log('asd', card_info?.modal_content)
 const CurrentModalContent = modal_content[card_info?.modal_content || 'master_class']
 
 </script>

@@ -1,5 +1,41 @@
 <script>
-export let forTeens = false
+  import Modal from '../modal/modal.svelte'
+  import Loading from '../../components/ui/loading.svelte'
+  import axios from "axios";
+    let isModalOpen = false
+  let isPost = false
+  let isDisabled = false
+
+  let input_value = ''
+  const setModalOpen = () => {
+    isModalOpen = !isModalOpen
+
+  }
+
+  async function submit(e) {
+    isDisabled = true
+    e.preventDefault()
+    if(input_value) {
+        axios
+          .post(
+            'https://letscodify.io/apis/feedback-mail/',
+            {
+              platform: 'codifylab.com (academy)',
+              message: input_value
+            },
+          )
+          .then(() => {
+            isPost = true
+            isDisabled = false
+            setTimeout(() => {
+              isPost = false
+              setModalOpen()
+            }, 3000)
+          })
+    }
+
+  }
+
 </script>
 <section class="container">
 
@@ -12,11 +48,18 @@ export let forTeens = false
         <p class="subtitle">
             Поделитесь вашими впечатлениями о CODIFY Practicum с нашим CEO, Динарой Руслан. Ваш отзыв поможет нам стать лучше!
         </p>
-        <a class={"mobile-link"} href={'https://wa.me/996708520039'} target="_blank">
+        <div class="btns_box">
+
+        <a  href={'https://wa.me/996708520039'} target="_blank">
             <button class="button">
                 Связаться через WhatsApp
             </button>
         </a>
+                <button class="button" on:click={setModalOpen}>
+                    Оставить отзыв
+                </button>
+        </div>
+
     </div>
     <div class="right-block">
         <img width={'220px'} class="teens-img" src={`/assets/email.png`} alt="rocket">
@@ -24,13 +67,74 @@ export let forTeens = false
 
 </div>
 </section>
+<Modal isOpen={isModalOpen} setModalOpen={setModalOpen}>
+    <div class="modal-card review-modal">
+        {#if isDisabled && !isPost}
+            <div class="innerLoading">
+                <Loading isTransparent vh="20"/>
+            </div>
+        {/if}
+        {#if isPost && !isDisabled}
+            <div class="innerLoading">
+                <p>{'Отзыв отправлена'}</p>
+            </div>
+        {/if}
+        <h3>Отзыв на почту</h3>
+        <textarea on:change={e => input_value = e.target.value} placeholder="Оставьте свой отзыв" rows="4" />
+        <div class="modal-btns">
+            <button class="button" on:click={setModalOpen}>
+                Назад
+            </button>
+            <button class="button contained" on:click={submit}>
+                Отправить
+            </button>
+        </div>
+    </div>
+</Modal>
 
 <style>
-    /*.teens-img {*/
-    /*    width: 258px;*/
-    /*}*/
-    .mobile-link {
+    .innerLoading {
+        background: #08578C;
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    textarea {
+        border-radius: 20px;
+        background: transparent;
+        padding: 10px 20px;
+        border: 1px solid white;
+    }
+    textarea::placeholder {
+        color: rgba(255, 255, 255, 0.53)
+    }
+    .modal-btns button {
+        min-height: auto;
+    }
+    .modal-btns {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: flex-end;
+    }
+.review-modal {
+    background: #08578C;
+    width: 100dvw;
+    max-width: 500px;
+    position: relative;
+}
+    .btns_box {
+        display: flex;
+        gap: 15px;
         margin-top: 30px;
+        flex-wrap: wrap;
     }
     .mobile-link button {
         width: 100%;
@@ -124,6 +228,9 @@ export let forTeens = false
             flex-direction: column-reverse;
         }
         .teens-program-card button {
+            width: 100%;
+        }
+        .teens-program-card a {
             width: 100%;
         }
         .program-card > img {
