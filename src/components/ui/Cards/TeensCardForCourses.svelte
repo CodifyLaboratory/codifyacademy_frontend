@@ -5,7 +5,11 @@
 
   let activeLang
   language.subscribe(lang => (activeLang = lang))
-
+    const categories = {
+    first: '7-9 лет',
+      second: '10-13 лет',
+      third: '14-17 лет'
+    }
 </script>
 
 <div class="teensCardForCourses card">
@@ -13,7 +17,7 @@
         <img src={cardInfo.icon} alt="course-icon">
     </div>
     <div class="card-badges">
-        <span class="badge">{cardInfo.age_category === 'teens' ? "12-17 лет" : "7-12 лет"}</span>
+        <span class="badge">{categories[cardInfo.age_category]}</span>
         <span class="badge">{cardInfo.duration_str}</span>
         {#each cardInfo.study_format as format}
             <span class="badge">{format === 'online' ? 'Онлайн' : 'Офлайн'}</span>
