@@ -36,9 +36,11 @@
     if (!tab) {
       filterCards()
     } else if (tab === 1) {
-      filterCards('children')
+      filterCards('first')
     } else if (tab === 2) {
-      filterCards('teens')
+      filterCards('second')
+    } else if (tab === 3) {
+      filterCards('third')
     }
   }
 
@@ -53,10 +55,13 @@
         >Все курсы</button
         >
         <button class={`buttonCourse dev ${activeBtn === 1 ? 'active1' : ''}`} on:click={() => filter(1)}
-        >Для детей 7-12 лет</button
+        >Для детей 7-9 лет</button
         >
         <button class={`buttonCourse design ${activeBtn === 2 ? 'active2' : ''}`} on:click={() => filter(2)}
-        >Для подростков 12-17 лет</button
+        >Для подростков 10-13 лет</button
+        >
+        <button class={`buttonCourse management ${activeBtn === 3 ? 'active3' : ''}`} on:click={() => filter(3)}
+        >Для подростков 14-17 лет</button
         >
     </div>
     </div>
@@ -116,25 +121,26 @@
     }
     .allCourses {
         border-color: rgba(247, 148, 30, 1);
-        filter: drop-shadow(4px 4px 10px #f7951e2f);
+        /*filter: drop-shadow(4px 4px 10px rgba(247, 149, 30, 0.13));*/
         transform: translate3d(0, 0, 0);
     }
 
     .dev {
         border-color: rgba(103, 3, 180, 1);
-        filter: drop-shadow(4px 4px 10px rgba(169, 0, 188, 0.199));
+        /*filter: drop-shadow(4px 4px 10px rgba(169, 0, 188, 0.199));*/
         transform: translate3d(0, 0, 0);
 
     }
     .design {
-        border-color: rgba(221, 255, 0, 1);
-        filter: drop-shadow(4px 4px 10px #ddff002d);
+        border-color: #037FB4;
+        /*filter: drop-shadow(4px 4px 10px rgba(3, 127, 180, 0.7));*/
+
         transform: translate3d(0, 0, 0);
 
     }
     .management {
-        border-color: rgba(0, 255, 98, 1);
-        filter: drop-shadow(4px 4px 10px #00ff6233);
+        border-color: rgba(221, 255, 0, 1);
+        /*filter: drop-shadow(4px 4px 10px #ddff002d);*/
         transform: translate3d(0, 0, 0);
 
     }
@@ -157,11 +163,13 @@
         background: rgba(103, 3, 180, 1);
     }
     .active2 {
-        background: rgba(221, 255, 0, 1);
+        background:#037FB4;
+
         color: black;
     }
     .active3 {
-        background: rgba(0, 255, 98, 1);
+        background: rgba(221, 255, 0, 1);
+
         color: black;
     }
 </style>
