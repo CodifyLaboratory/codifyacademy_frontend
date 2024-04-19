@@ -16,9 +16,9 @@
       .then((data) => {
         currentCards = data || []
         filter(0)
-        if (length && data.length > length) {
-          currentCards.length = length
-        }
+        // if (length && data.length > length) {
+        //   currentCards.length = length
+        // }
       })
   })
 
@@ -26,9 +26,9 @@
     request('get', 'children-courses/', {age_category})
       .then((data) => {
         currentCards = data || []
-        if (length && data.length > length) {
-          currentCards.length = length
-        }
+        // if (length && data.length > length) {
+        //   currentCards.length = length
+        // }
       })
   }
   function filter(tab) {
