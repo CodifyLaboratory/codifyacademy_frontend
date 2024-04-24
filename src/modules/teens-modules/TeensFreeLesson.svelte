@@ -23,19 +23,19 @@ import FreeLessonForm from '../../components/free-lesson-form/free-lesson-form.s
 
 <section id="freeLesson" class="sectionFreeLesson container">
     <div class="fleeLesson_box">
-        <div>
-            <h2>Не просто учим, а закладываем навыки для успешного будущего</h2>
-            <p>
-                Пробный урок — это идеальная возможность для вашего ребенка протестировать и выбрать направление обучения:
-            </p>
-            <div class="description_text-box">
+<!--        <div>-->
+<!--            <h2>Не просто учим, а закладываем навыки для успешного будущего</h2>-->
+<!--            <p>-->
+<!--                Пробный урок — это идеальная возможность для вашего ребенка протестировать и выбрать направление обучения:-->
+<!--            </p>-->
+<!--            <div class="description_text-box">-->
 
-                {#each description_texts as text}
-                    <span class="description_text">{text}</span>
-                {/each}
-            </div>
-        </div>
-        <FreeLessonForm maxWidth={392} comment={comment}/>
+<!--                {#each description_texts as text}-->
+<!--                    <span class="description_text">{text}</span>-->
+<!--                {/each}-->
+<!--            </div>-->
+<!--        </div>-->
+        <FreeLessonForm isBig maxWidth={2000} comment={comment}/>
     </div>
 </section>
 
@@ -52,7 +52,7 @@ import FreeLessonForm from '../../components/free-lesson-form/free-lesson-form.s
     }
     .fleeLesson_box {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 20px;
         justify-content: space-between;
         width: 100%;

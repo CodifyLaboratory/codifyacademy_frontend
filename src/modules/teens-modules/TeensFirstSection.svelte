@@ -15,8 +15,8 @@
   const badges = [
     '📚 Обучили более 2000 студентов от 7 до 17 лет',
     '⭐️ Опытные менторы и обучение на реальных проектах',
+    '🚀 Ваш ребенок освоит 3 IT профессии за 2 года',
     '🔥 Дополнительно получаете уроки английского и шахмат',
-    '🚀 Даем навыки, которые нужны в будущем'
   ]
 
 </script>
@@ -99,7 +99,7 @@
         font-size: 20px;
     }
   .firstSection {
-    padding-top: 120px;
+    padding-top: 140px;
   }
   .breadCrumbs {
     display: flex;
@@ -164,7 +164,7 @@
           font-size: 16px;
       }
     .firstSection {
-        padding-top: 60px;
+        padding-top: 80px;
     }
     .breadCrumbs {
         display: none;

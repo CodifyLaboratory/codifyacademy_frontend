@@ -25,6 +25,10 @@
   let isOpenMenu = false
   let it_map_downloaded = false
   let isModalOpen = false
+
+  let teensModalOpen = false
+  let it_plan_downloaded = false
+
 </script>
 
 <svelte:window bind:innerWidth={win} on:scroll={() => (callUsIsOpen = false)} />
@@ -116,15 +120,55 @@
     </div>
   </div>
 {/if}
+
 <Modal isOpen={isModalOpen} setModalOpen={() => isModalOpen = !isModalOpen}>
   <div style='max-width: 392px; background: #111119'>
 
-  <FindEducation forMap forModalMap />
+    <FindEducation forMap forModalMap />
   </div>
 
 </Modal>
 
+
+
+{#if $page.path === '/teens' && !it_plan_downloaded}
+  <div class="it-map">
+    <div class="blue-bg">
+
+      <div class="container">
+        <p class="it-map-text">Получите план обучения вашего ребенка 🚀</p>
+        <div style="display: flex; align-items: center; gap: 10px">
+
+          <button class="button contained"
+                  on:click={() =>{
+                    it_plan_downloaded = true
+                    teensModalOpen = true
+                     }}
+          >Получить план</button>
+          <img width="18" height="18" src="./assets/icons/close.svg" alt="closeIcon" style="cursor: pointer" on:click={() => (it_plan_downloaded = true)} />
+        </div>
+
+      </div>
+    </div>
+  </div>
+{/if}
+<Modal isOpen={teensModalOpen} setModalOpen={() => teensModalOpen = !teensModalOpen}>
+  <div style='max-width: 392px; background: #111119'>
+
+    <FindEducation forTeensPlan />
+  </div>
+
+</Modal>
+
+
 <style>
+  .blue-bg {
+    background: #009DFF;
+  }
+  .blue-bg .button {
+    background: white !important;
+    color: #009DFF;
+  }
   .mobile-nav {
     display: none;
   }
@@ -355,7 +399,7 @@
   }
   @media screen and (max-width: 768px) {
     .it-map , .mobile-nav {
-      top: 54px;
+      top: 53px;
     }
     .it-map-text {
       font-size: 12px;

@@ -3,6 +3,8 @@
   import Loading from '../../components/ui/loading.svelte'
   import axios from "axios";
   import {request} from "../../api";
+
+  export let isBig = false
   export let maxWidth = 600
   export let comment =''
   let activeLang = 'ru'
@@ -72,11 +74,22 @@
             <p>{message || 'Заявка отправлена'}</p>
         </div>
     {/if}
-    <div class={`find-education ${isDisabled || isPost? 'transparent' : ''}`}>
-        <p>Запишитесь на бесплатный пробный урок</p>
+    <div class={`find-education ${isBig ? 'is_big' : ''} ${isDisabled || isPost? 'transparent' : ''}`}>
+        <p>
+            {#if (isBig)}
+                Не просто учим, а закладываем навыки для успешного будущего
+                {:else }
+                Запишитесь на бесплатный пробный урок
+                {/if}
+
+            </p>
+        <div class={`find-education_form`}>
+
         <input  required type="text" placeholder='Имя' />
         <input required type="text" placeholder='Номер телефона' />
         <button class="button contained">Оставить заявку</button>
+        </div>
+
         <span class="subtitle">{'Отправляя заявку, вы даете согласие на обработку персональных данных.'}</span>
     </div>
 
@@ -97,19 +110,31 @@
         align-items: center;
         justify-content: center;
     }
-    .find-education {
+    .find-education, .find-education_form {
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
+
     .find-education.transparent {
         opacity: 0;
+    }
+
+    .is_big .find-education_form {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+
     }
     p {
         color: var(--white);
         font-size: 24px;
         font-weight: 500;
         line-height: 130%; /* 36.4px */
+    }
+    .is_big p {
+        font-size: 32px;
+        max-width: 650px;
     }
     input {
         border: 1px solid white;
@@ -144,12 +169,22 @@
         .card {
             max-width: 100% !important;
         }
-        .find-education {
+        .find-education, .find-education_form {
             gap: 10px;
+        }
+        .is_big .find-education_form {
+            display: grid;
+            grid-template-columns: 100%;
+            width: 100%;
+
         }
         p {
             font-size: 20px;
             line-height: 130%; /* 36.4px */
+        }
+        .is_big p {
+            font-size: 24px;
+            max-width: 650px;
         }
         input {
             margin-top: 5px;

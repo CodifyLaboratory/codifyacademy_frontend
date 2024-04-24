@@ -8,6 +8,7 @@
   export let forMap = false
   export let forTeens = false
   export let forModalMap = false
+  export let forTeensPlan = false
   let activeLang = 'ru'
   let message = ''
   let isPost = false
@@ -36,7 +37,7 @@
               first_name: e.target[0].value,
               phone: e.target[1].value,
               email: e.target[2].value ? e.target[2].value : null,
-              extra_comments: ['Главная страница', 'Десткие и взрослые', forMap ? 'Карта IT-профессий' : (forTeens ? 'Главная страница детских курсов' :'Поможем подобрать обучение')]
+              extra_comments: ['Главная страница', forMap ? 'Карта IT-профессий' : (forTeens ? 'Главная страница детских курсов' : (forTeensPlan ? 'План обучения для детей' : 'Поможем подобрать обучение'))]
             },
             { headers }
           )
@@ -46,6 +47,9 @@
             message = ''
             if(forMap) {
               window.location.href = "https://codifylab.com/ru/api/download-it-prof-map/"
+            }
+            if(forTeensPlan) {
+                window.location.href = "https://codifylab.com/ru/api/download-it-road-map/"
             }
             setTimeout(() => {
               isPost = false
@@ -78,19 +82,22 @@
         </div>
     {/if}
     <div class={`find-education ${isDisabled || isPost? 'transparent' : ''}`}>
-        {#if !forMap && !forTeens}
+        {#if !forMap && !forTeens && !forTeensPlan}
             <p>{texts[activeLang].findEducation.title}</p>
         {/if}
         {#if forModalMap}
             <p>Получите карту актуальных IT профессий</p>
         {/if}
         {#if forTeens}
-            <p>Получите бесплатный урок и карту профессий будущего</p>
+            <p>Запишитесь на диагностику IT навыков ребенка и получите карту IT профессий будущего</p>
+        {/if}
+        {#if forTeensPlan}
+            <p style="padding-right: 20px">Получите план обучения вашего ребенка 🚀</p>
         {/if}
     <input  required type="text" placeholder={texts[activeLang].findEducation.input_name} />
     <input required type="text" placeholder={texts[activeLang].findEducation.input_phone} />
-    <button class="button contained">{forMap ? 'Получить карту IT профессий' : texts[activeLang].findEducation.button}</button>
-    <span class="subtitle">{forMap ? 'Нажимая на кнопку, вы даете согласие на обработку персональных данных' :(texts[activeLang].findEducation.subText + ' ' +texts[activeLang].findEducation.subLink)}</span>
+    <button class="button contained">{forMap ? 'Получить карту IT профессий' : (forTeensPlan ? 'Получить план обучения' : (forTeens ? 'Записаться на диагностику' : texts[activeLang].findEducation.button))}</button>
+    <span class="subtitle">{'Нажимая на кнопку, вы даете согласие на обработку персональных данных'}</span>
     </div>
 
 </form>
