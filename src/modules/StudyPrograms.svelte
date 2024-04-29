@@ -22,7 +22,7 @@
 </script>
 <section id="study-programs" class="study-programs container">
     <h2><span style="color: #009DFF ">
-        CODIFY Teens
+        CODIFY Kids
     </span> — программы обучения для детей и подростков </h2>
 
         <ProgramCard forTeens program={programs.at(1)} />

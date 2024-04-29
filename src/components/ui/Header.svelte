@@ -46,7 +46,7 @@
       <a href="/" style="display: flex; align-items: center; position: relative">
         <img width="136px" height="28px" src="./assets/logo.svg" class="logo-img" alt="logo" />
         {#if path?.includes('teen')}
-          <img src="./assets/Teens.svg" alt="teens" class="teens-logo">
+          <img src="./assets/Kids.svg" alt="Kids" class="teens-logo">
         {/if}
       </a>
       <nav class="desktop-nav">
@@ -204,8 +204,8 @@
   }
   .teens-logo {
     position: absolute;
-    bottom: -23px;
-    right: -23px
+    bottom: -20px;
+    right: -14px
   }
   .active {
     color: var(--light-blue);
@@ -398,6 +398,10 @@
     }
   }
   @media screen and (max-width: 768px) {
+    .teens-logo {
+      width: 34px;
+      bottom: -15px;
+    }
     .it-map , .mobile-nav {
       top: 53px;
     }
