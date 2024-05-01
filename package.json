@@ -6,6 +6,7 @@
     "start": "node __sapper__/build",
     "build": "sapper build --legacy",
     "export": "sapper export --legacy",
+    "dev": "sapper dev",
     "live": "node __sapper__/build"
   },
   "dependencies": {
