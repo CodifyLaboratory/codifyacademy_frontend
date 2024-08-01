@@ -10,3 +10,4 @@ __sapper__
 .idea
 cypress
 package-lock.json
+.nvmrc
