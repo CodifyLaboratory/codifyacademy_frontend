@@ -107,7 +107,7 @@ export const texts = {
       },
       contacts: {
         title: 'Contacts',
-        address: '<a target="_blank" href="https://go.2gis.com/sp5qt">7 Microdistrict, 23 Str., Atlant House</a>\n<a href="https://go.2gis.com/2z2ih" target="_blank">Isanov st. 105/3, 1st floor</a>',
+        address: '<a target="_blank" href="https://go.2gis.com/sp5qt">7 Microdistrict, 23 Str., Atlant House</a>\n<a href="https://go.2gis.com/u44oz" target="_blank">Ibraimov 115, Asyl-Tash BC</a>',
       },
       endLinks: {
         privacy: 'Privacy Policy',
@@ -283,7 +283,7 @@ export const texts = {
       },
       contacts: {
         title: 'Контакты',
-        address: '<a target="_blank" href="https://go.2gis.com/sp5qt">7мкр, 23 стр, дом Атлант</a>\n<a href="https://go.2gis.com/2z2ih" target="_blank">ул. Исанова 105/3, 1 этаж</a>',
+        address: '<a target="_blank" href="https://go.2gis.com/sp5qt">7мкр, 23 стр, дом Атлант</a>\n<a href="https://go.2gis.com/u44oz" target="_blank">ул. Ибраимова 115, БЦ Асыл-Таш</a>',
       },
       endLinks: {
         privacy: 'Политика конфиденциальности',
