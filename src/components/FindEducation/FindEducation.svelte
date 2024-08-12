@@ -2,8 +2,8 @@
   import { texts } from '../../localization'
   import { language } from '../../stores'
   import Loading from '../../components/ui/loading.svelte'
-  import axios from "axios";
-  import {request} from "../../api";
+  import axios from 'axios'
+  import { request } from '../../api'
 
   export let forMap = false
   export let forTeens = false
@@ -13,6 +13,8 @@
   let message = ''
   let isPost = false
   let isDisabled = false
+  let isMessageVisible = false
+
   language.subscribe(lang => {
     activeLang = lang
   })
@@ -27,7 +29,7 @@
     request('post', 'contact-form/submit/', null, {
       name: e.target[0].value,
       phone_number: e.target[1].value,
-      comment: forMap ? 'Карта IT-профессий' : 'Поможем подобрать обучение'
+      comment: forMap ? 'Карта IT-профессий' : 'Поможем подобрать обучение',
     })
       .then(() => {
         axios
@@ -37,69 +39,87 @@
               first_name: e.target[0].value,
               phone: e.target[1].value,
               email: e.target[2].value ? e.target[2].value : null,
-              extra_comments: ['Главная страница', forMap ? 'Карта IT-профессий' : (forTeens ? 'Главная страница детских курсов' : (forTeensPlan ? 'План обучения для детей' : 'Поможем подобрать обучение'))]
+              extra_comments: [
+                'Главная страница',
+                forMap
+                  ? 'Карта IT-профессий'
+                  : forTeens
+                    ? 'Главная страница детских курсов'
+                    : forTeensPlan
+                      ? 'План обучения для детей'
+                      : 'Поможем подобрать обучение',
+              ],
             },
             { headers }
           )
           .then(() => {
             isPost = true
-            isDisabled=false
-            message = ''
-            if(forMap) {
-              window.location.href = "https://codifylab.com/ru/api/download-it-prof-map/"
-            }
-            if(forTeensPlan) {
-                window.location.href = "https://codifylab.com/ru/api/download-it-road-map/"
-            }
-            setTimeout(() => {
-              isPost = false
-            }, 5000)
+            isDisabled = false
+            message = 'Заявка отправлена!'
+            isMessageVisible = true
           })
       })
       .catch(err => {
         message = err.response.data.email?.join() || 'что-то пошло не так'
         isPost = true
         isDisabled = false
-        setTimeout(() => {
-          message = ''
-          isPost = false
-        }, 5000)
+        isMessageVisible = true
       })
   }
 
-
+  function closeMessage() {
+    isMessageVisible = false
+    isPost = false
+  }
 </script>
 
-<form  on:submit={submit} style={`${forModalMap ? 'background: linear-gradient(140deg, rgba(0, 157, 255, 0.50) 0%, rgba(188, 20, 227, 0.50) 100%)' : ''}`} class="card {forMap ? 'w-100' : null}">
-    {#if isDisabled && !isPost}
-        <div class="innerLoading">
-        <Loading isTransparent vh="20"/>
-        </div>
-    {/if}
-    {#if isPost && !isDisabled}
-        <div class="innerLoading">
-            <p>{message || 'Заявка отправлена'}</p>
-        </div>
-    {/if}
-    <div class={`find-education ${isDisabled || isPost? 'transparent' : ''}`}>
-        {#if !forMap && !forTeens && !forTeensPlan}
-            <p>{texts[activeLang].findEducation.title}</p>
-        {/if}
-        {#if forModalMap}
-            <p>Получите карту актуальных IT профессий</p>
-        {/if}
-        {#if forTeens}
-            <p>Запишитесь на диагностику IT навыков ребенка и получите карту IT профессий будущего</p>
-        {/if}
-        {#if forTeensPlan}
-            <p style="padding-right: 20px">Получите план обучения вашего ребенка 🚀</p>
-        {/if}
-    <input  required type="text" placeholder={texts[activeLang].findEducation.input_name} />
-    <input required type="text" placeholder={texts[activeLang].findEducation.input_phone} />
-    <button class="button contained">{forMap ? 'Получить карту IT профессий' : (forTeensPlan ? 'Получить план обучения' : (forTeens ? 'Записаться на диагностику' : texts[activeLang].findEducation.button))}</button>
-    <span class="subtitle">{'Нажимая на кнопку, вы даете согласие на обработку персональных данных'}</span>
+<form
+  on:submit={submit}
+  style={`min-height: 478px; ${forModalMap ? 'background: linear-gradient(140deg, rgba(0, 157, 255, 0.50) 0%, rgba(188, 20, 227, 0.50) 100%)' : ''}`}
+  class="card {forMap ? 'w-100' : null}"
+>
+  {#if isDisabled && !isPost}
+    <div class="innerLoading">
+      <Loading isTransparent vh="20" />
     </div>
-
+  {/if}
+  {#if isPost && isMessageVisible}
+    <div class="innerLoading complete">
+      <div>
+        <button class="close-button" on:click={closeMessage}>X</button>
+      </div>
+      <p>{message}</p>
+      <p></p>
+    </div>
+  {/if}
+  {#if !isPost || !isMessageVisible}
+    <div class={`find-education ${isDisabled || isPost ? 'transparent' : ''}`}>
+      {#if !forMap && !forTeens && !forTeensPlan}
+        <p>{texts[activeLang].findEducation.title}</p>
+      {/if}
+      {#if forModalMap}
+        <p>Получите карту актуальных IT профессий</p>
+      {/if}
+      {#if forTeens}
+        <p>Запишитесь на диагностику IT навыков ребенка и получите карту IT профессий будущего</p>
+      {/if}
+      {#if forTeensPlan}
+        <p style="padding-right: 20px">Получите план обучения вашего ребенка 🚀</p>
+      {/if}
+      <input required type="text" placeholder={texts[activeLang].findEducation.input_name} />
+      <input required type="text" placeholder={texts[activeLang].findEducation.input_phone} />
+      <button class="button contained"
+        >{forMap
+          ? 'Получить карту IT профессий'
+          : forTeensPlan
+            ? 'Получить план обучения'
+            : forTeens
+              ? 'Записаться на диагностику'
+              : texts[activeLang].findEducation.button}</button
+      >
+      <span class="subtitle">{'Нажимая на кнопку, вы даете согласие на обработку персональных данных'}</span>
+    </div>
+  {/if}
 </form>
 
 <style>
@@ -121,6 +141,20 @@
     align-items: center;
     justify-content: center;
   }
+
+  .innerLoading.complete {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .innerLoading.complete div {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+  }
+
   .find-education {
     display: flex;
     flex-direction: column;
@@ -160,12 +194,18 @@
     font-weight: 400;
     font-size: 14px;
     cursor: pointer;
-    color: #009DFF;
+    color: #009dff;
     text-decoration: underline;
   }
   a:hover {
     color: var(--blue);
-
+  }
+  .close-button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
   }
   @media (max-width: 855px) {
     .card {
@@ -187,7 +227,8 @@
     .find-education {
       max-width: 100%;
     }
-    .subtitle, a {
+    .subtitle,
+    a {
       font-size: 12px;
     }
   }

@@ -1,14 +1,15 @@
 <script>
   import axios from 'axios'
-
   import { texts } from '../../localization'
   import { language } from '../../stores'
-  import {request} from "../../api";
+  import { request } from '../../api'
+
   export let course_title = ''
   export let forMainPage = false
   let message = ''
   let isPost = false
   let isDisabled = false
+  let isMessageVisible = false
   let activeLang = 'ru'
 
   let text = texts[activeLang]
@@ -28,7 +29,7 @@
     request('post', 'contact-form/submit/', null, {
       name: e.target[0].value,
       phone_number: e.target[1].value,
-      comment: !!course_title ? `Оставил заявку на странице курса ${course_title}`  : 'Консультация'
+      comment: !!course_title ? `Оставил заявку на странице курса ${course_title}` : 'Консультация',
     })
       .then(() => {
         axios
@@ -37,30 +38,31 @@
             {
               first_name: e.target[0].value,
               phone: e.target[1].value,
-              // email: e.target[2].value ? e.target[2].value : null,
-              extra_comments: ['Консультация', course_title ? `Оставил заявку на странице курса ${course_title}` : 'Главная страница']
+              extra_comments: [
+                'Консультация',
+                course_title ? `Оставил заявку на странице курса ${course_title}` : 'Главная страница',
+              ],
             },
             { headers }
           )
           .then(() => {
             isPost = true
             message = 'Заявка отправлена'
-            setTimeout(() => {
-              message = ''
-              isPost = false
-              isDisabled=false
-            }, 10000)
+            isMessageVisible = true
+            isDisabled = false
           })
       })
       .catch(err => {
         message = err.response.data.email?.join() || 'что-то пошло не так'
         isPost = true
+        isMessageVisible = true
         isDisabled = false
-        setTimeout(() => {
-          message = ''
-          isPost = false
-        }, 5000)
       })
+  }
+
+  function closeMessage() {
+    isMessageVisible = false
+    isPost = false
   }
 </script>
 
@@ -71,18 +73,22 @@
       <p style={forMainPage ? 'text-align: start' : ''}>
         Мы с удовольствием ответим на все ваши вопросы и поможем определиться с выбором курса!
       </p>
-
     </div>
     <form on:submit={submit}>
       <div class="formInputs">
-        <p class={`successPost ${isPost ? 'post' : ''}`}>{message || text.enroll.postMessage}</p>
-        <input required type="text" placeholder={text.enroll.name + '*'} />
-        <input required type="number" class="phoneInput" placeholder={text.enroll.phone + '*'} />
-<!--        <input type="email" placeholder={text.enroll.email} />-->
-        <button disabled={isDisabled} class="button contained">Оставить заявку</button>
+        {#if isMessageVisible}
+          <div class="successPost">
+            <p>{message || text.enroll.postMessage}</p>
+            <button class="close-button" on:click={closeMessage}>X</button>
+          </div>
+        {/if}
+        {#if !isPost || !isMessageVisible}
+          <input required type="text" placeholder={text.enroll.name + '*'} />
+          <input required type="number" class="phoneInput" placeholder={text.enroll.phone + '*'} />
+          <button disabled={isDisabled} class="button contained">Оставить заявку</button>
+        {/if}
       </div>
       <div class="formCheck">
-<!--        <input required type="checkbox" />-->
         <p>{text.enroll.check}</p>
       </div>
     </form>
@@ -97,7 +103,6 @@
     display: flex;
     justify-content: center;
     width: 100%;
-
   }
   .description-box p {
     max-width: 875px;
@@ -111,7 +116,7 @@
   }
   .successPost {
     position: absolute;
-    top: -55px;
+    top: -40px;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -121,25 +126,19 @@
     background-image: var(--primary-bg);
     border-radius: 100px;
     border: 1px solid var(--blue);
-    pointer-events: none;
-    user-select: none;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 10px 50px;
-    opacity: 0;
+    opacity: 1;
   }
-  .post {
-    animation: 4s opac ease-out forwards;
-  }
-  @keyframes opac {
-    0%,
-    70% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
+  .close-button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    margin-left: 10px;
+    cursor: pointer;
   }
   .sectionEnroll {
     padding: 100px 0;
@@ -208,8 +207,6 @@
       min-width: 230px;
       max-width: 4900px;
     }
-    .formInputs button {
-    }
   }
   @media screen and (max-width: 768px) {
     .description-box p {
@@ -219,7 +216,6 @@
     .formInputs {
       display: grid;
       grid-template-columns: 100%;
-
     }
     .formInputs > input {
       min-height: 51px;
