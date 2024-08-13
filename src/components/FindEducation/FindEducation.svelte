@@ -21,11 +21,16 @@
 
   async function submit(e) {
     e.preventDefault()
+
+    if (isDisabled) return
+
+    isDisabled = true
+
     const headers = {
       Authorization: 'b8faa2c98db86c13fadc2e339bf33743',
       'content-Type': 'application/json',
     }
-    isDisabled = true
+
     request('post', 'contact-form/submit/', null, {
       name: e.target[0].value,
       phone_number: e.target[1].value,

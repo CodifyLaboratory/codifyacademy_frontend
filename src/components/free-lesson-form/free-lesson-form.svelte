@@ -23,6 +23,9 @@
       Authorization: 'b8faa2c98db86c13fadc2e339bf33743',
       'content-Type': 'application/json',
     }
+
+    if (isDisabled) return
+
     isDisabled = true
     request('post', 'contact-form/submit/', null, {
       name: e.target[0].value,
