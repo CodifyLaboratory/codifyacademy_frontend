@@ -22,6 +22,13 @@
   async function submit(e) {
     e.preventDefault()
 
+    const phoneNumber = e.target[1].value
+    if (phoneNumber.length < 8 || phoneNumber.length > 15) {
+      message = 'Номер телефона должен содержать от 8 до 15 цифр.'
+      isMessageVisible = true
+      return
+    }
+
     if (isDisabled) return
 
     isDisabled = true
@@ -33,7 +40,7 @@
 
     request('post', 'contact-form/submit/', null, {
       name: e.target[0].value,
-      phone_number: e.target[1].value,
+      phone_number: phoneNumber,
       comment: forMap ? 'Карта IT-профессий' : 'Поможем подобрать обучение',
     })
       .then(() => {
@@ -42,7 +49,7 @@
             'https://academy.codifylab.com/api/crm/leads/?org_id=1',
             {
               first_name: e.target[0].value,
-              phone: e.target[1].value,
+              phone: phoneNumber,
               email: e.target[2].value ? e.target[2].value : null,
               extra_comments: [
                 'Главная страница',
@@ -112,7 +119,7 @@
         <p style="padding-right: 20px">Получите план обучения вашего ребенка 🚀</p>
       {/if}
       <input required type="text" placeholder={texts[activeLang].findEducation.input_name} />
-      <input required type="text" placeholder={texts[activeLang].findEducation.input_phone} />
+      <input required type="number" placeholder={texts[activeLang].findEducation.input_phone} />
       <button class="button contained"
         >{forMap
           ? 'Получить карту IT профессий'

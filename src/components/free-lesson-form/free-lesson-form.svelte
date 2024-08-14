@@ -24,6 +24,13 @@
       'content-Type': 'application/json',
     }
 
+    const phoneNumber = e.target[1].value
+    if (phoneNumber.length < 8 || phoneNumber.length > 15) {
+      message = 'Номер телефона должен содержать от 8 до 15 цифр.'
+      isMessageVisible = true
+      return
+    }
+
     if (isDisabled) return
 
     isDisabled = true

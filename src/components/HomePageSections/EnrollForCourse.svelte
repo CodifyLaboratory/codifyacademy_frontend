@@ -21,6 +21,14 @@
 
   async function submit(e) {
     e.preventDefault()
+
+    const phoneNumber = e.target[1].value
+    if (phoneNumber.length < 8 || phoneNumber.length > 15) {
+      message = 'Номер телефона должен содержать от 8 до 15 цифр.'
+      isMessageVisible = true
+      return
+    }
+
     const headers = {
       Authorization: 'b8faa2c98db86c13fadc2e339bf33743',
       'content-Type': 'application/json',
