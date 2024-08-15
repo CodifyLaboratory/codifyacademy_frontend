@@ -97,7 +97,7 @@
       </p>
       <div class={`find-education_form`}>
         <input required type="text" placeholder="Имя" />
-        <input required type="text" placeholder="Номер телефона" />
+        <input required type="number" placeholder="Номер телефона" />
         <button class="button contained">Оставить заявку</button>
       </div>
 
