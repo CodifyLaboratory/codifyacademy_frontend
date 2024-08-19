@@ -8,7 +8,8 @@
   export let maxWidth = 600
   export let comment = ''
   let activeLang = 'ru'
-  let message = ''
+  let successMessage = ''
+  let errorMessage = ''
   let isPost = false
   let isDisabled = false
   let isMessageVisible = false
@@ -26,7 +27,7 @@
 
     const phoneNumber = e.target[1].value
     if (phoneNumber.length < 8 || phoneNumber.length > 15) {
-      message = 'Номер телефона должен содержать от 8 до 15 цифр.'
+      errorMessage = 'Номер телефона должен содержать от 8 до 15 цифр.'
       isMessageVisible = true
       return
     }
@@ -55,11 +56,13 @@
             isPost = true
             isDisabled = false
             isMessageVisible = true
-            message = 'Заявка отправлена'
+            successMessage = 'Наши менеджеры скоро свяжутся с вами.'
+            errorMessage = '' // сброс ошибки
           })
       })
       .catch(err => {
-        message = err.response.data.email?.join() || 'что-то пошло не так'
+        errorMessage = err.response?.data?.email?.join() || 'Что-то пошло не так'
+        successMessage = '' // сброс успешного сообщения
         isPost = true
         isDisabled = false
         isMessageVisible = true
@@ -69,6 +72,8 @@
   function closeMessage() {
     isMessageVisible = false
     isPost = false
+    successMessage = ''
+    errorMessage = ''
   }
 </script>
 
@@ -78,14 +83,15 @@
       <Loading isTransparent vh="20" />
     </div>
   {/if}
-  {#if isMessageVisible && isPost}
+  {#if isMessageVisible && successMessage}
     <div class="innerLoading">
       <div style="display: flex; justify-content:space-between; width:100%; padding:0 20px;">
-        <p>{message || 'Заявка отправлена'}</p>
+        <p>{successMessage}</p>
         <button class="close-button" on:click={closeMessage}>X</button>
       </div>
     </div>
   {/if}
+
   {#if !isPost || !isMessageVisible}
     <div class={`find-education ${isBig ? 'is_big' : ''} ${isDisabled || isPost ? 'transparent' : ''}`}>
       <p>
@@ -103,14 +109,22 @@
 
       <span class="subtitle">{'Отправляя заявку, вы даете согласие на обработку персональных данных.'}</span>
     </div>
+    {#if isMessageVisible && errorMessage}
+      <p class="errorMessage">{errorMessage}</p>
+    {/if}
   {/if}
 </form>
 
 <style>
+  .errorMessage {
+    color: red;
+  }
+
   .card {
     position: relative;
     justify-self: flex-end;
   }
+
   .innerLoading {
     position: absolute;
     width: 100%;
@@ -121,6 +135,7 @@
     align-items: center;
     justify-content: center;
   }
+
   .find-education,
   .find-education_form {
     display: flex;
@@ -137,16 +152,19 @@
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
   }
+
   p {
     color: var(--white);
     font-size: 24px;
     font-weight: 500;
     line-height: 130%; /* 36.4px */
   }
+
   .is_big p {
     font-size: 32px;
     max-width: 650px;
   }
+
   input {
     border: 1px solid white;
     padding: 11px 30px;
@@ -157,14 +175,17 @@
     font-weight: 400;
     border-radius: 100px;
   }
+
   input::placeholder {
     color: white;
     opacity: 0.7;
   }
+
   .subtitle {
     font-weight: 400;
     font-size: 14px;
   }
+
   .close-button {
     background: transparent;
     border: none;
@@ -173,6 +194,7 @@
     margin-left: 10px;
     cursor: pointer;
   }
+
   a {
     font-weight: 400;
     font-size: 14px;
@@ -180,9 +202,11 @@
     color: #009dff;
     text-decoration: underline;
   }
+
   a:hover {
     color: var(--blue);
   }
+
   @media (max-width: 855px) {
     .card {
       max-width: 100% !important;

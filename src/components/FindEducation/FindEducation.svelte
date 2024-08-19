@@ -10,7 +10,8 @@
   export let forModalMap = false
   export let forTeensPlan = false
   let activeLang = 'ru'
-  let message = ''
+  let successMessage = ''
+  let errorMessage = ''
   let isPost = false
   let isDisabled = false
   let isMessageVisible = false
@@ -24,7 +25,7 @@
 
     const phoneNumber = e.target[1].value
     if (phoneNumber.length < 8 || phoneNumber.length > 15) {
-      message = 'Номер телефона должен содержать от 8 до 15 цифр.'
+      errorMessage = 'Номер телефона должен содержать от 8 до 15 цифр.'
       isMessageVisible = true
       return
     }
@@ -67,12 +68,13 @@
           .then(() => {
             isPost = true
             isDisabled = false
-            message = 'Заявка отправлена!'
+            successMessage = 'Наши менеджеры скоро свяжутся с вами.'
+            errorMessage = ''
             isMessageVisible = true
           })
       })
       .catch(err => {
-        message = err.response.data.email?.join() || 'что-то пошло не так'
+        errorMessage = err.response?.data?.email?.join() || 'Что-то пошло не так'
         isPost = true
         isDisabled = false
         isMessageVisible = true
@@ -82,6 +84,8 @@
   function closeMessage() {
     isMessageVisible = false
     isPost = false
+    successMessage = ''
+    errorMessage = ''
   }
 </script>
 
@@ -95,13 +99,20 @@
       <Loading isTransparent vh="20" />
     </div>
   {/if}
-  {#if isPost && isMessageVisible}
+  {#if isPost && isMessageVisible && successMessage}
     <div class="innerLoading complete">
       <div>
         <button class="close-button" on:click={closeMessage}>X</button>
       </div>
-      <p>{message}</p>
-      <p></p>
+      <p>{successMessage}</p>
+    </div>
+  {/if}
+  {#if isPost && isMessageVisible && errorMessage}
+    <div class="innerLoading complete">
+      <div>
+        <button class="close-button" on:click={closeMessage}>X</button>
+      </div>
+      <p class="errorMessage">{errorMessage}</p>
     </div>
   {/if}
   {#if !isPost || !isMessageVisible}
@@ -129,20 +140,74 @@
               ? 'Записаться на диагностику'
               : texts[activeLang].findEducation.button}</button
       >
+      <p class="errorMessage">{errorMessage}</p>
       <span class="subtitle">{'Нажимая на кнопку, вы даете согласие на обработку персональных данных'}</span>
     </div>
   {/if}
 </form>
 
 <style>
+  .errorMessage {
+    width: 100%;
+    color: red;
+    margin-top: 10px;
+  }
+
+  .innerLoading.complete {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 20px;
+  }
+
+  .innerLoading.complete p {
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 50%;
+  }
+
+  .innerLoading.complete p.errorMessage {
+    color: red;
+  }
+
+  .innerLoading.complete div {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+  }
+
+  .close-button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .find-education {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .find-education.transparent {
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    cursor: default;
+  }
+
   .card {
     position: relative;
     max-width: 392px;
   }
+
   .card.w-100 {
     max-width: unset;
     width: 100%;
   }
+
   .innerLoading {
     position: absolute;
     width: 100%;
@@ -154,36 +219,13 @@
     justify-content: center;
   }
 
-  .innerLoading.complete {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px;
-  }
-
-  .innerLoading.complete div {
-    width: 100%;
-    display: flex;
-    justify-content: end;
-  }
-
-  .find-education {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  .find-education.transparent {
-    opacity: 0;
-    pointer-events: none;
-    user-select: none;
-    cursor: default;
-  }
   p {
     color: var(--white);
     font-size: 24px;
     font-weight: 500;
     line-height: 130%; /* 36.4px */
   }
+
   input {
     border: 1px solid white;
     padding: 11px 30px;
@@ -194,14 +236,17 @@
     font-weight: 300;
     border-radius: 100px;
   }
+
   input::placeholder {
     color: white;
     opacity: 0.7;
   }
+
   .subtitle {
     font-weight: 300;
     font-size: 14px;
   }
+
   a {
     font-weight: 400;
     font-size: 14px;
@@ -209,16 +254,11 @@
     color: #009dff;
     text-decoration: underline;
   }
+
   a:hover {
     color: var(--blue);
   }
-  .close-button {
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-  }
+
   @media (max-width: 855px) {
     .card {
       max-width: 100%;

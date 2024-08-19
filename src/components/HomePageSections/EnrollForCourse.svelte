@@ -6,7 +6,8 @@
 
   export let course_title = ''
   export let forMainPage = false
-  let message = ''
+  let successMessage = ''
+  let errorMessage = ''
   let isPost = false
   let isDisabled = false
   let isMessageVisible = false
@@ -24,7 +25,7 @@
 
     const phoneNumber = e.target[1].value
     if (phoneNumber.length < 8 || phoneNumber.length > 15) {
-      message = 'Номер телефона должен содержать от 8 до 15 цифр.'
+      errorMessage = 'Номер телефона должен содержать от 8 до 15 цифр.'
       isMessageVisible = true
       return
     }
@@ -58,13 +59,14 @@
           )
           .then(() => {
             isPost = true
-            message = 'Заявка отправлена'
+            successMessage = 'Наши менеджеры скоро свяжутся с вами.'
             isMessageVisible = true
+            errorMessage = ''
             isDisabled = false
           })
       })
       .catch(err => {
-        message = err.response.data.email?.join() || 'что-то пошло не так'
+        errorMessage = err.response?.data?.email?.join() || 'Что-то пошло не так'
         isPost = true
         isMessageVisible = true
         isDisabled = false
@@ -74,6 +76,8 @@
   function closeMessage() {
     isMessageVisible = false
     isPost = false
+    successMessage = ''
+    errorMessage = ''
   }
 </script>
 
@@ -87,9 +91,9 @@
     </div>
     <form on:submit={submit}>
       <div class="formInputs">
-        {#if isMessageVisible}
+        {#if isMessageVisible && successMessage}
           <div class="successPost">
-            <p>{message || text.enroll.postMessage}</p>
+            <p>{successMessage}</p>
             <button class="close-button" on:click={closeMessage}>X</button>
           </div>
         {/if}
@@ -99,6 +103,9 @@
           <button disabled={isDisabled} class="button contained">Оставить заявку</button>
         {/if}
       </div>
+      {#if isMessageVisible && errorMessage}
+        <p class="errorMessage">{errorMessage}</p>
+      {/if}
       <div class="formCheck">
         <p>{text.enroll.check}</p>
       </div>
@@ -107,24 +114,34 @@
 </section>
 
 <style>
+  .errorMessage {
+    width: 100%;
+    color: red;
+    margin-top: 10px;
+  }
+
   h2 {
     margin-bottom: 15px !important;
   }
+
   .description-box {
     display: flex;
     justify-content: center;
     width: 100%;
   }
+
   .description-box p {
     max-width: 875px;
     text-align: center;
     padding-bottom: 50px;
   }
+
   .button:disabled {
     opacity: 0.5;
     pointer-events: none;
     cursor: auto;
   }
+
   .successPost {
     position: absolute;
     top: -40px;
@@ -143,6 +160,7 @@
     padding: 10px 50px;
     opacity: 1;
   }
+
   .close-button {
     background: transparent;
     border: none;
@@ -151,10 +169,12 @@
     margin-left: 10px;
     cursor: pointer;
   }
+
   .sectionEnroll {
     padding: 100px 0;
     background-color: #131315;
   }
+
   .formInputs {
     display: grid;
     gap: 20px;
@@ -162,6 +182,7 @@
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
   }
+
   .formCheck {
     width: 100%;
     position: relative;
@@ -169,6 +190,7 @@
     justify-content: center;
     gap: 20px;
   }
+
   .formInputs > input {
     width: 100%;
     min-width: 230px;
@@ -178,14 +200,17 @@
     border: 1px solid var(--blue-main);
     background-color: #131315;
   }
+
   .formInputs > input:hover {
     border-color: #0071bc;
     box-shadow: 4px 4px 20px rgba(0, 157, 255, 0.2);
   }
+
   .formInputs > input:focus {
     border-color: #07ffe1;
     box-shadow: 4px 4px 20px rgba(0, 157, 255, 0.2);
   }
+
   .formCheck {
     display: flex;
     align-items: center;
@@ -194,20 +219,25 @@
     margin-top: 20px;
     justify-content: flex-start;
   }
+
   .formCheck > p {
     font-size: 12px;
     line-height: 12px;
   }
+
   .formCheck > input {
     width: 15px;
     height: 15px;
   }
+
   .phoneInput {
     -moz-appearance: textfield;
   }
+
   .phoneInput::-webkit-inner-spin-button {
     display: none;
   }
+
   @media screen and (max-width: 1050px) {
     .formCheck > input {
       width: 20px;
@@ -219,6 +249,7 @@
       max-width: 4900px;
     }
   }
+
   @media screen and (max-width: 768px) {
     .description-box p {
       padding-bottom: 30px;
