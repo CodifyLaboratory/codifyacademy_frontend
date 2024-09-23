@@ -24,7 +24,7 @@
     </div>
     <div class="location-block">
       <img class="location-image" src="./assets/images/place-2.png" alt="location" />
-      <h5 class="title">CODIFY Академия на Исанова</h5>
+      <h5 class="title">CODIFY Академия на БЦ Асыл-Таш</h5>
       <div class="location-info_box">
         <img src="./assets/icons/new-phone.svg" alt="phone" />
         <p>+996 500 431 430</p>
