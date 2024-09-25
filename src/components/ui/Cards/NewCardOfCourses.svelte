@@ -44,7 +44,8 @@
     <!--            🕓 Старт — {course.course_start}-->
     <!--        </p>-->
     <p class="price">
-      💸 Стоимость — {course?.discount_price || course?.price} сом в месяц
+      💸 Стоимость — {course?.discount_price || course?.price}
+      {course?.study_area === 'Management' ? 'сом за курс' : 'сом в месяц'}
     </p>
   </div>
 </a>
